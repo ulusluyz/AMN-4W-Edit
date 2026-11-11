@@ -27,7 +27,7 @@ jobs:
         run: |
           set -euo pipefail
           rsync -a --delete --exclude='.git/' source/ target/
-          git -C target add -A
+          git -C target add -A -f
           source_tree="$(git -C source rev-parse HEAD^{tree})"
           dest_tree="$(git -C target write-tree)"
           echo "Source tree: $source_tree"
