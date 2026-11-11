@@ -45,7 +45,12 @@ class DualAddressUpsertAMN(DualAddressAMN):
     keep the dual property. This fixes duplicate-key rank deficiency, not
     near-duplicate key issues, nor delete/no-key and free-text parsing.
     """
-    def forward(self, triples, query):
+    def forward(self, triples, query, *, guarantee_unique_keys=False):
+        # Optional zero-overhead fast path for upstream-validated inputs.
+        # NEVER enable if a repeated (entity, relation) key is possible.
+        # On these inputs the original Dual model is already exact.
+        if guarantee_unique_keys:
+            return super().forward(triples, query)
         keys = self.address(triples[:, :, :2])
         values = F.normalize(self.value(self.embed(triples[:, :, 2])), dim=-1)
         keep = last_write_mask(triples)
