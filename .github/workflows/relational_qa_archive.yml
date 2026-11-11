@@ -1,0 +1,73 @@
+name: Reproduce AMN relational QA experiment
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/relational_qa_archive.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install PyTorch and tests
+        run: python -m pip install -r requirements.txt
+      - name: Run split and memory regression tests
+        run: python -m pytest -q tests/test_relational_qa.py
+      - name: Train all architectures at the same 50-step budget
+        run: |
+          python experiments/relational_qa.py \
+            --model all --seeds 0 1 2 3 4 \
+            --steps 50 --batch 128 --dev-every 25 \
+            --dev-size 1000 --test-size 3000 \
+            --output-dir results/relational_qa/equal50
+      - name: Independent 6/8/12 fact stress checks
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, sys, torch
+          from pathlib import Path
+          sys.path.insert(0, 'experiments')
+          from relational_qa import DualAddressAMN, AssociativeAMN, evaluate, FACTS
+          root=Path('results/relational_qa')
+          records=[]
+          for arch, cls in [('amn',AssociativeAMN),('dual',DualAddressAMN)]:
+              for seed in range(5):
+                  p=root/'equal50'/f'{arch}_{seed}.pt'
+                  ck=torch.load(p,weights_only=True,map_location='cpu')
+                  model=cls(48)
+                  model.load_state_dict(ck['state_dict'])
+                  for nf in (4,6,8,12):
+                      r=evaluate(model,seed+80000,'test',1000,nf)
+                      records.append({'arch':arch,'seed':seed,'facts':nf,
+                                      'correct':r['correct'],'total':r['total'],
+                                      'accuracy':r['accuracy'],'loss':r['loss']})
+          (root/'stress.jsonl').write_text(''.join(
+              json.dumps(row,ensure_ascii=False)+'\n' for row in records))
+          import hashlib
+          (root/'metadata.json').write_text(json.dumps({
+              'source_sha256':hashlib.sha256(Path('experiments/relational_qa.py').read_bytes()).hexdigest(),
+              'torch':torch.__version__,
+              'splits':{name:len(facts) for name,facts in FACTS.items()},
+              'seeds':[0,1,2,3,4],
+              'stage':'synthetic structured Turkish QA, not general language generation'
+          },indent=2))
+          print('STRESS',records)
+          PY
+      - name: Archive model checkpoints and raw results only in AMN-4W-Edit
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f results/relational_qa/
+          git commit -m "Archive reproducible 5-seed relational QA checkpoints and stress results"
+          git push origin HEAD:main
