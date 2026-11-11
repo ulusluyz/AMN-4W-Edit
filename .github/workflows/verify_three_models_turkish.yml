@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - '.github/workflows/verify_three_models_turkish.yml'
+      - 'experiments/validate_three_models_turkish.py'
 
 permissions:
   contents: write
