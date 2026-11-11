@@ -1,0 +1,488 @@
+{
+  "protocol": {
+    "independent_test_triples": 31,
+    "test_samples_per_condition": 600,
+    "trained_semantic_extraction": "byte-level bidirectional GRU, no entity regex",
+    "frozen_memory": "Dual Upsert AMN 50-step checkpoint",
+    "output": "autoregressive GRU word tokens, no formatting at inference",
+    "limit": "synthetic finite person/location/colour domain; not open-domain Turkish"
+  },
+  "known_phrasing": {
+    "total": 600,
+    "accepted": 600,
+    "coverage": 1.0,
+    "exact_generated_count": 593,
+    "end_to_end_exact_accuracy": 0.9883333333333333,
+    "parse_episodes_exact_within_accepted": 600,
+    "answer_accuracy_conditional_accept": 0.9883333333333333,
+    "styles": {
+      "kisa": {
+        "correct": 200,
+        "total": 200
+      },
+      "aciklayici": {
+        "correct": 200,
+        "total": 200
+      },
+      "detayli": {
+        "correct": 193,
+        "total": 200
+      }
+    },
+    "rejections": {},
+    "examples": [
+      {
+        "raw_context": "Elif şu anda kafede. Bulunduğu yeri sorarsan Zeynep kafede. Murat'ın kaleminden söz ediliyor ve renk sarı. Bulunduğu yeri sorarsan Yiğit salonda.",
+        "raw_question": "Zeynep'in bulunduğu yer hakkında bilgi verir misin?",
+        "expected": "Zeynep şu anda kafededir.",
+        "generated": "Zeynep şu anda kafededir.",
+        "exact": true,
+        "parsed_correctly": true,
+        "confidence_min": 0.7930030822753906,
+        "style": "kisa"
+      },
+      {
+        "raw_context": "Mina için kalem rengi beyaz olarak belirtildi. Sena için son konum salonda kaydedildi. Elif şu anda kafede. Sena hakkında kaleminin sarı olduğu bilgisi var.",
+        "raw_question": "Sena nerede?",
+        "expected": "Verilen açıklamaya göre Sena şu anda salondadır. Sorunuz bu kişinin nerede olduğuyla ilgilidir. Bu nedenle belirtilen yer salonda konumudur.",
+        "generated": "Verilen açıklamaya göre Sena şu anda salondadır. Sorunuz bu kişinin nerede olduğuyla ilgilidir. Bu nedenle belirtilen yer salonda konumudur.",
+        "exact": true,
+        "parsed_correctly": true,
+        "confidence_min": 0.9322993755340576,
+        "style": "aciklayici"
+      },
+      {
+        "raw_context": "Yiğit halen salonda görünüyor. Yaren şu anda parkta. Yiğit'in kalemi turuncu görünüyor. Murat hakkında kaleminin mavi olduğu bilgisi var.",
+        "raw_question": "Yiğit'in kalemi hangi renktedir?",
+        "expected": "Sorunuzu metinde verilen renk bilgisine dayanarak yanıtlıyorum. Yiğit'in kaleminin rengi turuncudur. Başka kişilere ait kayıtlar bu sonucu değiştirmiyor. Sonuç olarak Yiğit için belirtilen renk turuncu olarak görünüyor.",
+        "generated": "Sorunuzu metinde verilen renk bilgisine dayanarak yanıtlıyorum. Yiğit'in kaleminin rengi turuncudur. Başka kişilere ait kayıtlar bu sonucu değiştirmiyor. Sonuç olarak Yiğit için belirtilen renk turuncu olarak görünüyor.",
+        "exact": true,
+        "parsed_correctly": true,
+        "confidence_min": 0.9278464913368225,
+        "style": "detayli"
+      },
+      {
+        "raw_context": "Yiğit'in kalemi turuncu renkte. Ece şu anda okulda. Mert'in konumu kafede olarak bildirildi. Konum kaydında Sena salonda olarak geçiyor.",
+        "raw_question": "Ece nerede bulunmuş?",
+        "expected": "Ece şu anda okuldadır.",
+        "generated": "Ece şu anda okuldadır.",
+        "exact": true,
+        "parsed_correctly": true,
+        "confidence_min": 0.9235856533050537,
+        "style": "kisa"
+      },
+      {
+        "raw_context": "Sena'nın şu an bulunduğu mekân salonda. Kaleminin rengini sorarsan Sena için cevap sarı. Yiğit hakkında kaleminin sarı olduğu bilgisi var. Mina halen parkta görünüyor.",
+        "raw_question": "Kalemi hakkında Sena için hangi renk yazılmış?",
+        "expected": "Metindeki bilgiye göre Sena'nın kaleminin rengi sarıdır. Soruda sorulan özellik kalemin rengidir. Bu nedenle cevap sarı rengidir.",
+        "generated": "Metindeki bilgiye göre Sena'nın kaleminin rengi sarıdır. Soruda sorulan özellik kalemin rengidir. Bu nedenle cevap sarı rengidir.",
+        "exact": true,
+        "parsed_correctly": true,
+        "confidence_min": 0.778413712978363,
+        "style": "aciklayici"
+      },
+      {
+        "raw_context": "Yiğit'in konumu salonda olarak bildirildi. Bulunduğu yeri sorarsan Ece okulda. Selin için yer bilgisi garajda. Deniz şu anda okulda.",
+        "raw_question": "Selin için hangi konum bildirilmiş?",
+        "expected": "Metindeki konum bilgilerini karşılaştırarak yanıtlıyorum. Selin şu anda garajdadır. Diğer kişilerin konumları farklı olabilir. Sonuç olarak Selin için kayıtlı yer garajda olarak belirtilmiştir.",
+        "generated": "Metindeki konum bilgilerini karşılaştırarak yanıtlıyorum. Selin şu anda garajdadır. Diğer kişilerin konumları farklı olabilir. Sonuç olarak Selin için kayıtlı yer garajda olarak belirtilmiştir.",
+        "exact": true,
+        "parsed_correctly": true,
+        "confidence_min": 0.9354720711708069,
+        "style": "detayli"
+      },
+      {
+        "raw_context": "Kaleminin rengini sorarsan Deniz için cevap beyaz. Yaren için yer bilgisi parkta. Murat'ın kaleminden söz ediliyor ve renk sarı. Konum kaydında Okan kafede olarak geçiyor.",
+        "raw_question": "Yaren şu anda nerede bulunuyor?",
+        "expected": "Yaren şu anda parktadır.",
+        "generated": "Yaren şu anda parktadır.",
+        "exact": true,
+        "parsed_correctly": true,
+        "confidence_min": 0.7930030822753906,
+        "style": "kisa"
+      },
+      {
+        "raw_context": "Murat'ın kaleminden söz ediliyor ve renk mor. Bulunduğu yeri sorarsan Zeynep garajda. Sena için son konum salonda kaydedildi. Okan'ın şu an bulunduğu mekân parkta.",
+        "raw_question": "Zeynep adlı kişinin bulunduğu yeri açıklar mısın?",
+        "expected": "Verilen açıklamaya göre Zeynep şu anda garajdadır. Sorunuz bu kişinin nerede olduğuyla ilgilidir. Bu nedenle belirtilen yer garajda konumudur.",
+        "generated": "Verilen açıklamaya göre Zeynep şu anda garajdadır. Sorunuz bu kişinin nerede olduğuyla ilgilidir. Bu nedenle belirtilen yer garajda konumudur.",
+        "exact": true,
+        "parsed_correctly": true,
+        "confidence_min": 0.7930030822753906,
+        "style": "aciklayici"
+      },
+      {
+        "raw_context": "Kaleminin rengini sorarsan Mina için cevap beyaz. Deniz'in kalemi beyaz renkte. Deniz'in şu an bulunduğu mekân okulda. Ece'nin şu an bulunduğu mekân okulda.",
+        "raw_question": "Deniz adlı kişinin bulunduğu yeri açıklar mısın?",
+        "expected": "Metindeki konum bilgilerini karşılaştırarak yanıtlıyorum. Deniz şu anda okuldadır. Diğer kişilerin konumları farklı olabilir. Sonuç olarak Deniz için kayıtlı yer okulda olarak belirtilmiştir.",
+        "generated": "Metindeki konum bilgilerini karşılaştırarak yanıtlıyorum. Deniz şu anda okuldadır. Diğer kişilerin konumları farklı olabilir. Sonuç olarak Deniz için kayıtlı yer okulda olarak belirtilmiştir.",
+        "exact": true,
+        "parsed_correctly": true,
+        "confidence_min": 0.8514930605888367,
+        "style": "detayli"
+      },
+      {
+        "raw_context": "Sena hakkında kaleminin sarı olduğu bilgisi var. Umut için kalem rengi siyah olarak belirtildi. Selin şimdi parkta vakit geçiriyor. Mina halen parkta görünüyor.",
+        "raw_question": "Selin bugün hangi yerde?",
+        "expected": "Selin şu anda parktadır.",
+        "generated": "Selin şu anda parktadır.",
+        "exact": true,
+        "parsed_correctly": true,
+        "confidence_min": 0.9322993755340576,
+        "style": "kisa"
+      },
+      {
+        "raw_context": "Bulunduğu yeri sorarsan Sena salonda. Sena'nın kaleminin rengi sarı. Renk bilgisi Umut için siyah olarak kaydedilmiş. Nisa'nın kaleminden söz ediliyor ve renk sarı.",
+        "raw_question": "Sena adlı kişinin kaleminin rengini açıklar mısın?",
+        "expected": "Metindeki bilgiye göre Sena'nın kaleminin rengi sarıdır. Soruda sorulan özellik kalemin rengidir. Bu nedenle cevap sarı rengidir.",
+        "generated": "Metindeki bilgiye göre Sena'nın kaleminin rengi sarıdır. Soruda sorulan özellik kalemin rengidir. Bu nedenle cevap sarı rengidir.",
+        "exact": true,
+        "parsed_correctly": true,
+        "confidence_min": 0.778413712978363,
+        "style": "aciklayici"
+      },
+      {
+        "raw_context": "Okan için yer bilgisi kafede. Ece için son konum okulda kaydedildi. Konum kaydında Elif kafede olarak geçiyor. Konum kaydında Yaren parkta olarak geçiyor.",
+        "raw_question": "Yaren şu anda nerede bulunuyor?",
+        "expected": "Metindeki konum bilgilerini karşılaştırarak yanıtlıyorum. Yaren şu anda parktadır. Diğer kişilerin konumları farklı olabilir. Sonuç olarak Yaren için kayıtlı yer parkta olarak belirtilmiştir.",
+        "generated": "Metindeki konum bilgilerini karşılaştırarak yanıtlıyorum. Yaren şu anda parktadır. Diğer kişilerin konumları farklı olabilir. Sonuç olarak Yaren için kayıtlı yer parkta olarak belirtilmiştir.",
+        "exact": true,
+        "parsed_correctly": true,
+        "confidence_min": 0.9354720711708069,
+        "style": "detayli"
+      },
+      {
+        "raw_context": "Murat bir mavi kalem kullanıyor. Ece'nin konumu okulda olarak bildirildi. Zeynep halen garajda görünüyor. Selin için son konum garajda kaydedildi.",
+        "raw_question": "Selin bugün hangi yerde?",
+        "expected": "Selin şu anda garajdadır.",
+        "generated": "Selin şu anda garajdadır.",
+        "exact": true,
+        "parsed_correctly": true,
+        "confidence_min": 0.8514930605888367,
+        "style": "kisa"
+      },
+      {
+        "raw_context": "Yiğit şu anda salonda. Mina adlı kişinin kullandığı kalem beyaz renktedir. Okan bugün kafede bulunuyor. Bulunduğu yeri sorarsan Deniz okulda.",
+        "raw_question": "Okan nerede?",
+        "expected": "Verilen açıklamaya göre Okan şu anda kafededir. Sorunuz bu kişinin nerede olduğuyla ilgilidir. Bu nedenle belirtilen yer kafede konumudur.",
+        "generated": "Verilen açıklamaya göre Okan şu anda kafededir. Sorunuz bu kişinin nerede olduğuyla ilgilidir. Bu nedenle belirtilen yer kafede konumudur.",
+        "exact": true,
+        "parsed_correctly": true,
+        "confidence_min": 0.9509217739105225,
+        "style": "aciklayici"
+      },
+      {
+        "raw_context": "Mina için son konum parkta kaydedildi. Yaren şimdi okulda vakit geçiriyor. Deniz'in kaleminin rengi beyaz. Zeynep için son konum kafede kaydedildi.",
+        "raw_question": "Zeynep şimdi nerede, söyler misin?",
+        "expected": "Metindeki konum bilgilerini karşılaştırarak yanıtlıyorum. Zeynep şu anda kafededir. Diğer kişilerin konumları farklı olabilir. Sonuç olarak Zeynep için kayıtlı yer kafede olarak belirtilmiştir.",
+        "generated": "Metindeki konum bilgilerini karşılaştırarak yanıtlıyorum. Zeynep şu anda kafededir. Diğer kişilerin konumları farklı olabilir. Sonuç olarak Zeynep için kayıtlı yer kafede olarak belirtilmiştir.",
+        "exact": true,
+        "parsed_correctly": true,
+        "confidence_min": 0.9181949496269226,
+        "style": "detayli"
+      },
+      {
+        "raw_context": "Mina için yer bilgisi parkta. Renk bilgisi Mina için beyaz olarak kaydedilmiş. Murat'ın kalemi mor görünüyor. Sena hakkında kaleminin yeşil olduğu bilgisi var.",
+        "raw_question": "Mina hangi renk kalem kullanıyor?",
+        "expected": "Mina'nın kaleminin rengi beyazdır.",
+        "generated": "Mina'nın kaleminin rengi beyazdır.",
+        "exact": true,
+        "parsed_correctly": true,
+        "confidence_min": 0.7930030822753906,
+        "style": "kisa"
+      },
+      {
+        "raw_context": "Yiğit'in kaleminden söz ediliyor ve renk turuncu. Can halen bahçede görünüyor. Ayşe'nin kaleminden söz ediliyor ve renk sarı. Murat bir sarı kalem kullanıyor.",
+        "raw_question": "Kalemi hakkında Murat için hangi renk yazılmış?",
+        "expected": "Sorunuzu metinde verilen renk bilgisine dayanarak yanıtlıyorum. Murat'ın kaleminin rengi sarıdır. Başka kişilere ait kayıtlar bu sonucu değiştirmiyor. Sonuç olarak Murat için belirtilen renk sarı olarak görünüyor.",
+        "generated": "Sorunuzu metinde verilen renk bilgisine dayanarak yanıtlıyorum. Murat'ın kaleminin rengi sarıdır. Başka kişilere ait kayıtlar bu sonucu değiştirmiyor. Sonuç olarak Umut için belirtilen renk sarı olarak görünüyor.",
+        "exact": false,
+        "parsed_correctly": true,
+        "confidence_min": 0.9334228038787842,
+        "style": "detayli"
+      },
+      {
+        "raw_context": "Okan bugün kafede bulunuyor. Konum kaydında Selin garajda olarak geçiyor. Yiğit hakkında kaleminin turuncu olduğu bilgisi var. Murat adlı kişinin kullandığı kalem sarı renktedir.",
+        "raw_question": "Murat için kalemin rengini söyler misin?",
+        "expected": "Sorunuzu metinde verilen renk bilgisine dayanarak yanıtlıyorum. Murat'ın kaleminin rengi sarıdır. Başka kişilere ait kayıtlar bu sonucu değiştirmiyor. Sonuç olarak Murat için belirtilen renk sarı olarak görünüyor.",
+        "generated": "Sorunuzu metinde verilen renk bilgisine dayanarak yanıtlıyorum. Murat'ın kaleminin rengi sarıdır. Başka kişilere ait kayıtlar bu sonucu değiştirmiyor. Sonuç olarak Umut için belirtilen renk sarı olarak görünüyor.",
+        "exact": false,
+        "parsed_correctly": true,
+        "confidence_min": 0.9334228038787842,
+        "style": "detayli"
+      },
+      {
+        "raw_context": "Yiğit için son konum salonda kaydedildi. Deniz bir beyaz kalem kullanıyor. Ayşe'nin kaleminden söz ediliyor ve renk sarı. Yiğit adlı kişinin kullandığı kalem sarı renktedir.",
+        "raw_question": "Yiğit'in kalemi ne renk?",
+        "expected": "Sorunuzu metinde verilen renk bilgisine dayanarak yanıtlıyorum. Yiğit'in kaleminin rengi sarıdır. Başka kişilere ait kayıtlar bu sonucu değiştirmiyor. Sonuç olarak Yiğit için belirtilen renk sarı olarak görünüyor.",
+        "generated": "Sorunuzu metinde verilen renk bilgisine dayanarak yanıtlıyorum. Yiğit'in kaleminin rengi sarıdır. Başka kişilere ait kayıtlar bu sonucu değiştirmiyor. Sonuç olarak Yiğit için belirtilen renk mor olarak görünüyor.",
+        "exact": false,
+        "parsed_correctly": true,
+        "confidence_min": 0.9541438221931458,
+        "style": "detayli"
+      },
+      {
+        "raw_context": "Murat adlı kişinin kullandığı kalem sarı renktedir. Sena için kalem rengi sarı olarak belirtildi. Umut'un kalemi siyah görünüyor. Selin şu anda parkta.",
+        "raw_question": "Murat hangi renk kalem kullanıyor?",
+        "expected": "Sorunuzu metinde verilen renk bilgisine dayanarak yanıtlıyorum. Murat'ın kaleminin rengi sarıdır. Başka kişilere ait kayıtlar bu sonucu değiştirmiyor. Sonuç olarak Murat için belirtilen renk sarı olarak görünüyor.",
+        "generated": "Sorunuzu metinde verilen renk bilgisine dayanarak yanıtlıyorum. Murat'ın kaleminin rengi sarıdır. Başka kişilere ait kayıtlar bu sonucu değiştirmiyor. Sonuç olarak Umut için belirtilen renk sarı olarak görünüyor.",
+        "exact": false,
+        "parsed_correctly": true,
+        "confidence_min": 0.7811349034309387,
+        "style": "detayli"
+      }
+    ]
+  },
+  "unseen_phrasing": {
+    "total": 600,
+    "accepted": 600,
+    "coverage": 1.0,
+    "exact_generated_count": 584,
+    "end_to_end_exact_accuracy": 0.9733333333333334,
+    "parse_episodes_exact_within_accepted": 600,
+    "answer_accuracy_conditional_accept": 0.9733333333333334,
+    "styles": {
+      "kisa": {
+        "correct": 200,
+        "total": 200
+      },
+      "aciklayici": {
+        "correct": 200,
+        "total": 200
+      },
+      "detayli": {
+        "correct": 184,
+        "total": 200
+      }
+    },
+    "rejections": {},
+    "examples": [
+      {
+        "raw_context": "Ece okulda olduğu bilgisi verildi. Zeynep, garajda zaman geçiriyor. Okan, kafede zaman geçiriyor. Yaren parkta olduğu bilgisi verildi.",
+        "raw_question": "Ece son olarak nerede görüldü?",
+        "expected": "Ece şu anda okuldadır.",
+        "generated": "Ece şu anda okuldadır.",
+        "exact": true,
+        "parsed_correctly": true,
+        "confidence_min": 0.9354720711708069,
+        "style": "kisa"
+      },
+      {
+        "raw_context": "Yaren, parkta zaman geçiriyor. Deniz'in kullandığı kalem beyaz renkle tarif ediliyor. Okan, kafede zaman geçiriyor. Deniz, okulda zaman geçiriyor.",
+        "raw_question": "Deniz son olarak nerede görüldü?",
+        "expected": "Verilen açıklamaya göre Deniz şu anda okuldadır. Sorunuz bu kişinin nerede olduğuyla ilgilidir. Bu nedenle belirtilen yer okulda konumudur.",
+        "generated": "Verilen açıklamaya göre Deniz şu anda okuldadır. Sorunuz bu kişinin nerede olduğuyla ilgilidir. Bu nedenle belirtilen yer okulda konumudur.",
+        "exact": true,
+        "parsed_correctly": true,
+        "confidence_min": 0.9181949496269226,
+        "style": "aciklayici"
+      },
+      {
+        "raw_context": "Deniz, beyaz renginde bir kaleme sahip. Deniz, okulda zaman geçiriyor. Murat, sarı renginde bir kaleme sahip. Selin, garajda zaman geçiriyor.",
+        "raw_question": "Deniz hangi renk ile ilişkilendiriliyor?",
+        "expected": "Sorunuzu metinde verilen renk bilgisine dayanarak yanıtlıyorum. Deniz'in kaleminin rengi beyazdır. Başka kişilere ait kayıtlar bu sonucu değiştirmiyor. Sonuç olarak Deniz için belirtilen renk beyaz olarak görünüyor.",
+        "generated": "Sorunuzu metinde verilen renk bilgisine dayanarak yanıtlıyorum. Deniz'in kaleminin rengi beyazdır. Başka kişilere ait kayıtlar bu sonucu değiştirmiyor. Sonuç olarak Deniz için belirtilen renk beyaz olarak görünüyor.",
+        "exact": true,
+        "parsed_correctly": true,
+        "confidence_min": 0.8101206421852112,
+        "style": "detayli"
+      },
+      {
+        "raw_context": "Yiğit, turuncu renginde bir kaleme sahip. Nisa, sarı renginde bir kaleme sahip. Sena'nın kullandığı kalem yeşil renkle tarif ediliyor. Zeynep kafede olduğu bilgisi verildi.",
+        "raw_question": "Nisa hangi renk ile ilişkilendiriliyor?",
+        "expected": "Nisa'nın kaleminin rengi sarıdır.",
+        "generated": "Nisa'nın kaleminin rengi sarıdır.",
+        "exact": true,
+        "parsed_correctly": true,
+        "confidence_min": 0.778413712978363,
+        "style": "kisa"
+      },
+      {
+        "raw_context": "Yiğit, turuncu renginde bir kaleme sahip. Deniz, okulda zaman geçiriyor. Selin, parkta zaman geçiriyor. Deniz'in kullandığı kalem beyaz renkle tarif ediliyor.",
+        "raw_question": "Deniz son olarak nerede görüldü?",
+        "expected": "Verilen açıklamaya göre Deniz şu anda okuldadır. Sorunuz bu kişinin nerede olduğuyla ilgilidir. Bu nedenle belirtilen yer okulda konumudur.",
+        "generated": "Verilen açıklamaya göre Deniz şu anda okuldadır. Sorunuz bu kişinin nerede olduğuyla ilgilidir. Bu nedenle belirtilen yer okulda konumudur.",
+        "exact": true,
+        "parsed_correctly": true,
+        "confidence_min": 0.9181949496269226,
+        "style": "aciklayici"
+      },
+      {
+        "raw_context": "Zeynep, garajda zaman geçiriyor. Yaren, okulda zaman geçiriyor. Selin parkta olduğu bilgisi verildi. Murat'ın kullandığı kalem sarı renkle tarif ediliyor.",
+        "raw_question": "Yaren son olarak nerede görüldü?",
+        "expected": "Metindeki konum bilgilerini karşılaştırarak yanıtlıyorum. Yaren şu anda okuldadır. Diğer kişilerin konumları farklı olabilir. Sonuç olarak Yaren için kayıtlı yer okulda olarak belirtilmiştir.",
+        "generated": "Metindeki konum bilgilerini karşılaştırarak yanıtlıyorum. Yaren şu anda okuldadır. Diğer kişilerin konumları farklı olabilir. Sonuç olarak Yaren için kayıtlı yer okulda olarak belirtilmiştir.",
+        "exact": true,
+        "parsed_correctly": true,
+        "confidence_min": 0.7930030822753906,
+        "style": "detayli"
+      },
+      {
+        "raw_context": "Okan parkta olduğu bilgisi verildi. Ece okulda olduğu bilgisi verildi. Yaren parkta olduğu bilgisi verildi. Nisa'nın kullandığı kalem sarı renkle tarif ediliyor.",
+        "raw_question": "Okan son olarak nerede görüldü?",
+        "expected": "Okan şu anda parktadır.",
+        "generated": "Okan şu anda parktadır.",
+        "exact": true,
+        "parsed_correctly": true,
+        "confidence_min": 0.9354720711708069,
+        "style": "kisa"
+      },
+      {
+        "raw_context": "Ayşe, sarı renginde bir kaleme sahip. Sena, yeşil renginde bir kaleme sahip. Selin garajda olduğu bilgisi verildi. Nisa, sarı renginde bir kaleme sahip.",
+        "raw_question": "Ayşe'nin kullandığı kalemi tarif eder misin?",
+        "expected": "Metindeki bilgiye göre Ayşe'nin kaleminin rengi sarıdır. Soruda sorulan özellik kalemin rengidir. Bu nedenle cevap sarı rengidir.",
+        "generated": "Metindeki bilgiye göre Ayşe'nin kaleminin rengi sarıdır. Soruda sorulan özellik kalemin rengidir. Bu nedenle cevap sarı rengidir.",
+        "exact": true,
+        "parsed_correctly": true,
+        "confidence_min": 0.9322993755340576,
+        "style": "aciklayici"
+      },
+      {
+        "raw_context": "Elif kafede olduğu bilgisi verildi. Murat'ın kullandığı kalem mor renkle tarif ediliyor. Okan kafede olduğu bilgisi verildi. Mert kafede olduğu bilgisi verildi.",
+        "raw_question": "Okan son olarak nerede görüldü?",
+        "expected": "Metindeki konum bilgilerini karşılaştırarak yanıtlıyorum. Okan şu anda kafededir. Diğer kişilerin konumları farklı olabilir. Sonuç olarak Okan için kayıtlı yer kafede olarak belirtilmiştir.",
+        "generated": "Metindeki konum bilgilerini karşılaştırarak yanıtlıyorum. Okan şu anda kafededir. Diğer kişilerin konumları farklı olabilir. Sonuç olarak Okan için kayıtlı yer kafede olarak belirtilmiştir.",
+        "exact": true,
+        "parsed_correctly": true,
+        "confidence_min": 0.7930030822753906,
+        "style": "detayli"
+      },
+      {
+        "raw_context": "Mina, beyaz renginde bir kaleme sahip. Mina, parkta zaman geçiriyor. Murat, kırmızı renginde bir kaleme sahip. Umut'un kullandığı kalem siyah renkle tarif ediliyor.",
+        "raw_question": "Mina hangi renk ile ilişkilendiriliyor?",
+        "expected": "Mina'nın kaleminin rengi beyazdır.",
+        "generated": "Mina'nın kaleminin rengi beyazdır.",
+        "exact": true,
+        "parsed_correctly": true,
+        "confidence_min": 0.7811349034309387,
+        "style": "kisa"
+      },
+      {
+        "raw_context": "Deniz, beyaz renginde bir kaleme sahip. Deniz okulda olduğu bilgisi verildi. Okan, kafede zaman geçiriyor. Murat, sarı renginde bir kaleme sahip.",
+        "raw_question": "Deniz hangi renk ile ilişkilendiriliyor?",
+        "expected": "Metindeki bilgiye göre Deniz'in kaleminin rengi beyazdır. Soruda sorulan özellik kalemin rengidir. Bu nedenle cevap beyaz rengidir.",
+        "generated": "Metindeki bilgiye göre Deniz'in kaleminin rengi beyazdır. Soruda sorulan özellik kalemin rengidir. Bu nedenle cevap beyaz rengidir.",
+        "exact": true,
+        "parsed_correctly": true,
+        "confidence_min": 0.8101206421852112,
+        "style": "aciklayici"
+      },
+      {
+        "raw_context": "Can salonda olduğu bilgisi verildi. Mina'nın kullandığı kalem beyaz renkle tarif ediliyor. Murat'ın kullandığı kalem mavi renkle tarif ediliyor. Yiğit'in kullandığı kalem sarı renkle tarif ediliyor.",
+        "raw_question": "Murat hangi renk ile ilişkilendiriliyor?",
+        "expected": "Sorunuzu metinde verilen renk bilgisine dayanarak yanıtlıyorum. Murat'ın kaleminin rengi mavidir. Başka kişilere ait kayıtlar bu sonucu değiştirmiyor. Sonuç olarak Murat için belirtilen renk mavi olarak görünüyor.",
+        "generated": "Sorunuzu metinde verilen renk bilgisine dayanarak yanıtlıyorum. Murat'ın kaleminin rengi mavidir. Başka kişilere ait kayıtlar bu sonucu değiştirmiyor. Sonuç olarak Murat için belirtilen renk mavi olarak görünüyor.",
+        "exact": true,
+        "parsed_correctly": true,
+        "confidence_min": 0.6012319326400757,
+        "style": "detayli"
+      },
+      {
+        "raw_context": "Yiğit, salonda zaman geçiriyor. Nisa'nın kullandığı kalem sarı renkle tarif ediliyor. Mina parkta olduğu bilgisi verildi. Yiğit'in kullandığı kalem sarı renkle tarif ediliyor.",
+        "raw_question": "Yiğit'in kullandığı kalemi tarif eder misin?",
+        "expected": "Yiğit'in kaleminin rengi sarıdır.",
+        "generated": "Yiğit'in kaleminin rengi sarıdır.",
+        "exact": true,
+        "parsed_correctly": true,
+        "confidence_min": 0.949555516242981,
+        "style": "kisa"
+      },
+      {
+        "raw_context": "Sena'nın kullandığı kalem sarı renkle tarif ediliyor. Umut garajda olduğu bilgisi verildi. Zeynep garajda olduğu bilgisi verildi. Sena, salonda zaman geçiriyor.",
+        "raw_question": "Sena konum olarak hangi yerde?",
+        "expected": "Verilen açıklamaya göre Sena şu anda salondadır. Sorunuz bu kişinin nerede olduğuyla ilgilidir. Bu nedenle belirtilen yer salonda konumudur.",
+        "generated": "Verilen açıklamaya göre Sena şu anda salondadır. Sorunuz bu kişinin nerede olduğuyla ilgilidir. Bu nedenle belirtilen yer salonda konumudur.",
+        "exact": true,
+        "parsed_correctly": true,
+        "confidence_min": 0.778413712978363,
+        "style": "aciklayici"
+      },
+      {
+        "raw_context": "Nisa, sarı renginde bir kaleme sahip. Okan kafede olduğu bilgisi verildi. Mina'nın kullandığı kalem beyaz renkle tarif ediliyor. Mina, parkta zaman geçiriyor.",
+        "raw_question": "Mina'nın kullandığı kalemi tarif eder misin?",
+        "expected": "Sorunuzu metinde verilen renk bilgisine dayanarak yanıtlıyorum. Mina'nın kaleminin rengi beyazdır. Başka kişilere ait kayıtlar bu sonucu değiştirmiyor. Sonuç olarak Mina için belirtilen renk beyaz olarak görünüyor.",
+        "generated": "Sorunuzu metinde verilen renk bilgisine dayanarak yanıtlıyorum. Mina'nın kaleminin rengi beyazdır. Başka kişilere ait kayıtlar bu sonucu değiştirmiyor. Sonuç olarak Mina için belirtilen renk beyaz olarak görünüyor.",
+        "exact": true,
+        "parsed_correctly": true,
+        "confidence_min": 0.9366849064826965,
+        "style": "detayli"
+      },
+      {
+        "raw_context": "Deniz'in kullandığı kalem beyaz renkle tarif ediliyor. Mina, parkta zaman geçiriyor. Deniz okulda olduğu bilgisi verildi. Umut, siyah renginde bir kaleme sahip.",
+        "raw_question": "Deniz son olarak nerede görüldü?",
+        "expected": "Deniz şu anda okuldadır.",
+        "generated": "Deniz şu anda okuldadır.",
+        "exact": true,
+        "parsed_correctly": true,
+        "confidence_min": 0.9181949496269226,
+        "style": "kisa"
+      },
+      {
+        "raw_context": "Can, salonda zaman geçiriyor. Yiğit, salonda zaman geçiriyor. Murat'ın kullandığı kalem mavi renkle tarif ediliyor. Yiğit, sarı renginde bir kaleme sahip.",
+        "raw_question": "Yiğit'in kullandığı kalemi tarif eder misin?",
+        "expected": "Sorunuzu metinde verilen renk bilgisine dayanarak yanıtlıyorum. Yiğit'in kaleminin rengi sarıdır. Başka kişilere ait kayıtlar bu sonucu değiştirmiyor. Sonuç olarak Yiğit için belirtilen renk sarı olarak görünüyor.",
+        "generated": "Sorunuzu metinde verilen renk bilgisine dayanarak yanıtlıyorum. Yiğit'in kaleminin rengi sarıdır. Başka kişilere ait kayıtlar bu sonucu değiştirmiyor. Sonuç olarak Yiğit için belirtilen renk mor olarak görünüyor.",
+        "exact": false,
+        "parsed_correctly": true,
+        "confidence_min": 0.7930030822753906,
+        "style": "detayli"
+      },
+      {
+        "raw_context": "Yiğit salonda olduğu bilgisi verildi. Umut'un kullandığı kalem siyah renkle tarif ediliyor. Can salonda olduğu bilgisi verildi. Yiğit, sarı renginde bir kaleme sahip.",
+        "raw_question": "Yiğit hangi renk ile ilişkilendiriliyor?",
+        "expected": "Sorunuzu metinde verilen renk bilgisine dayanarak yanıtlıyorum. Yiğit'in kaleminin rengi sarıdır. Başka kişilere ait kayıtlar bu sonucu değiştirmiyor. Sonuç olarak Yiğit için belirtilen renk sarı olarak görünüyor.",
+        "generated": "Sorunuzu metinde verilen renk bilgisine dayanarak yanıtlıyorum. Yiğit'in kaleminin rengi sarıdır. Başka kişilere ait kayıtlar bu sonucu değiştirmiyor. Sonuç olarak Yiğit için belirtilen renk mor olarak görünüyor.",
+        "exact": false,
+        "parsed_correctly": true,
+        "confidence_min": 0.7811349034309387,
+        "style": "detayli"
+      },
+      {
+        "raw_context": "Sena, sarı renginde bir kaleme sahip. Okan, kafede zaman geçiriyor. Yiğit, sarı renginde bir kaleme sahip. Murat'ın kullandığı kalem sarı renkle tarif ediliyor.",
+        "raw_question": "Murat'ın kullandığı kalemi tarif eder misin?",
+        "expected": "Sorunuzu metinde verilen renk bilgisine dayanarak yanıtlıyorum. Murat'ın kaleminin rengi sarıdır. Başka kişilere ait kayıtlar bu sonucu değiştirmiyor. Sonuç olarak Murat için belirtilen renk sarı olarak görünüyor.",
+        "generated": "Sorunuzu metinde verilen renk bilgisine dayanarak yanıtlıyorum. Murat'ın kaleminin rengi sarıdır. Başka kişilere ait kayıtlar bu sonucu değiştirmiyor. Sonuç olarak Umut için belirtilen renk sarı olarak görünüyor.",
+        "exact": false,
+        "parsed_correctly": true,
+        "confidence_min": 0.7930030822753906,
+        "style": "detayli"
+      },
+      {
+        "raw_context": "Yiğit salonda olduğu bilgisi verildi. Yiğit'in kullandığı kalem sarı renkle tarif ediliyor. Deniz'in kullandığı kalem beyaz renkle tarif ediliyor. Murat, sarı renginde bir kaleme sahip.",
+        "raw_question": "Yiğit hangi renk ile ilişkilendiriliyor?",
+        "expected": "Sorunuzu metinde verilen renk bilgisine dayanarak yanıtlıyorum. Yiğit'in kaleminin rengi sarıdır. Başka kişilere ait kayıtlar bu sonucu değiştirmiyor. Sonuç olarak Yiğit için belirtilen renk sarı olarak görünüyor.",
+        "generated": "Sorunuzu metinde verilen renk bilgisine dayanarak yanıtlıyorum. Yiğit'in kaleminin rengi sarıdır. Başka kişilere ait kayıtlar bu sonucu değiştirmiyor. Sonuç olarak Yiğit için belirtilen renk mor olarak görünüyor.",
+        "exact": false,
+        "parsed_correctly": true,
+        "confidence_min": 0.8280207514762878,
+        "style": "detayli"
+      }
+    ]
+  },
+  "out_of_domain": [
+    {
+      "context": "Kuantum fiziği atom altı parçacıkları inceler.",
+      "question": "Bir kara deliğin nasıl oluştuğunu anlatır mısın?",
+      "status": "rejected",
+      "reason": "Unknown person / question"
+    },
+    {
+      "context": "Bora dün yeni bir telefon satın aldı.",
+      "question": "Bora hangi marka telefonu aldı?",
+      "status": "rejected",
+      "reason": "Unknown person / question"
+    },
+    {
+      "context": "Ali şu anda evde.",
+      "question": "Ali neden sinirli?",
+      "status": "rejected",
+      "reason": "Unsupported question type"
+    },
+    {
+      "context": "Yarın hava yağmurlu olacak.",
+      "question": "Yağmurun oluşumunu ayrıntılı açıklar mısın?",
+      "status": "rejected",
+      "reason": "Unknown person / question"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "dev_best": 1.0,
+  "best_step": 50,
+  "word_vocab_size": 123,
+  "known_forms": {
+    "episodes_correct": 1200,
+    "total": 1200,
+    "accuracy": 1.0,
+    "field_accuracy": 1.0
+  },
+  "unseen_forms": {
+    "episodes_correct": 1200,
+    "total": 1200,
+    "accuracy": 1.0,
+    "field_accuracy": 1.0
+  },
+  "history": [
+    {
+      "step": 1,
+      "dev": 0.0,
+      "training_loss": 11.632623672485352
+    },
+    {
+      "step": 50,
+      "dev": 1.0,
+      "training_loss": 0.018389370292425156
+    },
+    {
+      "step": 100,
+      "dev": 1.0,
+      "training_loss": 0.004031278658658266
+    },
+    {
+      "step": 150,
+      "dev": 1.0,
+      "training_loss": 0.002208059187978506
+    }
+  ]
+}

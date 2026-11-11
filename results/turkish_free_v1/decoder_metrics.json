@@ -1,0 +1,108 @@
+{
+  "training_seconds": 29.74153506800002,
+  "best_step": 1600,
+  "dev_best": 0.975,
+  "test": {
+    "exact_count": 1181,
+    "count": 1200,
+    "exact_accuracy": 0.9841666666666666,
+    "samples": [
+      "Verilen açıklamaya göre Ece şu anda okuldadır. Sorunuz bu kişinin nerede olduğuyla ilgilidir. Bu nedenle belirtilen yer okulda konumudur.",
+      "Metindeki bilgiye göre Murat'ın kaleminin rengi mavidir. Soruda sorulan özellik kalemin rengidir. Bu nedenle cevap mavi rengidir.",
+      "Murat'ın kaleminin rengi mordur.",
+      "Verilen açıklamaya göre Can şu anda bahçededir. Sorunuz bu kişinin nerede olduğuyla ilgilidir. Bu nedenle belirtilen yer bahçede konumudur.",
+      "Mina'nın kaleminin rengi beyazdır.",
+      "Verilen açıklamaya göre Sena şu anda salondadır. Sorunuz bu kişinin nerede olduğuyla ilgilidir. Bu nedenle belirtilen yer salonda konumudur.",
+      "Umut şu anda garajdadır.",
+      "Sena şu anda salondadır."
+    ]
+  },
+  "history": [
+    {
+      "step": 1,
+      "loss": 4.840760231018066,
+      "dev_exact": 0.0
+    },
+    {
+      "step": 100,
+      "loss": 0.425284743309021,
+      "dev_exact": 0.0
+    },
+    {
+      "step": 200,
+      "loss": 0.3006911873817444,
+      "dev_exact": 0.01
+    },
+    {
+      "step": 300,
+      "loss": 0.24038545787334442,
+      "dev_exact": 0.023333333333333334
+    },
+    {
+      "step": 400,
+      "loss": 0.13809819519519806,
+      "dev_exact": 0.31666666666666665
+    },
+    {
+      "step": 500,
+      "loss": 0.09427028894424438,
+      "dev_exact": 0.6666666666666666
+    },
+    {
+      "step": 600,
+      "loss": 0.04803098738193512,
+      "dev_exact": 0.7983333333333333
+    },
+    {
+      "step": 700,
+      "loss": 0.029939621686935425,
+      "dev_exact": 0.8066666666666666
+    },
+    {
+      "step": 800,
+      "loss": 0.02285097725689411,
+      "dev_exact": 0.8016666666666666
+    },
+    {
+      "step": 900,
+      "loss": 0.018117306753993034,
+      "dev_exact": 0.8516666666666667
+    },
+    {
+      "step": 1000,
+      "loss": 0.014156955294311047,
+      "dev_exact": 0.8316666666666667
+    },
+    {
+      "step": 1100,
+      "loss": 0.0080669354647398,
+      "dev_exact": 0.865
+    },
+    {
+      "step": 1200,
+      "loss": 0.007781066931784153,
+      "dev_exact": 0.9
+    },
+    {
+      "step": 1300,
+      "loss": 0.006721033249050379,
+      "dev_exact": 0.8316666666666667
+    },
+    {
+      "step": 1400,
+      "loss": 0.005835736636072397,
+      "dev_exact": 0.9266666666666666
+    },
+    {
+      "step": 1500,
+      "loss": 0.0036844743881374598,
+      "dev_exact": 0.945
+    },
+    {
+      "step": 1600,
+      "loss": 0.002347905421629548,
+      "dev_exact": 0.975
+    }
+  ],
+  "params": 96512
+}
