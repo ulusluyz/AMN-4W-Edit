@@ -1,0 +1,77 @@
+name: Reproduce neural Turkish free-text long sentences
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/free_turkish_generation.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: amn-edit-free-turkish-neural-training
+  cancel-in-progress: false
+
+jobs:
+  train-validate-archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Verify frozen AMN and neural text paths
+        run: python -m pytest -q tests/test_free_turkish_core.py
+      - name: Train genuine autoregressive Turkish word decoder (existing Dual weights frozen)
+        run: |
+          python -u experiments/free_turkish_core.py \
+            --output results/turkish_free_v1 \
+            --decoder-steps 1600 \
+            --decoder-train 15000 \
+            --decoder-dev 600 \
+            --decoder-test 1200
+      - name: Train neural tagger on unstructured Turkish statements
+        run: |
+          python -u experiments/turkish_tagged_parser.py train \
+            --decoder-from results/turkish_free_v1/decoder.pt \
+            --output results/turkish_tagged_v1 \
+            --steps 600 --train-size 12000 --dev-size 800 --test-size 1200 \
+            --batch 128 --eval-every 50
+      - name: Measure strict raw-input to long-Turkish-answer accuracy, including failures
+        run: |
+          python -u experiments/evaluate_free_turkish.py \
+            --output results/turkish_tagged_v1 \
+            --count 600 --threshold 0.55
+          sha256sum experiments/free_turkish_core.py \
+            experiments/turkish_tagged_parser.py \
+            experiments/evaluate_free_turkish.py \
+            > results/turkish_tagged_v1/SOURCE_SHA256.txt
+      - name: Archive separate model and results without changing any old checkpoints
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          tmp="$(mktemp -d)"
+          cp -a results/turkish_free_v1 "$tmp/."
+          cp -a results/turkish_tagged_v1 "$tmp/."
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            mkdir -p results/turkish_free_v1 results/turkish_tagged_v1
+            cp -a "$tmp/turkish_free_v1/." results/turkish_free_v1/
+            cp -a "$tmp/turkish_tagged_v1/." results/turkish_tagged_v1/
+            git add -f results/turkish_free_v1 results/turkish_tagged_v1
+            if git diff --cached --quiet; then
+              echo "Result files already archived"
+              exit 0
+            fi
+            git commit -m "Archive neural Turkish parser, long-answer decoder, benchmarks and frozen-backbone verification"
+            if git push origin HEAD:main; then exit 0; fi
+            echo "Concurrent commit encountered, retrying from latest main"
+          done
+          exit 1
