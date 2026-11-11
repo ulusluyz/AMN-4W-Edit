@@ -37,6 +37,11 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          # The workflow-scoped GitHub token cannot modify workflow files.
+          # Keep this migration workflow unchanged; copy ci.yml separately using
+          # the authorized GitHub connector after the bulk data transfer.
+          git -C target reset -q -- '.github/workflows/*'
+          git -C target restore --worktree -- '.github/workflows/import-jules.yml'
           git -C target config user.name "github-actions[bot]"
           git -C target config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git -C target commit -m "Import exact AMN-4W-jules frozen snapshot (78 files)"
