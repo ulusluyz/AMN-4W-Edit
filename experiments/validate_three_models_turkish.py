@@ -147,7 +147,7 @@ def make_last_write_batch(seed, count=500):
         queries.append([ID[name], ID[rel]])
         contexts.append([[ID[w] for w in fact] for fact in facts])
         targets.append(ID[latest[2]])
-        if len(demos) < 3:
+        if len(demos) < 24:
             demos.append({
                 "facts": [render_fact(fact) for fact in facts],
                 "question": render_question((name, rel)),
@@ -224,7 +224,7 @@ def main():
             "deletion_operation": "unsupported",
             "multi_hop": "unsupported",
         },
-        "unsupported_probes":unsupported, "seeds": [], "examples":[],
+        "unsupported_probes":unsupported, "seeds": [], "examples":[], "update_examples":[],
     }
     for seed in range(5):
         models = dict(trained_models(seed))
@@ -239,7 +239,7 @@ def main():
                 row["correct"] += res["correct"]
                 row["total"] += res["total"]
                 row["loss_sum"] += res["loss"]*n
-        latest_facts, latest_query, latest_labels, _ = make_last_write_batch(seed)
+        latest_facts, latest_query, latest_labels, update_demos = make_last_write_batch(seed)
         update_stats = {}
         for kind, model in models.items():
             result = score(model,latest_facts,latest_query,latest_labels)
@@ -247,6 +247,30 @@ def main():
             clean_stats[kind]["loss"] = clean_stats[kind].pop("loss_sum")/3000
         if seed == 0:
             out["examples"] = render_examples(models,12)
+            # Prefer visible counterexamples to the claim that dual memory
+            # automatically implements a last-write-wins upsert.
+            preview = {}
+            for kind, model in models.items():
+                with torch.no_grad():
+                    preview[kind] = model(latest_facts[:len(update_demos)],
+                                          latest_query[:len(update_demos)]).softmax(-1)
+            ranked = sorted(range(len(update_demos)), key=lambda i: (
+                not (int(preview["amn"][i].argmax()) == int(latest_labels[i]) and
+                     int(preview["dual"][i].argmax()) != int(latest_labels[i])),
+                i
+            ))
+            for ix in ranked[:4]:
+                item = dict(update_demos[ix])
+                item["model_answers"] = {}
+                for kind in ("amn","dual","transformer"):
+                    dist = preview[kind][ix]
+                    pred = int(dist.argmax())
+                    item["model_answers"][kind] = {
+                        "answer": VOCAB[pred],
+                        "confidence": round(float(dist[pred]), 6),
+                        "exact": pred == int(latest_labels[ix]),
+                    }
+                out["update_examples"].append(item)
         out["seeds"].append({"seed":seed,"heldout":clean_stats,"last_write_stress":update_stats})
         print("SEED",seed,"HELDOUT",{
             kind: r["correct"] for kind,r in clean_stats.items()
@@ -274,6 +298,19 @@ def main():
             row=item["model_answers"][k]
             status = "DOĞRU" if row["exact"] else "YANLIŞ"
             lines.append(f"- {k}: **{row['answer']}** ({status}; olasılık {row['confidence']:.4f})")
+        lines.append("")
+    lines.append("## Aynı bilgiyi güncelleme: Türkçe örnekler")
+    lines.append("Bu testte aynı kişi ve ilişki iki kez yazılıyor; hedef son kayıttır.")
+    lines.append("")
+    for i, item in enumerate(out["update_examples"],1):
+        lines.extend([f"### Güncelleme örneği {i}",
+                      " ".join(item["facts"]),
+                      "**Soru:** " + item["question"],
+                      "**Son kayıt (beklenen cevap):** " + item["latest_write_gold"]])
+        for kind in ("amn","dual","transformer"):
+            r = item["model_answers"][kind]
+            state = "DOĞRU" if r["exact"] else "YANLIŞ"
+            lines.append(f"- {kind}: **{r['answer']}** ({state}; olasılık {r['confidence']:.4f})")
         lines.append("")
     lines.append("## Sayısal sonuçlar")
     for kind in ("amn","dual","transformer"):
