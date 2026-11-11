@@ -1,0 +1,486 @@
+{
+  "architecture": "transformer",
+  "seed": 0,
+  "frozen_backbone": true,
+  "backbone_original_training_steps": 50,
+  "decoder_training_steps_used": 650,
+  "decoder_best_step": 650,
+  "decoder_train_seconds": 4.346,
+  "decoder_params": 74175,
+  "best_dev_sentence_accuracy": 0.0421875,
+  "test_correct_complete_sentences": 47,
+  "test_sentence_count": 1200,
+  "test_accuracy": 0.03916666666666667,
+  "examples": [
+    {
+      "facts": [
+        [
+          "Can",
+          "konum",
+          "bahçe"
+        ],
+        [
+          "Yaren",
+          "konum",
+          "park"
+        ],
+        [
+          "Okan",
+          "konum",
+          "park"
+        ],
+        [
+          "Elif",
+          "konum",
+          "kafe"
+        ]
+      ],
+      "query": [
+        "Elif",
+        "konum"
+      ],
+      "expected": "Elif şu anda kafededir.",
+      "generated": "Elif şu anda parktadır.",
+      "exact": false
+    },
+    {
+      "facts": [
+        [
+          "Yiğit",
+          "konum",
+          "salon"
+        ],
+        [
+          "Nisa",
+          "renk",
+          "sarı"
+        ],
+        [
+          "Yiğit",
+          "renk",
+          "sarı"
+        ],
+        [
+          "Murat",
+          "renk",
+          "sarı"
+        ]
+      ],
+      "query": [
+        "Yiğit",
+        "renk"
+      ],
+      "expected": "Yiğit'in kaleminin rengi sarıdır.",
+      "generated": "Yiğit'in kaleminin rengi sarıdır.",
+      "exact": true
+    },
+    {
+      "facts": [
+        [
+          "Umut",
+          "konum",
+          "garaj"
+        ],
+        [
+          "Ece",
+          "konum",
+          "okul"
+        ],
+        [
+          "Umut",
+          "renk",
+          "siyah"
+        ],
+        [
+          "Zeynep",
+          "konum",
+          "kafe"
+        ]
+      ],
+      "query": [
+        "Umut",
+        "konum"
+      ],
+      "expected": "Umut şu anda garajdadır.",
+      "generated": "Umut şu anda okuldadır.",
+      "exact": false
+    },
+    {
+      "facts": [
+        [
+          "Okan",
+          "konum",
+          "kafe"
+        ],
+        [
+          "Nisa",
+          "renk",
+          "sarı"
+        ],
+        [
+          "Deniz",
+          "konum",
+          "okul"
+        ],
+        [
+          "Yaren",
+          "konum",
+          "park"
+        ]
+      ],
+      "query": [
+        "Yaren",
+        "konum"
+      ],
+      "expected": "Yaren şu anda parktadır.",
+      "generated": "Yaren şu anda kafededir.",
+      "exact": false
+    },
+    {
+      "facts": [
+        [
+          "Murat",
+          "renk",
+          "mor"
+        ],
+        [
+          "Yiğit",
+          "konum",
+          "salon"
+        ],
+        [
+          "Can",
+          "konum",
+          "bahçe"
+        ],
+        [
+          "Ayşe",
+          "renk",
+          "sarı"
+        ]
+      ],
+      "query": [
+        "Ayşe",
+        "renk"
+      ],
+      "expected": "Ayşe'nin kaleminin rengi sarıdır.",
+      "generated": "Ayşe'nin kaleminin rengi mordur.",
+      "exact": false
+    },
+    {
+      "facts": [
+        [
+          "Murat",
+          "renk",
+          "sarı"
+        ],
+        [
+          "Sena",
+          "konum",
+          "salon"
+        ],
+        [
+          "Yiğit",
+          "renk",
+          "turuncu"
+        ],
+        [
+          "Sena",
+          "renk",
+          "sarı"
+        ]
+      ],
+      "query": [
+        "Sena",
+        "renk"
+      ],
+      "expected": "Sena'nın kaleminin rengi sarıdır.",
+      "generated": "Sena'nın kaleminin rengi beyazdır.",
+      "exact": false
+    },
+    {
+      "facts": [
+        [
+          "Sena",
+          "renk",
+          "sarı"
+        ],
+        [
+          "Can",
+          "konum",
+          "salon"
+        ],
+        [
+          "Yaren",
+          "konum",
+          "okul"
+        ],
+        [
+          "Deniz",
+          "konum",
+          "okul"
+        ]
+      ],
+      "query": [
+        "Yaren",
+        "konum"
+      ],
+      "expected": "Yaren şu anda okuldadır.",
+      "generated": "Yaren şu anda bahçededir.",
+      "exact": false
+    },
+    {
+      "facts": [
+        [
+          "Zeynep",
+          "konum",
+          "kafe"
+        ],
+        [
+          "Can",
+          "konum",
+          "bahçe"
+        ],
+        [
+          "Deniz",
+          "renk",
+          "beyaz"
+        ],
+        [
+          "Deniz",
+          "konum",
+          "okul"
+        ]
+      ],
+      "query": [
+        "Zeynep",
+        "konum"
+      ],
+      "expected": "Zeynep şu anda kafededir.",
+      "generated": "Zeynep şu anda okuldadır.",
+      "exact": false
+    },
+    {
+      "facts": [
+        [
+          "Selin",
+          "konum",
+          "park"
+        ],
+        [
+          "Okan",
+          "konum",
+          "park"
+        ],
+        [
+          "Murat",
+          "renk",
+          "mavi"
+        ],
+        [
+          "Yaren",
+          "konum",
+          "park"
+        ]
+      ],
+      "query": [
+        "Yaren",
+        "konum"
+      ],
+      "expected": "Yaren şu anda parktadır.",
+      "generated": "Yaren şu anda bahçededir.",
+      "exact": false
+    },
+    {
+      "facts": [
+        [
+          "Yiğit",
+          "renk",
+          "turuncu"
+        ],
+        [
+          "Umut",
+          "renk",
+          "siyah"
+        ],
+        [
+          "Nisa",
+          "renk",
+          "sarı"
+        ],
+        [
+          "Umut",
+          "konum",
+          "garaj"
+        ]
+      ],
+      "query": [
+        "Umut",
+        "renk"
+      ],
+      "expected": "Umut'un kaleminin rengi siyahtır.",
+      "generated": "Umut'un kaleminin rengi turuncudur.",
+      "exact": false
+    },
+    {
+      "facts": [
+        [
+          "Murat",
+          "renk",
+          "mavi"
+        ],
+        [
+          "Ayşe",
+          "renk",
+          "sarı"
+        ],
+        [
+          "Yiğit",
+          "renk",
+          "sarı"
+        ],
+        [
+          "Yiğit",
+          "konum",
+          "salon"
+        ]
+      ],
+      "query": [
+        "Ayşe",
+        "renk"
+      ],
+      "expected": "Ayşe'nin kaleminin rengi sarıdır.",
+      "generated": "Ayşe'nin kaleminin rengi sarıdır.",
+      "exact": true
+    },
+    {
+      "facts": [
+        [
+          "Umut",
+          "renk",
+          "siyah"
+        ],
+        [
+          "Umut",
+          "konum",
+          "garaj"
+        ],
+        [
+          "Deniz",
+          "renk",
+          "beyaz"
+        ],
+        [
+          "Yiğit",
+          "konum",
+          "salon"
+        ]
+      ],
+      "query": [
+        "Umut",
+        "konum"
+      ],
+      "expected": "Umut şu anda garajdadır.",
+      "generated": "Umut şu anda okuldadır.",
+      "exact": false
+    }
+  ],
+  "history": [
+    {
+      "step": 1,
+      "dev_sentence_exact": 0.0,
+      "loss": 4.1411967277526855,
+      "decoder_train_seconds": 0.02
+    },
+    {
+      "step": 50,
+      "dev_sentence_exact": 0.0,
+      "loss": 0.5173061490058899,
+      "decoder_train_seconds": 0.352
+    },
+    {
+      "step": 100,
+      "dev_sentence_exact": 0.0,
+      "loss": 0.4322892725467682,
+      "decoder_train_seconds": 0.684
+    },
+    {
+      "step": 150,
+      "dev_sentence_exact": 0.0,
+      "loss": 0.41772884130477905,
+      "decoder_train_seconds": 1.015
+    },
+    {
+      "step": 200,
+      "dev_sentence_exact": 0.0,
+      "loss": 0.40337276458740234,
+      "decoder_train_seconds": 1.348
+    },
+    {
+      "step": 250,
+      "dev_sentence_exact": 0.0,
+      "loss": 0.39201265573501587,
+      "decoder_train_seconds": 1.676
+    },
+    {
+      "step": 300,
+      "dev_sentence_exact": 0.0,
+      "loss": 0.386920690536499,
+      "decoder_train_seconds": 2.01
+    },
+    {
+      "step": 350,
+      "dev_sentence_exact": 0.0,
+      "loss": 0.3628142178058624,
+      "decoder_train_seconds": 2.34
+    },
+    {
+      "step": 400,
+      "dev_sentence_exact": 0.0,
+      "loss": 0.3321871757507324,
+      "decoder_train_seconds": 2.673
+    },
+    {
+      "step": 450,
+      "dev_sentence_exact": 0.01875,
+      "loss": 0.30714595317840576,
+      "decoder_train_seconds": 3.003
+    },
+    {
+      "step": 500,
+      "dev_sentence_exact": 0.003125,
+      "loss": 0.3129964768886566,
+      "decoder_train_seconds": 3.34
+    },
+    {
+      "step": 550,
+      "dev_sentence_exact": 0.03125,
+      "loss": 0.2720831632614136,
+      "decoder_train_seconds": 3.678
+    },
+    {
+      "step": 600,
+      "dev_sentence_exact": 0.040625,
+      "loss": 0.26104965806007385,
+      "decoder_train_seconds": 4.011
+    },
+    {
+      "step": 650,
+      "dev_sentence_exact": 0.0421875,
+      "loss": 0.28437539935112,
+      "decoder_train_seconds": 4.345
+    }
+  ],
+  "limits": {
+    "train_unique_triples": 264,
+    "dev_unique_triples": 25,
+    "test_unique_triples": 31,
+    "train_sampled_contexts": 8192,
+    "dev_sampled_contexts": 640,
+    "test_sampled_contexts": 1200,
+    "model_input": "structured person/relation/value triples",
+    "training_references": "limited templated Turkish word sequences",
+    "model_output": "word-by-word autoregressive neural generation",
+    "unsupported": "raw free-form Turkish input / unconstrained writing"
+  }
+}
