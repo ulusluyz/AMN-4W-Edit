@@ -136,8 +136,7 @@ def main():
             "last_write_policy":"exact entity+relation ID; latest occurrence wins",
             "known_boundary":"structured facts; no free-form Turkish parsing",
         },
-        "aggregate":aggregated,"seeds":records,
-        "elapsed_validation_seconds":time.perf_counter()-t
+        "aggregate":aggregated,"seeds":records
     }
     OUTPUT.mkdir(parents=True,exist_ok=True)
     (OUTPUT/"validation.json").write_text(
@@ -165,6 +164,7 @@ def main():
                   "Tekrarlanan anahtar bulunmadığında modelin logitleri bit düzeyinde aynıdır.",""])
     (OUTPUT/"outputs_tr.md").write_text("\n".join(lines),encoding="utf-8")
     print("PASS",json.dumps(aggregated,ensure_ascii=False),flush=True)
+    print("VALIDATION_SECONDS",round(time.perf_counter()-t,3),flush=True)
 
 
 if __name__=="__main__":
