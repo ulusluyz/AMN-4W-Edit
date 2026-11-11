@@ -1,0 +1,481 @@
+{
+  "protocol": {
+    "checkpoint_training_steps": 50,
+    "training_examples": 264,
+    "dev_triples": 25,
+    "heldout_triples": 31,
+    "test_episodes_per_seed": 3000,
+    "overwrite_episodes_per_seed": 500,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "free_turkish_input": false,
+    "turkish_text_layer": "handwritten finite grammar parser, identical for all",
+    "answer_generation": "single-vocabulary-token classification, not prose generation",
+    "novel_words": "unsupported",
+    "deletion_operation": "unsupported",
+    "multi_hop": "unsupported"
+  },
+  "unsupported_probes": {
+    "new_word": "unsupported",
+    "free_prose": "unsupported",
+    "deletion": "unsupported"
+  },
+  "seeds": [
+    {
+      "seed": 0,
+      "heldout": {
+        "amn": {
+          "correct": 2996,
+          "total": 3000,
+          "loss": 0.041921639134486516
+        },
+        "dual": {
+          "correct": 3000,
+          "total": 3000,
+          "loss": 0.03014015953739484
+        },
+        "transformer": {
+          "correct": 1408,
+          "total": 3000,
+          "loss": 1.3440270427068075
+        }
+      },
+      "last_write_stress": {
+        "amn": {
+          "correct": 500,
+          "total": 500,
+          "loss": 0.028242886066436768
+        },
+        "dual": {
+          "correct": 250,
+          "total": 500,
+          "loss": 0.8010821342468262
+        },
+        "transformer": {
+          "correct": 221,
+          "total": 500,
+          "loss": 1.354325294494629
+        }
+      }
+    },
+    {
+      "seed": 1,
+      "heldout": {
+        "amn": {
+          "correct": 3000,
+          "total": 3000,
+          "loss": 0.036228161285320915
+        },
+        "dual": {
+          "correct": 3000,
+          "total": 3000,
+          "loss": 0.03120591985185941
+        },
+        "transformer": {
+          "correct": 1429,
+          "total": 3000,
+          "loss": 1.3639181543986003
+        }
+      },
+      "last_write_stress": {
+        "amn": {
+          "correct": 500,
+          "total": 500,
+          "loss": 0.027602678164839745
+        },
+        "dual": {
+          "correct": 249,
+          "total": 500,
+          "loss": 0.8178635835647583
+        },
+        "transformer": {
+          "correct": 178,
+          "total": 500,
+          "loss": 1.5778558254241943
+        }
+      }
+    },
+    {
+      "seed": 2,
+      "heldout": {
+        "amn": {
+          "correct": 3000,
+          "total": 3000,
+          "loss": 0.035175585875908535
+        },
+        "dual": {
+          "correct": 3000,
+          "total": 3000,
+          "loss": 0.030575745423634847
+        },
+        "transformer": {
+          "correct": 1409,
+          "total": 3000,
+          "loss": 1.2553703152338664
+        }
+      },
+      "last_write_stress": {
+        "amn": {
+          "correct": 500,
+          "total": 500,
+          "loss": 0.02966066636145115
+        },
+        "dual": {
+          "correct": 262,
+          "total": 500,
+          "loss": 0.7980091571807861
+        },
+        "transformer": {
+          "correct": 222,
+          "total": 500,
+          "loss": 1.3707367181777954
+        }
+      }
+    },
+    {
+      "seed": 3,
+      "heldout": {
+        "amn": {
+          "correct": 3000,
+          "total": 3000,
+          "loss": 0.039084232966105144
+        },
+        "dual": {
+          "correct": 3000,
+          "total": 3000,
+          "loss": 0.031971891701221465
+        },
+        "transformer": {
+          "correct": 1392,
+          "total": 3000,
+          "loss": 1.3675741402308146
+        }
+      },
+      "last_write_stress": {
+        "amn": {
+          "correct": 500,
+          "total": 500,
+          "loss": 0.030572116374969482
+        },
+        "dual": {
+          "correct": 256,
+          "total": 500,
+          "loss": 0.8228128552436829
+        },
+        "transformer": {
+          "correct": 168,
+          "total": 500,
+          "loss": 1.5636144876480103
+        }
+      }
+    },
+    {
+      "seed": 4,
+      "heldout": {
+        "amn": {
+          "correct": 3000,
+          "total": 3000,
+          "loss": 0.03756940997640292
+        },
+        "dual": {
+          "correct": 3000,
+          "total": 3000,
+          "loss": 0.0301645089139541
+        },
+        "transformer": {
+          "correct": 1362,
+          "total": 3000,
+          "loss": 1.4445055990219116
+        }
+      },
+      "last_write_stress": {
+        "amn": {
+          "correct": 500,
+          "total": 500,
+          "loss": 0.02964789792895317
+        },
+        "dual": {
+          "correct": 239,
+          "total": 500,
+          "loss": 0.8225193619728088
+        },
+        "transformer": {
+          "correct": 163,
+          "total": 500,
+          "loss": 1.6640286445617676
+        }
+      }
+    }
+  ],
+  "examples": [
+    {
+      "context": "Murat'ın kaleminin rengi mavi. Ece şu anda okulda. Yaren şu anda parkta. Nisa'nın kaleminin rengi sarı.",
+      "question": "Nisa'nın kaleminin rengi nedir?",
+      "expected": "sarı",
+      "model_answers": {
+        "amn": {
+          "answer": "sarı",
+          "confidence": 0.975889,
+          "exact": true
+        },
+        "dual": {
+          "answer": "sarı",
+          "confidence": 0.975262,
+          "exact": true
+        },
+        "transformer": {
+          "answer": "sarı",
+          "confidence": 0.583405,
+          "exact": true
+        }
+      }
+    },
+    {
+      "context": "Can şu anda bahçede. Okan şu anda parkta. Mina'nın kaleminin rengi beyaz. Zeynep şu anda garajda.",
+      "question": "Can şu anda nerede?",
+      "expected": "bahçe",
+      "model_answers": {
+        "amn": {
+          "answer": "bahçe",
+          "confidence": 0.925204,
+          "exact": true
+        },
+        "dual": {
+          "answer": "bahçe",
+          "confidence": 0.978944,
+          "exact": true
+        },
+        "transformer": {
+          "answer": "garaj",
+          "confidence": 0.295846,
+          "exact": false
+        }
+      }
+    },
+    {
+      "context": "Deniz şu anda okulda. Elif şu anda kafede. Sena'nın kaleminin rengi sarı. Deniz'in kaleminin rengi beyaz.",
+      "question": "Deniz'in kaleminin rengi nedir?",
+      "expected": "beyaz",
+      "model_answers": {
+        "amn": {
+          "answer": "beyaz",
+          "confidence": 0.978912,
+          "exact": true
+        },
+        "dual": {
+          "answer": "beyaz",
+          "confidence": 0.977968,
+          "exact": true
+        },
+        "transformer": {
+          "answer": "beyaz",
+          "confidence": 0.421691,
+          "exact": true
+        }
+      }
+    },
+    {
+      "context": "Umut'un kaleminin rengi siyah. Okan şu anda parkta. Umut şu anda garajda. Can şu anda salonda.",
+      "question": "Umut şu anda nerede?",
+      "expected": "garaj",
+      "model_answers": {
+        "amn": {
+          "answer": "garaj",
+          "confidence": 0.962215,
+          "exact": true
+        },
+        "dual": {
+          "answer": "garaj",
+          "confidence": 0.965539,
+          "exact": true
+        },
+        "transformer": {
+          "answer": "garaj",
+          "confidence": 0.287093,
+          "exact": true
+        }
+      }
+    },
+    {
+      "context": "Murat'ın kaleminin rengi mavi. Yiğit şu anda salonda. Sena'nın kaleminin rengi sarı. Umut'un kaleminin rengi siyah.",
+      "question": "Murat'ın kaleminin rengi nedir?",
+      "expected": "mavi",
+      "model_answers": {
+        "amn": {
+          "answer": "mavi",
+          "confidence": 0.950066,
+          "exact": true
+        },
+        "dual": {
+          "answer": "mavi",
+          "confidence": 0.967429,
+          "exact": true
+        },
+        "transformer": {
+          "answer": "siyah",
+          "confidence": 0.680105,
+          "exact": false
+        }
+      }
+    },
+    {
+      "context": "Yiğit şu anda salonda. Yiğit'in kaleminin rengi turuncu. Nisa'nın kaleminin rengi sarı. Umut'un kaleminin rengi siyah.",
+      "question": "Yiğit'in kaleminin rengi nedir?",
+      "expected": "turuncu",
+      "model_answers": {
+        "amn": {
+          "answer": "turuncu",
+          "confidence": 0.959308,
+          "exact": true
+        },
+        "dual": {
+          "answer": "turuncu",
+          "confidence": 0.967097,
+          "exact": true
+        },
+        "transformer": {
+          "answer": "siyah",
+          "confidence": 0.374995,
+          "exact": false
+        }
+      }
+    },
+    {
+      "context": "Mert şu anda kafede. Umut şu anda garajda. Umut'un kaleminin rengi siyah. Ece şu anda okulda.",
+      "question": "Umut şu anda nerede?",
+      "expected": "garaj",
+      "model_answers": {
+        "amn": {
+          "answer": "garaj",
+          "confidence": 0.965778,
+          "exact": true
+        },
+        "dual": {
+          "answer": "garaj",
+          "confidence": 0.965539,
+          "exact": true
+        },
+        "transformer": {
+          "answer": "kafe",
+          "confidence": 0.45511,
+          "exact": false
+        }
+      }
+    },
+    {
+      "context": "Okan şu anda parkta. Yiğit'in kaleminin rengi turuncu. Yaren şu anda parkta. Zeynep şu anda garajda.",
+      "question": "Okan şu anda nerede?",
+      "expected": "park",
+      "model_answers": {
+        "amn": {
+          "answer": "park",
+          "confidence": 0.955524,
+          "exact": true
+        },
+        "dual": {
+          "answer": "park",
+          "confidence": 0.964887,
+          "exact": true
+        },
+        "transformer": {
+          "answer": "park",
+          "confidence": 0.521807,
+          "exact": true
+        }
+      }
+    },
+    {
+      "context": "Sena şu anda salonda. Deniz şu anda okulda. Sena'nın kaleminin rengi sarı. Can şu anda salonda.",
+      "question": "Sena şu anda nerede?",
+      "expected": "salon",
+      "model_answers": {
+        "amn": {
+          "answer": "salon",
+          "confidence": 0.92551,
+          "exact": true
+        },
+        "dual": {
+          "answer": "salon",
+          "confidence": 0.975404,
+          "exact": true
+        },
+        "transformer": {
+          "answer": "salon",
+          "confidence": 0.603198,
+          "exact": true
+        }
+      }
+    },
+    {
+      "context": "Zeynep şu anda garajda. Selin şu anda parkta. Deniz'in kaleminin rengi beyaz. Deniz şu anda okulda.",
+      "question": "Deniz şu anda nerede?",
+      "expected": "okul",
+      "model_answers": {
+        "amn": {
+          "answer": "okul",
+          "confidence": 0.964278,
+          "exact": true
+        },
+        "dual": {
+          "answer": "okul",
+          "confidence": 0.962261,
+          "exact": true
+        },
+        "transformer": {
+          "answer": "garaj",
+          "confidence": 0.400687,
+          "exact": false
+        }
+      }
+    },
+    {
+      "context": "Murat'ın kaleminin rengi sarı. Sena'nın kaleminin rengi sarı. Yiğit şu anda salonda. Sena şu anda salonda.",
+      "question": "Sena'nın kaleminin rengi nedir?",
+      "expected": "sarı",
+      "model_answers": {
+        "amn": {
+          "answer": "sarı",
+          "confidence": 0.976047,
+          "exact": true
+        },
+        "dual": {
+          "answer": "sarı",
+          "confidence": 0.975262,
+          "exact": true
+        },
+        "transformer": {
+          "answer": "sarı",
+          "confidence": 0.717436,
+          "exact": true
+        }
+      }
+    },
+    {
+      "context": "Murat'ın kaleminin rengi sarı. Nisa'nın kaleminin rengi sarı. Sena şu anda salonda. Okan şu anda parkta.",
+      "question": "Nisa'nın kaleminin rengi nedir?",
+      "expected": "sarı",
+      "model_answers": {
+        "amn": {
+          "answer": "sarı",
+          "confidence": 0.973791,
+          "exact": true
+        },
+        "dual": {
+          "answer": "sarı",
+          "confidence": 0.975262,
+          "exact": true
+        },
+        "transformer": {
+          "answer": "sarı",
+          "confidence": 0.74057,
+          "exact": true
+        }
+      }
+    }
+  ]
+}
