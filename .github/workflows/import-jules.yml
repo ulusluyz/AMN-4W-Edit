@@ -1,0 +1,43 @@
+name: Import frozen AMN-4W-jules snapshot
+on:
+  push:
+    paths:
+      - '.github/workflows/import-jules.yml'
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out target repo
+        uses: actions/checkout@v4
+        with:
+          path: target
+          persist-credentials: true
+      - name: Fetch frozen public source (read-only)
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --quiet --no-checkout https://github.com/ulusluyz/AMN-4W-jules.git source
+          git -C source checkout --quiet --detach 4f646bd6dc7c86f91259ab22b81a0b6bcd83a0f7
+          echo "Frozen source commit $(git -C source rev-parse HEAD)"
+      - name: Copy complete repository tree including binary weights
+        shell: bash
+        run: |
+          set -euo pipefail
+          rsync -a --delete --exclude='.git/' source/ target/
+          git -C target add -A
+          source_tree="$(git -C source rev-parse HEAD^{tree})"
+          dest_tree="$(git -C target write-tree)"
+          echo "Source tree: $source_tree"
+          echo "Target tree: $dest_tree"
+          test "$source_tree" = "$dest_tree"
+      - name: Commit exact snapshot to AMN-4W-Edit only
+        shell: bash
+        run: |
+          set -euo pipefail
+          git -C target config user.name "github-actions[bot]"
+          git -C target config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C target commit -m "Import exact AMN-4W-jules frozen snapshot (78 files)"
+          git -C target push origin HEAD:main
