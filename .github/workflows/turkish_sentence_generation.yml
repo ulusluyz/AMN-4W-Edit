@@ -1,0 +1,59 @@
+name: Train Turkish full-sentence decoder and archive real generated text
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/turkish_sentence_generation.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: turkish-sentence-generator-archive
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install CPU training dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Verify that original model checkpoint weights are still frozen
+        run: python -m pytest -q tests/test_turkish_sentence_decoder.py
+      - name: Train one identical recurrent sentence decoder for each existing model
+        run: |
+          python -u experiments/turkish_sentence_decoder.py \
+            --models dual_upsert amn transformer \
+            --seeds 0 1 2 --steps 650 \
+            --train-size 8192 --dev-size 640 --test-size 1200 \
+            --batch 128 --eval-every 50 \
+            --output results/real_turkish_sentences
+      - name: Archive decoder checkpoints and actual generated words in AMN-4W-Edit only
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          tmp="$(mktemp -d)"
+          cp -a results/real_turkish_sentences/. "$tmp/"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            mkdir -p results/real_turkish_sentences
+            cp -a "$tmp/." results/real_turkish_sentences/
+            git add -f results/real_turkish_sentences/
+            if git diff --cached --quiet; then
+              echo "Identical results already archived"
+              exit 0
+            fi
+            git commit -m "Archive neural-generated Turkish sentences and 9 decoder checkpoints"
+            if git push origin HEAD:main; then exit 0; fi
+            echo "Concurrent commit; retrying latest main"
+          done
+          exit 1
