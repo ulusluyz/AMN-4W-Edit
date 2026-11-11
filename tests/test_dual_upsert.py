@@ -40,6 +40,7 @@ def test_original_logits_and_gradients_identical_with_unique_pairs():
     facts,query,answers=generate("train",16,6,random.Random(10))
     a=old(facts,query);b=new(facts,query)
     assert torch.equal(a,b)
+    assert torch.equal(a,new(facts,query,guarantee_unique_keys=True))
     F.cross_entropy(a,answers).backward()
     F.cross_entropy(b,answers).backward()
     for (n,p),(m,q) in zip(old.named_parameters(),new.named_parameters()):
