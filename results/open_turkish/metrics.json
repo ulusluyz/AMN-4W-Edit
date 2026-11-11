@@ -1,0 +1,214 @@
+{
+  "dataset": {
+    "dataset": "TFLai/Turkish-Alpaca",
+    "dataset_page": "https://huggingface.co/datasets/TFLai/Turkish-Alpaca",
+    "license": "Apache-2.0",
+    "source_file_sha256": "f1aed098ae68849a66075220c7aae09971e0193371937c0f35433b2afd9d2f64",
+    "split_key": "normalized prompt",
+    "split_protocol": "SHA256 deterministic; 86% train, 7% dev, 7% test, exact input dedup",
+    "note": "SFT real human-readable Turkish text; no template or structured slot labels",
+    "source_rows": 51914,
+    "eligible": 14180,
+    "selected": 12000,
+    "skipped": {
+      "empty": 0,
+      "short": 11592,
+      "too_long": 26008,
+      "duplicate": 134
+    },
+    "train": 10321,
+    "val": 861,
+    "test": 818,
+    "min_answer_bytes": 50,
+    "max_seq_len": 320,
+    "max_samples": 12000
+  },
+  "train_examples": 10321,
+  "dev_examples": 861,
+  "test_examples": 818,
+  "model_params": 194515,
+  "architecture": {
+    "width": 96,
+    "key_dim": 24,
+    "layers": 2
+  },
+  "best_step": 1200,
+  "steps_executed": 1200,
+  "train_seconds": 322.14452713900005,
+  "best_val_nll": 1.59570553452921,
+  "test": {
+    "nll": 1.6381355549685508,
+    "ppl": 5.14556693657023,
+    "tokens": 21960
+  },
+  "history": [
+    {
+      "step": 1,
+      "train_nll": 5.749950885772705,
+      "val_nll": 5.163064411122312,
+      "val_ppl": 174.6989856916525,
+      "seconds": 0.9963280560000101
+    },
+    {
+      "step": 100,
+      "train_nll": 2.183535575866699,
+      "val_nll": 2.1938276955975184,
+      "val_ppl": 8.96947993023261,
+      "seconds": 27.803378840000008
+    },
+    {
+      "step": 200,
+      "train_nll": 2.0990450382232666,
+      "val_nll": 2.0449266003024196,
+      "val_ppl": 7.728591240830618,
+      "seconds": 54.83781511500001
+    },
+    {
+      "step": 300,
+      "train_nll": 1.9964983463287354,
+      "val_nll": 1.9426394976778514,
+      "val_ppl": 6.977142839634839,
+      "seconds": 81.50001378800002
+    },
+    {
+      "step": 400,
+      "train_nll": 2.285078763961792,
+      "val_nll": 1.862049333657354,
+      "val_ppl": 6.4369146497235645,
+      "seconds": 108.149838961
+    },
+    {
+      "step": 500,
+      "train_nll": 1.8545351028442383,
+      "val_nll": 1.8042852211291522,
+      "val_ppl": 6.075627166179153,
+      "seconds": 135.042362738
+    },
+    {
+      "step": 600,
+      "train_nll": 1.9755244255065918,
+      "val_nll": 1.7587916970436108,
+      "val_ppl": 5.8054184504744235,
+      "seconds": 161.341044939
+    },
+    {
+      "step": 700,
+      "train_nll": 1.656895637512207,
+      "val_nll": 1.731927996516777,
+      "val_ppl": 5.651539559893184,
+      "seconds": 187.893695806
+    },
+    {
+      "step": 800,
+      "train_nll": 1.6404742002487183,
+      "val_nll": 1.6870869391891081,
+      "val_ppl": 5.403716400610447,
+      "seconds": 214.45436530700002
+    },
+    {
+      "step": 900,
+      "train_nll": 1.6480690240859985,
+      "val_nll": 1.6672966882380473,
+      "val_ppl": 5.2978267443954925,
+      "seconds": 240.628966952
+    },
+    {
+      "step": 1000,
+      "train_nll": 1.4492746591567993,
+      "val_nll": 1.6349374703731039,
+      "val_ppl": 5.1291372639601915,
+      "seconds": 267.264033757
+    },
+    {
+      "step": 1100,
+      "train_nll": 1.7333447933197021,
+      "val_nll": 1.608510982202861,
+      "val_ppl": 4.995367496179409,
+      "seconds": 294.23645681200003
+    },
+    {
+      "step": 1200,
+      "train_nll": 1.503361701965332,
+      "val_nll": 1.59570553452921,
+      "val_ppl": 4.931807405348626,
+      "seconds": 320.111464241
+    }
+  ],
+  "generation": [
+    {
+      "prompt": "Bir insanın öğrenme sürecini açıklayan kısa bir paragraf yazar mısın?",
+      "text": "Huzurlu bir kalsel bir kaplar gökyüzünde bir programsaya kırmasını altında birim olarak için karışlarını güverlikte çekici süresine kalmak için yarıt bir sürüklüğünde göründe, sıklandır.",
+      "bytes_generated": 212,
+      "valid_utf8": true,
+      "eos": true
+    },
+    {
+      "prompt": "Bir ağ bağlantısındaki gecikme neden artabilir?",
+      "text": "Bir kütü bir küllük gibi.",
+      "bytes_generated": 29,
+      "valid_utf8": true,
+      "eos": true
+    },
+    {
+      "prompt": "Bir kitabın ana fikri nasıl belirlenir?",
+      "text": "Almanya konusu için maliyetin kalbol önerik.",
+      "bytes_generated": 46,
+      "valid_utf8": true,
+      "eos": true
+    },
+    {
+      "prompt": "Yeni bir proje geliştirirken karşılaşılabilecek sorunları açıklar mısın?",
+      "text": "Dünya'dır.",
+      "bytes_generated": 12,
+      "valid_utf8": true,
+      "eos": true
+    },
+    {
+      "prompt": "Bir arkadaşına çevreyi korumanın önemini anlat.",
+      "text": "Araçları yaklayın. Harketlerin koranlıkları almaktadır.",
+      "bytes_generated": 61,
+      "valid_utf8": true,
+      "eos": true
+    },
+    {
+      "prompt": "Türkçede neden kelimelerin sonuna ekler getirilir?",
+      "text": "Bir bağlanmasını adım öneriği için ürkünde dair mühendinde yaygın an isimleri ve dereceleri gerçekten balgaları bir güneş çalıyorunabilecek içinde düzenleri ve işberin görünün bulunan bir macera harfi bulunur.",
+      "bytes_generated": 232,
+      "valid_utf8": true,
+      "eos": true
+    },
+    {
+      "prompt": "Yarıçapı verilen bir dairenin alanını hesaplamak için kullanılabilecek geçerli bir denklem oluşturun.",
+      "test_reference": "Verilen yarıçapıyla bir dairenin alanını hesaplamak için kullanılan denklem A = πr² şeklindedir, burada A alanı, π sabit Pi (3.14159...) ve r yarıçapı temsil eder.",
+      "text": "Avus ve in bir yapabilirleri güney işletme ve bir geri gittiğini iki tamamlaman bahdemin etkileri için kullanır.",
+      "bytes_generated": 117,
+      "valid_utf8": true,
+      "eos": true
+    },
+    {
+      "prompt": "Aşağıdaki cümleyi emir kipi olarak biçimlendirin. \n\n(Bu cümle de zaten emir kipi olarak verilmiş olduğundan çeviri yapmama gerek yok.)\nLütfen görevi tamamlamak için bir hatırlatıcı ayarlayın.",
+      "test_reference": "Görevi tamamlamak için bir hatırlatıcı ayarla.",
+      "text": "\"Mod mamanında bulun üçgen insanlar için hikapyorum. Bu çağın içermektir. Bu çalışmasını olarak bir maktorum.",
+      "bytes_generated": 122,
+      "valid_utf8": true,
+      "eos": true
+    },
+    {
+      "prompt": "\"Çöpleri dışarı çıkarır mısın?\"\nÇöpü dışarı çıkar.",
+      "test_reference": "Çöpü dışarı çıkarır mısın lütfen? Eğer yaparsan büyük yardım olur. Şimdiden teşekkürler!",
+      "text": "Bir düzenli bir şekleri olarak bir dünyanın en çok kediyorum.\nSağ görüş çevren eserlerin artırıldır.",
+      "bytes_generated": 113,
+      "valid_utf8": true,
+      "eos": true
+    },
+    {
+      "prompt": "Bir sözlük veya tezaurus kullanarak, \"happy\" kelimesi için dört eş anlamlı kelime listesi yapın.",
+      "test_reference": "\"Mutlu\" kelimesinin dört eş anlamlısı sevinçli, coşkulu, memnun ve hoşnut'tur.",
+      "text": "Dönüştürüler, çevrimiçi olarak, harfeki bir aldım, çağıları ve türleri takımları, süret yaratın, kaydal alışvaratır.",
+      "bytes_generated": 136,
+      "valid_utf8": true,
+      "eos": true
+    }
+  ],
+  "caveat": "Open-domain generative experiment; no general Turkish ability guarantee; no pretrained LLM"
+}

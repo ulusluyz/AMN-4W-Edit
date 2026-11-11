@@ -1,0 +1,24 @@
+{
+  "dataset": "TFLai/Turkish-Alpaca",
+  "dataset_page": "https://huggingface.co/datasets/TFLai/Turkish-Alpaca",
+  "license": "Apache-2.0",
+  "source_file_sha256": "f1aed098ae68849a66075220c7aae09971e0193371937c0f35433b2afd9d2f64",
+  "split_key": "normalized prompt",
+  "split_protocol": "SHA256 deterministic; 86% train, 7% dev, 7% test, exact input dedup",
+  "note": "SFT real human-readable Turkish text; no template or structured slot labels",
+  "source_rows": 51914,
+  "eligible": 14180,
+  "selected": 12000,
+  "skipped": {
+    "empty": 0,
+    "short": 11592,
+    "too_long": 26008,
+    "duplicate": 134
+  },
+  "train": 10321,
+  "val": 861,
+  "test": 818,
+  "min_answer_bytes": 50,
+  "max_seq_len": 320,
+  "max_samples": 12000
+}
