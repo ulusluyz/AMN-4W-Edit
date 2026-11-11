@@ -1,0 +1,577 @@
+{
+  "protocol": {
+    "checkpoint_training_steps": 50,
+    "training_this_run": false,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "source": "AMN-4W-Edit",
+    "test_triples": 31,
+    "data_split": "same hashed held-out triples as earlier",
+    "last_write_policy": "exact entity+relation ID; latest occurrence wins",
+    "known_boundary": "structured facts; no free-form Turkish parsing"
+  },
+  "aggregate": {
+    "amn_original": {
+      "last_write_correct": 2500,
+      "last_write_total": 2500,
+      "clean_correct_by_facts": {
+        "4": 14996,
+        "6": 4994,
+        "8": 4990,
+        "12": 4919
+      },
+      "clean_total_by_facts": {
+        "4": 15000,
+        "6": 5000,
+        "8": 5000,
+        "12": 5000
+      }
+    },
+    "dual_original": {
+      "last_write_correct": 1256,
+      "last_write_total": 2500,
+      "clean_correct_by_facts": {
+        "4": 15000,
+        "6": 5000,
+        "8": 5000,
+        "12": 5000
+      },
+      "clean_total_by_facts": {
+        "4": 15000,
+        "6": 5000,
+        "8": 5000,
+        "12": 5000
+      }
+    },
+    "dual_upsert": {
+      "last_write_correct": 2500,
+      "last_write_total": 2500,
+      "clean_correct_by_facts": {
+        "4": 15000,
+        "6": 5000,
+        "8": 5000,
+        "12": 5000
+      },
+      "clean_total_by_facts": {
+        "4": 15000,
+        "6": 5000,
+        "8": 5000,
+        "12": 5000
+      }
+    }
+  },
+  "seeds": [
+    {
+      "seed": 0,
+      "unchanged_logits_max_abs": 0.0,
+      "clean_by_facts": {
+        "dual_original": {
+          "correct": 0,
+          "total": 0
+        },
+        "dual_upsert": {
+          "correct": 0,
+          "total": 0
+        },
+        "amn_original": {
+          "correct": 0,
+          "total": 0
+        },
+        "4": {
+          "dual_original": {
+            "correct": 3000,
+            "total": 3000
+          },
+          "dual_upsert": {
+            "correct": 3000,
+            "total": 3000
+          },
+          "amn_original": {
+            "correct": 2996,
+            "total": 3000
+          }
+        },
+        "6": {
+          "dual_original": {
+            "correct": 1000,
+            "total": 1000
+          },
+          "dual_upsert": {
+            "correct": 1000,
+            "total": 1000
+          },
+          "amn_original": {
+            "correct": 997,
+            "total": 1000
+          }
+        },
+        "8": {
+          "dual_original": {
+            "correct": 1000,
+            "total": 1000
+          },
+          "dual_upsert": {
+            "correct": 1000,
+            "total": 1000
+          },
+          "amn_original": {
+            "correct": 998,
+            "total": 1000
+          }
+        },
+        "12": {
+          "dual_original": {
+            "correct": 1000,
+            "total": 1000
+          },
+          "dual_upsert": {
+            "correct": 1000,
+            "total": 1000
+          },
+          "amn_original": {
+            "correct": 979,
+            "total": 1000
+          }
+        }
+      },
+      "last_write": {
+        "dual_original": {
+          "correct": 250,
+          "total": 500
+        },
+        "dual_upsert": {
+          "correct": 500,
+          "total": 500
+        },
+        "amn_original": {
+          "correct": 500,
+          "total": 500
+        }
+      },
+      "update_examples": [
+        {
+          "facts": [
+            "Ayşe'nin kaleminin rengi sarı.",
+            "Elif şu anda kafede.",
+            "Sena'nın kaleminin rengi yeşil.",
+            "Ayşe'nin kaleminin rengi kırmızı."
+          ],
+          "question": "Ayşe'nin kaleminin rengi nedir?",
+          "latest_write_gold": "kırmızı",
+          "responses": {
+            "dual_original": "sarı",
+            "dual_upsert": "kırmızı",
+            "amn_original": "kırmızı"
+          }
+        },
+        {
+          "facts": [
+            "Umut'un kaleminin rengi siyah.",
+            "Deniz'in kaleminin rengi beyaz.",
+            "Mina'nın kaleminin rengi beyaz.",
+            "Umut'un kaleminin rengi sarı."
+          ],
+          "question": "Umut'un kaleminin rengi nedir?",
+          "latest_write_gold": "sarı",
+          "responses": {
+            "dual_original": "siyah",
+            "dual_upsert": "sarı",
+            "amn_original": "sarı"
+          }
+        },
+        {
+          "facts": [
+            "Okan şu anda bahçede.",
+            "Zeynep şu anda kafede.",
+            "Can şu anda bahçede.",
+            "Okan şu anda parkta."
+          ],
+          "question": "Okan şu anda nerede?",
+          "latest_write_gold": "park",
+          "responses": {
+            "dual_original": "bahçe",
+            "dual_upsert": "park",
+            "amn_original": "park"
+          }
+        },
+        {
+          "facts": [
+            "Okan şu anda parkta.",
+            "Yaren şu anda okulda.",
+            "Ayşe'nin kaleminin rengi sarı.",
+            "Okan şu anda okulda."
+          ],
+          "question": "Okan şu anda nerede?",
+          "latest_write_gold": "okul",
+          "responses": {
+            "dual_original": "park",
+            "dual_upsert": "okul",
+            "amn_original": "okul"
+          }
+        }
+      ]
+    },
+    {
+      "seed": 1,
+      "unchanged_logits_max_abs": 0.0,
+      "clean_by_facts": {
+        "dual_original": {
+          "correct": 0,
+          "total": 0
+        },
+        "dual_upsert": {
+          "correct": 0,
+          "total": 0
+        },
+        "amn_original": {
+          "correct": 0,
+          "total": 0
+        },
+        "4": {
+          "dual_original": {
+            "correct": 3000,
+            "total": 3000
+          },
+          "dual_upsert": {
+            "correct": 3000,
+            "total": 3000
+          },
+          "amn_original": {
+            "correct": 3000,
+            "total": 3000
+          }
+        },
+        "6": {
+          "dual_original": {
+            "correct": 1000,
+            "total": 1000
+          },
+          "dual_upsert": {
+            "correct": 1000,
+            "total": 1000
+          },
+          "amn_original": {
+            "correct": 999,
+            "total": 1000
+          }
+        },
+        "8": {
+          "dual_original": {
+            "correct": 1000,
+            "total": 1000
+          },
+          "dual_upsert": {
+            "correct": 1000,
+            "total": 1000
+          },
+          "amn_original": {
+            "correct": 997,
+            "total": 1000
+          }
+        },
+        "12": {
+          "dual_original": {
+            "correct": 1000,
+            "total": 1000
+          },
+          "dual_upsert": {
+            "correct": 1000,
+            "total": 1000
+          },
+          "amn_original": {
+            "correct": 973,
+            "total": 1000
+          }
+        }
+      },
+      "last_write": {
+        "dual_original": {
+          "correct": 249,
+          "total": 500
+        },
+        "dual_upsert": {
+          "correct": 500,
+          "total": 500
+        },
+        "amn_original": {
+          "correct": 500,
+          "total": 500
+        }
+      },
+      "update_examples": []
+    },
+    {
+      "seed": 2,
+      "unchanged_logits_max_abs": 0.0,
+      "clean_by_facts": {
+        "dual_original": {
+          "correct": 0,
+          "total": 0
+        },
+        "dual_upsert": {
+          "correct": 0,
+          "total": 0
+        },
+        "amn_original": {
+          "correct": 0,
+          "total": 0
+        },
+        "4": {
+          "dual_original": {
+            "correct": 3000,
+            "total": 3000
+          },
+          "dual_upsert": {
+            "correct": 3000,
+            "total": 3000
+          },
+          "amn_original": {
+            "correct": 3000,
+            "total": 3000
+          }
+        },
+        "6": {
+          "dual_original": {
+            "correct": 1000,
+            "total": 1000
+          },
+          "dual_upsert": {
+            "correct": 1000,
+            "total": 1000
+          },
+          "amn_original": {
+            "correct": 1000,
+            "total": 1000
+          }
+        },
+        "8": {
+          "dual_original": {
+            "correct": 1000,
+            "total": 1000
+          },
+          "dual_upsert": {
+            "correct": 1000,
+            "total": 1000
+          },
+          "amn_original": {
+            "correct": 1000,
+            "total": 1000
+          }
+        },
+        "12": {
+          "dual_original": {
+            "correct": 1000,
+            "total": 1000
+          },
+          "dual_upsert": {
+            "correct": 1000,
+            "total": 1000
+          },
+          "amn_original": {
+            "correct": 996,
+            "total": 1000
+          }
+        }
+      },
+      "last_write": {
+        "dual_original": {
+          "correct": 262,
+          "total": 500
+        },
+        "dual_upsert": {
+          "correct": 500,
+          "total": 500
+        },
+        "amn_original": {
+          "correct": 500,
+          "total": 500
+        }
+      },
+      "update_examples": []
+    },
+    {
+      "seed": 3,
+      "unchanged_logits_max_abs": 0.0,
+      "clean_by_facts": {
+        "dual_original": {
+          "correct": 0,
+          "total": 0
+        },
+        "dual_upsert": {
+          "correct": 0,
+          "total": 0
+        },
+        "amn_original": {
+          "correct": 0,
+          "total": 0
+        },
+        "4": {
+          "dual_original": {
+            "correct": 3000,
+            "total": 3000
+          },
+          "dual_upsert": {
+            "correct": 3000,
+            "total": 3000
+          },
+          "amn_original": {
+            "correct": 3000,
+            "total": 3000
+          }
+        },
+        "6": {
+          "dual_original": {
+            "correct": 1000,
+            "total": 1000
+          },
+          "dual_upsert": {
+            "correct": 1000,
+            "total": 1000
+          },
+          "amn_original": {
+            "correct": 998,
+            "total": 1000
+          }
+        },
+        "8": {
+          "dual_original": {
+            "correct": 1000,
+            "total": 1000
+          },
+          "dual_upsert": {
+            "correct": 1000,
+            "total": 1000
+          },
+          "amn_original": {
+            "correct": 998,
+            "total": 1000
+          }
+        },
+        "12": {
+          "dual_original": {
+            "correct": 1000,
+            "total": 1000
+          },
+          "dual_upsert": {
+            "correct": 1000,
+            "total": 1000
+          },
+          "amn_original": {
+            "correct": 986,
+            "total": 1000
+          }
+        }
+      },
+      "last_write": {
+        "dual_original": {
+          "correct": 256,
+          "total": 500
+        },
+        "dual_upsert": {
+          "correct": 500,
+          "total": 500
+        },
+        "amn_original": {
+          "correct": 500,
+          "total": 500
+        }
+      },
+      "update_examples": []
+    },
+    {
+      "seed": 4,
+      "unchanged_logits_max_abs": 0.0,
+      "clean_by_facts": {
+        "dual_original": {
+          "correct": 0,
+          "total": 0
+        },
+        "dual_upsert": {
+          "correct": 0,
+          "total": 0
+        },
+        "amn_original": {
+          "correct": 0,
+          "total": 0
+        },
+        "4": {
+          "dual_original": {
+            "correct": 3000,
+            "total": 3000
+          },
+          "dual_upsert": {
+            "correct": 3000,
+            "total": 3000
+          },
+          "amn_original": {
+            "correct": 3000,
+            "total": 3000
+          }
+        },
+        "6": {
+          "dual_original": {
+            "correct": 1000,
+            "total": 1000
+          },
+          "dual_upsert": {
+            "correct": 1000,
+            "total": 1000
+          },
+          "amn_original": {
+            "correct": 1000,
+            "total": 1000
+          }
+        },
+        "8": {
+          "dual_original": {
+            "correct": 1000,
+            "total": 1000
+          },
+          "dual_upsert": {
+            "correct": 1000,
+            "total": 1000
+          },
+          "amn_original": {
+            "correct": 997,
+            "total": 1000
+          }
+        },
+        "12": {
+          "dual_original": {
+            "correct": 1000,
+            "total": 1000
+          },
+          "dual_upsert": {
+            "correct": 1000,
+            "total": 1000
+          },
+          "amn_original": {
+            "correct": 985,
+            "total": 1000
+          }
+        }
+      },
+      "last_write": {
+        "dual_original": {
+          "correct": 239,
+          "total": 500
+        },
+        "dual_upsert": {
+          "correct": 500,
+          "total": 500
+        },
+        "amn_original": {
+          "correct": 500,
+          "total": 500
+        }
+      },
+      "update_examples": []
+    }
+  ],
+  "elapsed_validation_seconds": 2.035612403000002
+}
