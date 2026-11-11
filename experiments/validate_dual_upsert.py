@@ -79,7 +79,11 @@ def evaluate(seed):
             count+=batch
         clean[nf]={kind:{"correct":score,"total":total} for kind,score in scores.items()}
     x,q,y,demos=make_last_write_batch(seed, count=500)
-    assert int((~last_write_mask(x)).sum()) == len(x), "Expected exactly one overwritten pair per episode"
+    # The target key occurs exactly twice. Distractor keys MAY also repeat
+    # with different values; that is a valid additional upsert stress case.
+    target_occurrences = (x[:, :, :2] == q[:, None, :]).all(dim=-1).sum(dim=-1)
+    assert bool((target_occurrences == 2).all()), "Expected two target writes per episode"
+    assert bool(((~last_write_mask(x)).sum(dim=-1) >= 1).all())
     last_write=check_batch(models,x,q,y)
     examples = []
     if seed==0:
