@@ -1,0 +1,71 @@
+name: Train native AMN on real open-domain Turkish text
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/amn_open_turkish.yml'
+      - 'experiments/amn_open_turkish.py'
+      - 'experiments/prepare_open_turkish.py'
+      - 'experiments/train_open_turkish.py'
+      - 'tests/test_amn_open_turkish.py'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: amn-open-turkish-native-language
+  cancel-in-progress: false
+
+jobs:
+  train-and-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install model environment
+        run: python -m pip install -r requirements.txt
+      - name: Check causal memory, streaming decoding, UTF8 and dataset leakage
+        run: python -m pytest -q tests/test_amn_open_turkish.py
+      - name: Acquire public Apache-2.0 Turkish instruction pairs and split by prompt hash
+        run: |
+          python -u experiments/prepare_open_turkish.py \
+            --output data/open_turkish \
+            --max-samples 12000 --max-seq-len 320 \
+            --min-answer-bytes 50 --min-train 1500
+      - name: Train text-to-text AMN from scratch and generate raw Turkish answers
+        run: |
+          python -u experiments/train_open_turkish.py \
+            --data data/open_turkish --output results/open_turkish \
+            --steps 1200 --width 96 --key-dim 24 --layers 2 \
+            --batch 12 --max-len 320 --threads 2 \
+            --eval-every 100 --eval-batches 14 --test-batches 24 \
+            --sample-bytes 320 --seed 17
+      - name: Verify saved model and archive model evidence in Edit only
+        shell: bash
+        run: |
+          set -euo pipefail
+          cp data/open_turkish/manifest.json results/open_turkish/data_manifest.json
+          python experiments/amn_open_turkish.py inspect --checkpoint results/open_turkish/best.pt
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          tmp="$(mktemp -d)"
+          cp -a results/open_turkish/. "$tmp/"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            mkdir -p results/open_turkish
+            cp -a "$tmp/." results/open_turkish/
+            git add -f results/open_turkish/
+            if git diff --cached --quiet; then
+              echo "All artifacts already archived"
+              exit 0
+            fi
+            git commit -m "Archive raw Turkish AMN text generation checkpoint, test NLL and outputs"
+            if git push origin HEAD:main; then exit 0; fi
+            echo "Concurrent push; retry latest main"
+          done
+          exit 1
