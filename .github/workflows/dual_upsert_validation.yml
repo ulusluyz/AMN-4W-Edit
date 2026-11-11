@@ -1,0 +1,35 @@
+name: Verify protected Dual AMN upsert without regressions
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/dual_upsert_validation.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Test unchanged-key forward/backward and update handling
+        run: python -m pytest -q tests/test_dual_upsert.py
+      - name: Evaluate frozen 50-step checkpoints, five seeds
+        run: python experiments/validate_dual_upsert.py
+      - name: Save raw evidence in AMN-4W-Edit only
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f results/dual_upsert/validation.json results/dual_upsert/outputs_tr.md
+          git commit -m "Record 5-seed Dual upsert update and non-regression results"
+          git push origin HEAD:main
