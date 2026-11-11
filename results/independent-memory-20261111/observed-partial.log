@@ -1,0 +1,8 @@
+version 2.10.0+cpu
+NUMERIC {"dual_erase_target_max": 4.8498225879711754e-08, "dual_erase_other_max": 1.9369643666777847e-08, "duplicated_other_max": 2.0692400681809886e-08, "duplicated_ok": 1.0, "write": {"0.3": {"std_neighbor_cos": 0.9416157603263855, "dual_neighbor_cos": 1.0, "dual_max_neighbor_change": 3.819199179133648e-08, "dual_update_norm": 1.2055673599243164, "rho_mean": 0.9004306028284051, "ok": 1.0}, "0.9": {"std_neighbor_cos": 0.2012873888015747, "dual_neighbor_cos": 1.0, "dual_max_neighbor_change": 7.03017377645665e-08, "dual_update_norm": 3.217669725418091, "rho_mean": 0.411257034634762, "ok": 1.0}, "0.99": {"std_neighbor_cos": 0.025923609733581543, "dual_neighbor_cos": 1.0, "dual_max_neighbor_change": 2.4611139792796166e-07, "dual_update_norm": 10.308415412902832, "rho_mean": 0.13329485489668805, "ok": 1.0}, "0.9999": {"std_neighbor_cos": 0.014310352504253387, "dual_neighbor_cos": 1.0, "dual_max_neighbor_change": 2.1383530111052096e-06, "dual_update_norm": 103.56767272949219, "rho_mean": 0.013288821378426463, "ok": 1.0}}}
+TRAIN baseline 0 {"final": 1.0, "r2_C": 1.0, "leak": 0.2018214911222458, "maxcos": 0.17069163918495178} elapsed 5.5
+TRAIN baseline 1 {"final": 1.0, "r2_C": 1.0, "leak": 0.20153555274009705, "maxcos": 0.1721876561641693} elapsed 9.9
+TRAIN baseline 2 {"final": 1.0, "r2_C": 1.0, "leak": 0.20689021050930023, "maxcos": 0.17529934644699097} elapsed 14.2
+TRAIN leak0.5 0 {"final": 1.0, "r2_C": 1.0, "leak": 0.17601381242275238, "maxcos": 0.14962075650691986} elapsed 19.1
+TRAIN leak0.5 1 {"final": 1.0, "r2_C": 1.0, "leak": 0.17690406739711761, "maxcos": 0.149807408452034} elapsed 24.3
+TRAIN leak0.5 2 {"final": 1.0, "r2_C": 1.0, "leak": 0.1812683343887329, "maxcos": 0.15499073266983032} elapsed 29.9

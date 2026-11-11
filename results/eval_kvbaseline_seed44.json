@@ -1,0 +1,4036 @@
+{
+  "train_eval": {
+    "accuracy": 0.04,
+    "details": [
+      {
+        "fact_id": 0,
+        "question": "Fatma'nin kalemi ne renk?",
+        "expected": "siyah",
+        "predicted": "C Cevaparu: Sor",
+        "correct": false
+      },
+      {
+        "fact_id": 0,
+        "question": "Fatma nerede?",
+        "expected": "ofis",
+        "predicted": "Ce Cevanevap: C",
+        "correct": false
+      },
+      {
+        "fact_id": 1,
+        "question": "Elif'nin kitapi ne renk?",
+        "expected": "mavi",
+        "predicted": "Cededevare Cem ",
+        "correct": false
+      },
+      {
+        "fact_id": 1,
+        "question": "Elif nerede?",
+        "expected": "sinema",
+        "predicted": "Cede Cevap:eir.",
+        "correct": false
+      },
+      {
+        "fact_id": 2,
+        "question": "Mehmet'nin yüzüki ne renk?",
+        "expected": "mor",
+        "predicted": "Ce Cevap: C Ced",
+        "correct": false
+      },
+      {
+        "fact_id": 2,
+        "question": "Mehmet nerede?",
+        "expected": "ev",
+        "predicted": "C: k? ne k? Ce ",
+        "correct": false
+      },
+      {
+        "fact_id": 3,
+        "question": "Ali'nin silgii ne renk?",
+        "expected": "sarı",
+        "predicted": "ner. Cediyap: C",
+        "correct": false
+      },
+      {
+        "fact_id": 3,
+        "question": "Ali nerede?",
+        "expected": "ofis",
+        "predicted": "C Cevap: k? Cer",
+        "correct": false
+      },
+      {
+        "fact_id": 4,
+        "question": "Emre'nin kolyei ne renk?",
+        "expected": "kırmızı",
+        "predicted": " Cemap: C C Cer",
+        "correct": false
+      },
+      {
+        "fact_id": 4,
+        "question": "Emre nerede?",
+        "expected": "sinema",
+        "predicted": "korer. k? Cemap",
+        "correct": false
+      },
+      {
+        "fact_id": 5,
+        "question": "Can'nin kemeri ne renk?",
+        "expected": "mor",
+        "predicted": "Cede Cedi Cemap",
+        "correct": false
+      },
+      {
+        "fact_id": 5,
+        "question": "Can nerede?",
+        "expected": "ofis",
+        "predicted": ": Cememarevap: ",
+        "correct": false
+      },
+      {
+        "fact_id": 6,
+        "question": "Kemal'nin yüzüki ne renk?",
+        "expected": "siyah",
+        "predicted": "Cededevapap: So",
+        "correct": false
+      },
+      {
+        "fact_id": 6,
+        "question": "Kemal nerede?",
+        "expected": "ev",
+        "predicted": "Sore Cevap:ap: ",
+        "correct": true
+      },
+      {
+        "fact_id": 7,
+        "question": "Zeynep'nin bardaki ne renk?",
+        "expected": "beyaz",
+        "predicted": "C: Cetpedi mape",
+        "correct": false
+      },
+      {
+        "fact_id": 7,
+        "question": "Zeynep nerede?",
+        "expected": "kütüphane",
+        "predicted": "Cedini map: Ced",
+        "correct": false
+      },
+      {
+        "fact_id": 8,
+        "question": "Ahmet'nin telefoni ne renk?",
+        "expected": "beyaz",
+        "predicted": "Cededededi Cedi",
+        "correct": false
+      },
+      {
+        "fact_id": 8,
+        "question": "Ahmet nerede?",
+        "expected": "okul",
+        "predicted": "Sor. kininedede",
+        "correct": false
+      },
+      {
+        "fact_id": 9,
+        "question": "Mehmet'nin şemsiyei ne renk?",
+        "expected": "mavi",
+        "predicted": " nir. Cedir. Cd",
+        "correct": false
+      },
+      {
+        "fact_id": 9,
+        "question": "Mehmet nerede?",
+        "expected": "bahçe",
+        "predicted": "ner. Cededir.  ",
+        "correct": false
+      },
+      {
+        "fact_id": 10,
+        "question": "Deniz'nin kolyei ne renk?",
+        "expected": "siyah",
+        "predicted": "Cededemap: t Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 10,
+        "question": "Deniz nerede?",
+        "expected": "ev",
+        "predicted": "Cede Cevap:ap: ",
+        "correct": true
+      },
+      {
+        "fact_id": 11,
+        "question": "Kemal'nin kemeri ne renk?",
+        "expected": "mavi",
+        "predicted": "C ner. Sor. Cer",
+        "correct": false
+      },
+      {
+        "fact_id": 11,
+        "question": "Kemal nerede?",
+        "expected": "market",
+        "predicted": "Cor n Soru: C n",
+        "correct": false
+      },
+      {
+        "fact_id": 12,
+        "question": "Mehmet'nin kemeri ne renk?",
+        "expected": "siyah",
+        "predicted": "Soru Sor. S Sor",
+        "correct": false
+      },
+      {
+        "fact_id": 12,
+        "question": "Mehmet nerede?",
+        "expected": "hastane",
+        "predicted": "Soredededir. C ",
+        "correct": false
+      },
+      {
+        "fact_id": 13,
+        "question": "Deniz'nin yüzüki ne renk?",
+        "expected": "sarı",
+        "predicted": "Ceni Cederu: Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 13,
+        "question": "Deniz nerede?",
+        "expected": "okul",
+        "predicted": "C: k? Cenedir. ",
+        "correct": false
+      },
+      {
+        "fact_id": 14,
+        "question": "Ayşe'nin saati ne renk?",
+        "expected": "siyah",
+        "predicted": "k. Cen Cemap: C",
+        "correct": false
+      },
+      {
+        "fact_id": 14,
+        "question": "Ayşe nerede?",
+        "expected": "okul",
+        "predicted": "map: koren kini",
+        "correct": false
+      },
+      {
+        "fact_id": 15,
+        "question": "Elif'nin çantai ne renk?",
+        "expected": "mor",
+        "predicted": "sap: Solir. Sor",
+        "correct": false
+      },
+      {
+        "fact_id": 15,
+        "question": "Elif nerede?",
+        "expected": "kütüphane",
+        "predicted": "nenedededededed",
+        "correct": false
+      },
+      {
+        "fact_id": 16,
+        "question": "Kemal'nin cüzdani ne renk?",
+        "expected": "yeşil",
+        "predicted": "Cer. Sor. Sor. ",
+        "correct": false
+      },
+      {
+        "fact_id": 16,
+        "question": "Kemal nerede?",
+        "expected": "bahçe",
+        "predicted": "Sor. Sokük? Cev",
+        "correct": false
+      },
+      {
+        "fact_id": 17,
+        "question": "Deniz'nin telefoni ne renk?",
+        "expected": "siyah",
+        "predicted": "Cededed : Ceded",
+        "correct": false
+      },
+      {
+        "fact_id": 17,
+        "question": "Deniz nerede?",
+        "expected": "okul",
+        "predicted": "Sor. kevap: Cev",
+        "correct": false
+      },
+      {
+        "fact_id": 18,
+        "question": "Ece'nin bilgisayari ne renk?",
+        "expected": "gri",
+        "predicted": "Cevirereder. Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 18,
+        "question": "Ece nerede?",
+        "expected": "ofis",
+        "predicted": "Sedir. sap: Ced",
+        "correct": false
+      },
+      {
+        "fact_id": 19,
+        "question": "Zeynep'nin şapkai ne renk?",
+        "expected": "mor",
+        "predicted": "Sore Cede sir. ",
+        "correct": false
+      },
+      {
+        "fact_id": 19,
+        "question": "Zeynep nerede?",
+        "expected": "kütüphane",
+        "predicted": "map: Ce Cevap: ",
+        "correct": false
+      },
+      {
+        "fact_id": 20,
+        "question": "Aslı'nin saati ne renk?",
+        "expected": "beyaz",
+        "predicted": "n Cedinin ner. ",
+        "correct": false
+      },
+      {
+        "fact_id": 20,
+        "question": "Aslı nerede?",
+        "expected": "ev",
+        "predicted": "Cevap: k? sedem",
+        "correct": true
+      },
+      {
+        "fact_id": 21,
+        "question": "Elif'nin defteri ne renk?",
+        "expected": "beyaz",
+        "predicted": "mn Cededi Ceded",
+        "correct": false
+      },
+      {
+        "fact_id": 21,
+        "question": "Elif nerede?",
+        "expected": "market",
+        "predicted": "nedededireded C",
+        "correct": false
+      },
+      {
+        "fact_id": 22,
+        "question": "Burak'nin silgii ne renk?",
+        "expected": "sarı",
+        "predicted": "Cemapahdemap: S",
+        "correct": false
+      },
+      {
+        "fact_id": 22,
+        "question": "Burak nerede?",
+        "expected": "hastane",
+        "predicted": "Sor. Sokir. Cem",
+        "correct": false
+      },
+      {
+        "fact_id": 23,
+        "question": "Oğuz'nin telefoni ne renk?",
+        "expected": "turuncu",
+        "predicted": "C Ceded Cethedi",
+        "correct": false
+      },
+      {
+        "fact_id": 23,
+        "question": "Oğuz nerede?",
+        "expected": "market",
+        "predicted": "Ceder.ninededed",
+        "correct": false
+      },
+      {
+        "fact_id": 24,
+        "question": "Kemal'nin kitapi ne renk?",
+        "expected": "siyah",
+        "predicted": "C Cevapap: Soru",
+        "correct": false
+      },
+      {
+        "fact_id": 24,
+        "question": "Kemal nerede?",
+        "expected": "park",
+        "predicted": "Ce Cev kinir. C",
+        "correct": false
+      },
+      {
+        "fact_id": 25,
+        "question": "Elif'nin kemeri ne renk?",
+        "expected": "gri",
+        "predicted": "siyap: Cedediru",
+        "correct": false
+      },
+      {
+        "fact_id": 25,
+        "question": "Elif nerede?",
+        "expected": "kütüphane",
+        "predicted": ": k? Cer.nir. s",
+        "correct": false
+      },
+      {
+        "fact_id": 26,
+        "question": "Volkan'nin bardaki ne renk?",
+        "expected": "kahverengi",
+        "predicted": "Sor. si C Ce ki",
+        "correct": false
+      },
+      {
+        "fact_id": 26,
+        "question": "Volkan nerede?",
+        "expected": "market",
+        "predicted": "Cen: map: kedir",
+        "correct": false
+      },
+      {
+        "fact_id": 27,
+        "question": "Deniz'nin saati ne renk?",
+        "expected": "yeşil",
+        "predicted": "s.nir. siz Cede",
+        "correct": false
+      },
+      {
+        "fact_id": 27,
+        "question": "Deniz nerede?",
+        "expected": "sinema",
+        "predicted": "korevap:evap: S",
+        "correct": false
+      },
+      {
+        "fact_id": 28,
+        "question": "Gizem'nin silgii ne renk?",
+        "expected": "kırmızı",
+        "predicted": "Cevapareder. Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 28,
+        "question": "Gizem nerede?",
+        "expected": "okul",
+        "predicted": "k? Cer.nir. Cev",
+        "correct": false
+      },
+      {
+        "fact_id": 29,
+        "question": "Ahmet'nin bilgisayari ne renk?",
+        "expected": "mor",
+        "predicted": "Ceder. Soredeva",
+        "correct": false
+      },
+      {
+        "fact_id": 29,
+        "question": "Ahmet nerede?",
+        "expected": "hastane",
+        "predicted": "Ceman C Cemapar",
+        "correct": false
+      },
+      {
+        "fact_id": 30,
+        "question": "Kemal'nin ayakkabıi ne renk?",
+        "expected": "siyah",
+        "predicted": "Sor. Cededirede",
+        "correct": false
+      },
+      {
+        "fact_id": 30,
+        "question": "Kemal nerede?",
+        "expected": "sinema",
+        "predicted": "Cer. Cedediru: ",
+        "correct": false
+      },
+      {
+        "fact_id": 31,
+        "question": "Ali'nin çantai ne renk?",
+        "expected": "gri",
+        "predicted": "Cedinevap: Eap:",
+        "correct": false
+      },
+      {
+        "fact_id": 31,
+        "question": "Ali nerede?",
+        "expected": "kütüphane",
+        "predicted": "Sevevap: ku: C",
+        "correct": false
+      },
+      {
+        "fact_id": 32,
+        "question": "Oğuz'nin çantai ne renk?",
+        "expected": "siyah",
+        "predicted": "Cer. Ceder. Ced",
+        "correct": false
+      },
+      {
+        "fact_id": 32,
+        "question": "Oğuz nerede?",
+        "expected": "market",
+        "predicted": "Cer. Cededinede",
+        "correct": false
+      },
+      {
+        "fact_id": 33,
+        "question": "Emre'nin bilgisayari ne renk?",
+        "expected": "gri",
+        "predicted": "Soll",
+        "correct": false
+      },
+      {
+        "fact_id": 33,
+        "question": "Emre nerede?",
+        "expected": "okul",
+        "predicted": "renededededed C",
+        "correct": false
+      },
+      {
+        "fact_id": 34,
+        "question": "Ceren'nin ayakkabıi ne renk?",
+        "expected": "kahverengi",
+        "predicted": "Cedededi Sor. s",
+        "correct": false
+      },
+      {
+        "fact_id": 34,
+        "question": "Ceren nerede?",
+        "expected": "ofis",
+        "predicted": "kap: n sir. red",
+        "correct": false
+      },
+      {
+        "fact_id": 35,
+        "question": "Ahmet'nin cüzdani ne renk?",
+        "expected": "yeşil",
+        "predicted": "Cedered : Cerer",
+        "correct": false
+      },
+      {
+        "fact_id": 35,
+        "question": "Ahmet nerede?",
+        "expected": "sinema",
+        "predicted": "Cer. Cededediru",
+        "correct": false
+      },
+      {
+        "fact_id": 36,
+        "question": "Emre'nin kalemi ne renk?",
+        "expected": "kahverengi",
+        "predicted": "Sor. nemar. Cem",
+        "correct": false
+      },
+      {
+        "fact_id": 36,
+        "question": "Emre nerede?",
+        "expected": "bahçe",
+        "predicted": "Cev Cedininevap",
+        "correct": false
+      },
+      {
+        "fact_id": 37,
+        "question": "Gizem'nin kalemi ne renk?",
+        "expected": "mavi",
+        "predicted": "C Cevaparu Cede",
+        "correct": false
+      },
+      {
+        "fact_id": 37,
+        "question": "Gizem nerede?",
+        "expected": "bahçe",
+        "predicted": "Cenededededened",
+        "correct": false
+      },
+      {
+        "fact_id": 38,
+        "question": "Ceren'nin saati ne renk?",
+        "expected": "kırmızı",
+        "predicted": "sap: ki Sor. Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 38,
+        "question": "Ceren nerede?",
+        "expected": "ofis",
+        "predicted": "kor. Cedededir.",
+        "correct": false
+      },
+      {
+        "fact_id": 39,
+        "question": "Volkan'nin silgii ne renk?",
+        "expected": "mavi",
+        "predicted": "Cevap: C Cede S",
+        "correct": false
+      },
+      {
+        "fact_id": 39,
+        "question": "Volkan nerede?",
+        "expected": "kafe",
+        "predicted": "Sor. Sor. C Cev",
+        "correct": false
+      },
+      {
+        "fact_id": 40,
+        "question": "Gizem'nin kemeri ne renk?",
+        "expected": "yeşil",
+        "predicted": "C C C Cedededir",
+        "correct": false
+      },
+      {
+        "fact_id": 40,
+        "question": "Gizem nerede?",
+        "expected": "kütüphane",
+        "predicted": "n Cedir. Cedire",
+        "correct": false
+      },
+      {
+        "fact_id": 41,
+        "question": "Aslı'nin telefoni ne renk?",
+        "expected": "siyah",
+        "predicted": "si E redm Cedi ",
+        "correct": false
+      },
+      {
+        "fact_id": 41,
+        "question": "Aslı nerede?",
+        "expected": "market",
+        "predicted": "karev ku: Ce Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 42,
+        "question": "Deniz'nin şapkai ne renk?",
+        "expected": "gri",
+        "predicted": "Cededemapap: Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 42,
+        "question": "Deniz nerede?",
+        "expected": "kafe",
+        "predicted": "Cedeninedededed",
+        "correct": false
+      },
+      {
+        "fact_id": 43,
+        "question": "Fatma'nin saati ne renk?",
+        "expected": "sarı",
+        "predicted": "Cedin Cedinir. ",
+        "correct": false
+      },
+      {
+        "fact_id": 43,
+        "question": "Fatma nerede?",
+        "expected": "okul",
+        "predicted": "kaneninedededed",
+        "correct": false
+      },
+      {
+        "fact_id": 44,
+        "question": "Oğuz'nin kalemi ne renk?",
+        "expected": "kahverengi",
+        "predicted": "map: Ced Cediru",
+        "correct": false
+      },
+      {
+        "fact_id": 44,
+        "question": "Oğuz nerede?",
+        "expected": "sinema",
+        "predicted": " Ce? Cedinevap:",
+        "correct": false
+      },
+      {
+        "fact_id": 45,
+        "question": "Elif'nin yüzüki ne renk?",
+        "expected": "sarı",
+        "predicted": "k? Cedirevap: S",
+        "correct": false
+      },
+      {
+        "fact_id": 45,
+        "question": "Elif nerede?",
+        "expected": "ev",
+        "predicted": "Cemevanenededed",
+        "correct": true
+      },
+      {
+        "fact_id": 46,
+        "question": "Mehmet'nin defteri ne renk?",
+        "expected": "sarı",
+        "predicted": "Cededi Cedetned",
+        "correct": false
+      },
+      {
+        "fact_id": 46,
+        "question": "Mehmet nerede?",
+        "expected": "okul",
+        "predicted": "Cenenenir. Ceva",
+        "correct": false
+      },
+      {
+        "fact_id": 47,
+        "question": "Ayşe'nin anahtari ne renk?",
+        "expected": "mavi",
+        "predicted": "Cevap: C Cede b",
+        "correct": false
+      },
+      {
+        "fact_id": 47,
+        "question": "Ayşe nerede?",
+        "expected": "sinema",
+        "predicted": "ne Ce Ce Ce san",
+        "correct": false
+      },
+      {
+        "fact_id": 48,
+        "question": "Elif'nin gözlüki ne renk?",
+        "expected": "turuncu",
+        "predicted": "map: E Sor. Cev",
+        "correct": false
+      },
+      {
+        "fact_id": 48,
+        "question": "Elif nerede?",
+        "expected": "ofis",
+        "predicted": "Cevap: kir. sin",
+        "correct": false
+      },
+      {
+        "fact_id": 49,
+        "question": "Aslı'nin kitapi ne renk?",
+        "expected": "kahverengi",
+        "predicted": "C Cedem Cedi So",
+        "correct": false
+      },
+      {
+        "fact_id": 49,
+        "question": "Aslı nerede?",
+        "expected": "hastane",
+        "predicted": "se? Cedi Cevap:",
+        "correct": false
+      },
+      {
+        "fact_id": 50,
+        "question": "Gizem'nin saati ne renk?",
+        "expected": "turuncu",
+        "predicted": "Cemaparedm Cere",
+        "correct": false
+      },
+      {
+        "fact_id": 50,
+        "question": "Gizem nerede?",
+        "expected": "market",
+        "predicted": "sin Cevap: Cema",
+        "correct": false
+      },
+      {
+        "fact_id": 51,
+        "question": "Can'nin çantai ne renk?",
+        "expected": "mavi",
+        "predicted": "Cedir. Cevirere",
+        "correct": false
+      },
+      {
+        "fact_id": 51,
+        "question": "Can nerede?",
+        "expected": "market",
+        "predicted": "Cevedir. Cedede",
+        "correct": false
+      },
+      {
+        "fact_id": 52,
+        "question": "Deniz'nin bardaki ne renk?",
+        "expected": "mor",
+        "predicted": "Cediru: E C: Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 52,
+        "question": "Deniz nerede?",
+        "expected": "kafe",
+        "predicted": "Ce Sor. ku: Ce ",
+        "correct": false
+      },
+      {
+        "fact_id": 53,
+        "question": "Ayşe'nin çantai ne renk?",
+        "expected": "kırmızı",
+        "predicted": "nir. Soredmap: ",
+        "correct": false
+      },
+      {
+        "fact_id": 53,
+        "question": "Ayşe nerede?",
+        "expected": "market",
+        "predicted": "Cen n kinir. Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 54,
+        "question": "Selin'nin bilgisayari ne renk?",
+        "expected": "siyah",
+        "predicted": "Cniredediredine",
+        "correct": false
+      },
+      {
+        "fact_id": 54,
+        "question": "Selin nerede?",
+        "expected": "kafe",
+        "predicted": "Cenedir. Cemapa",
+        "correct": false
+      },
+      {
+        "fact_id": 55,
+        "question": "Elif'nin silgii ne renk?",
+        "expected": "turuncu",
+        "predicted": "map: E redmap: ",
+        "correct": false
+      },
+      {
+        "fact_id": 55,
+        "question": "Elif nerede?",
+        "expected": "sinema",
+        "predicted": "Cerer. kap: map",
+        "correct": false
+      },
+      {
+        "fact_id": 56,
+        "question": "Fatma'nin defteri ne renk?",
+        "expected": "gri",
+        "predicted": "Ced Cevap: Cema",
+        "correct": false
+      },
+      {
+        "fact_id": 56,
+        "question": "Fatma nerede?",
+        "expected": "ev",
+        "predicted": "map: kedededede",
+        "correct": false
+      },
+      {
+        "fact_id": 57,
+        "question": "Mehmet'nin saati ne renk?",
+        "expected": "yeşil",
+        "predicted": "Sor. Sor. Ceded",
+        "correct": false
+      },
+      {
+        "fact_id": 57,
+        "question": "Mehmet nerede?",
+        "expected": "market",
+        "predicted": "sah Cededemap: ",
+        "correct": false
+      },
+      {
+        "fact_id": 58,
+        "question": "Gizem'nin monti ne renk?",
+        "expected": "sarı",
+        "predicted": "Cerevar. Sor. C",
+        "correct": false
+      },
+      {
+        "fact_id": 58,
+        "question": "Gizem nerede?",
+        "expected": "market",
+        "predicted": "Cenedededededed",
+        "correct": false
+      },
+      {
+        "fact_id": 59,
+        "question": "Ayşe'nin bilgisayari ne renk?",
+        "expected": "mor",
+        "predicted": "sl",
+        "correct": false
+      },
+      {
+        "fact_id": 59,
+        "question": "Ayşe nerede?",
+        "expected": "ev",
+        "predicted": "medenir. kinir.",
+        "correct": false
+      },
+      {
+        "fact_id": 60,
+        "question": "Mert'nin gözlüki ne renk?",
+        "expected": "turuncu",
+        "predicted": "Soru: Sor. si C",
+        "correct": false
+      },
+      {
+        "fact_id": 60,
+        "question": "Mert nerede?",
+        "expected": "kütüphane",
+        "predicted": "ser. Cevan ki C",
+        "correct": false
+      },
+      {
+        "fact_id": 61,
+        "question": "Selin'nin kemeri ne renk?",
+        "expected": "turuncu",
+        "predicted": "Cevi Cedi Sor. ",
+        "correct": false
+      },
+      {
+        "fact_id": 61,
+        "question": "Selin nerede?",
+        "expected": "park",
+        "predicted": "Sor. kedir. Cev",
+        "correct": false
+      },
+      {
+        "fact_id": 62,
+        "question": "Can'nin arabai ne renk?",
+        "expected": "sarı",
+        "predicted": "Cev Ceninini Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 62,
+        "question": "Can nerede?",
+        "expected": "ev",
+        "predicted": "nedevinedinerev",
+        "correct": true
+      },
+      {
+        "fact_id": 63,
+        "question": "Volkan'nin kemeri ne renk?",
+        "expected": "kırmızı",
+        "predicted": "Soru C Cededire",
+        "correct": false
+      },
+      {
+        "fact_id": 63,
+        "question": "Volkan nerede?",
+        "expected": "bahçe",
+        "predicted": "Soru: C Cemap: ",
+        "correct": false
+      },
+      {
+        "fact_id": 64,
+        "question": "Ayşe'nin defteri ne renk?",
+        "expected": "kahverengi",
+        "predicted": "Cedered : Cered",
+        "correct": false
+      },
+      {
+        "fact_id": 64,
+        "question": "Ayşe nerede?",
+        "expected": "kafe",
+        "predicted": "Cen Cedinenevar",
+        "correct": false
+      },
+      {
+        "fact_id": 65,
+        "question": "Emre'nin ayakkabıi ne renk?",
+        "expected": "yeşil",
+        "predicted": "Cede Sore Ceded",
+        "correct": false
+      },
+      {
+        "fact_id": 65,
+        "question": "Emre nerede?",
+        "expected": "ev",
+        "predicted": "Cede Cen kir. C",
+        "correct": false
+      },
+      {
+        "fact_id": 66,
+        "question": "Emre'nin silgii ne renk?",
+        "expected": "yeşil",
+        "predicted": "Cedinevar. Cir.",
+        "correct": false
+      },
+      {
+        "fact_id": 66,
+        "question": "Emre nerede?",
+        "expected": "okul",
+        "predicted": "Cev: k? Ce? Ced",
+        "correct": false
+      },
+      {
+        "fact_id": 67,
+        "question": "Ece'nin silgii ne renk?",
+        "expected": "sarı",
+        "predicted": "kokir. Cevinine",
+        "correct": false
+      },
+      {
+        "fact_id": 67,
+        "question": "Ece nerede?",
+        "expected": "market",
+        "predicted": "Cevedinerev kok",
+        "correct": false
+      },
+      {
+        "fact_id": 68,
+        "question": "Fatma'nin yüzüki ne renk?",
+        "expected": "sarı",
+        "predicted": "Cevapareder. Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 68,
+        "question": "Fatma nerede?",
+        "expected": "hastane",
+        "predicted": "Sor. ku: Cen Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 69,
+        "question": "Ece'nin defteri ne renk?",
+        "expected": "kahverengi",
+        "predicted": "map: Sire Ceded",
+        "correct": false
+      },
+      {
+        "fact_id": 69,
+        "question": "Ece nerede?",
+        "expected": "okul",
+        "predicted": "Cedi Ce? Cedin:",
+        "correct": false
+      },
+      {
+        "fact_id": 70,
+        "question": "Selin'nin yüzüki ne renk?",
+        "expected": "kahverengi",
+        "predicted": "Cedir. Ceredi d",
+        "correct": false
+      },
+      {
+        "fact_id": 70,
+        "question": "Selin nerede?",
+        "expected": "sinema",
+        "predicted": "Cedir. Cevirere",
+        "correct": false
+      },
+      {
+        "fact_id": 71,
+        "question": "Oğuz'nin gözlüki ne renk?",
+        "expected": "sarı",
+        "predicted": "Cen: Ceder. Ced",
+        "correct": false
+      },
+      {
+        "fact_id": 71,
+        "question": "Oğuz nerede?",
+        "expected": "bahçe",
+        "predicted": "Cedenededevap: ",
+        "correct": false
+      },
+      {
+        "fact_id": 72,
+        "question": "Ceren'nin şapkai ne renk?",
+        "expected": "beyaz",
+        "predicted": "Cevap: Cediniru",
+        "correct": false
+      },
+      {
+        "fact_id": 72,
+        "question": "Ceren nerede?",
+        "expected": "okul",
+        "predicted": "Cedededinin Ced",
+        "correct": false
+      },
+      {
+        "fact_id": 73,
+        "question": "Ali'nin şapkai ne renk?",
+        "expected": "kahverengi",
+        "predicted": "Cem Sere Cedede",
+        "correct": false
+      },
+      {
+        "fact_id": 73,
+        "question": "Ali nerede?",
+        "expected": "hastane",
+        "predicted": "kap: Sokinin'in",
+        "correct": false
+      },
+      {
+        "fact_id": 74,
+        "question": "Fatma'nin silgii ne renk?",
+        "expected": "gri",
+        "predicted": "Cededemapap: Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 74,
+        "question": "Fatma nerede?",
+        "expected": "ofis",
+        "predicted": "Cedenededededed",
+        "correct": false
+      },
+      {
+        "fact_id": 75,
+        "question": "Emre'nin gözlüki ne renk?",
+        "expected": "yeşil",
+        "predicted": "C Cedededir. Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 75,
+        "question": "Emre nerede?",
+        "expected": "bahçe",
+        "predicted": "C: nedededined ",
+        "correct": false
+      },
+      {
+        "fact_id": 76,
+        "question": "Ece'nin ayakkabıi ne renk?",
+        "expected": "kırmızı",
+        "predicted": "Cediredm Cetpi ",
+        "correct": false
+      },
+      {
+        "fact_id": 76,
+        "question": "Ece nerede?",
+        "expected": "sinema",
+        "predicted": "C Cedededini Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 77,
+        "question": "Ceren'nin çantai ne renk?",
+        "expected": "yeşil",
+        "predicted": "ki rededinededi",
+        "correct": false
+      },
+      {
+        "fact_id": 77,
+        "question": "Ceren nerede?",
+        "expected": "kütüphane",
+        "predicted": "n Cedir. Cedire",
+        "correct": false
+      },
+      {
+        "fact_id": 78,
+        "question": "Fatma'nin çantai ne renk?",
+        "expected": "gri",
+        "predicted": "Cededemapap: Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 78,
+        "question": "Fatma nerede?",
+        "expected": "park",
+        "predicted": "kaneninedededed",
+        "correct": false
+      },
+      {
+        "fact_id": 79,
+        "question": "Burak'nin arabai ne renk?",
+        "expected": "kahverengi",
+        "predicted": "Solıdem Ceredir",
+        "correct": false
+      },
+      {
+        "fact_id": 79,
+        "question": "Burak nerede?",
+        "expected": "ofis",
+        "predicted": "Cenenir. Cevapa",
+        "correct": false
+      },
+      {
+        "fact_id": 80,
+        "question": "Gizem'nin gözlüki ne renk?",
+        "expected": "kırmızı",
+        "predicted": "Cededededededi ",
+        "correct": false
+      },
+      {
+        "fact_id": 80,
+        "question": "Gizem nerede?",
+        "expected": "okul",
+        "predicted": "C Cedenir. Ceva",
+        "correct": false
+      },
+      {
+        "fact_id": 81,
+        "question": "Selin'nin gözlüki ne renk?",
+        "expected": "kırmızı",
+        "predicted": "Cevi Cedinifap:",
+        "correct": false
+      },
+      {
+        "fact_id": 81,
+        "question": "Selin nerede?",
+        "expected": "ev",
+        "predicted": "kor. k? Cedi Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 82,
+        "question": "Oğuz'nin kitapi ne renk?",
+        "expected": "siyah",
+        "predicted": "Cer. Cevap: Ced",
+        "correct": false
+      },
+      {
+        "fact_id": 82,
+        "question": "Oğuz nerede?",
+        "expected": "park",
+        "predicted": "Cedir. Cededine",
+        "correct": false
+      },
+      {
+        "fact_id": 83,
+        "question": "Aslı'nin defteri ne renk?",
+        "expected": "beyaz",
+        "predicted": "Cedi edi Soredi",
+        "correct": false
+      },
+      {
+        "fact_id": 83,
+        "question": "Aslı nerede?",
+        "expected": "hastane",
+        "predicted": "kap: Soru: Sor.",
+        "correct": false
+      },
+      {
+        "fact_id": 84,
+        "question": "Ayşe'nin arabai ne renk?",
+        "expected": "beyaz",
+        "predicted": "Cevap: Cevap: s",
+        "correct": false
+      },
+      {
+        "fact_id": 84,
+        "question": "Ayşe nerede?",
+        "expected": "ev",
+        "predicted": "Cevap:  Cer. Ck",
+        "correct": true
+      },
+      {
+        "fact_id": 85,
+        "question": "Deniz'nin kemeri ne renk?",
+        "expected": "mor",
+        "predicted": " Cevap: C Cedev",
+        "correct": false
+      },
+      {
+        "fact_id": 85,
+        "question": "Deniz nerede?",
+        "expected": "hastane",
+        "predicted": "kap: k? Cedin C",
+        "correct": false
+      },
+      {
+        "fact_id": 86,
+        "question": "Ahmet'nin saati ne renk?",
+        "expected": "yeşil",
+        "predicted": "Cevap: ki red s",
+        "correct": false
+      },
+      {
+        "fact_id": 86,
+        "question": "Ahmet nerede?",
+        "expected": "park",
+        "predicted": "r. nevap: Cedev",
+        "correct": false
+      },
+      {
+        "fact_id": 87,
+        "question": "Selin'nin kalemi ne renk?",
+        "expected": "yeşil",
+        "predicted": "map: Sorededi t",
+        "correct": false
+      },
+      {
+        "fact_id": 87,
+        "question": "Selin nerede?",
+        "expected": "bahçe",
+        "predicted": "kedin kedir. Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 88,
+        "question": "Selin'nin saati ne renk?",
+        "expected": "siyah",
+        "predicted": "Cedirevirerur. ",
+        "correct": false
+      },
+      {
+        "fact_id": 88,
+        "question": "Selin nerede?",
+        "expected": "park",
+        "predicted": "r.  ner. k? Cer",
+        "correct": false
+      },
+      {
+        "fact_id": 89,
+        "question": "Fatma'nin şemsiyei ne renk?",
+        "expected": "kırmızı",
+        "predicted": "Soredninededine",
+        "correct": false
+      },
+      {
+        "fact_id": 89,
+        "question": "Fatma nerede?",
+        "expected": "kafe",
+        "predicted": "sap: Cedin sin ",
+        "correct": false
+      },
+      {
+        "fact_id": 90,
+        "question": "Elif'nin telefoni ne renk?",
+        "expected": "turuncu",
+        "predicted": "Cedireder. Cedi",
+        "correct": false
+      },
+      {
+        "fact_id": 90,
+        "question": "Elif nerede?",
+        "expected": "bahçe",
+        "predicted": "Sor. kinini Cev",
+        "correct": false
+      },
+      {
+        "fact_id": 91,
+        "question": "Can'nin şemsiyei ne renk?",
+        "expected": "beyaz",
+        "predicted": "Sor. ni Cededi ",
+        "correct": false
+      },
+      {
+        "fact_id": 91,
+        "question": "Can nerede?",
+        "expected": "kütüphane",
+        "predicted": "Cedine? Cedi Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 92,
+        "question": "Mehmet'nin gözlüki ne renk?",
+        "expected": "beyaz",
+        "predicted": "C Cedirenir. So",
+        "correct": false
+      },
+      {
+        "fact_id": 92,
+        "question": "Mehmet nerede?",
+        "expected": "sinema",
+        "predicted": "Soredededir. C ",
+        "correct": false
+      },
+      {
+        "fact_id": 93,
+        "question": "Mert'nin kemeri ne renk?",
+        "expected": "beyaz",
+        "predicted": "sinir. Cevap: s",
+        "correct": false
+      },
+      {
+        "fact_id": 93,
+        "question": "Mert nerede?",
+        "expected": "ev",
+        "predicted": "Cevap: k? n sin",
+        "correct": true
+      },
+      {
+        "fact_id": 94,
+        "question": "Fatma'nin gözlüki ne renk?",
+        "expected": "yeşil",
+        "predicted": "C C s Cederedin",
+        "correct": false
+      },
+      {
+        "fact_id": 94,
+        "question": "Fatma nerede?",
+        "expected": "hastane",
+        "predicted": "sir. Cer. Cevap",
+        "correct": false
+      },
+      {
+        "fact_id": 95,
+        "question": "Burak'nin defteri ne renk?",
+        "expected": "mavi",
+        "predicted": "kap: C Cede S S",
+        "correct": false
+      },
+      {
+        "fact_id": 95,
+        "question": "Burak nerede?",
+        "expected": "hastane",
+        "predicted": "Ce Sor. Ce Ceva",
+        "correct": false
+      },
+      {
+        "fact_id": 96,
+        "question": "Selin'nin cüzdani ne renk?",
+        "expected": "beyaz",
+        "predicted": "Cedireder. Cedi",
+        "correct": false
+      },
+      {
+        "fact_id": 96,
+        "question": "Selin nerede?",
+        "expected": "market",
+        "predicted": "Cev Cevap: Cevi",
+        "correct": false
+      },
+      {
+        "fact_id": 97,
+        "question": "Volkan'nin telefoni ne renk?",
+        "expected": "siyah",
+        "predicted": "C Ceded Cediru:",
+        "correct": false
+      },
+      {
+        "fact_id": 97,
+        "question": "Volkan nerede?",
+        "expected": "ev",
+        "predicted": "Cev ku: Cedevap",
+        "correct": true
+      },
+      {
+        "fact_id": 98,
+        "question": "Can'nin cüzdani ne renk?",
+        "expected": "mor",
+        "predicted": "Soredededemap: ",
+        "correct": false
+      },
+      {
+        "fact_id": 98,
+        "question": "Can nerede?",
+        "expected": "okul",
+        "predicted": "C Cevevıenedede",
+        "correct": false
+      },
+      {
+        "fact_id": 99,
+        "question": "Oğuz'nin kolyei ne renk?",
+        "expected": "beyaz",
+        "predicted": "Cer. Cevap: Ced",
+        "correct": false
+      },
+      {
+        "fact_id": 99,
+        "question": "Oğuz nerede?",
+        "expected": "okul",
+        "predicted": "Cedir. Cededine",
+        "correct": false
+      }
+    ]
+  },
+  "new_knowledge": {
+    "accuracy": 0.026041666666666668,
+    "details": [
+      {
+        "fact_id": 100,
+        "question": "Oğuz'nin şemsiyei ne renk?",
+        "expected": "siyah",
+        "predicted": " Cederedm Ceti ",
+        "correct": false
+      },
+      {
+        "fact_id": 100,
+        "question": "Oğuz nerede?",
+        "expected": "sinema",
+        "predicted": "Cen Ce? Cedi Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 101,
+        "question": "Zeynep'nin kolyei ne renk?",
+        "expected": "kahverengi",
+        "predicted": "Cetnedi Cededed",
+        "correct": false
+      },
+      {
+        "fact_id": 101,
+        "question": "Zeynep nerede?",
+        "expected": "kütüphane",
+        "predicted": " Cevap: Cedirur",
+        "correct": false
+      },
+      {
+        "fact_id": 102,
+        "question": "Ceren'nin telefoni ne renk?",
+        "expected": "mor",
+        "predicted": "Solde Cedede C ",
+        "correct": false
+      },
+      {
+        "fact_id": 102,
+        "question": "Ceren nerede?",
+        "expected": "hastane",
+        "predicted": "Cen Cenir. Cevi",
+        "correct": false
+      },
+      {
+        "fact_id": 103,
+        "question": "Ece'nin anahtari ne renk?",
+        "expected": "turuncu",
+        "predicted": "Cevap: Cediniru",
+        "correct": false
+      },
+      {
+        "fact_id": 103,
+        "question": "Ece nerede?",
+        "expected": "kafe",
+        "predicted": "Sor. Cev kinir.",
+        "correct": false
+      },
+      {
+        "fact_id": 104,
+        "question": "Kemal'nin telefoni ne renk?",
+        "expected": "gri",
+        "predicted": "Cevaparededi Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 104,
+        "question": "Kemal nerede?",
+        "expected": "kafe",
+        "predicted": "Ce Cen Sor. Ced",
+        "correct": false
+      },
+      {
+        "fact_id": 105,
+        "question": "Zeynep'nin silgii ne renk?",
+        "expected": "siyah",
+        "predicted": "C Ceded Cene So",
+        "correct": false
+      },
+      {
+        "fact_id": 105,
+        "question": "Zeynep nerede?",
+        "expected": "sinema",
+        "predicted": "Ce? Cedininedin",
+        "correct": false
+      },
+      {
+        "fact_id": 106,
+        "question": "Ali'nin defteri ne renk?",
+        "expected": "sarı",
+        "predicted": "kiredirevap: E ",
+        "correct": false
+      },
+      {
+        "fact_id": 106,
+        "question": "Ali nerede?",
+        "expected": "kafe",
+        "predicted": "Ceirevap: sa Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 107,
+        "question": "Mert'nin saati ne renk?",
+        "expected": "yeşil",
+        "predicted": "n Cenir. n Cede",
+        "correct": false
+      },
+      {
+        "fact_id": 107,
+        "question": "Mert nerede?",
+        "expected": "ev",
+        "predicted": "Cevap: k? neded",
+        "correct": true
+      },
+      {
+        "fact_id": 108,
+        "question": "Fatma'nin bardaki ne renk?",
+        "expected": "sarı",
+        "predicted": " Cevap: C Ceded",
+        "correct": false
+      },
+      {
+        "fact_id": 108,
+        "question": "Fatma nerede?",
+        "expected": "park",
+        "predicted": "Cenedededededed",
+        "correct": false
+      },
+      {
+        "fact_id": 109,
+        "question": "Emre'nin şapkai ne renk?",
+        "expected": "kırmızı",
+        "predicted": "nir. Soredmap: ",
+        "correct": false
+      },
+      {
+        "fact_id": 109,
+        "question": "Emre nerede?",
+        "expected": "sinema",
+        "predicted": "Cerer. kap: nev",
+        "correct": false
+      },
+      {
+        "fact_id": 110,
+        "question": "Oğuz'nin şapkai ne renk?",
+        "expected": "kahverengi",
+        "predicted": "Cederedm : Cedi",
+        "correct": false
+      },
+      {
+        "fact_id": 110,
+        "question": "Oğuz nerede?",
+        "expected": "sinema",
+        "predicted": "si Cedir. Cevap",
+        "correct": false
+      },
+      {
+        "fact_id": 111,
+        "question": "Gizem'nin şapkai ne renk?",
+        "expected": "siyah",
+        "predicted": "C Cevapap: Cede",
+        "correct": false
+      },
+      {
+        "fact_id": 111,
+        "question": "Gizem nerede?",
+        "expected": "ofis",
+        "predicted": "Ce Cev Cevap: C",
+        "correct": false
+      },
+      {
+        "fact_id": 112,
+        "question": "Burak'nin ayakkabıi ne renk?",
+        "expected": "turuncu",
+        "predicted": "Sor. Cededirede",
+        "correct": false
+      },
+      {
+        "fact_id": 112,
+        "question": "Burak nerede?",
+        "expected": "ofis",
+        "predicted": "Cer. Cedediru: ",
+        "correct": false
+      },
+      {
+        "fact_id": 113,
+        "question": "Burak'nin şapkai ne renk?",
+        "expected": "mavi",
+        "predicted": "kap: C Soedined",
+        "correct": false
+      },
+      {
+        "fact_id": 113,
+        "question": "Burak nerede?",
+        "expected": "kütüphane",
+        "predicted": "Cedededenedinin",
+        "correct": false
+      },
+      {
+        "fact_id": 114,
+        "question": "Aslı'nin silgii ne renk?",
+        "expected": "yeşil",
+        "predicted": "Cedinevar. Sor.",
+        "correct": false
+      },
+      {
+        "fact_id": 114,
+        "question": "Aslı nerede?",
+        "expected": "park",
+        "predicted": "Cev: Sorevap: C",
+        "correct": false
+      },
+      {
+        "fact_id": 115,
+        "question": "Elif'nin şemsiyei ne renk?",
+        "expected": "yeşil",
+        "predicted": "meder. Sor. Cer",
+        "correct": false
+      },
+      {
+        "fact_id": 115,
+        "question": "Elif nerede?",
+        "expected": "ofis",
+        "predicted": "Cer. Cediru: C ",
+        "correct": false
+      },
+      {
+        "fact_id": 116,
+        "question": "Mehmet'nin bardaki ne renk?",
+        "expected": "mor",
+        "predicted": "map: C Cedetn S",
+        "correct": false
+      },
+      {
+        "fact_id": 116,
+        "question": "Mehmet nerede?",
+        "expected": "bahçe",
+        "predicted": "Ceneninir. Ceva",
+        "correct": false
+      },
+      {
+        "fact_id": 117,
+        "question": "Aslı'nin şapkai ne renk?",
+        "expected": "mor",
+        "predicted": "Cer. Cededevap:",
+        "correct": false
+      },
+      {
+        "fact_id": 117,
+        "question": "Aslı nerede?",
+        "expected": "ev",
+        "predicted": "C Cevedir. Cede",
+        "correct": true
+      },
+      {
+        "fact_id": 118,
+        "question": "Can'nin bardaki ne renk?",
+        "expected": "mor",
+        "predicted": "Cederevap: Sor.",
+        "correct": false
+      },
+      {
+        "fact_id": 118,
+        "question": "Can nerede?",
+        "expected": "hastane",
+        "predicted": "Soredenedededed",
+        "correct": false
+      },
+      {
+        "fact_id": 119,
+        "question": "Ali'nin yüzüki ne renk?",
+        "expected": "mor",
+        "predicted": "Cede Cedi Cemap",
+        "correct": false
+      },
+      {
+        "fact_id": 119,
+        "question": "Ali nerede?",
+        "expected": "kafe",
+        "predicted": "Soremap: korev ",
+        "correct": false
+      },
+      {
+        "fact_id": 120,
+        "question": "Ali'nin cüzdani ne renk?",
+        "expected": "siyah",
+        "predicted": "Cedirevirerur. ",
+        "correct": false
+      },
+      {
+        "fact_id": 120,
+        "question": "Ali nerede?",
+        "expected": "market",
+        "predicted": "Cedir. Cededede",
+        "correct": false
+      },
+      {
+        "fact_id": 121,
+        "question": "Elif'nin monti ne renk?",
+        "expected": "sarı",
+        "predicted": "Cedevevap: kap:",
+        "correct": false
+      },
+      {
+        "fact_id": 121,
+        "question": "Elif nerede?",
+        "expected": "kütüphane",
+        "predicted": ": k? Cer.nir. C",
+        "correct": false
+      },
+      {
+        "fact_id": 122,
+        "question": "Selin'nin monti ne renk?",
+        "expected": "kırmızı",
+        "predicted": "Cemapareder. Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 122,
+        "question": "Selin nerede?",
+        "expected": "market",
+        "predicted": "sin Cevap: Cema",
+        "correct": false
+      },
+      {
+        "fact_id": 123,
+        "question": "Ahmet'nin kolyei ne renk?",
+        "expected": "gri",
+        "predicted": "Ckor. Cemapared",
+        "correct": false
+      },
+      {
+        "fact_id": 123,
+        "question": "Ahmet nerede?",
+        "expected": "ev",
+        "predicted": " Cevap: sir. Ce",
+        "correct": true
+      },
+      {
+        "fact_id": 124,
+        "question": "Mert'nin yüzüki ne renk?",
+        "expected": "kahverengi",
+        "predicted": "sor. ki Sor. Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 124,
+        "question": "Mert nerede?",
+        "expected": "ev",
+        "predicted": "Cedi Ce? Cedine",
+        "correct": false
+      },
+      {
+        "fact_id": 125,
+        "question": "Zeynep'nin defteri ne renk?",
+        "expected": "siyah",
+        "predicted": "Cedinedenir. Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 125,
+        "question": "Zeynep nerede?",
+        "expected": "market",
+        "predicted": "kedededeyakired",
+        "correct": false
+      },
+      {
+        "fact_id": 126,
+        "question": "Can'nin kalemi ne renk?",
+        "expected": "kahverengi",
+        "predicted": "Cemap: Sore Ced",
+        "correct": false
+      },
+      {
+        "fact_id": 126,
+        "question": "Can nerede?",
+        "expected": "park",
+        "predicted": "Cedeevahemanedi",
+        "correct": false
+      },
+      {
+        "fact_id": 127,
+        "question": "Deniz'nin bilgisayari ne renk?",
+        "expected": "kahverengi",
+        "predicted": "Soredevap: Cedi",
+        "correct": false
+      },
+      {
+        "fact_id": 127,
+        "question": "Deniz nerede?",
+        "expected": "hastane",
+        "predicted": "n Cer. Elemap: ",
+        "correct": false
+      },
+      {
+        "fact_id": 128,
+        "question": "Fatma'nin bilgisayari ne renk?",
+        "expected": "siyah",
+        "predicted": " Cededediredene",
+        "correct": false
+      },
+      {
+        "fact_id": 128,
+        "question": "Fatma nerede?",
+        "expected": "okul",
+        "predicted": "Cenedir. Cemapa",
+        "correct": false
+      },
+      {
+        "fact_id": 129,
+        "question": "Volkan'nin kalemi ne renk?",
+        "expected": "siyah",
+        "predicted": "Soruededeni Sor",
+        "correct": false
+      },
+      {
+        "fact_id": 129,
+        "question": "Volkan nerede?",
+        "expected": "hastane",
+        "predicted": "Soru: son maper",
+        "correct": false
+      },
+      {
+        "fact_id": 130,
+        "question": "Mert'nin şemsiyei ne renk?",
+        "expected": "sarı",
+        "predicted": "siyap: C Cemap:",
+        "correct": false
+      },
+      {
+        "fact_id": 130,
+        "question": "Mert nerede?",
+        "expected": "okul",
+        "predicted": "sirenedededi Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 131,
+        "question": "Volkan'nin saati ne renk?",
+        "expected": "mavi",
+        "predicted": "Solredmap: S So",
+        "correct": false
+      },
+      {
+        "fact_id": 131,
+        "question": "Volkan nerede?",
+        "expected": "kütüphane",
+        "predicted": "Soru: sor. Solr",
+        "correct": false
+      },
+      {
+        "fact_id": 132,
+        "question": "Ece'nin çantai ne renk?",
+        "expected": "kahverengi",
+        "predicted": "Cedinap: Sorur.",
+        "correct": false
+      },
+      {
+        "fact_id": 132,
+        "question": "Ece nerede?",
+        "expected": "ev",
+        "predicted": "Cev: k? Ce Ceir",
+        "correct": true
+      },
+      {
+        "fact_id": 133,
+        "question": "Mehmet'nin ayakkabıi ne renk?",
+        "expected": "beyaz",
+        "predicted": "C sinedetnedini",
+        "correct": false
+      },
+      {
+        "fact_id": 133,
+        "question": "Mehmet nerede?",
+        "expected": "ev",
+        "predicted": "sap: Cedini Ced",
+        "correct": false
+      },
+      {
+        "fact_id": 134,
+        "question": "Zeynep'nin ayakkabıi ne renk?",
+        "expected": "siyah",
+        "predicted": "Sor. Sor. Ce Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 134,
+        "question": "Zeynep nerede?",
+        "expected": "hastane",
+        "predicted": "Cedi Cevap: Ced",
+        "correct": false
+      },
+      {
+        "fact_id": 135,
+        "question": "Aslı'nin monti ne renk?",
+        "expected": "turuncu",
+        "predicted": "Cev: C E r. m C",
+        "correct": false
+      },
+      {
+        "fact_id": 135,
+        "question": "Aslı nerede?",
+        "expected": "market",
+        "predicted": "nevap: kinir. C",
+        "correct": false
+      },
+      {
+        "fact_id": 136,
+        "question": "Volkan'nin gözlüki ne renk?",
+        "expected": "beyaz",
+        "predicted": "C Ceded Cenedin",
+        "correct": false
+      },
+      {
+        "fact_id": 136,
+        "question": "Volkan nerede?",
+        "expected": "ofis",
+        "predicted": "Cedededed Cevap",
+        "correct": false
+      },
+      {
+        "fact_id": 137,
+        "question": "Zeynep'nin monti ne renk?",
+        "expected": "sarı",
+        "predicted": "ni kap: Cemapen",
+        "correct": false
+      },
+      {
+        "fact_id": 137,
+        "question": "Zeynep nerede?",
+        "expected": "bahçe",
+        "predicted": "k? Cenedir. Cev",
+        "correct": false
+      },
+      {
+        "fact_id": 138,
+        "question": "Burak'nin anahtari ne renk?",
+        "expected": "siyah",
+        "predicted": "Cedediretnedi C",
+        "correct": false
+      },
+      {
+        "fact_id": 138,
+        "question": "Burak nerede?",
+        "expected": "hastane",
+        "predicted": "Cenedir. Cevapa",
+        "correct": false
+      },
+      {
+        "fact_id": 139,
+        "question": "Burak'nin kemeri ne renk?",
+        "expected": "kırmızı",
+        "predicted": "Cedered Sor. So",
+        "correct": false
+      },
+      {
+        "fact_id": 139,
+        "question": "Burak nerede?",
+        "expected": "sinema",
+        "predicted": "Cedededededinin",
+        "correct": false
+      },
+      {
+        "fact_id": 140,
+        "question": "Can'nin silgii ne renk?",
+        "expected": "sarı",
+        "predicted": "Cedir. Cevinine",
+        "correct": false
+      },
+      {
+        "fact_id": 140,
+        "question": "Can nerede?",
+        "expected": "market",
+        "predicted": "Cevedinerev Ced",
+        "correct": false
+      },
+      {
+        "fact_id": 141,
+        "question": "Ceren'nin yüzüki ne renk?",
+        "expected": "beyaz",
+        "predicted": "Cevap: Cediniru",
+        "correct": false
+      },
+      {
+        "fact_id": 141,
+        "question": "Ceren nerede?",
+        "expected": "kafe",
+        "predicted": "Cedededinin Ced",
+        "correct": false
+      },
+      {
+        "fact_id": 142,
+        "question": "Aslı'nin ayakkabıi ne renk?",
+        "expected": "beyaz",
+        "predicted": "Solrededi Cedin",
+        "correct": false
+      },
+      {
+        "fact_id": 142,
+        "question": "Aslı nerede?",
+        "expected": "market",
+        "predicted": "Sor. Sor. s. in",
+        "correct": false
+      },
+      {
+        "fact_id": 143,
+        "question": "Aslı'nin anahtari ne renk?",
+        "expected": "beyaz",
+        "predicted": "mevar. Sor. Cev",
+        "correct": false
+      },
+      {
+        "fact_id": 143,
+        "question": "Aslı nerede?",
+        "expected": "kafe",
+        "predicted": "r. Sor. Cevap: ",
+        "correct": false
+      },
+      {
+        "fact_id": 144,
+        "question": "Fatma'nin telefoni ne renk?",
+        "expected": "beyaz",
+        "predicted": "Cededededi Cedi",
+        "correct": false
+      },
+      {
+        "fact_id": 144,
+        "question": "Fatma nerede?",
+        "expected": "okul",
+        "predicted": "Sor. kevAnedi ",
+        "correct": false
+      },
+      {
+        "fact_id": 145,
+        "question": "Aslı'nin bilgisayari ne renk?",
+        "expected": "sarı",
+        "predicted": "E Sor. C Cedi C",
+        "correct": false
+      },
+      {
+        "fact_id": 145,
+        "question": "Aslı nerede?",
+        "expected": "ofis",
+        "predicted": "karer. kap: map",
+        "correct": false
+      },
+      {
+        "fact_id": 146,
+        "question": "Ece'nin arabai ne renk?",
+        "expected": "mavi",
+        "predicted": "Cer. Cedineviz ",
+        "correct": false
+      },
+      {
+        "fact_id": 146,
+        "question": "Ece nerede?",
+        "expected": "ofis",
+        "predicted": "C Cevedir. Cede",
+        "correct": false
+      },
+      {
+        "fact_id": 147,
+        "question": "Ceren'nin kalemi ne renk?",
+        "expected": "gri",
+        "predicted": "Cededemapahdine",
+        "correct": false
+      },
+      {
+        "fact_id": 147,
+        "question": "Ceren nerede?",
+        "expected": "park",
+        "predicted": "Cedeninedededed",
+        "correct": false
+      },
+      {
+        "fact_id": 148,
+        "question": "Ceren'nin kitapi ne renk?",
+        "expected": "turuncu",
+        "predicted": "Cevi Cedi Sor. ",
+        "correct": false
+      },
+      {
+        "fact_id": 148,
+        "question": "Ceren nerede?",
+        "expected": "okul",
+        "predicted": "k? n kir. sor. ",
+        "correct": false
+      },
+      {
+        "fact_id": 149,
+        "question": "Ayşe'nin gözlüki ne renk?",
+        "expected": "turuncu",
+        "predicted": "map: Soreder. C",
+        "correct": false
+      },
+      {
+        "fact_id": 149,
+        "question": "Ayşe nerede?",
+        "expected": "okul",
+        "predicted": "revap: Cedir. C",
+        "correct": false
+      },
+      {
+        "fact_id": 150,
+        "question": "Volkan'nin defteri ne renk?",
+        "expected": "yeşil",
+        "predicted": "C Ceded Ceni si",
+        "correct": false
+      },
+      {
+        "fact_id": 150,
+        "question": "Volkan nerede?",
+        "expected": "park",
+        "predicted": "si Cediredede S",
+        "correct": false
+      },
+      {
+        "fact_id": 151,
+        "question": "Volkan'nin arabai ne renk?",
+        "expected": "mavi",
+        "predicted": "Cevap: C Cede b",
+        "correct": false
+      },
+      {
+        "fact_id": 151,
+        "question": "Volkan nerede?",
+        "expected": "ofis",
+        "predicted": "Sor. kedine Cev",
+        "correct": false
+      },
+      {
+        "fact_id": 152,
+        "question": "Fatma'nin kemeri ne renk?",
+        "expected": "mor",
+        "predicted": " Cevap: Cededev",
+        "correct": false
+      },
+      {
+        "fact_id": 152,
+        "question": "Fatma nerede?",
+        "expected": "hastane",
+        "predicted": "kanevaredir. Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 153,
+        "question": "Ece'nin kolyei ne renk?",
+        "expected": "sarı",
+        "predicted": "kenir. Cevinere",
+        "correct": false
+      },
+      {
+        "fact_id": 153,
+        "question": "Ece nerede?",
+        "expected": "sinema",
+        "predicted": "Cevedinerev ku:",
+        "correct": false
+      },
+      {
+        "fact_id": 154,
+        "question": "Mert'nin şapkai ne renk?",
+        "expected": "turuncu",
+        "predicted": "Cediredm : Cedi",
+        "correct": false
+      },
+      {
+        "fact_id": 154,
+        "question": "Mert nerede?",
+        "expected": "kütüphane",
+        "predicted": "sirededededir. ",
+        "correct": false
+      },
+      {
+        "fact_id": 155,
+        "question": "Can'nin telefoni ne renk?",
+        "expected": "siyah",
+        "predicted": "Cededevap: Cede",
+        "correct": false
+      },
+      {
+        "fact_id": 155,
+        "question": "Can nerede?",
+        "expected": "okul",
+        "predicted": "ap: Ce Cev Ceva",
+        "correct": false
+      },
+      {
+        "fact_id": 156,
+        "question": "Zeynep'nin saati ne renk?",
+        "expected": "yeşil",
+        "predicted": "Sor. Sorn Ceded",
+        "correct": false
+      },
+      {
+        "fact_id": 156,
+        "question": "Zeynep nerede?",
+        "expected": "sinema",
+        "predicted": "sahedededeyaled",
+        "correct": false
+      },
+      {
+        "fact_id": 157,
+        "question": "Mehmet'nin bilgisayari ne renk?",
+        "expected": "kırmızı",
+        "predicted": " ap: Cn kap: C ",
+        "correct": false
+      },
+      {
+        "fact_id": 157,
+        "question": "Mehmet nerede?",
+        "expected": "market",
+        "predicted": "sorevaperedmap:",
+        "correct": false
+      },
+      {
+        "fact_id": 158,
+        "question": "Kemal'nin kolyei ne renk?",
+        "expected": "turuncu",
+        "predicted": "C t So. Cevap: ",
+        "correct": false
+      },
+      {
+        "fact_id": 158,
+        "question": "Kemal nerede?",
+        "expected": "kütüphane",
+        "predicted": "Sor. nevap: C t",
+        "correct": false
+      },
+      {
+        "fact_id": 159,
+        "question": "Kemal'nin silgii ne renk?",
+        "expected": "sarı",
+        "predicted": "Cedered Sor. So",
+        "correct": false
+      },
+      {
+        "fact_id": 159,
+        "question": "Kemal nerede?",
+        "expected": "kütüphane",
+        "predicted": "Cedededenedinin",
+        "correct": false
+      },
+      {
+        "fact_id": 160,
+        "question": "Ahmet'nin silgii ne renk?",
+        "expected": "kırmızı",
+        "predicted": "Cevapareder. Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 160,
+        "question": "Ahmet nerede?",
+        "expected": "park",
+        "predicted": "Sor. kinir. Cev",
+        "correct": false
+      },
+      {
+        "fact_id": 161,
+        "question": "Ceren'nin kolyei ne renk?",
+        "expected": "kahverengi",
+        "predicted": "k? : Cedi Cedi ",
+        "correct": false
+      },
+      {
+        "fact_id": 161,
+        "question": "Ceren nerede?",
+        "expected": "kütüphane",
+        "predicted": "Cenedemapar. Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 162,
+        "question": "Kemal'nin çantai ne renk?",
+        "expected": "turuncu",
+        "predicted": "sif So. Cevap: ",
+        "correct": false
+      },
+      {
+        "fact_id": 162,
+        "question": "Kemal nerede?",
+        "expected": "kütüphane",
+        "predicted": "Soru: Cevap: So",
+        "correct": false
+      },
+      {
+        "fact_id": 163,
+        "question": "Ayşe'nin bardaki ne renk?",
+        "expected": "beyaz",
+        "predicted": "Cedi Cedem Cedi",
+        "correct": false
+      },
+      {
+        "fact_id": 163,
+        "question": "Ayşe nerede?",
+        "expected": "hastane",
+        "predicted": "Cedede? Cedi Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 164,
+        "question": "Burak'nin kalemi ne renk?",
+        "expected": "mavi",
+        "predicted": "Ceni Cedereder.",
+        "correct": false
+      },
+      {
+        "fact_id": 164,
+        "question": "Burak nerede?",
+        "expected": "ofis",
+        "predicted": " Sor. Cenenir. ",
+        "correct": false
+      },
+      {
+        "fact_id": 165,
+        "question": "Volkan'nin yüzüki ne renk?",
+        "expected": "kırmızı",
+        "predicted": " Cedetnedi Cede",
+        "correct": false
+      },
+      {
+        "fact_id": 165,
+        "question": "Volkan nerede?",
+        "expected": "kütüphane",
+        "predicted": "Cededevap: Cedi",
+        "correct": false
+      },
+      {
+        "fact_id": 166,
+        "question": "Gizem'nin cüzdani ne renk?",
+        "expected": "mor",
+        "predicted": "C Ce Sore Soedi",
+        "correct": false
+      },
+      {
+        "fact_id": 166,
+        "question": "Gizem nerede?",
+        "expected": "bahçe",
+        "predicted": "Ce Ce Ce Ce C C",
+        "correct": false
+      },
+      {
+        "fact_id": 167,
+        "question": "Mert'nin ayakkabıi ne renk?",
+        "expected": "kırmızı",
+        "predicted": "C kededetnedi C",
+        "correct": false
+      },
+      {
+        "fact_id": 167,
+        "question": "Mert nerede?",
+        "expected": "sinema",
+        "predicted": "Cedededed Cemap",
+        "correct": false
+      },
+      {
+        "fact_id": 168,
+        "question": "Kemal'nin bardaki ne renk?",
+        "expected": "kırmızı",
+        "predicted": "Cededed Soreded",
+        "correct": false
+      },
+      {
+        "fact_id": 168,
+        "question": "Kemal nerede?",
+        "expected": "ofis",
+        "predicted": "Cededenini Ceva",
+        "correct": false
+      },
+      {
+        "fact_id": 169,
+        "question": "Emre'nin cüzdani ne renk?",
+        "expected": "kahverengi",
+        "predicted": "Ceder. Cededini",
+        "correct": false
+      },
+      {
+        "fact_id": 169,
+        "question": "Emre nerede?",
+        "expected": "kafe",
+        "predicted": "Cen Cedinenevar",
+        "correct": false
+      },
+      {
+        "fact_id": 170,
+        "question": "Kemal'nin defteri ne renk?",
+        "expected": "sarı",
+        "predicted": "Soredm Cede Sor",
+        "correct": false
+      },
+      {
+        "fact_id": 170,
+        "question": "Kemal nerede?",
+        "expected": "kütüphane",
+        "predicted": "n Cenir. Cevapa",
+        "correct": false
+      },
+      {
+        "fact_id": 171,
+        "question": "Gizem'nin çantai ne renk?",
+        "expected": "kırmızı",
+        "predicted": "Sol. Sor. Cedir",
+        "correct": false
+      },
+      {
+        "fact_id": 171,
+        "question": "Gizem nerede?",
+        "expected": "hastane",
+        "predicted": "n Cedir. Cevapa",
+        "correct": false
+      },
+      {
+        "fact_id": 172,
+        "question": "Elif'nin bilgisayari ne renk?",
+        "expected": "siyah",
+        "predicted": "Cem Cer. si mem",
+        "correct": false
+      },
+      {
+        "fact_id": 172,
+        "question": "Elif nerede?",
+        "expected": "sinema",
+        "predicted": "Cedededed Cemap",
+        "correct": false
+      },
+      {
+        "fact_id": 173,
+        "question": "Ali'nin kemeri ne renk?",
+        "expected": "mor",
+        "predicted": "kahçedire Cevap",
+        "correct": false
+      },
+      {
+        "fact_id": 173,
+        "question": "Ali nerede?",
+        "expected": "okul",
+        "predicted": "Sorememarev kap",
+        "correct": false
+      },
+      {
+        "fact_id": 174,
+        "question": "Ahmet'nin monti ne renk?",
+        "expected": "siyah",
+        "predicted": "saniru: Sor. Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 174,
+        "question": "Ahmet nerede?",
+        "expected": "sinema",
+        "predicted": "korer. k? Cered",
+        "correct": false
+      },
+      {
+        "fact_id": 175,
+        "question": "Burak'nin bardaki ne renk?",
+        "expected": "turuncu",
+        "predicted": "Cedered Sor. So",
+        "correct": false
+      },
+      {
+        "fact_id": 175,
+        "question": "Burak nerede?",
+        "expected": "kafe",
+        "predicted": "Ceder.nir. Ceva",
+        "correct": false
+      },
+      {
+        "fact_id": 176,
+        "question": "Elif'nin şapkai ne renk?",
+        "expected": "gri",
+        "predicted": "ku: Cedevap: So",
+        "correct": false
+      },
+      {
+        "fact_id": 176,
+        "question": "Elif nerede?",
+        "expected": "park",
+        "predicted": "Cevap: kap: ku:",
+        "correct": false
+      },
+      {
+        "fact_id": 177,
+        "question": "Mert'nin telefoni ne renk?",
+        "expected": "kahverengi",
+        "predicted": "rededi Cedir. C",
+        "correct": false
+      },
+      {
+        "fact_id": 177,
+        "question": "Mert nerede?",
+        "expected": "sinema",
+        "predicted": "k? Cedi Cevap: ",
+        "correct": false
+      },
+      {
+        "fact_id": 178,
+        "question": "Oğuz'nin ayakkabıi ne renk?",
+        "expected": "siyah",
+        "predicted": "Cededi Sor. Ced",
+        "correct": false
+      },
+      {
+        "fact_id": 178,
+        "question": "Oğuz nerede?",
+        "expected": "ev",
+        "predicted": "Cedeni Cenir. S",
+        "correct": false
+      },
+      {
+        "fact_id": 179,
+        "question": "Ceren'nin arabai ne renk?",
+        "expected": "kahverengi",
+        "predicted": "E Cneder. Sored",
+        "correct": false
+      },
+      {
+        "fact_id": 179,
+        "question": "Ceren nerede?",
+        "expected": "hastane",
+        "predicted": "Ceden Cevirered",
+        "correct": false
+      },
+      {
+        "fact_id": 0,
+        "question": "Nur'nin kamerai ne renk?",
+        "expected": "mavi",
+        "predicted": "Sor. Solir. Sor",
+        "correct": false
+      },
+      {
+        "fact_id": 0,
+        "question": "Nur nerede?",
+        "expected": "kütüphane",
+        "predicted": "Soe C ne? Cedi ",
+        "correct": false
+      },
+      {
+        "fact_id": 1,
+        "question": "Yasin'nin tableti ne renk?",
+        "expected": "beyaz",
+        "predicted": "C Cedininevap: ",
+        "correct": false
+      },
+      {
+        "fact_id": 1,
+        "question": "Yasin nerede?",
+        "expected": "hastane",
+        "predicted": "sir. Cevap: Ced",
+        "correct": false
+      },
+      {
+        "fact_id": 2,
+        "question": "Nur'nin çorapi ne renk?",
+        "expected": "yeşil",
+        "predicted": "kir. Cedevar. r",
+        "correct": false
+      },
+      {
+        "fact_id": 2,
+        "question": "Nur nerede?",
+        "expected": "park",
+        "predicted": "Ceviru: ki ner.",
+        "correct": false
+      },
+      {
+        "fact_id": 3,
+        "question": "Esra'nin kravati ne renk?",
+        "expected": "sarı",
+        "predicted": "Cen Cevap: Cem ",
+        "correct": false
+      },
+      {
+        "fact_id": 3,
+        "question": "Esra nerede?",
+        "expected": "kafe",
+        "predicted": "Sedir. Cededine",
+        "correct": false
+      },
+      {
+        "fact_id": 4,
+        "question": "Onur'nin çorapi ne renk?",
+        "expected": "sarı",
+        "predicted": "Cededevap: sir.",
+        "correct": false
+      },
+      {
+        "fact_id": 4,
+        "question": "Onur nerede?",
+        "expected": "sinema",
+        "predicted": "Cedenedededi Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 5,
+        "question": "Nur'nin kravati ne renk?",
+        "expected": "turuncu",
+        "predicted": "Cediremap: y C:",
+        "correct": false
+      },
+      {
+        "fact_id": 5,
+        "question": "Nur nerede?",
+        "expected": "ofis",
+        "predicted": "mev: k? ner.nir",
+        "correct": false
+      },
+      {
+        "fact_id": 6,
+        "question": "Esra'nin çorapi ne renk?",
+        "expected": "yeşil",
+        "predicted": "Cedinevar. Sor.",
+        "correct": false
+      },
+      {
+        "fact_id": 6,
+        "question": "Esra nerede?",
+        "expected": "ofis",
+        "predicted": "Cev: Sorevap: C",
+        "correct": false
+      },
+      {
+        "fact_id": 7,
+        "question": "Onur'nin tableti ne renk?",
+        "expected": "gri",
+        "predicted": "Cedir: Ceder. C",
+        "correct": false
+      },
+      {
+        "fact_id": 7,
+        "question": "Onur nerede?",
+        "expected": "okul",
+        "predicted": "Soredenedededin",
+        "correct": false
+      },
+      {
+        "fact_id": 8,
+        "question": "Esra'nin kamerai ne renk?",
+        "expected": "mor",
+        "predicted": "Cedininedin C S",
+        "correct": false
+      },
+      {
+        "fact_id": 8,
+        "question": "Esra nerede?",
+        "expected": "okul",
+        "predicted": "Soredevap: Soki",
+        "correct": false
+      },
+      {
+        "fact_id": 9,
+        "question": "Esra'nin tableti ne renk?",
+        "expected": "mor",
+        "predicted": "Cemap: Sore Sor",
+        "correct": false
+      },
+      {
+        "fact_id": 9,
+        "question": "Esra nerede?",
+        "expected": "sinema",
+        "predicted": "Cededevah k? Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 10,
+        "question": "Onur'nin kamerai ne renk?",
+        "expected": "mor",
+        "predicted": "Cedininedin C C",
+        "correct": false
+      },
+      {
+        "fact_id": 10,
+        "question": "Onur nerede?",
+        "expected": "okul",
+        "predicted": "Soredevap: sini",
+        "correct": false
+      },
+      {
+        "fact_id": 11,
+        "question": "Yasin'nin kravati ne renk?",
+        "expected": "yeşil",
+        "predicted": "Cevirereder. Se",
+        "correct": false
+      },
+      {
+        "fact_id": 11,
+        "question": "Yasin nerede?",
+        "expected": "park",
+        "predicted": "korer. nkük? Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 12,
+        "question": "Yasin'nin kamerai ne renk?",
+        "expected": "yeşil",
+        "predicted": "Cedi Sor. Sor. ",
+        "correct": false
+      },
+      {
+        "fact_id": 12,
+        "question": "Yasin nerede?",
+        "expected": "kütüphane",
+        "predicted": "Cedi Cer. Cedir",
+        "correct": false
+      },
+      {
+        "fact_id": 13,
+        "question": "Yasin'nin çorapi ne renk?",
+        "expected": "turuncu",
+        "predicted": "Cevap: Cedinir.",
+        "correct": false
+      },
+      {
+        "fact_id": 13,
+        "question": "Yasin nerede?",
+        "expected": "ev",
+        "predicted": "Cevap: Cedir. C",
+        "correct": true
+      },
+      {
+        "fact_id": 14,
+        "question": "Onur'nin kravati ne renk?",
+        "expected": "yeşil",
+        "predicted": "Cedededi Sor. C",
+        "correct": false
+      },
+      {
+        "fact_id": 14,
+        "question": "Onur nerede?",
+        "expected": "kafe",
+        "predicted": "Sor. Cede? Cede",
+        "correct": false
+      },
+      {
+        "fact_id": 15,
+        "question": "Nur'nin tableti ne renk?",
+        "expected": "mavi",
+        "predicted": "sor. kinediniru",
+        "correct": false
+      },
+      {
+        "fact_id": 15,
+        "question": "Nur nerede?",
+        "expected": "kütüphane",
+        "predicted": "r. Sor. Sor. s:",
+        "correct": false
+      }
+    ]
+  },
+  "unseen_patterns": {
+    "accuracy": 0.0,
+    "details": [
+      {
+        "fact_id": 0,
+        "question": "Fatma adlı kişinin sahip olduğu kalem hangi renktedir?",
+        "expected": "siyah",
+        "predicted": "Cedir. Sor. Cev",
+        "correct": false
+      },
+      {
+        "fact_id": 0,
+        "question": "Fatma şu anda hangi konumda bulunuyor?",
+        "expected": "ofis",
+        "predicted": "Cediru:  Cnedev",
+        "correct": false
+      },
+      {
+        "fact_id": 1,
+        "question": "Elif adlı kişinin sahip olduğu kitap hangi renktedir?",
+        "expected": "mavi",
+        "predicted": "Soredi Cedi Ced",
+        "correct": false
+      },
+      {
+        "fact_id": 1,
+        "question": "Elif şu anda hangi konumda bulunuyor?",
+        "expected": "sinema",
+        "predicted": "Cedet'ne? Cevap",
+        "correct": false
+      },
+      {
+        "fact_id": 2,
+        "question": "Mehmet adlı kişinin sahip olduğu yüzük hangi renktedir?",
+        "expected": "mor",
+        "predicted": "Sor.  C: Cevap:",
+        "correct": false
+      },
+      {
+        "fact_id": 2,
+        "question": "Mehmet şu anda hangi konumda bulunuyor?",
+        "expected": "ev",
+        "predicted": "yatni ap: Cne C",
+        "correct": false
+      },
+      {
+        "fact_id": 3,
+        "question": "Ali adlı kişinin sahip olduğu silgi hangi renktedir?",
+        "expected": "sarı",
+        "predicted": "Ceedeviredi C: ",
+        "correct": false
+      },
+      {
+        "fact_id": 3,
+        "question": "Ali şu anda hangi konumda bulunuyor?",
+        "expected": "ofis",
+        "predicted": "Sorednededi C C",
+        "correct": false
+      },
+      {
+        "fact_id": 4,
+        "question": "Emre adlı kişinin sahip olduğu kolye hangi renktedir?",
+        "expected": "kırmızı",
+        "predicted": "edir.  C Cedire",
+        "correct": false
+      },
+      {
+        "fact_id": 4,
+        "question": "Emre şu anda hangi konumda bulunuyor?",
+        "expected": "sinema",
+        "predicted": "Cedediredi kap:",
+        "correct": false
+      },
+      {
+        "fact_id": 5,
+        "question": "Can adlı kişinin sahip olduğu kemer hangi renktedir?",
+        "expected": "mor",
+        "predicted": "Cevahnev C Cem ",
+        "correct": false
+      },
+      {
+        "fact_id": 5,
+        "question": "Can şu anda hangi konumda bulunuyor?",
+        "expected": "ofis",
+        "predicted": "C Cedi Sir. si ",
+        "correct": false
+      },
+      {
+        "fact_id": 6,
+        "question": "Kemal adlı kişinin sahip olduğu yüzük hangi renktedir?",
+        "expected": "siyah",
+        "predicted": "Soredir. Soredd",
+        "correct": false
+      },
+      {
+        "fact_id": 6,
+        "question": "Kemal şu anda hangi konumda bulunuyor?",
+        "expected": "ev",
+        "predicted": "Sorededirededed",
+        "correct": false
+      },
+      {
+        "fact_id": 7,
+        "question": "Zeynep adlı kişinin sahip olduğu bardak hangi renktedir?",
+        "expected": "beyaz",
+        "predicted": "Cedirenevap:  C",
+        "correct": false
+      },
+      {
+        "fact_id": 7,
+        "question": "Zeynep şu anda hangi konumda bulunuyor?",
+        "expected": "kütüphane",
+        "predicted": "Cedinededinened",
+        "correct": false
+      },
+      {
+        "fact_id": 8,
+        "question": "Ahmet adlı kişinin sahip olduğu telefon hangi renktedir?",
+        "expected": "beyaz",
+        "predicted": "Cedinininineyar",
+        "correct": false
+      },
+      {
+        "fact_id": 8,
+        "question": "Ahmet şu anda hangi konumda bulunuyor?",
+        "expected": "okul",
+        "predicted": "Cedi Cedeededed",
+        "correct": false
+      },
+      {
+        "fact_id": 9,
+        "question": "Mehmet adlı kişinin sahip olduğu şemsiye hangi renktedir?",
+        "expected": "mavi",
+        "predicted": "ni Cedirer. :  ",
+        "correct": false
+      },
+      {
+        "fact_id": 9,
+        "question": "Mehmet şu anda hangi konumda bulunuyor?",
+        "expected": "bahçe",
+        "predicted": "Soredmedirededi",
+        "correct": false
+      },
+      {
+        "fact_id": 10,
+        "question": "Deniz adlı kişinin sahip olduğu kolye hangi renktedir?",
+        "expected": "siyah",
+        "predicted": "Cededir. Cedin ",
+        "correct": false
+      },
+      {
+        "fact_id": 10,
+        "question": "Deniz şu anda hangi konumda bulunuyor?",
+        "expected": "ev",
+        "predicted": "Cedededirededed",
+        "correct": false
+      },
+      {
+        "fact_id": 11,
+        "question": "Kemal adlı kişinin sahip olduğu kemer hangi renktedir?",
+        "expected": "mavi",
+        "predicted": "edi C: Cevap: C",
+        "correct": false
+      },
+      {
+        "fact_id": 11,
+        "question": "Kemal şu anda hangi konumda bulunuyor?",
+        "expected": "market",
+        "predicted": "Soredi Cenedeva",
+        "correct": false
+      },
+      {
+        "fact_id": 12,
+        "question": "Mehmet adlı kişinin sahip olduğu kemer hangi renktedir?",
+        "expected": "siyah",
+        "predicted": "Cr. Sorevap: : ",
+        "correct": false
+      },
+      {
+        "fact_id": 12,
+        "question": "Mehmet şu anda hangi konumda bulunuyor?",
+        "expected": "hastane",
+        "predicted": "Cedededevanemap",
+        "correct": false
+      },
+      {
+        "fact_id": 13,
+        "question": "Deniz adlı kişinin sahip olduğu yüzük hangi renktedir?",
+        "expected": "sarı",
+        "predicted": "Sor.  C: Cevap:",
+        "correct": false
+      },
+      {
+        "fact_id": 13,
+        "question": "Deniz şu anda hangi konumda bulunuyor?",
+        "expected": "okul",
+        "predicted": "yapüner. dinede",
+        "correct": false
+      },
+      {
+        "fact_id": 14,
+        "question": "Ayşe adlı kişinin sahip olduğu saat hangi renktedir?",
+        "expected": "siyah",
+        "predicted": "Cenere nir. Sor",
+        "correct": false
+      },
+      {
+        "fact_id": 14,
+        "question": "Ayşe şu anda hangi konumda bulunuyor?",
+        "expected": "okul",
+        "predicted": "Cemap: Sor. Cen",
+        "correct": false
+      },
+      {
+        "fact_id": 15,
+        "question": "Elif adlı kişinin sahip olduğu çanta hangi renktedir?",
+        "expected": "mor",
+        "predicted": "Cedir. ninirevi",
+        "correct": false
+      },
+      {
+        "fact_id": 15,
+        "question": "Elif şu anda hangi konumda bulunuyor?",
+        "expected": "kütüphane",
+        "predicted": "Cer. sirede kat",
+        "correct": false
+      },
+      {
+        "fact_id": 16,
+        "question": "Kemal adlı kişinin sahip olduğu cüzdan hangi renktedir?",
+        "expected": "yeşil",
+        "predicted": "Sor. Cedir. Cev",
+        "correct": false
+      },
+      {
+        "fact_id": 16,
+        "question": "Kemal şu anda hangi konumda bulunuyor?",
+        "expected": "bahçe",
+        "predicted": "Cedir. Cnedetru",
+        "correct": false
+      },
+      {
+        "fact_id": 17,
+        "question": "Deniz adlı kişinin sahip olduğu telefon hangi renktedir?",
+        "expected": "siyah",
+        "predicted": "Cedinininineyar",
+        "correct": false
+      },
+      {
+        "fact_id": 17,
+        "question": "Deniz şu anda hangi konumda bulunuyor?",
+        "expected": "okul",
+        "predicted": "Cedi Cedeededed",
+        "correct": false
+      },
+      {
+        "fact_id": 18,
+        "question": "Ece adlı kişinin sahip olduğu bilgisayar hangi renktedir?",
+        "expected": "gri",
+        "predicted": "n kedir. Cevir.",
+        "correct": false
+      },
+      {
+        "fact_id": 18,
+        "question": "Ece şu anda hangi konumda bulunuyor?",
+        "expected": "ofis",
+        "predicted": "Cmedediru: Cede",
+        "correct": false
+      },
+      {
+        "fact_id": 19,
+        "question": "Zeynep adlı kişinin sahip olduğu şapka hangi renktedir?",
+        "expected": "mor",
+        "predicted": "C Cevap: Sor. C",
+        "correct": false
+      },
+      {
+        "fact_id": 19,
+        "question": "Zeynep şu anda hangi konumda bulunuyor?",
+        "expected": "kütüphane",
+        "predicted": "Ce C Ce Soredi ",
+        "correct": false
+      },
+      {
+        "fact_id": 20,
+        "question": "Aslı adlı kişinin sahip olduğu saat hangi renktedir?",
+        "expected": "beyaz",
+        "predicted": "Cnedirededir. r",
+        "correct": false
+      },
+      {
+        "fact_id": 20,
+        "question": "Aslı şu anda hangi konumda bulunuyor?",
+        "expected": "ev",
+        "predicted": "Cedem Cer. Sore",
+        "correct": false
+      },
+      {
+        "fact_id": 21,
+        "question": "Elif adlı kişinin sahip olduğu defter hangi renktedir?",
+        "expected": "beyaz",
+        "predicted": "e nededi Cedire",
+        "correct": false
+      },
+      {
+        "fact_id": 21,
+        "question": "Elif şu anda hangi konumda bulunuyor?",
+        "expected": "market",
+        "predicted": "Cedi si m Cede?",
+        "correct": false
+      },
+      {
+        "fact_id": 22,
+        "question": "Burak adlı kişinin sahip olduğu silgi hangi renktedir?",
+        "expected": "sarı",
+        "predicted": "Sm C Sor. Sinen",
+        "correct": false
+      },
+      {
+        "fact_id": 22,
+        "question": "Burak şu anda hangi konumda bulunuyor?",
+        "expected": "hastane",
+        "predicted": "Cedi Cedevinine",
+        "correct": false
+      },
+      {
+        "fact_id": 23,
+        "question": "Oğuz adlı kişinin sahip olduğu telefon hangi renktedir?",
+        "expected": "turuncu",
+        "predicted": "C: Cedineder. :",
+        "correct": false
+      },
+      {
+        "fact_id": 23,
+        "question": "Oğuz şu anda hangi konumda bulunuyor?",
+        "expected": "market",
+        "predicted": "S si Cededirede",
+        "correct": false
+      },
+      {
+        "fact_id": 24,
+        "question": "Kemal adlı kişinin sahip olduğu kitap hangi renktedir?",
+        "expected": "siyah",
+        "predicted": "Cedir. Sor. Sor",
+        "correct": false
+      },
+      {
+        "fact_id": 24,
+        "question": "Kemal şu anda hangi konumda bulunuyor?",
+        "expected": "park",
+        "predicted": "Cediru: Cededev",
+        "correct": false
+      },
+      {
+        "fact_id": 25,
+        "question": "Elif adlı kişinin sahip olduğu kemer hangi renktedir?",
+        "expected": "gri",
+        "predicted": "medir. redirevi",
+        "correct": false
+      },
+      {
+        "fact_id": 25,
+        "question": "Elif şu anda hangi konumda bulunuyor?",
+        "expected": "kütüphane",
+        "predicted": "Cediru: m Cedev",
+        "correct": false
+      },
+      {
+        "fact_id": 26,
+        "question": "Volkan adlı kişinin sahip olduğu bardak hangi renktedir?",
+        "expected": "kahverengi",
+        "predicted": "Cedeyap: Soru: ",
+        "correct": false
+      },
+      {
+        "fact_id": 26,
+        "question": "Volkan şu anda hangi konumda bulunuyor?",
+        "expected": "market",
+        "predicted": "Ceded C Cen Sor",
+        "correct": false
+      },
+      {
+        "fact_id": 27,
+        "question": "Deniz adlı kişinin sahip olduğu saat hangi renktedir?",
+        "expected": "yeşil",
+        "predicted": "Ceva C: C Cedir",
+        "correct": false
+      },
+      {
+        "fact_id": 27,
+        "question": "Deniz şu anda hangi konumda bulunuyor?",
+        "expected": "sinema",
+        "predicted": "Cededi Cevap: C",
+        "correct": false
+      },
+      {
+        "fact_id": 28,
+        "question": "Gizem adlı kişinin sahip olduğu silgi hangi renktedir?",
+        "expected": "kırmızı",
+        "predicted": "r. Cedi C C Cev",
+        "correct": false
+      },
+      {
+        "fact_id": 28,
+        "question": "Gizem şu anda hangi konumda bulunuyor?",
+        "expected": "okul",
+        "predicted": "Cedi C Cnedevap",
+        "correct": false
+      },
+      {
+        "fact_id": 29,
+        "question": "Ahmet adlı kişinin sahip olduğu bilgisayar hangi renktedir?",
+        "expected": "mor",
+        "predicted": "Cr. Cevarenkire",
+        "correct": false
+      },
+      {
+        "fact_id": 29,
+        "question": "Ahmet şu anda hangi konumda bulunuyor?",
+        "expected": "hastane",
+        "predicted": "Sorenedevnedin ",
+        "correct": false
+      },
+      {
+        "fact_id": 30,
+        "question": "Kemal adlı kişinin sahip olduğu ayakkabı hangi renktedir?",
+        "expected": "siyah",
+        "predicted": "Cevap: C Cedine",
+        "correct": false
+      },
+      {
+        "fact_id": 30,
+        "question": "Kemal şu anda hangi konumda bulunuyor?",
+        "expected": "sinema",
+        "predicted": "Soredirediredin",
+        "correct": false
+      },
+      {
+        "fact_id": 31,
+        "question": "Ali adlı kişinin sahip olduğu çanta hangi renktedir?",
+        "expected": "gri",
+        "predicted": "Cireedi C: Cevi",
+        "correct": false
+      },
+      {
+        "fact_id": 31,
+        "question": "Ali şu anda hangi konumda bulunuyor?",
+        "expected": "kütüphane",
+        "predicted": "Cmedevapap: Ce ",
+        "correct": false
+      },
+      {
+        "fact_id": 32,
+        "question": "Oğuz adlı kişinin sahip olduğu çanta hangi renktedir?",
+        "expected": "siyah",
+        "predicted": "Sor.  C: Cedine",
+        "correct": false
+      },
+      {
+        "fact_id": 32,
+        "question": "Oğuz şu anda hangi konumda bulunuyor?",
+        "expected": "market",
+        "predicted": "yap: Sor. Cnedi",
+        "correct": false
+      },
+      {
+        "fact_id": 33,
+        "question": "Emre adlı kişinin sahip olduğu bilgisayar hangi renktedir?",
+        "expected": "gri",
+        "predicted": "C: C Cedirur. :",
+        "correct": false
+      },
+      {
+        "fact_id": 33,
+        "question": "Emre şu anda hangi konumda bulunuyor?",
+        "expected": "okul",
+        "predicted": "Cerediredem kap",
+        "correct": false
+      },
+      {
+        "fact_id": 34,
+        "question": "Ceren adlı kişinin sahip olduğu ayakkabı hangi renktedir?",
+        "expected": "kahverengi",
+        "predicted": "Cevir. Cedin So",
+        "correct": false
+      },
+      {
+        "fact_id": 34,
+        "question": "Ceren şu anda hangi konumda bulunuyor?",
+        "expected": "ofis",
+        "predicted": "Cededeviredir. ",
+        "correct": false
+      },
+      {
+        "fact_id": 35,
+        "question": "Ahmet adlı kişinin sahip olduğu cüzdan hangi renktedir?",
+        "expected": "yeşil",
+        "predicted": "Ce p: Cirerur. ",
+        "correct": false
+      },
+      {
+        "fact_id": 35,
+        "question": "Ahmet şu anda hangi konumda bulunuyor?",
+        "expected": "sinema",
+        "predicted": "Sor. Cededetru:",
+        "correct": false
+      },
+      {
+        "fact_id": 36,
+        "question": "Emre adlı kişinin sahip olduğu kalem hangi renktedir?",
+        "expected": "kahverengi",
+        "predicted": "C C nedemevin k",
+        "correct": false
+      },
+      {
+        "fact_id": 36,
+        "question": "Emre şu anda hangi konumda bulunuyor?",
+        "expected": "bahçe",
+        "predicted": "S Sorediru: Sor",
+        "correct": false
+      },
+      {
+        "fact_id": 37,
+        "question": "Gizem adlı kişinin sahip olduğu kalem hangi renktedir?",
+        "expected": "mavi",
+        "predicted": "Cedi C r. Cinin",
+        "correct": false
+      },
+      {
+        "fact_id": 37,
+        "question": "Gizem şu anda hangi konumda bulunuyor?",
+        "expected": "bahçe",
+        "predicted": "Cer. Sor Cnedev",
+        "correct": false
+      },
+      {
+        "fact_id": 38,
+        "question": "Ceren adlı kişinin sahip olduğu saat hangi renktedir?",
+        "expected": "kırmızı",
+        "predicted": "Cediredir. Cr. ",
+        "correct": false
+      },
+      {
+        "fact_id": 38,
+        "question": "Ceren şu anda hangi konumda bulunuyor?",
+        "expected": "ofis",
+        "predicted": "Cedediredi kap:",
+        "correct": false
+      },
+      {
+        "fact_id": 39,
+        "question": "Volkan adlı kişinin sahip olduğu silgi hangi renktedir?",
+        "expected": "mavi",
+        "predicted": "ma C: ki Cevine",
+        "correct": false
+      },
+      {
+        "fact_id": 39,
+        "question": "Volkan şu anda hangi konumda bulunuyor?",
+        "expected": "kafe",
+        "predicted": "Ce Sore Ce Ceva",
+        "correct": false
+      },
+      {
+        "fact_id": 40,
+        "question": "Gizem adlı kişinin sahip olduğu kemer hangi renktedir?",
+        "expected": "yeşil",
+        "predicted": "C: C C C Ce? Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 40,
+        "question": "Gizem şu anda hangi konumda bulunuyor?",
+        "expected": "kütüphane",
+        "predicted": "Soredi Ce? Ce C",
+        "correct": false
+      },
+      {
+        "fact_id": 41,
+        "question": "Aslı adlı kişinin sahip olduğu telefon hangi renktedir?",
+        "expected": "siyah",
+        "predicted": "Cen Sor. Cevine",
+        "correct": false
+      },
+      {
+        "fact_id": 41,
+        "question": "Aslı şu anda hangi konumda bulunuyor?",
+        "expected": "market",
+        "predicted": "Cededi Cededire",
+        "correct": false
+      },
+      {
+        "fact_id": 42,
+        "question": "Deniz adlı kişinin sahip olduğu şapka hangi renktedir?",
+        "expected": "gri",
+        "predicted": "Soredir. Cedede",
+        "correct": false
+      },
+      {
+        "fact_id": 42,
+        "question": "Deniz şu anda hangi konumda bulunuyor?",
+        "expected": "kafe",
+        "predicted": "Ceder. Sorededi",
+        "correct": false
+      },
+      {
+        "fact_id": 43,
+        "question": "Fatma adlı kişinin sahip olduğu saat hangi renktedir?",
+        "expected": "sarı",
+        "predicted": "kor.  kr. Sor. ",
+        "correct": false
+      },
+      {
+        "fact_id": 43,
+        "question": "Fatma şu anda hangi konumda bulunuyor?",
+        "expected": "okul",
+        "predicted": "Ceder. sapededi",
+        "correct": false
+      },
+      {
+        "fact_id": 44,
+        "question": "Oğuz adlı kişinin sahip olduğu kalem hangi renktedir?",
+        "expected": "kahverengi",
+        "predicted": "Ced Cedinevap: ",
+        "correct": false
+      },
+      {
+        "fact_id": 44,
+        "question": "Oğuz şu anda hangi konumda bulunuyor?",
+        "expected": "sinema",
+        "predicted": "map: Cnediredem",
+        "correct": false
+      },
+      {
+        "fact_id": 45,
+        "question": "Elif adlı kişinin sahip olduğu yüzük hangi renktedir?",
+        "expected": "sarı",
+        "predicted": "Cedevededir.  C",
+        "correct": false
+      },
+      {
+        "fact_id": 45,
+        "question": "Elif şu anda hangi konumda bulunuyor?",
+        "expected": "ev",
+        "predicted": "Cedem Cer. sire",
+        "correct": false
+      },
+      {
+        "fact_id": 46,
+        "question": "Mehmet adlı kişinin sahip olduğu defter hangi renktedir?",
+        "expected": "sarı",
+        "predicted": "Cedinedininevar",
+        "correct": false
+      },
+      {
+        "fact_id": 46,
+        "question": "Mehmet şu anda hangi konumda bulunuyor?",
+        "expected": "okul",
+        "predicted": "S si Cenedini C",
+        "correct": false
+      },
+      {
+        "fact_id": 47,
+        "question": "Ayşe adlı kişinin sahip olduğu anahtar hangi renktedir?",
+        "expected": "mavi",
+        "predicted": "ni Ce C sirevi ",
+        "correct": false
+      },
+      {
+        "fact_id": 47,
+        "question": "Ayşe şu anda hangi konumda bulunuyor?",
+        "expected": "sinema",
+        "predicted": "Ce S si Cem Cev",
+        "correct": false
+      },
+      {
+        "fact_id": 48,
+        "question": "Elif adlı kişinin sahip olduğu gözlük hangi renktedir?",
+        "expected": "turuncu",
+        "predicted": "eva C: Cevap: :",
+        "correct": false
+      },
+      {
+        "fact_id": 48,
+        "question": "Elif şu anda hangi konumda bulunuyor?",
+        "expected": "ofis",
+        "predicted": "Cevap: C Ckedev",
+        "correct": false
+      },
+      {
+        "fact_id": 49,
+        "question": "Aslı adlı kişinin sahip olduğu kitap hangi renktedir?",
+        "expected": "kahverengi",
+        "predicted": "C: Cedir. Cevap",
+        "correct": false
+      },
+      {
+        "fact_id": 49,
+        "question": "Aslı şu anda hangi konumda bulunuyor?",
+        "expected": "hastane",
+        "predicted": "Soreda Cevap: C",
+        "correct": false
+      }
+    ]
+  },
+  "update": {
+    "accuracy": 0.0,
+    "details": [
+      {
+        "fact_id": 0,
+        "question": "Fatma'nin kalemi ne renk?",
+        "expected": "sarı",
+        "predicted": "Cered C Cevap: ",
+        "correct": false
+      },
+      {
+        "fact_id": 1,
+        "question": "Elif'nin kitapi ne renk?",
+        "expected": "yeşil",
+        "predicted": "Cevir. Cedin Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 2,
+        "question": "Mehmet'nin yüzüki ne renk?",
+        "expected": "beyaz",
+        "predicted": "Ceredi  Ce Cedi",
+        "correct": false
+      },
+      {
+        "fact_id": 3,
+        "question": "Ali'nin silgii ne renk?",
+        "expected": "kahverengi",
+        "predicted": "Cer. : Soru: Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 4,
+        "question": "Emre'nin kolyei ne renk?",
+        "expected": "mavi",
+        "predicted": "r. ne Ce Cedir.",
+        "correct": false
+      },
+      {
+        "fact_id": 5,
+        "question": "Can'nin kemeri ne renk?",
+        "expected": "turuncu",
+        "predicted": "nem  Cevirevine",
+        "correct": false
+      },
+      {
+        "fact_id": 6,
+        "question": "Kemal'nin yüzüki ne renk?",
+        "expected": "mavi",
+        "predicted": "kap: C So Cedi ",
+        "correct": false
+      },
+      {
+        "fact_id": 7,
+        "question": "Zeynep'nin bardaki ne renk?",
+        "expected": "kahverengi",
+        "predicted": "Soredinedinir. ",
+        "correct": false
+      },
+      {
+        "fact_id": 8,
+        "question": "Ahmet'nin telefoni ne renk?",
+        "expected": "gri",
+        "predicted": "So Cedi Cei Sin",
+        "correct": false
+      },
+      {
+        "fact_id": 9,
+        "question": "Mehmet'nin şemsiyei ne renk?",
+        "expected": "mor",
+        "predicted": "ni C  orediner:",
+        "correct": false
+      },
+      {
+        "fact_id": 10,
+        "question": "Deniz'nin kolyei ne renk?",
+        "expected": "kırmızı",
+        "predicted": "Cevapnededi Cei",
+        "correct": false
+      },
+      {
+        "fact_id": 11,
+        "question": "Kemal'nin kemeri ne renk?",
+        "expected": "siyah",
+        "predicted": "Seredin So Cedi",
+        "correct": false
+      },
+      {
+        "fact_id": 12,
+        "question": "Mehmet'nin kemeri ne renk?",
+        "expected": "gri",
+        "predicted": " Soru Cedi Cein",
+        "correct": false
+      },
+      {
+        "fact_id": 13,
+        "question": "Deniz'nin yüzüki ne renk?",
+        "expected": "siyah",
+        "predicted": "Cener. ni Ce Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 14,
+        "question": "Ayşe'nin saati ne renk?",
+        "expected": "sarı",
+        "predicted": "Soru: Cevaren  ",
+        "correct": false
+      },
+      {
+        "fact_id": 15,
+        "question": "Elif'nin çantai ne renk?",
+        "expected": "beyaz",
+        "predicted": "Sor. : su:ed Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 16,
+        "question": "Kemal'nin cüzdani ne renk?",
+        "expected": "turuncu",
+        "predicted": " So Cedi Ceru: ",
+        "correct": false
+      },
+      {
+        "fact_id": 17,
+        "question": "Deniz'nin telefoni ne renk?",
+        "expected": "kahverengi",
+        "predicted": ": Cediredinizap",
+        "correct": false
+      },
+      {
+        "fact_id": 18,
+        "question": "Ece'nin bilgisayari ne renk?",
+        "expected": "siyah",
+        "predicted": "Cedi Cevap: Sor",
+        "correct": false
+      },
+      {
+        "fact_id": 19,
+        "question": "Zeynep'nin şapkai ne renk?",
+        "expected": "beyaz",
+        "predicted": "Cnedi Ce Cedede",
+        "correct": false
+      },
+      {
+        "fact_id": 20,
+        "question": "Aslı'nin saati ne renk?",
+        "expected": "gri",
+        "predicted": "C: Sor.r. Cevap",
+        "correct": false
+      },
+      {
+        "fact_id": 21,
+        "question": "Elif'nin defteri ne renk?",
+        "expected": "mavi",
+        "predicted": "siredin Ce Cedi",
+        "correct": false
+      },
+      {
+        "fact_id": 22,
+        "question": "Burak'nin silgii ne renk?",
+        "expected": "mor",
+        "predicted": "Cevarenkine Ced",
+        "correct": false
+      },
+      {
+        "fact_id": 23,
+        "question": "Oğuz'nin telefoni ne renk?",
+        "expected": "beyaz",
+        "predicted": "Soruedinedededi",
+        "correct": false
+      },
+      {
+        "fact_id": 24,
+        "question": "Kemal'nin kitapi ne renk?",
+        "expected": "turuncu",
+        "predicted": "Cevap: Sore Ced",
+        "correct": false
+      },
+      {
+        "fact_id": 25,
+        "question": "Elif'nin kemeri ne renk?",
+        "expected": "sarı",
+        "predicted": "Cevap: : Soru: ",
+        "correct": false
+      },
+      {
+        "fact_id": 26,
+        "question": "Volkan'nin bardaki ne renk?",
+        "expected": "kırmızı",
+        "predicted": "Soredinir. C Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 27,
+        "question": "Deniz'nin saati ne renk?",
+        "expected": "kahverengi",
+        "predicted": "ne Sor. Sore? C",
+        "correct": false
+      },
+      {
+        "fact_id": 28,
+        "question": "Gizem'nin silgii ne renk?",
+        "expected": "beyaz",
+        "predicted": "eredin C  Cedi ",
+        "correct": false
+      },
+      {
+        "fact_id": 29,
+        "question": "Ahmet'nin bilgisayari ne renk?",
+        "expected": "sarı",
+        "predicted": "Soredededediner",
+        "correct": false
+      }
+    ]
+  },
+  "delete": {
+    "accuracy": 0.0,
+    "details": [
+      {
+        "fact_id": 30,
+        "question": "Kemal'nin ayakkabıi ne renk?",
+        "expected": "bilmiyorum",
+        "predicted": "Sor. Cnedevap: ",
+        "correct": false
+      },
+      {
+        "fact_id": 31,
+        "question": "Ali'nin çantai ne renk?",
+        "expected": "bilmiyorum",
+        "predicted": "C Cem Sorur. Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 32,
+        "question": "Oğuz'nin çantai ne renk?",
+        "expected": "bilmiyorum",
+        "predicted": "Soliredederedir",
+        "correct": false
+      },
+      {
+        "fact_id": 33,
+        "question": "Emre'nin bilgisayari ne renk?",
+        "expected": "bilmiyorum",
+        "predicted": "Soredi Cevaredi",
+        "correct": false
+      },
+      {
+        "fact_id": 34,
+        "question": "Ceren'nin ayakkabıi ne renk?",
+        "expected": "bilmiyorum",
+        "predicted": "Cevap: Cedi C: ",
+        "correct": false
+      },
+      {
+        "fact_id": 35,
+        "question": "Ahmet'nin cüzdani ne renk?",
+        "expected": "bilmiyorum",
+        "predicted": "Ceder. ap: Cevi",
+        "correct": false
+      },
+      {
+        "fact_id": 36,
+        "question": "Emre'nin kalemi ne renk?",
+        "expected": "bilmiyorum",
+        "predicted": " Cededi ap: Cev",
+        "correct": false
+      },
+      {
+        "fact_id": 37,
+        "question": "Gizem'nin kalemi ne renk?",
+        "expected": "bilmiyorum",
+        "predicted": "C C Ceder. Sor ",
+        "correct": false
+      },
+      {
+        "fact_id": 38,
+        "question": "Ceren'nin saati ne renk?",
+        "expected": "bilmiyorum",
+        "predicted": "sir. Sor. sir. ",
+        "correct": false
+      },
+      {
+        "fact_id": 39,
+        "question": "Volkan'nin silgii ne renk?",
+        "expected": "bilmiyorum",
+        "predicted": " Cede s sin Cne",
+        "correct": false
+      },
+      {
+        "fact_id": 40,
+        "question": "Gizem'nin kemeri ne renk?",
+        "expected": "bilmiyorum",
+        "predicted": "E  Cedededirede",
+        "correct": false
+      },
+      {
+        "fact_id": 41,
+        "question": "Aslı'nin telefoni ne renk?",
+        "expected": "bilmiyorum",
+        "predicted": "map: S Sorede k",
+        "correct": false
+      },
+      {
+        "fact_id": 42,
+        "question": "Deniz'nin şapkai ne renk?",
+        "expected": "bilmiyorum",
+        "predicted": "Soru: Cediredir",
+        "correct": false
+      },
+      {
+        "fact_id": 43,
+        "question": "Fatma'nin saati ne renk?",
+        "expected": "bilmiyorum",
+        "predicted": "kap: C Ceder. S",
+        "correct": false
+      },
+      {
+        "fact_id": 44,
+        "question": "Oğuz'nin kalemi ne renk?",
+        "expected": "bilmiyorum",
+        "predicted": " Cededi ap: Cev",
+        "correct": false
+      },
+      {
+        "fact_id": 45,
+        "question": "Elif'nin yüzüki ne renk?",
+        "expected": "bilmiyorum",
+        "predicted": "medired : Ceded",
+        "correct": false
+      },
+      {
+        "fact_id": 46,
+        "question": "Mehmet'nin defteri ne renk?",
+        "expected": "bilmiyorum",
+        "predicted": "Cetnedi Ceneded",
+        "correct": false
+      },
+      {
+        "fact_id": 47,
+        "question": "Ayşe'nin anahtari ne renk?",
+        "expected": "bilmiyorum",
+        "predicted": "Sor. Ce Sore S ",
+        "correct": false
+      },
+      {
+        "fact_id": 48,
+        "question": "Elif'nin gözlüki ne renk?",
+        "expected": "bilmiyorum",
+        "predicted": "kazor. si C Cre",
+        "correct": false
+      },
+      {
+        "fact_id": 49,
+        "question": "Aslı'nin kitapi ne renk?",
+        "expected": "bilmiyorum",
+        "predicted": "Sor. Cedi C Cke",
+        "correct": false
+      }
+    ]
+  },
+  "2hop": {
+    "accuracy": 0.0,
+    "details": [
+      {
+        "fact_id": 50,
+        "question": "Gizem'nin saati nasıldır?",
+        "expected": "hafif",
+        "predicted": "Ceder. sirededi",
+        "correct": false
+      },
+      {
+        "fact_id": 51,
+        "question": "Can'nin çantai nasıldır?",
+        "expected": "küçük",
+        "predicted": "Sor. Sor. Cedir",
+        "correct": false
+      },
+      {
+        "fact_id": 52,
+        "question": "Deniz'nin bardaki nasıldır?",
+        "expected": "pahalı",
+        "predicted": "E C: Ce S Sore ",
+        "correct": false
+      },
+      {
+        "fact_id": 53,
+        "question": "Ayşe'nin çantai nasıldır?",
+        "expected": "hafif",
+        "predicted": "C Cer. Sorede s",
+        "correct": false
+      },
+      {
+        "fact_id": 54,
+        "question": "Selin'nin bilgisayari nasıldır?",
+        "expected": "küçük",
+        "predicted": "Sorenedeviredi ",
+        "correct": false
+      },
+      {
+        "fact_id": 55,
+        "question": "Elif'nin silgii nasıldır?",
+        "expected": "pahalı",
+        "predicted": "Sor. map: Ce Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 56,
+        "question": "Fatma'nin defteri nasıldır?",
+        "expected": "ucuz",
+        "predicted": "Sorednr. Cedine",
+        "correct": false
+      },
+      {
+        "fact_id": 57,
+        "question": "Mehmet'nin saati nasıldır?",
+        "expected": "ucuz",
+        "predicted": "Sor. Cedede? Ce",
+        "correct": false
+      },
+      {
+        "fact_id": 58,
+        "question": "Gizem'nin monti nasıldır?",
+        "expected": "büyük",
+        "predicted": "ki Sor. Cer. si",
+        "correct": false
+      },
+      {
+        "fact_id": 59,
+        "question": "Ayşe'nin bilgisayari nasıldır?",
+        "expected": "büyük",
+        "predicted": "Cer. Soredi kap",
+        "correct": false
+      },
+      {
+        "fact_id": 60,
+        "question": "Mert'nin gözlüki nasıldır?",
+        "expected": "küçük",
+        "predicted": "Cevap: C Credev",
+        "correct": false
+      },
+      {
+        "fact_id": 61,
+        "question": "Selin'nin kemeri nasıldır?",
+        "expected": "ucuz",
+        "predicted": "Soreredi Cevap:",
+        "correct": false
+      },
+      {
+        "fact_id": 62,
+        "question": "Can'nin arabai nasıldır?",
+        "expected": "ucuz",
+        "predicted": "Cevinined Sor. ",
+        "correct": false
+      },
+      {
+        "fact_id": 63,
+        "question": "Volkan'nin kemeri nasıldır?",
+        "expected": "ucuz",
+        "predicted": "Cededin Cnedir.",
+        "correct": false
+      },
+      {
+        "fact_id": 64,
+        "question": "Ayşe'nin defteri nasıldır?",
+        "expected": "küçük",
+        "predicted": "Cedenedirededi ",
+        "correct": false
+      },
+      {
+        "fact_id": 65,
+        "question": "Emre'nin ayakkabıi nasıldır?",
+        "expected": "küçük",
+        "predicted": "Cedi Sorede k? ",
+        "correct": false
+      },
+      {
+        "fact_id": 66,
+        "question": "Emre'nin silgii nasıldır?",
+        "expected": "hafif",
+        "predicted": "Cedevap: Sor. C",
+        "correct": false
+      },
+      {
+        "fact_id": 67,
+        "question": "Ece'nin silgii nasıldır?",
+        "expected": "ucuz",
+        "predicted": "Cevinini Cededi",
+        "correct": false
+      },
+      {
+        "fact_id": 68,
+        "question": "Fatma'nin yüzüki nasıldır?",
+        "expected": "büyük",
+        "predicted": "C C Ceder. Sore",
+        "correct": false
+      },
+      {
+        "fact_id": 69,
+        "question": "Ece'nin defteri nasıldır?",
+        "expected": "hafif",
+        "predicted": "si Cedevap: med",
+        "correct": false
+      },
+      {
+        "fact_id": 70,
+        "question": "Selin'nin yüzüki nasıldır?",
+        "expected": "hafif",
+        "predicted": "Cedinedevededi ",
+        "correct": false
+      },
+      {
+        "fact_id": 71,
+        "question": "Oğuz'nin gözlüki nasıldır?",
+        "expected": "ucuz",
+        "predicted": "E Sor. Cer. Ced",
+        "correct": false
+      },
+      {
+        "fact_id": 72,
+        "question": "Ceren'nin şapkai nasıldır?",
+        "expected": "pahalı",
+        "predicted": "C: Cedede? Cede",
+        "correct": false
+      },
+      {
+        "fact_id": 73,
+        "question": "Ali'nin şapkai nasıldır?",
+        "expected": "küçük",
+        "predicted": "Cemap: Cnedir. ",
+        "correct": false
+      },
+      {
+        "fact_id": 74,
+        "question": "Fatma'nin silgii nasıldır?",
+        "expected": "hafif",
+        "predicted": "C C C Ceder. ap",
+        "correct": false
+      },
+      {
+        "fact_id": 75,
+        "question": "Emre'nin gözlüki nasıldır?",
+        "expected": "pahalı",
+        "predicted": "C: Cedi : C Cke",
+        "correct": false
+      },
+      {
+        "fact_id": 76,
+        "question": "Ece'nin ayakkabıi nasıldır?",
+        "expected": "ucuz",
+        "predicted": "Cededinedi sir.",
+        "correct": false
+      },
+      {
+        "fact_id": 77,
+        "question": "Ceren'nin çantai nasıldır?",
+        "expected": "ağır",
+        "predicted": "Cededir. siredi",
+        "correct": false
+      },
+      {
+        "fact_id": 78,
+        "question": "Fatma'nin çantai nasıldır?",
+        "expected": "pahalı",
+        "predicted": "Soredm Cer. si ",
+        "correct": false
+      },
+      {
+        "fact_id": 79,
+        "question": "Burak'nin arabai nasıldır?",
+        "expected": "ağır",
+        "predicted": "Soredevap: Cedi",
+        "correct": false
+      }
+    ]
+  }
+}

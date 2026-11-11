@@ -1,0 +1,11 @@
+[
+  {
+    "context": [
+      "Aliin kalemi mavidir.",
+      "Aliin kalemi sarıdir."
+    ],
+    "question": "Aliin kalemi ne renk?",
+    "answer": "sarı",
+    "fact_id": 0
+  }
+]

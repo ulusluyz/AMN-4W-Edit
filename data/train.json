@@ -1,0 +1,38 @@
+[
+  {
+    "context": "Aliin kalemi mavidir. Ali evdedir.",
+    "question": "Aliin kalemi ne renk?",
+    "answer": "mavi",
+    "fact_id": 0
+  },
+  {
+    "context": "Aliin kalemi mavidir. Ali evdedir.",
+    "question": "Ali nerede?",
+    "answer": "ev",
+    "fact_id": 0
+  },
+  {
+    "context": "Aliin kalemi kırmızıdir. Ali evdedir.",
+    "question": "Aliin kalemi ne renk?",
+    "answer": "kırmızı",
+    "fact_id": 1
+  },
+  {
+    "context": "Aliin kalemi kırmızıdir. Ali evdedir.",
+    "question": "Ali nerede?",
+    "answer": "ev",
+    "fact_id": 1
+  },
+  {
+    "context": "Ayşein kalemi kırmızıdir. Ayşe evdedir.",
+    "question": "Ayşein kalemi ne renk?",
+    "answer": "kırmızı",
+    "fact_id": 2
+  },
+  {
+    "context": "Ayşein kalemi kırmızıdir. Ayşe evdedir.",
+    "question": "Ayşe nerede?",
+    "answer": "ev",
+    "fact_id": 2
+  }
+]
