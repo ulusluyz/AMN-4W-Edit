@@ -5,6 +5,9 @@ on:
   push:
     paths:
       - '.github/workflows/dual_upsert_validation.yml'
+      - 'experiments/dual_upsert.py'
+      - 'experiments/validate_dual_upsert.py'
+      - 'tests/test_dual_upsert.py'
 
 permissions:
   contents: write
