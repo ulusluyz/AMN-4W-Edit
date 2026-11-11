@@ -32,24 +32,24 @@
         "amn": {
           "correct": 2996,
           "total": 3000,
-          "loss": 0.041921639134486516
+          "loss": 0.04192163675030072
         },
         "dual": {
           "correct": 3000,
           "total": 3000,
-          "loss": 0.03014015953739484
+          "loss": 0.030140156189600628
         },
         "transformer": {
           "correct": 1408,
           "total": 3000,
-          "loss": 1.3440270427068075
+          "loss": 1.3440270579655966
         }
       },
       "last_write_stress": {
         "amn": {
           "correct": 500,
           "total": 500,
-          "loss": 0.028242886066436768
+          "loss": 0.028242874890565872
         },
         "dual": {
           "correct": 250,
@@ -69,24 +69,24 @@
         "amn": {
           "correct": 3000,
           "total": 3000,
-          "loss": 0.036228161285320915
+          "loss": 0.03622816673914592
         },
         "dual": {
           "correct": 3000,
           "total": 3000,
-          "loss": 0.03120591985185941
+          "loss": 0.03120593758424123
         },
         "transformer": {
           "correct": 1429,
           "total": 3000,
-          "loss": 1.3639181543986003
+          "loss": 1.363918123881022
         }
       },
       "last_write_stress": {
         "amn": {
           "correct": 500,
           "total": 500,
-          "loss": 0.027602678164839745
+          "loss": 0.027602694928646088
         },
         "dual": {
           "correct": 249,
@@ -106,24 +106,24 @@
         "amn": {
           "correct": 3000,
           "total": 3000,
-          "loss": 0.035175585875908535
+          "loss": 0.03517558887600899
         },
         "dual": {
           "correct": 3000,
           "total": 3000,
-          "loss": 0.030575745423634847
+          "loss": 0.03057574689388275
         },
         "transformer": {
           "correct": 1409,
           "total": 3000,
-          "loss": 1.2553703152338664
+          "loss": 1.2553703203201294
         }
       },
       "last_write_stress": {
         "amn": {
           "correct": 500,
           "total": 500,
-          "loss": 0.02966066636145115
+          "loss": 0.02966068685054779
         },
         "dual": {
           "correct": 262,
@@ -133,7 +133,7 @@
         "transformer": {
           "correct": 222,
           "total": 500,
-          "loss": 1.3707367181777954
+          "loss": 1.3707365989685059
         }
       }
     },
@@ -143,24 +143,24 @@
         "amn": {
           "correct": 3000,
           "total": 3000,
-          "loss": 0.039084232966105144
+          "loss": 0.03908423067132632
         },
         "dual": {
           "correct": 3000,
           "total": 3000,
-          "loss": 0.031971891701221465
+          "loss": 0.031971883803606035
         },
         "transformer": {
           "correct": 1392,
           "total": 3000,
-          "loss": 1.3675741402308146
+          "loss": 1.3675741147994995
         }
       },
       "last_write_stress": {
         "amn": {
           "correct": 500,
           "total": 500,
-          "loss": 0.030572116374969482
+          "loss": 0.030572110787034035
         },
         "dual": {
           "correct": 256,
@@ -180,24 +180,24 @@
         "amn": {
           "correct": 3000,
           "total": 3000,
-          "loss": 0.03756940997640292
+          "loss": 0.037569399982690814
         },
         "dual": {
           "correct": 3000,
           "total": 3000,
-          "loss": 0.0301645089139541
+          "loss": 0.030164544597268104
         },
         "transformer": {
           "correct": 1362,
           "total": 3000,
-          "loss": 1.4445055990219116
+          "loss": 1.4445055735905965
         }
       },
       "last_write_stress": {
         "amn": {
           "correct": 500,
           "total": 500,
-          "loss": 0.02964789792895317
+          "loss": 0.02964787185192108
         },
         "dual": {
           "correct": 239,
@@ -313,7 +313,7 @@
         },
         "dual": {
           "answer": "mavi",
-          "confidence": 0.967429,
+          "confidence": 0.967428,
           "exact": true
         },
         "transformer": {
@@ -474,6 +474,116 @@
           "answer": "sarı",
           "confidence": 0.74057,
           "exact": true
+        }
+      }
+    }
+  ],
+  "update_examples": [
+    {
+      "facts": [
+        "Ayşe'nin kaleminin rengi sarı.",
+        "Elif şu anda kafede.",
+        "Sena'nın kaleminin rengi yeşil.",
+        "Ayşe'nin kaleminin rengi kırmızı."
+      ],
+      "question": "Ayşe'nin kaleminin rengi nedir?",
+      "latest_write_gold": "kırmızı",
+      "model_answers": {
+        "amn": {
+          "answer": "kırmızı",
+          "confidence": 0.971541,
+          "exact": true
+        },
+        "dual": {
+          "answer": "sarı",
+          "confidence": 0.472442,
+          "exact": false
+        },
+        "transformer": {
+          "answer": "kırmızı",
+          "confidence": 0.557896,
+          "exact": true
+        }
+      }
+    },
+    {
+      "facts": [
+        "Umut'un kaleminin rengi siyah.",
+        "Deniz'in kaleminin rengi beyaz.",
+        "Mina'nın kaleminin rengi beyaz.",
+        "Umut'un kaleminin rengi sarı."
+      ],
+      "question": "Umut'un kaleminin rengi nedir?",
+      "latest_write_gold": "sarı",
+      "model_answers": {
+        "amn": {
+          "answer": "sarı",
+          "confidence": 0.975889,
+          "exact": true
+        },
+        "dual": {
+          "answer": "siyah",
+          "confidence": 0.573081,
+          "exact": false
+        },
+        "transformer": {
+          "answer": "beyaz",
+          "confidence": 0.277821,
+          "exact": false
+        }
+      }
+    },
+    {
+      "facts": [
+        "Okan şu anda bahçede.",
+        "Zeynep şu anda kafede.",
+        "Can şu anda bahçede.",
+        "Okan şu anda parkta."
+      ],
+      "question": "Okan şu anda nerede?",
+      "latest_write_gold": "park",
+      "model_answers": {
+        "amn": {
+          "answer": "park",
+          "confidence": 0.966125,
+          "exact": true
+        },
+        "dual": {
+          "answer": "bahçe",
+          "confidence": 0.583167,
+          "exact": false
+        },
+        "transformer": {
+          "answer": "park",
+          "confidence": 0.386735,
+          "exact": true
+        }
+      }
+    },
+    {
+      "facts": [
+        "Okan şu anda parkta.",
+        "Yaren şu anda okulda.",
+        "Ayşe'nin kaleminin rengi sarı.",
+        "Okan şu anda okulda."
+      ],
+      "question": "Okan şu anda nerede?",
+      "latest_write_gold": "okul",
+      "model_answers": {
+        "amn": {
+          "answer": "okul",
+          "confidence": 0.964279,
+          "exact": true
+        },
+        "dual": {
+          "answer": "park",
+          "confidence": 0.487811,
+          "exact": false
+        },
+        "transformer": {
+          "answer": "park",
+          "confidence": 0.431931,
+          "exact": false
         }
       }
     }

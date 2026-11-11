@@ -111,6 +111,41 @@ Murat'ın kaleminin rengi sarı. Nisa'nın kaleminin rengi sarı. Sena şu anda 
 - dual: **sarı** (DOĞRU; olasılık 0.9753)
 - transformer: **sarı** (DOĞRU; olasılık 0.7406)
 
+## Aynı bilgiyi güncelleme: Türkçe örnekler
+Bu testte aynı kişi ve ilişki iki kez yazılıyor; hedef son kayıttır.
+
+### Güncelleme örneği 1
+Ayşe'nin kaleminin rengi sarı. Elif şu anda kafede. Sena'nın kaleminin rengi yeşil. Ayşe'nin kaleminin rengi kırmızı.
+**Soru:** Ayşe'nin kaleminin rengi nedir?
+**Son kayıt (beklenen cevap):** kırmızı
+- amn: **kırmızı** (DOĞRU; olasılık 0.9715)
+- dual: **sarı** (YANLIŞ; olasılık 0.4724)
+- transformer: **kırmızı** (DOĞRU; olasılık 0.5579)
+
+### Güncelleme örneği 2
+Umut'un kaleminin rengi siyah. Deniz'in kaleminin rengi beyaz. Mina'nın kaleminin rengi beyaz. Umut'un kaleminin rengi sarı.
+**Soru:** Umut'un kaleminin rengi nedir?
+**Son kayıt (beklenen cevap):** sarı
+- amn: **sarı** (DOĞRU; olasılık 0.9759)
+- dual: **siyah** (YANLIŞ; olasılık 0.5731)
+- transformer: **beyaz** (YANLIŞ; olasılık 0.2778)
+
+### Güncelleme örneği 3
+Okan şu anda bahçede. Zeynep şu anda kafede. Can şu anda bahçede. Okan şu anda parkta.
+**Soru:** Okan şu anda nerede?
+**Son kayıt (beklenen cevap):** park
+- amn: **park** (DOĞRU; olasılık 0.9661)
+- dual: **bahçe** (YANLIŞ; olasılık 0.5832)
+- transformer: **park** (DOĞRU; olasılık 0.3867)
+
+### Güncelleme örneği 4
+Okan şu anda parkta. Yaren şu anda okulda. Ayşe'nin kaleminin rengi sarı. Okan şu anda okulda.
+**Soru:** Okan şu anda nerede?
+**Son kayıt (beklenen cevap):** okul
+- amn: **okul** (DOĞRU; olasılık 0.9643)
+- dual: **park** (YANLIŞ; olasılık 0.4878)
+- transformer: **park** (YANLIŞ; olasılık 0.4319)
+
 ## Sayısal sonuçlar
 - amn: 4 kayıtlı held-out **14996/15000**, tekrarlanan anahtar güncelleme stresi **2500/2500**.
 - dual: 4 kayıtlı held-out **15000/15000**, tekrarlanan anahtar güncelleme stresi **1256/2500**.
