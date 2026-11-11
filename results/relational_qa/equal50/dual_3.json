@@ -1,0 +1,61 @@
+{
+  "kind": "dual",
+  "seed": 3,
+  "steps": 50,
+  "first_dev_100_step": 25,
+  "training_seconds": 0.34792203599999993,
+  "train_loss": 0.03409496322274208,
+  "dev": {
+    "accuracy": 1.0,
+    "correct": 1000,
+    "total": 1000,
+    "loss": 0.03117350172996521,
+    "errors": []
+  },
+  "test": {
+    "accuracy": 1.0,
+    "correct": 3000,
+    "total": 3000,
+    "loss": 0.03197188377380371,
+    "errors": []
+  },
+  "params": 8874,
+  "data_splits": {
+    "train": 264,
+    "dev": 25,
+    "test": 31
+  },
+  "settings": {
+    "batch": 128,
+    "n_facts": 4,
+    "dim": 48,
+    "lr": 0.003,
+    "dev_every": 25,
+    "dev_size": 1000,
+    "test_size": 3000,
+    "patience": 2
+  },
+  "history": [
+    {
+      "step": 1,
+      "seconds": 0.02074499200000446,
+      "training_loss": 4.08955192565918,
+      "dev_acc": 0.0,
+      "dev_loss": 3.380796600341797
+    },
+    {
+      "step": 25,
+      "seconds": 0.18134556000001112,
+      "training_loss": 0.19877979159355164,
+      "dev_acc": 1.0,
+      "dev_loss": 0.1721556873321533
+    },
+    {
+      "step": 50,
+      "seconds": 0.3478747850000019,
+      "training_loss": 0.03409496322274208,
+      "dev_acc": 1.0,
+      "dev_loss": 0.03117350172996521
+    }
+  ]
+}

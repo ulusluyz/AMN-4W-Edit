@@ -1,0 +1,61 @@
+{
+  "kind": "dual",
+  "seed": 0,
+  "steps": 50,
+  "first_dev_100_step": 25,
+  "training_seconds": 0.35148668699999064,
+  "train_loss": 0.02925301529467106,
+  "dev": {
+    "accuracy": 1.0,
+    "correct": 1000,
+    "total": 1000,
+    "loss": 0.026941569805145265,
+    "errors": []
+  },
+  "test": {
+    "accuracy": 1.0,
+    "correct": 3000,
+    "total": 3000,
+    "loss": 0.030140156189600628,
+    "errors": []
+  },
+  "params": 8874,
+  "data_splits": {
+    "train": 264,
+    "dev": 25,
+    "test": 31
+  },
+  "settings": {
+    "batch": 128,
+    "n_facts": 4,
+    "dim": 48,
+    "lr": 0.003,
+    "dev_every": 25,
+    "dev_size": 1000,
+    "test_size": 3000,
+    "patience": 2
+  },
+  "history": [
+    {
+      "step": 1,
+      "seconds": 0.021589792999989754,
+      "training_loss": 3.848898410797119,
+      "dev_acc": 0.092,
+      "dev_loss": 3.4864325256347657
+    },
+    {
+      "step": 25,
+      "seconds": 0.18416728399999727,
+      "training_loss": 0.15911641716957092,
+      "dev_acc": 1.0,
+      "dev_loss": 0.14564273262023925
+    },
+    {
+      "step": 50,
+      "seconds": 0.3514369819999956,
+      "training_loss": 0.02925301529467106,
+      "dev_acc": 1.0,
+      "dev_loss": 0.026941569805145265
+    }
+  ]
+}

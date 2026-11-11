@@ -1,0 +1,111 @@
+{
+  "kind": "transformer",
+  "seed": 1,
+  "steps": 50,
+  "first_dev_100_step": null,
+  "training_seconds": 1.0949593360000023,
+  "train_loss": 1.3899900913238525,
+  "dev": {
+    "accuracy": 0.472,
+    "correct": 472,
+    "total": 1000,
+    "loss": 1.3746320037841797,
+    "errors": [
+      {
+        "prompt": "Selin konum bahçe. Emre renk kırmızı. Yaren konum ev. Emre konum ev. Soru: Emre konum? -> ev",
+        "pred": "bahçe"
+      },
+      {
+        "prompt": "Nisa konum ofis. Murat konum salon. Ece konum bahçe. Emre konum ev. Soru: Nisa konum? -> ofis",
+        "pred": "salon"
+      },
+      {
+        "prompt": "Mert konum bahçe. Nisa konum ofis. Emre konum ev. Emre renk kırmızı. Soru: Nisa konum? -> ofis",
+        "pred": "bahçe"
+      },
+      {
+        "prompt": "Selin konum okul. Umut konum salon. Emre konum ev. Emre renk siyah. Soru: Emre konum? -> ev",
+        "pred": "salon"
+      },
+      {
+        "prompt": "Selin konum bahçe. Nisa konum ofis. Okan konum ofis. Zeynep konum ofis. Soru: Zeynep konum? -> ofis",
+        "pred": "bahçe"
+      },
+      {
+        "prompt": "Mert konum ofis. Murat konum salon. Okan konum ofis. Mert renk sarı. Soru: Mert konum? -> ofis",
+        "pred": "salon"
+      }
+    ]
+  },
+  "test": {
+    "accuracy": 0.47633333333333333,
+    "correct": 1429,
+    "total": 3000,
+    "loss": 1.363918123881022,
+    "errors": [
+      {
+        "prompt": "Murat renk sarı. Zeynep konum garaj. Mina renk beyaz. Selin konum park. Soru: Zeynep konum? -> garaj",
+        "pred": "park"
+      },
+      {
+        "prompt": "Murat renk sarı. Sena renk yeşil. Sena konum salon. Selin konum garaj. Soru: Sena renk? -> yeşil",
+        "pred": "sarı"
+      },
+      {
+        "prompt": "Umut konum garaj. Can konum bahçe. Murat renk mor. Umut renk siyah. Soru: Umut konum? -> garaj",
+        "pred": "bahçe"
+      },
+      {
+        "prompt": "Sena konum salon. Can konum bahçe. Sena renk sarı. Deniz renk beyaz. Soru: Sena renk? -> sarı",
+        "pred": "beyaz"
+      },
+      {
+        "prompt": "Selin konum garaj. Ece konum okul. Okan konum park. Can konum bahçe. Soru: Selin konum? -> garaj",
+        "pred": "park"
+      },
+      {
+        "prompt": "Zeynep konum garaj. Murat renk mavi. Yiğit renk sarı. Can konum salon. Soru: Zeynep konum? -> garaj",
+        "pred": "salon"
+      }
+    ]
+  },
+  "params": 42666,
+  "data_splits": {
+    "train": 264,
+    "dev": 25,
+    "test": 31
+  },
+  "settings": {
+    "batch": 128,
+    "n_facts": 4,
+    "dim": 48,
+    "lr": 0.003,
+    "dev_every": 25,
+    "dev_size": 1000,
+    "test_size": 3000,
+    "patience": 2
+  },
+  "history": [
+    {
+      "step": 1,
+      "seconds": 0.0815608850000018,
+      "training_loss": 3.8571364879608154,
+      "dev_acc": 0.163,
+      "dev_loss": 3.6691167602539063
+    },
+    {
+      "step": 25,
+      "seconds": 0.575270388000007,
+      "training_loss": 2.008941888809204,
+      "dev_acc": 0.135,
+      "dev_loss": 2.0926363677978514
+    },
+    {
+      "step": 50,
+      "seconds": 1.094904452999998,
+      "training_loss": 1.3899900913238525,
+      "dev_acc": 0.472,
+      "dev_loss": 1.3746320037841797
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "kind": "amn",
+  "seed": 0,
+  "steps": 50,
+  "first_dev_100_step": null,
+  "training_seconds": 0.6638263850000072,
+  "train_loss": 0.03274111449718475,
+  "dev": {
+    "accuracy": 0.999,
+    "correct": 999,
+    "total": 1000,
+    "loss": 0.034096702814102174,
+    "errors": [
+      {
+        "prompt": "Selin konum bahçe. Emre renk kırmızı. Mert konum bahçe. Selin renk turuncu. Soru: Selin konum? -> bahçe",
+        "pred": "kırmızı"
+      }
+    ]
+  },
+  "test": {
+    "accuracy": 0.9986666666666667,
+    "correct": 2996,
+    "total": 3000,
+    "loss": 0.04192163674036662,
+    "errors": [
+      {
+        "prompt": "Okan konum park. Can konum salon. Sena konum salon. Deniz konum okul. Soru: Okan konum? -> park",
+        "pred": "salon"
+      },
+      {
+        "prompt": "Okan konum kafe. Can konum salon. Sena konum salon. Selin konum garaj. Soru: Okan konum? -> kafe",
+        "pred": "salon"
+      },
+      {
+        "prompt": "Selin konum park. Okan konum kafe. Sena konum salon. Can konum salon. Soru: Okan konum? -> kafe",
+        "pred": "salon"
+      },
+      {
+        "prompt": "Okan konum kafe. Yaren konum park. Can konum salon. Sena konum salon. Soru: Okan konum? -> kafe",
+        "pred": "salon"
+      }
+    ]
+  },
+  "params": 8874,
+  "data_splits": {
+    "train": 264,
+    "dev": 25,
+    "test": 31
+  },
+  "settings": {
+    "batch": 128,
+    "n_facts": 4,
+    "dim": 48,
+    "lr": 0.003,
+    "dev_every": 25,
+    "dev_size": 1000,
+    "test_size": 3000,
+    "patience": 2
+  },
+  "history": [
+    {
+      "step": 1,
+      "seconds": 0.042062712000003444,
+      "training_loss": 3.8676326274871826,
+      "dev_acc": 0.096,
+      "dev_loss": 3.504845764160156
+    },
+    {
+      "step": 25,
+      "seconds": 0.3531971390000024,
+      "training_loss": 0.1844024807214737,
+      "dev_acc": 0.997,
+      "dev_loss": 0.17973259544372558
+    },
+    {
+      "step": 50,
+      "seconds": 0.6637679970000079,
+      "training_loss": 0.03274111449718475,
+      "dev_acc": 0.999,
+      "dev_loss": 0.034096702814102174
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "kind": "amn",
+  "seed": 1,
+  "steps": 50,
+  "first_dev_100_step": 25,
+  "training_seconds": 0.6647389370000099,
+  "train_loss": 0.03311116620898247,
+  "dev": {
+    "accuracy": 1.0,
+    "correct": 1000,
+    "total": 1000,
+    "loss": 0.036686259746551514,
+    "errors": []
+  },
+  "test": {
+    "accuracy": 1.0,
+    "correct": 3000,
+    "total": 3000,
+    "loss": 0.03622816673914592,
+    "errors": []
+  },
+  "params": 8874,
+  "data_splits": {
+    "train": 264,
+    "dev": 25,
+    "test": 31
+  },
+  "settings": {
+    "batch": 128,
+    "n_facts": 4,
+    "dim": 48,
+    "lr": 0.003,
+    "dev_every": 25,
+    "dev_size": 1000,
+    "test_size": 3000,
+    "patience": 2
+  },
+  "history": [
+    {
+      "step": 1,
+      "seconds": 0.03815542600000299,
+      "training_loss": 3.7405176162719727,
+      "dev_acc": 0.121,
+      "dev_loss": 3.411053802490234
+    },
+    {
+      "step": 25,
+      "seconds": 0.3561838110000082,
+      "training_loss": 0.18828988075256348,
+      "dev_acc": 1.0,
+      "dev_loss": 0.18367240333557128
+    },
+    {
+      "step": 50,
+      "seconds": 0.6646805499999999,
+      "training_loss": 0.03311116620898247,
+      "dev_acc": 1.0,
+      "dev_loss": 0.036686259746551514
+    }
+  ]
+}

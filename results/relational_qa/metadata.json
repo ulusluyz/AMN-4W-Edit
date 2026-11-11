@@ -1,0 +1,17 @@
+{
+  "source_sha256": "3e43988c8d223f0a78a179a2a8ee91157d8f2aee99077e05f8b410b9327e9c89",
+  "torch": "2.15.0+cu132",
+  "splits": {
+    "train": 264,
+    "dev": 25,
+    "test": 31
+  },
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "stage": "synthetic structured Turkish QA, not general language generation"
+}
