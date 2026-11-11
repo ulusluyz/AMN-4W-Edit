@@ -22,12 +22,14 @@ def compare(mask):
     model.zero_grad(set_to_none=True)
     candidate = memory_forward_precomputed(model, ctx, mask)
     test_loss = candidate.square().sum()
-    test_loss.backward()
+    if test_loss.requires_grad:
+        test_loss.backward()
     assert torch.allclose(ref, candidate, atol=1e-6, rtol=1e-5)
     assert torch.allclose(ref_loss, test_loss, atol=1e-6, rtol=1e-5)
     for n, p in model.named_parameters():
         if n in ref_grad:
-            assert torch.allclose(ref_grad[n], p.grad, atol=2e-5, rtol=1e-5), n
+            actual = p.grad if p.grad is not None else torch.zeros_like(ref_grad[n])
+            assert torch.allclose(ref_grad[n], actual, atol=2e-5, rtol=1e-5), n
 
 
 def test_shared_mask():
