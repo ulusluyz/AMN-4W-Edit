@@ -2,3 +2,4 @@ torch
 numpy
 tqdm
 pytest
+sentencepiece==0.2.1
