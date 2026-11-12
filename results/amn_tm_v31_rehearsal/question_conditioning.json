@@ -1,0 +1,127 @@
+{
+  "scope": "6 genuine previously seen training examples",
+  "purpose": "Verify whether answers depend on their own question instead of generic text",
+  "before": {
+    "n": 6,
+    "positive_margin_count": 4,
+    "mean_margin_wrong_minus_true": 0.00020575523376464844,
+    "per_question": [
+      {
+        "correct_question": "Bir konuşma başlatmak için üç en iyi uygulamayı listeleyin.",
+        "wrong_question": "Web geliştirme ve web tasarımı arasındaki farkı açıklayın.",
+        "target_answer": "Bir konuşma başlatmak için en iyi uygulamaların bazıları şunlardır: 1) Doğrudan olun ve açık uçlu bir soru sorun. 2) Sıcak ve dostça olun. 3) Gerçek ilgi göstererek övgüler sunun ve diğer kişinin ne söylediğini dinleyin.",
+        "true_prompt_nll": 6.861208438873291,
+        "swapped_prompt_nll": 6.861988067626953,
+        "margin_wrong_minus_true": 0.0007796287536621094,
+        "correct_prompt_preferred": true
+      },
+      {
+        "correct_question": "Web geliştirme ve web tasarımı arasındaki farkı açıklayın.",
+        "wrong_question": "Doğru bir çizgi için matematiksel denklemi türetin.",
+        "target_answer": "Web geliştirme, web sitesi oluşturma sürecidir ve web sitesinin işlevselliğini oluşturmak için kodlama ve işaretleme dili yazmayı içerir. Web tasarımı, web sitesinin görünümüne odaklanır ve görsel düzeni, renkleri ve tipografisini içerir. Web geliştirme, bir web sitesinin teknik yönlerine odaklanırken web tasarımı estetiğine odaklanır.",
+        "true_prompt_nll": 7.10565710067749,
+        "swapped_prompt_nll": 7.114802360534668,
+        "margin_wrong_minus_true": 0.009145259857177734,
+        "correct_prompt_preferred": true
+      },
+      {
+        "correct_question": "Doğru bir çizgi için matematiksel denklemi türetin.",
+        "wrong_question": "Vejetaryenler için uygun bir yemek önerin.",
+        "target_answer": "y = mx + b, burada m eğim ve b çizginin y-kesiti olarak tanımlanır.",
+        "true_prompt_nll": 6.789156436920166,
+        "swapped_prompt_nll": 6.7973737716674805,
+        "margin_wrong_minus_true": 0.008217334747314453,
+        "correct_prompt_preferred": true
+      },
+      {
+        "correct_question": "Vejetaryenler için uygun bir yemek önerin.",
+        "wrong_question": "Dünyada kaç kuş türü olduğunu bulun.",
+        "target_answer": "Lezzetli bir vejetaryen yemek Ratatouille olabilir. Patlıcan, kabak, domates, biber, soğan, sarımsak ve otların zengin domates sosunda pişirilmesiyle yapılır. Quinoa, kuskus veya gevrek ekmekle servis edilebilir.",
+        "true_prompt_nll": 6.849050998687744,
+        "swapped_prompt_nll": 6.845870018005371,
+        "margin_wrong_minus_true": -0.003180980682373047,
+        "correct_prompt_preferred": false
+      },
+      {
+        "correct_question": "Dünyada kaç kuş türü olduğunu bulun.",
+        "wrong_question": "İyi dengelenmiş bir diyetin beş bileşenini adlandırın.",
+        "target_answer": "Dünya'da yaklaşık 10.000 kuş türü vardır.",
+        "true_prompt_nll": 6.277552604675293,
+        "swapped_prompt_nll": 6.263018608093262,
+        "margin_wrong_minus_true": -0.01453399658203125,
+        "correct_prompt_preferred": false
+      },
+      {
+        "correct_question": "İyi dengelenmiş bir diyetin beş bileşenini adlandırın.",
+        "wrong_question": "Bir konuşma başlatmak için üç en iyi uygulamayı listeleyin.",
+        "target_answer": "Dengeli bir diyet, meyve ve sebzeler; tam tahıllar; az yağlı süt ürünleri; sağlıklı yağlar ve az şeker, tuz ve sağlıksız yağ içeren besinler gibi çeşitli besin yoğunluğuna sahip yiyecekleri içermelidir. Ayrıca, dengeli bir diyet için yeterli su tüketimi ve gün boyunca düzenli öğünler ve atıştırmalıklar tüketmek önemlidir.",
+        "true_prompt_nll": 6.780827522277832,
+        "swapped_prompt_nll": 6.78163480758667,
+        "margin_wrong_minus_true": 0.0008072853088378906,
+        "correct_prompt_preferred": true
+      }
+    ]
+  },
+  "after": {
+    "n": 6,
+    "positive_margin_count": 6,
+    "mean_margin_wrong_minus_true": 0.46847121654233587,
+    "per_question": [
+      {
+        "correct_question": "Bir konuşma başlatmak için üç en iyi uygulamayı listeleyin.",
+        "wrong_question": "Web geliştirme ve web tasarımı arasındaki farkı açıklayın.",
+        "target_answer": "Bir konuşma başlatmak için en iyi uygulamaların bazıları şunlardır: 1) Doğrudan olun ve açık uçlu bir soru sorun. 2) Sıcak ve dostça olun. 3) Gerçek ilgi göstererek övgüler sunun ve diğer kişinin ne söylediğini dinleyin.",
+        "true_prompt_nll": 0.003289341926574707,
+        "swapped_prompt_nll": 0.37741756439208984,
+        "margin_wrong_minus_true": 0.37412822246551514,
+        "correct_prompt_preferred": true
+      },
+      {
+        "correct_question": "Web geliştirme ve web tasarımı arasındaki farkı açıklayın.",
+        "wrong_question": "Doğru bir çizgi için matematiksel denklemi türetin.",
+        "target_answer": "Web geliştirme, web sitesi oluşturma sürecidir ve web sitesinin işlevselliğini oluşturmak için kodlama ve işaretleme dili yazmayı içerir. Web tasarımı, web sitesinin görünümüne odaklanır ve görsel düzeni, renkleri ve tipografisini içerir. Web geliştirme, bir web sitesinin teknik yönlerine odaklanırken web tasarımı estetiğine odaklanır.",
+        "true_prompt_nll": 0.0029512515757232904,
+        "swapped_prompt_nll": 0.6823917031288147,
+        "margin_wrong_minus_true": 0.6794404515530914,
+        "correct_prompt_preferred": true
+      },
+      {
+        "correct_question": "Doğru bir çizgi için matematiksel denklemi türetin.",
+        "wrong_question": "Vejetaryenler için uygun bir yemek önerin.",
+        "target_answer": "y = mx + b, burada m eğim ve b çizginin y-kesiti olarak tanımlanır.",
+        "true_prompt_nll": 0.002904251217842102,
+        "swapped_prompt_nll": 0.3249026834964752,
+        "margin_wrong_minus_true": 0.3219984322786331,
+        "correct_prompt_preferred": true
+      },
+      {
+        "correct_question": "Vejetaryenler için uygun bir yemek önerin.",
+        "wrong_question": "Dünyada kaç kuş türü olduğunu bulun.",
+        "target_answer": "Lezzetli bir vejetaryen yemek Ratatouille olabilir. Patlıcan, kabak, domates, biber, soğan, sarımsak ve otların zengin domates sosunda pişirilmesiyle yapılır. Quinoa, kuskus veya gevrek ekmekle servis edilebilir.",
+        "true_prompt_nll": 0.0032063471153378487,
+        "swapped_prompt_nll": 0.16446487605571747,
+        "margin_wrong_minus_true": 0.16125852894037962,
+        "correct_prompt_preferred": true
+      },
+      {
+        "correct_question": "Dünyada kaç kuş türü olduğunu bulun.",
+        "wrong_question": "İyi dengelenmiş bir diyetin beş bileşenini adlandırın.",
+        "target_answer": "Dünya'da yaklaşık 10.000 kuş türü vardır.",
+        "true_prompt_nll": 0.0027758507058024406,
+        "swapped_prompt_nll": 1.1306452751159668,
+        "margin_wrong_minus_true": 1.1278694244101644,
+        "correct_prompt_preferred": true
+      },
+      {
+        "correct_question": "İyi dengelenmiş bir diyetin beş bileşenini adlandırın.",
+        "wrong_question": "Bir konuşma başlatmak için üç en iyi uygulamayı listeleyin.",
+        "target_answer": "Dengeli bir diyet, meyve ve sebzeler; tam tahıllar; az yağlı süt ürünleri; sağlıklı yağlar ve az şeker, tuz ve sağlıksız yağ içeren besinler gibi çeşitli besin yoğunluğuna sahip yiyecekleri içermelidir. Ayrıca, dengeli bir diyet için yeterli su tüketimi ve gün boyunca düzenli öğünler ve atıştırmalıklar tüketmek önemlidir.",
+        "true_prompt_nll": 0.002954161260277033,
+        "swapped_prompt_nll": 0.14908640086650848,
+        "margin_wrong_minus_true": 0.14613223960623145,
+        "correct_prompt_preferred": true
+      }
+    ]
+  },
+  "claim_limit": "This only measures question-conditioned reference likelihood on rehearsed examples; not human judgment or generalization."
+}
