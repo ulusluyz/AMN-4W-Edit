@@ -1,0 +1,20 @@
+{
+  "model": {
+    "vocab_size": 256,
+    "d_model": 24,
+    "memory_dim": 12,
+    "slots": 4,
+    "layers": 1,
+    "expansion": 2,
+    "use_fast": true,
+    "use_episodic": true
+  },
+  "training": {
+    "device": "cpu",
+    "threads": 2,
+    "lr": 0.001,
+    "chunk_size": 12,
+    "epochs": 2,
+    "max_steps": 8
+  }
+}
