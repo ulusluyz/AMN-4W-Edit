@@ -1,0 +1,348 @@
+{
+  "training": "genuine CPU full-epoch supervised AMN v3.1 knowledge adaptation",
+  "trained": true,
+  "architecture": "AMNTMv3.1",
+  "source_manifest": {
+    "dataset": "Turkish Wikipedia curated titles + official TÜİK 2025 names",
+    "source_file_sha256": "249b0d07b564bc76f81a5897e1ece8b7641d8d4f2b74f62083f5da9d4ddab098",
+    "license": "Wikipedia CC BY-SA/GFDL and official statistical facts",
+    "train": 746,
+    "val": 63,
+    "test": 54,
+    "split_protocol": "topic-disjoint deterministic hash; official names train only",
+    "quality_gate": "manual editorial reject list and strict source-attributed format checks"
+  },
+  "quality_audit": {
+    "accepted_pages": 273,
+    "rejected_pages": 82,
+    "rejection_reasons": {
+      "manual_review_reject": 42,
+      "disambiguation_or_markup": 7,
+      "title_mismatch": 18,
+      "not_found": 5,
+      "broken_markup": 1,
+      "broken_citation": 1,
+      "too_long": 5,
+      "incomplete_first_sentence": 2,
+      "too_short": 1
+    },
+    "category_counts": {
+      "hayvanlar": 38,
+      "insan_ve_saglik": 34,
+      "dogabilimleri": 34,
+      "matematik": 24,
+      "teknoloji": 30,
+      "cografya": 37,
+      "bitkiler_ve_gida": 33,
+      "toplum_ve_dil": 32,
+      "tarihi_kisiler": 11
+    }
+  },
+  "pretrained_checkpoint": "results/amn_tm_v31/best.pt",
+  "pretrained_sha256": "79f4d92aa351996bad4b83cd7b434a516921f02bbbc39a7152fbac01f8383e2b",
+  "tokenizer_sha256": "5ce79ef839ad3dd4a7e411d2f74bfb10cc7db00e0e55bb2369f7e95f376b41f5",
+  "input_rows": {
+    "train": 746,
+    "val": 63,
+    "test": 54
+  },
+  "encoded_rows": {
+    "train": 746,
+    "val": 63,
+    "test": 54
+  },
+  "dropped_by_max_length": {
+    "train": 0,
+    "val": 0,
+    "test": 0
+  },
+  "max_training_tokens": 192,
+  "model_parameters": 16380518,
+  "seed": 131,
+  "learning_rate": 0.00025,
+  "main_batch": 2,
+  "core_batch": 2,
+  "core_topic_count": 89,
+  "total_updates": 746,
+  "completed_epochs": 2,
+  "stop_reason": "epochs_completed",
+  "best_step": 720,
+  "best_validation_nll": 6.461961412195683,
+  "main_source_coverage": {
+    "total_samples": 1492,
+    "unique_samples": 746,
+    "dataset_size": 746,
+    "coverage_ratio": 1.0,
+    "minimum_exposures": 2,
+    "maximum_exposures": 2
+  },
+  "core_replay_coverage": {
+    "total_samples": 1492,
+    "unique_samples": 89,
+    "dataset_size": 89,
+    "coverage_ratio": 1.0,
+    "minimum_exposures": 16,
+    "maximum_exposures": 17
+  },
+  "full_dataset_one_pass_completed": true,
+  "before": {
+    "val": {
+      "nll": 7.4235354026548865,
+      "ppl": 1674.9446562271592,
+      "tokens": 1833,
+      "sample_count": 48
+    },
+    "test": {
+      "nll": 7.653830398536762,
+      "ppl": 2108.7073291934767,
+      "tokens": 2007,
+      "sample_count": 54
+    },
+    "direct": [
+      {
+        "question": "Web geliştirme nedir",
+        "answer": "Bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir",
+        "generated_tokens": 100,
+        "eos": false
+      },
+      {
+        "question": "Teknik yön nedir",
+        "answer": "Bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir",
+        "generated_tokens": 100,
+        "eos": false
+      },
+      {
+        "question": "Denklem nedir",
+        "answer": "Bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir",
+        "generated_tokens": 100,
+        "eos": false
+      },
+      {
+        "question": "Köpek nedir",
+        "answer": "Bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir",
+        "generated_tokens": 100,
+        "eos": false
+      },
+      {
+        "question": "10.000 kuş türü mü vardır",
+        "answer": "Bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir",
+        "generated_tokens": 100,
+        "eos": false
+      },
+      {
+        "question": "Kadın kime denir",
+        "answer": "Bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir",
+        "generated_tokens": 100,
+        "eos": false
+      },
+      {
+        "question": "Erkek kime denir",
+        "answer": "Bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir",
+        "generated_tokens": 100,
+        "eos": false
+      },
+      {
+        "question": "İnsan cinsiyetleri neler",
+        "answer": "Bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir",
+        "generated_tokens": 100,
+        "eos": false
+      },
+      {
+        "question": "20 tane erkek insan 8 tane kadın insan ismi yaz",
+        "answer": "Bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir",
+        "generated_tokens": 100,
+        "eos": false
+      }
+    ]
+  },
+  "after": {
+    "val": {
+      "nll": 6.461961412195683,
+      "ppl": 640.3157488017699,
+      "tokens": 1833,
+      "sample_count": 48
+    },
+    "test": {
+      "nll": 6.80418830115105,
+      "ppl": 901.6156324599364,
+      "tokens": 2007,
+      "sample_count": 54
+    },
+    "direct": [
+      {
+        "question": "Web geliştirme nedir",
+        "answer": "Web, resmî adıyla Fed Cum Cumhura, Güney''da en ülk bir ülkedir.",
+        "generated_tokens": 25,
+        "eos": true
+      },
+      {
+        "question": "Teknik yön nedir",
+        "answer": "Robot, yetişkin bir dişi insandır.",
+        "generated_tokens": 9,
+        "eos": true
+      },
+      {
+        "question": "Denklem nedir",
+        "answer": "Robot, otonom veya önceden programlanmış görevleri yerine getirebilen elektro-mekanik bir makinedir.",
+        "generated_tokens": 22,
+        "eos": true
+      },
+      {
+        "question": "Köpek nedir",
+        "answer": "Al, resmî adıyla Fed Cum Cumhuriyeti, Güney''da en ülk bir ülkedir.",
+        "generated_tokens": 25,
+        "eos": true
+      },
+      {
+        "question": "10.000 kuş türü mü vardır",
+        "answer": "Erkek isimleri: Alparslan, Göktuğ, Metehan, Yusuf, Kerem.",
+        "generated_tokens": 28,
+        "eos": true
+      },
+      {
+        "question": "Kadın kime denir",
+        "answer": "Robot, yetişkin dişi insan için kullanılan bir sözcüktür; toplumsal cinsiyet bağlamında kadın kimliğiyle yaşayan yetişkinler için de kullanılır.",
+        "generated_tokens": 29,
+        "eos": true
+      },
+      {
+        "question": "Erkek kime denir",
+        "answer": "Erkek, yetişkin bir eril insandır.",
+        "generated_tokens": 11,
+        "eos": true
+      },
+      {
+        "question": "İnsan cinsiyetleri neler",
+        "answer": "Yapayk yaklaşık�Fel adı.",
+        "generated_tokens": 8,
+        "eos": true
+      },
+      {
+        "question": "20 tane erkek insan 8 tane kadın insan ismi yaz",
+        "answer": "Erkek isimleri: Alparslan, Göktuğ, Metehan, Yusuf, Kerem.",
+        "generated_tokens": 28,
+        "eos": true
+      }
+    ],
+    "canonical": [
+      {
+        "question": "Köpek nedir?",
+        "answer": "İnsan (Homo sapiens lit. \"bilge insan\") veya modern insan, primatların en yaygın türüdür.",
+        "generated_tokens": 28,
+        "eos": true
+      },
+      {
+        "question": "Denklem nedir?",
+        "answer": "Elektrik, elektrik yüküne sahip maddenin varlığı ve hareketiyle ilişkili fiziksel olaylar bütünüdür.",
+        "generated_tokens": 20,
+        "eos": true
+      },
+      {
+        "question": "Kadın nedir?",
+        "answer": "Web grafik, Güneş Sistemi'nde Güneş'e en yakın üçüncü gezegen olup şu için üzerinde yaşam ve sıvı su barındırdığı kesin olarak bilinen tek astronomik cisimdir.",
+        "generated_tokens": 35,
+        "eos": true
+      },
+      {
+        "question": "Erkek nedir?",
+        "answer": "Erkek, yetişkin bir eril insandır.",
+        "generated_tokens": 11,
+        "eos": true
+      },
+      {
+        "question": "İnsan nedir?",
+        "answer": "İnsan (Homo sapiens lit. \"bilge insan\") veya modern insan, primatların en yaygın türüdür.",
+        "generated_tokens": 28,
+        "eos": true
+      },
+      {
+        "question": "Bilgisayar nedir?",
+        "answer": "Bilgisayar, bilgisayar sistemlerini birbirine bağlayan elektronik iletişim ağıdır.",
+        "generated_tokens": 13,
+        "eos": true
+      },
+      {
+        "question": "Robot nedir?",
+        "answer": "İnternet, bilgisayar sistemlerini birbirine bağlayan elektronik iletişim ağıdır.",
+        "generated_tokens": 13,
+        "eos": true
+      },
+      {
+        "question": "Dünya nedir?",
+        "answer": "İnsan (Homo sapiens lit. \"bilge insan\") veya modern insan, primatların en yaygın türüdür.",
+        "generated_tokens": 28,
+        "eos": true
+      }
+    ]
+  },
+  "history": [
+    {
+      "step": 1,
+      "training_nll": 7.326300621032715,
+      "elapsed_seconds": 0.7,
+      "broad_coverage": 0.0027
+    },
+    {
+      "step": 80,
+      "training_nll": 6.175159454345703,
+      "elapsed_seconds": 63.0,
+      "broad_coverage": 0.2145
+    },
+    {
+      "step": 160,
+      "training_nll": 2.97306227684021,
+      "elapsed_seconds": 126.2,
+      "broad_coverage": 0.429
+    },
+    {
+      "step": 240,
+      "training_nll": 4.880340576171875,
+      "elapsed_seconds": 186.7,
+      "broad_coverage": 0.6434
+    },
+    {
+      "step": 320,
+      "training_nll": 4.043937683105469,
+      "elapsed_seconds": 252.3,
+      "broad_coverage": 0.8579
+    },
+    {
+      "step": 400,
+      "training_nll": 3.7066595554351807,
+      "elapsed_seconds": 319.8,
+      "broad_coverage": 1.0
+    },
+    {
+      "step": 480,
+      "training_nll": 1.2581019401550293,
+      "elapsed_seconds": 381.8,
+      "broad_coverage": 1.0
+    },
+    {
+      "step": 560,
+      "training_nll": 2.1446995735168457,
+      "elapsed_seconds": 449.5,
+      "broad_coverage": 1.0
+    },
+    {
+      "step": 640,
+      "training_nll": 3.694399833679199,
+      "elapsed_seconds": 514.4,
+      "broad_coverage": 1.0
+    },
+    {
+      "step": 720,
+      "training_nll": 2.9927539825439453,
+      "elapsed_seconds": 577.5,
+      "broad_coverage": 1.0
+    },
+    {
+      "step": 746,
+      "training_nll": 3.1778810024261475,
+      "elapsed_seconds": 601.7,
+      "broad_coverage": 1.0
+    }
+  ],
+  "quality_limit": "Wikipedia article facts have programmatic screening, not per-fact human verification; exact QA success does not prove general intelligence",
+  "train_seconds": 613.1
+}
