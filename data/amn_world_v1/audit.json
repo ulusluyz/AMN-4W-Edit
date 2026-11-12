@@ -2,9 +2,10 @@
   "dataset": "AMN grounded Turkish world-knowledge v1",
   "seed_topic_count": 355,
   "download_success_count": 350,
-  "accepted_page_count": 315,
-  "rejected_page_count": 40,
+  "accepted_page_count": 273,
+  "rejected_page_count": 82,
   "rejection_reasons": {
+    "manual_review_reject": 42,
     "disambiguation_or_markup": 7,
     "title_mismatch": 18,
     "not_found": 5,
@@ -15,21 +16,24 @@
     "too_short": 1
   },
   "accepted_by_category": {
-    "hayvanlar": 43,
-    "insan_ve_saglik": 37,
-    "dogabilimleri": 40,
-    "matematik": 28,
-    "teknoloji": 37,
-    "cografya": 40,
-    "bitkiler_ve_gida": 38,
-    "toplum_ve_dil": 40,
-    "tarihi_kisiler": 12
+    "hayvanlar": 38,
+    "insan_ve_saglik": 34,
+    "dogabilimleri": 34,
+    "matematik": 24,
+    "teknoloji": 30,
+    "cografya": 37,
+    "bitkiler_ve_gida": 33,
+    "toplum_ve_dil": 32,
+    "tarihi_kisiler": 11
   },
-  "training_topics": 259,
+  "manually_rejected_count": 42,
+  "manual_review_exclusion_file": "data/amn_world_manual_review_exclusions_v1.json",
+  "manual_review_exclusion_sha256": "5ad65d8b4dd0b5c43a03ed0e74dc316fdb84d8e2b66f7735675f4ba0f395804f",
+  "training_topics": 234,
   "split_qa_counts": {
-    "train": 818,
-    "val": 99,
-    "test": 69
+    "train": 746,
+    "val": 63,
+    "test": 54
   },
   "official_tuik_name_qa_count": 29,
   "externally_sourced_editorial_qa_count": 15,
@@ -42,27 +46,15 @@
     "source_url": "https://nip.tuik.gov.tr/?value=YeniDoganIsimleri",
     "license": "public statistical facts"
   },
-  "total_unique_prompts": 986,
-  "source_sha256": "9da6ef739f46201a821d55167d51a5c224b963b94d9d886ee75325d0f4514334",
+  "total_unique_prompts": 863,
+  "source_sha256": "249b0d07b564bc76f81a5897e1ece8b7641d8d4f2b74f62083f5da9d4ddab098",
   "topic_disjoint": true,
   "audit_sample": [
     {
       "category": "bitkiler_ve_gida",
-      "title": "Portakal",
-      "fact": "Portakal (Citrus sinensis), Citrus cinsi bir ağaç olan Citrus sinensis'i ve onun meyvesini tanımlar.",
-      "url": "https://tr.wikipedia.org/wiki/Portakal"
-    },
-    {
-      "category": "bitkiler_ve_gida",
-      "title": "Buğday",
-      "fact": "Buğday (Triticum aestivum), Triticum cinsine bağlı bütün dünyada ıslahı yapılmış tek yıllık otsu bitki türüdür.",
-      "url": "https://tr.wikipedia.org/wiki/Bu%C4%9Fday"
-    },
-    {
-      "category": "bitkiler_ve_gida",
-      "title": "Biber",
-      "fact": "Biber (Latince: Capsicum), patlıcangillerden bir cinstir.",
-      "url": "https://tr.wikipedia.org/wiki/Biber"
+      "title": "Süt",
+      "fact": "Süt, memelilerin meme bezleri tarafından üretilen beyaz sıvı bir besindir.",
+      "url": "https://tr.wikipedia.org/wiki/S%C3%BCt"
     },
     {
       "category": "bitkiler_ve_gida",
@@ -72,33 +64,63 @@
     },
     {
       "category": "bitkiler_ve_gida",
-      "title": "Mısır (bitki)",
-      "fact": "Mısır (Zea mays), genellikle çok nemli iklim bölgelerinde yetiştirilebilen bir tarım bitkisi.",
-      "url": "https://tr.wikipedia.org/wiki/M%C4%B1s%C4%B1r_(bitki)"
+      "title": "Vitamin",
+      "fact": "Vitamin, bir canlının metabolizmasının düzgün çalışması için küçük miktarlarda ihtiyaç duyduğu temel bir mikro besin olan organik bir moleküldür (veya kimyasal olarak yakından ilişkili bir molekül grubudur, yani vitamerlerdir).",
+      "url": "https://tr.wikipedia.org/wiki/Vitamin"
     },
     {
       "category": "bitkiler_ve_gida",
-      "title": "Pirinç",
-      "fact": "Pirinç, Buğdaygiller familyasından Oryza sativa (Asya pirinci) veya daha az yaygın olarak Oryza glaberrima (Afrika pirinci) türüne ait bitki ve bu bitkinin tohumlarıdır.",
-      "url": "https://tr.wikipedia.org/wiki/Pirin%C3%A7"
+      "title": "Bal",
+      "fact": "Bal, arılar tarafından çiçeklerden ve meyve tomurcuklarından alınarak yutulan nektarın arıların bal midesi denilen organlarında invertaz enzimi sayesinde kimyasal değişime uğramasıyla oluşan ve kovandaki petek hücrelerine yerleştirilen çok faydalı bir besindir.",
+      "url": "https://tr.wikipedia.org/wiki/Bal"
     },
     {
       "category": "bitkiler_ve_gida",
-      "title": "Mercimek",
-      "fact": "Mercimek (Lens culinaris), baklagiller (Fabaceae) familyasında yer alan Lens cinsine dahil, mercek şeklindeki tohumları için yetiştirilen otsu bir bitki türüdür.",
-      "url": "https://tr.wikipedia.org/wiki/Mercimek"
+      "title": "Patates",
+      "fact": "Patates (Solanum tuberosum), patlıcangiller (Solanaceae) familyasından yumruları yenen otsu bitki türüdür.",
+      "url": "https://tr.wikipedia.org/wiki/Patates"
     },
     {
       "category": "bitkiler_ve_gida",
-      "title": "Protein",
-      "fact": "Proteinler, bir veya daha fazla uzun amino asit artık zincirini içeren büyük biyomoleküller ve makromolekül'lerdir.",
-      "url": "https://tr.wikipedia.org/wiki/Protein"
+      "title": "Et",
+      "fact": "Et, hayvanlarda deri ile kemik arasındaki kas ve yağdan oluşan tabakaya, kasaplıkta ise hayvanlardan sağlanan kaslardan oluşmuş besin maddesine denir.",
+      "url": "https://tr.wikipedia.org/wiki/Et"
+    },
+    {
+      "category": "bitkiler_ve_gida",
+      "title": "Sarımsak",
+      "fact": "Sarımsak (Allium sativum) ya da sarmısak, Amaryllidaceae familyasına dahil olan Allium cinsinden, soğanlı bir bitki türüdür.",
+      "url": "https://tr.wikipedia.org/wiki/Sar%C4%B1msak"
+    },
+    {
+      "category": "bitkiler_ve_gida",
+      "title": "Havuç",
+      "fact": "Havuç (Daucus carota subsp. sativus), Apiaceae familyasına ait bir kök sebzedir.",
+      "url": "https://tr.wikipedia.org/wiki/Havu%C3%A7"
     },
     {
       "category": "cografya",
-      "title": "Japonya",
-      "fact": "Japonya, Doğu Asya'da yer alan bir ada ülkesidir.",
-      "url": "https://tr.wikipedia.org/wiki/Japonya"
+      "title": "Rusya",
+      "fact": "Rusya, resmî adıyla Rusya Federasyonu (Rusça: Росси́йская Федера́ция, romanize: Rossiyskaya Federatsiya), Kuzey Avrasya'da bulunan, federal yarı başkanlık tipi cumhuriyetle yönetilen bir ülkedir.",
+      "url": "https://tr.wikipedia.org/wiki/Rusya"
+    },
+    {
+      "category": "cografya",
+      "title": "Çin",
+      "fact": "Çin, resmî adıyla Çin Halk Cumhuriyeti, Doğu Asya'da Çin Komünist Partisi tarafından tek parti rejimiyle yönetilen üniter egemen devlet.",
+      "url": "https://tr.wikipedia.org/wiki/%C3%87in"
+    },
+    {
+      "category": "cografya",
+      "title": "İspanya",
+      "fact": "İspanya, resmî adıyla İspanya Krallığı, Avrupa'nın güneybatısında yer alan ve Kuzey Afrika'da da bazı topraklara sahip olan bir ülkedir.",
+      "url": "https://tr.wikipedia.org/wiki/%C4%B0spanya"
+    },
+    {
+      "category": "cografya",
+      "title": "Mısır",
+      "fact": "Mısır (Arapça: مصر, romanize: Mısr), resmî adıyla Mısır Arap Cumhuriyeti, Afrika'nın kuzeydoğu köşesi ile Sina Yarımadası üzerinden Asya'nın güneybatı köşesini kapsayan bir ülkedir.",
+      "url": "https://tr.wikipedia.org/wiki/M%C4%B1s%C4%B1r"
     },
     {
       "category": "cografya",
@@ -108,45 +130,57 @@
     },
     {
       "category": "cografya",
-      "title": "Güney Amerika",
-      "fact": "Güney Amerika, Amerika'nın güneyinde bulunan bir kıta.",
-      "url": "https://tr.wikipedia.org/wiki/G%C3%BCney_Amerika"
+      "title": "İsviçre",
+      "fact": "İsviçre, resmî adıyla İsviçre Konfederasyonu, Batı, Orta ve Güney Avrupa'nın kesişme noktasında bulunan bir ülkedir.",
+      "url": "https://tr.wikipedia.org/wiki/%C4%B0svi%C3%A7re"
     },
     {
       "category": "cografya",
-      "title": "İtalya",
-      "fact": "İtalya (İtalyanca: Italia), resmî adıyla İtalyan Cumhuriyeti (İtalyanca: Repubblica Italiana), Güney Avrupa'da, büyük ölçüde İtalya Yarımadası üzerinde yer alan bir ülke.",
-      "url": "https://tr.wikipedia.org/wiki/%C4%B0talya"
+      "title": "Kuzey Amerika",
+      "fact": "Kuzey Amerika, kuzey yarım kürede bulunan, kuzeyde Arktik Okyanusu, doğuda Atlas Okyanusu, güneyde Karayip Denizi ve kuzeybatıda Büyük Okyanus ile çevrili olan kıtadır.",
+      "url": "https://tr.wikipedia.org/wiki/Kuzey_Amerika"
     },
     {
       "category": "cografya",
-      "title": "İran",
-      "fact": "İran (Farsça: ایران), resmî adıyla İran İslam Cumhuriyeti (Farsça: جمهوری اسلامی ایران), Batı Asya'da yer alan bir ülkedir.",
-      "url": "https://tr.wikipedia.org/wiki/%C4%B0ran"
-    },
-    {
-      "category": "cografya",
-      "title": "Afrika",
-      "fact": "Afrika (İngilizce: Africa, Fransızca: Afrique, Arapça: أفريقيا), yüzölçümü ve nüfus yoğunluğu açısından Dünya'nın en büyük ikinci kıtasıdır.",
-      "url": "https://tr.wikipedia.org/wiki/Afrika"
-    },
-    {
-      "category": "cografya",
-      "title": "Suriye",
-      "fact": "Suriye, resmî adıyla Suriye Arap Cumhuriyeti, Doğu Akdeniz ve Levant'ta yer alan bir Batı Asya ülkesidir.",
-      "url": "https://tr.wikipedia.org/wiki/Suriye"
-    },
-    {
-      "category": "cografya",
-      "title": "Avrupa",
-      "fact": "Avrupa, kuzeyde Arktik Okyanusu, batıda Atlantik Okyanusu, güneyde Akdeniz ve doğuda Asya ile çevrili bir kıtadır.",
-      "url": "https://tr.wikipedia.org/wiki/Avrupa"
+      "title": "Fransa",
+      "fact": "Fransa, resmî adıyla Fransız Cumhuriyeti, Batı Avrupa'da yer alan bir ülkedir.",
+      "url": "https://tr.wikipedia.org/wiki/Fransa"
     },
     {
       "category": "dogabilimleri",
-      "title": "Kar",
-      "fact": "Kar, beyaz, parlak, çoğunlukla altıgen şekilli, buz kristallerinden oluşan bir yağış çeşididir.",
-      "url": "https://tr.wikipedia.org/wiki/Kar"
+      "title": "Rüzgâr",
+      "fact": "Rüzgâr ya da yel, hava veya diğer gazların gezegen yüzeyine göre doğal hareketidir.",
+      "url": "https://tr.wikipedia.org/wiki/R%C3%BCzg%C3%A2r"
+    },
+    {
+      "category": "dogabilimleri",
+      "title": "Dağ",
+      "fact": "Dağ, çevresindeki karasal alanlardan daha yüksek olan kara kütlelerine verilen addır. \"Dağlık\" sıfatı, dağlarla ilişkili ve kaplı alanları tanımlamak için kullanılır.",
+      "url": "https://tr.wikipedia.org/wiki/Da%C4%9F"
+    },
+    {
+      "category": "dogabilimleri",
+      "title": "Isı",
+      "fact": "Isı, belirli sıcaklıktaki bir sistemin sınırlarından, daha düşük sıcaklıktaki bir sisteme, sıcaklık farkı nedeniyle geçen enerjidir.",
+      "url": "https://tr.wikipedia.org/wiki/Is%C4%B1"
+    },
+    {
+      "category": "dogabilimleri",
+      "title": "Manyetizma",
+      "fact": "Manyetizma, manyetik alanların aracılık ettiği fiziksel olguların genel adıdır.",
+      "url": "https://tr.wikipedia.org/wiki/Manyetizma"
+    },
+    {
+      "category": "dogabilimleri",
+      "title": "Yıldız",
+      "fact": "Yıldız, ağırlıklı olarak hidrojen ve helyumdan oluşan, karanlık uzayda ışık saçan, gökyüzünde bir nokta olarak görünen plazma küresidir.",
+      "url": "https://tr.wikipedia.org/wiki/Y%C4%B1ld%C4%B1z"
+    },
+    {
+      "category": "dogabilimleri",
+      "title": "Evrim",
+      "fact": "Evrim, popülasyondaki gen ve özellik dağılımının nesiller içerisinde seçilim baskısıyla değişmesidir.",
+      "url": "https://tr.wikipedia.org/wiki/Evrim"
     },
     {
       "category": "dogabilimleri",
@@ -156,87 +190,63 @@
     },
     {
       "category": "dogabilimleri",
-      "title": "Işık",
-      "fact": "Işık veya görünür ışık, elektromanyetik spektrumun insan gözü tarafından algılanabilen kısmı içindeki elektromanyetik radyasyon.",
-      "url": "https://tr.wikipedia.org/wiki/I%C5%9F%C4%B1k"
-    },
-    {
-      "category": "dogabilimleri",
-      "title": "Deprem",
-      "fact": "Deprem, yer sarsıntısı, seizma veya zelzele, yer kabuğunda beklenmedik bir anda ortaya çıkan enerji sonucunda meydana gelen sismik dalgalanmalar ve bu dalgaların yeryüzünü sarsması olayıdır.",
-      "url": "https://tr.wikipedia.org/wiki/Deprem"
-    },
-    {
-      "category": "dogabilimleri",
-      "title": "Enerji",
-      "fact": "Fizikte enerji (Antik Yunanca ἐνέργεια (enérgeia) 'aktivite'den gelir), bir cisime veya fiziksel bir sisteme aktarılan, işin performansında ve ısı ve ışık biçiminde tanınabilen niceliksel özelliktir.",
-      "url": "https://tr.wikipedia.org/wiki/Enerji"
-    },
-    {
-      "category": "dogabilimleri",
-      "title": "Sıcaklık",
-      "fact": "Sıcaklık ya da suhunet, bir cismin sıcaklığının ya da soğukluğunun bir ölçüsüdür.",
-      "url": "https://tr.wikipedia.org/wiki/S%C4%B1cakl%C4%B1k"
-    },
-    {
-      "category": "dogabilimleri",
-      "title": "Okyanus",
-      "fact": "Okyanus (Eski Yunanca: Ὠκεανός, trans.",
-      "url": "https://tr.wikipedia.org/wiki/Okyanus"
-    },
-    {
-      "category": "dogabilimleri",
-      "title": "Isı",
-      "fact": "Isı, belirli sıcaklıktaki bir sistemin sınırlarından, daha düşük sıcaklıktaki bir sisteme, sıcaklık farkı nedeniyle geçen enerjidir.",
-      "url": "https://tr.wikipedia.org/wiki/Is%C4%B1"
+      "title": "DNA",
+      "fact": "Deoksiribonükleik asit veya kısaca DNA, tüm organizmaların ve bazı virüslerin canlılık işlevleri ve biyolojik gelişmeleri için gerekli olan genetik talimatları taşıyan bir nükleik asittir.",
+      "url": "https://tr.wikipedia.org/wiki/DNA"
     },
     {
       "category": "hayvanlar",
-      "title": "Sincap",
-      "fact": "Sincap, sincapgiller (Latince: Sciuridae) familyasından uzun kuyruk tüyleri ile dikkat çeken kemirici memelilerin ortak adıdır.",
-      "url": "https://tr.wikipedia.org/wiki/Sincap"
+      "title": "Ahtapot",
+      "fact": "Ahtapot; yumuşak gövdeli, sekiz kollu, Octopoda takımında sınıflandırılan yumuşakçaların genel adı.",
+      "url": "https://tr.wikipedia.org/wiki/Ahtapot"
     },
     {
       "category": "hayvanlar",
-      "title": "Karasinek",
-      "fact": "Karasinek (Musca domestica), iki kanatlılar (Diptera) takımının Muscidae familyasından böcek türü.",
-      "url": "https://tr.wikipedia.org/wiki/Karasinek"
+      "title": "Hamster",
+      "fact": "Hamsterler, yedi cinste sınıflandırılmış 19 tür içeren Cricetidae alt familyasına ait kemirgenlerdir.",
+      "url": "https://tr.wikipedia.org/wiki/Hamster"
     },
     {
       "category": "hayvanlar",
-      "title": "Timsahlar",
-      "fact": "Timsahlar (Latince: Crocodilia), sıcak bölgelerde bataklıklar ve su kenarlarında yaşayan vücudu kemiksi pullarla örtülü sürüngenleri içeren bir grup.",
-      "url": "https://tr.wikipedia.org/wiki/Timsahlar"
+      "title": "Kirpi",
+      "fact": "Kirpi, Erinaceinae alt familyasına ait dikenli bir memelidir ve Kirpigiller familyasının bir üyesidir.",
+      "url": "https://tr.wikipedia.org/wiki/Kirpi"
     },
     {
       "category": "hayvanlar",
-      "title": "Kartal",
-      "fact": "Kartal, atmacagiller (Accipitridae) familyasına üyedir.",
-      "url": "https://tr.wikipedia.org/wiki/Kartal"
+      "title": "Fare",
+      "fact": "Fare, kemiriciler (Rodentia) takımından bir sıçangil cinsi.",
+      "url": "https://tr.wikipedia.org/wiki/Fare"
     },
     {
       "category": "hayvanlar",
-      "title": "Deve",
-      "fact": "Deve, devegiller (Camelidae) familyasının Camelus cinsini oluşturan iki evcil hayvan türünün ortak adı.",
-      "url": "https://tr.wikipedia.org/wiki/Deve"
+      "title": "Güvercin",
+      "fact": "Güvercin (Columba livia), Güvercingiller (Columbidae) familyasına ait bir kuş türü.",
+      "url": "https://tr.wikipedia.org/wiki/G%C3%BCvercin"
     },
     {
       "category": "hayvanlar",
-      "title": "Hayvan",
-      "fact": "Hayvan, canlılar dünyasının ökaryotlar üst âlemindeki hayvanlar âleminde sınıflanan canlıların ortak adıdır.",
-      "url": "https://tr.wikipedia.org/wiki/Hayvan"
+      "title": "Fil",
+      "fact": "Fil, hortumlular takımının filgiller (Elephantidae) familyasını oluşturan memeli bir hayvandır.",
+      "url": "https://tr.wikipedia.org/wiki/Fil"
     },
     {
       "category": "hayvanlar",
-      "title": "Dev panda",
-      "fact": "Dev panda (Ailuropoda Melanoleuca) veya sadece panda, ayıgiller familyasından, beyaz postu üzerinde bölge bölge siyah büyük benekleri olan, iri, nesli tehlikede olan bir ayı türü.",
-      "url": "https://tr.wikipedia.org/wiki/Dev_panda"
+      "title": "Kelebek",
+      "fact": "Kelebekler, pul kanatlılar takımına bağlı Papilionoidea üst familyasından kanatlı böceklerdir.",
+      "url": "https://tr.wikipedia.org/wiki/Kelebek"
     },
     {
       "category": "hayvanlar",
-      "title": "Kurt",
-      "fact": "Kurt (Canis lupus) veya bozkurt, Avrasya ve Kuzey Amerika'ya özgü ve Canis cinsinden iri bir memelidir.",
-      "url": "https://tr.wikipedia.org/wiki/Kurt"
+      "title": "Ayı",
+      "fact": "Ayılar veya Ayıgiller, Ursidae familyasının etçil memelileridir.",
+      "url": "https://tr.wikipedia.org/wiki/Ay%C4%B1"
+    },
+    {
+      "category": "insan_ve_saglik",
+      "title": "İnsan",
+      "fact": "İnsan (Homo sapiens lit. \"bilge insan\") veya modern insan, primatların en yaygın türüdür.",
+      "url": "https://tr.wikipedia.org/wiki/%C4%B0nsan"
     },
     {
       "category": "insan_ve_saglik",
@@ -246,129 +256,99 @@
     },
     {
       "category": "insan_ve_saglik",
-      "title": "El",
-      "fact": "El, şempanze, maki ve insan gibi primatlarda birden fazla parmağı barındıran, kolun bilekten parmak uçlarına kadar olan bölümünü tanımlar.",
-      "url": "https://tr.wikipedia.org/wiki/El"
-    },
-    {
-      "category": "insan_ve_saglik",
-      "title": "Cinsiyet",
-      "fact": "Cinsiyet, erillik ve dişilik arasında farklılık gösteren özellikler aralığı veya bağlama göre, bu özellikler biyolojik cinsiyeti ve cinsiyete dayalı toplumsal yapıları (cinsiyet rolleri ve diğer toplumsal roller de) kapsayabilir.",
-      "url": "https://tr.wikipedia.org/wiki/Cinsiyet"
-    },
-    {
-      "category": "insan_ve_saglik",
-      "title": "Kas",
-      "fact": "Kas, yumuşak bir doku olup, dört temel hayvan doku türünden biridir.",
-      "url": "https://tr.wikipedia.org/wiki/Kas"
-    },
-    {
-      "category": "insan_ve_saglik",
       "title": "Kadın",
       "fact": "Kadın, yetişkin bir dişi insandır.",
       "url": "https://tr.wikipedia.org/wiki/Kad%C4%B1n"
     },
     {
       "category": "insan_ve_saglik",
-      "title": "Baba",
-      "fact": "Baba, çocuğun erkek ebeveynidir.",
-      "url": "https://tr.wikipedia.org/wiki/Baba"
+      "title": "Göz",
+      "fact": "Göz, göz çukurunda bulunan, iri bir bilye büyüklüğünde, görmeyi sağlayan küremsi bir organdır.",
+      "url": "https://tr.wikipedia.org/wiki/G%C3%B6z"
     },
     {
       "category": "insan_ve_saglik",
-      "title": "Erkek",
-      "fact": "Erkek, yetişkin bir eril insandır.",
-      "url": "https://tr.wikipedia.org/wiki/Erkek"
+      "title": "Kemik",
+      "fact": "Kemik veya süyek, vücudu oluşturan dokular arasında en sert olanıdır.",
+      "url": "https://tr.wikipedia.org/wiki/Kemik"
     },
     {
       "category": "insan_ve_saglik",
-      "title": "Karaciğer",
-      "fact": "Karaciğer, sadece omurgalılarda bulunan, detoksifikasyon, protein sentezi ve sindirim için gerekli olan enzimlerin üretimi de dahil olmak üzere pek çok işleve sahip bir organdır.",
-      "url": "https://tr.wikipedia.org/wiki/Karaci%C4%9Fer"
+      "title": "Hücre",
+      "fact": "Hücre bir canlının yapısal ve işlevsel özellikler gösterebilen en küçük birimidir.",
+      "url": "https://tr.wikipedia.org/wiki/H%C3%BCcre"
+    },
+    {
+      "category": "insan_ve_saglik",
+      "title": "Toplumsal cinsiyet",
+      "fact": "Toplumsal cinsiyet, kadınlık ve erkeklik ile ilgili ve bunlar arasında ayrım yapan özellikler dizisidir.",
+      "url": "https://tr.wikipedia.org/wiki/Toplumsal_cinsiyet"
+    },
+    {
+      "category": "insan_ve_saglik",
+      "title": "Kalp",
+      "fact": "Kalp ya da yürek, pek çok hayvanda bulunan kaslı bir organdır.",
+      "url": "https://tr.wikipedia.org/wiki/Kalp"
     },
     {
       "category": "matematik",
-      "title": "Çıkarma",
-      "fact": "Çıkarma (eksi işareti ile gösterilir, –), toplama, çarpma ve bölme ile birlikte dört aritmetik işlemden biridir.",
-      "url": "https://tr.wikipedia.org/wiki/%C3%87%C4%B1karma"
+      "title": "Toplama",
+      "fact": "Toplama işlemi (genellikle toplama işareti + ile sembolize edilir) dört ana aritmetik işlemden biridir.",
+      "url": "https://tr.wikipedia.org/wiki/Toplama"
     },
     {
       "category": "matematik",
-      "title": "İntegral",
-      "fact": "İntegral veya tümlev, toplama işleminin sürekli bir aralıkta alınan hâlidir.",
-      "url": "https://tr.wikipedia.org/wiki/%C4%B0ntegral"
+      "title": "Geometri",
+      "fact": "Geometri (eski adı Hendese), matematiğin uzamsal ilişkiler ile ilgilenen alt dalıdır.",
+      "url": "https://tr.wikipedia.org/wiki/Geometri"
     },
     {
       "category": "matematik",
-      "title": "Matematik",
-      "fact": "Matematik (Yunanca μάθημα máthēma, \"bilgi, çalışma, öğrenme\"); sayılar, felsefe, uzay ve fizik gibi konularla ilgilenir.",
-      "url": "https://tr.wikipedia.org/wiki/Matematik"
+      "title": "Oran",
+      "fact": "Matematikte, oran (veya finans bağlamında rasyo), bir sayının diğerini kaç kez içerdiğini gösterir.",
+      "url": "https://tr.wikipedia.org/wiki/Oran"
     },
     {
       "category": "matematik",
-      "title": "Kare",
-      "fact": "Kare, murabba veya dördül, bütün kenarları ve açıları birbirine eşit olan düzgün dörtgendir.",
-      "url": "https://tr.wikipedia.org/wiki/Kare"
+      "title": "Alan",
+      "fact": "Alan veya yüz ölçümü, bir yüzeyin uzayda kapladığı iki boyutlu yer miktarını ölçen bir büyüklüktür.",
+      "url": "https://tr.wikipedia.org/wiki/Alan"
     },
     {
       "category": "matematik",
-      "title": "Asal sayı",
-      "fact": "Bir asal sayı, yalnızca 1'den büyük olup kendisinden küçük iki doğal sayının çarpımı olarak ifade edilemeyen bir doğal sayıdır.",
-      "url": "https://tr.wikipedia.org/wiki/Asal_say%C4%B1"
+      "title": "Açı",
+      "fact": "Açı, başlangıç noktaları ortak olan iki ışının birleşimidir.",
+      "url": "https://tr.wikipedia.org/wiki/A%C3%A7%C4%B1"
     },
     {
       "category": "matematik",
-      "title": "Çember",
-      "fact": "Çember ya da dönge, düzlemde sabit bir noktaya eşit uzaklıkta bulunan noktaların kümesinin oluşturduğu yuvarlak geometrik şekildir.",
-      "url": "https://tr.wikipedia.org/wiki/%C3%87ember"
+      "title": "Sayı",
+      "fact": "Sayı, sayma, ölçme ve etiketleme için kullanılan bir matematiksel nesnedir.",
+      "url": "https://tr.wikipedia.org/wiki/Say%C4%B1"
     },
     {
       "category": "matematik",
-      "title": "Türev",
-      "fact": "Matematikte türev, bir fonksiyonun tanımlı olduğu herhangi bir noktada değişim yönünü veya hızını veren temel bir kavramdır.",
-      "url": "https://tr.wikipedia.org/wiki/T%C3%BCrev"
+      "title": "Hacim",
+      "fact": "Hacim ya da sıygı, bir cismin uzayda ya da fiziksel ortamda kapladığı alandır.",
+      "url": "https://tr.wikipedia.org/wiki/Hacim"
     },
     {
       "category": "matematik",
-      "title": "Trigonometri",
-      "fact": "Trigonometri (Yunanca trigōnon \"üçgen\" + metron \"ölçmek\"), üçgenlerin açıları ile kenarları arasındaki bağıntıları konu edinen matematik dalı.",
-      "url": "https://tr.wikipedia.org/wiki/Trigonometri"
+      "title": "Kesir",
+      "fact": "Kesir, bir birimin bölündüğü parçalardan birinin veya birkaçının bütüne oranını ifade eden sayı.",
+      "url": "https://tr.wikipedia.org/wiki/Kesir"
     },
     {
       "category": "tarihi_kisiler",
-      "title": "Louis Pasteur",
-      "fact": "Louis Pasteur (27 Aralık 1822, Dole, Fransa - 28 Eylül 1895 Saint-Cloud, Fransa), aşılama, mikrobiyal fermantasyon ve kendi adıyla anılan pastörizasyon ilkelerine ilişkin keşifleriyle tanınan Fransız kimyager, eczacı ve mikrobiyolog.",
-      "url": "https://tr.wikipedia.org/wiki/Louis_Pasteur"
+      "title": "Nikola Tesla",
+      "fact": "Nikola Tesla (Sırpça telaffuz: [nǐkola têsla]; Sırpça: Никола Тесла; 10 Temmuz 1856 - 7 Ocak 1943), Sırp-Amerikalı mucit, elektrik mühendisi, makine mühendisi ve fütüristti.",
+      "url": "https://tr.wikipedia.org/wiki/Nikola_Tesla"
     },
     {
       "category": "tarihi_kisiler",
-      "title": "William Shakespeare",
-      "fact": "William Shakespeare (26 Nisan 1564 (vaftiz) – 23 Nisan 1616), İngiliz şair, oyun yazarı ve oyuncudur.",
-      "url": "https://tr.wikipedia.org/wiki/William_Shakespeare"
-    },
-    {
-      "category": "tarihi_kisiler",
-      "title": "Yunus Emre",
-      "fact": "Yunus Emre (Osmanlıca: يونس امره ya da Kul Yunus, Âşık Yunus veya Yunus) (1240?-1320), Anadolu sahasında yetişmiş Türk şair ve mutasavvıf.",
-      "url": "https://tr.wikipedia.org/wiki/Yunus_Emre"
-    },
-    {
-      "category": "tarihi_kisiler",
-      "title": "Isaac Newton",
-      "fact": "Isaac Newton (4 Ocak 1643, Woolsthorpe-by-Colsterworth - 31 Mart 1727, Kensington), İngiliz fizikçi, matematikçi, astronom, mucit, simyacı, teolog ve filozoftur.",
-      "url": "https://tr.wikipedia.org/wiki/Isaac_Newton"
-    },
-    {
-      "category": "tarihi_kisiler",
-      "title": "Mevlânâ Celâleddîn-i Rûmî",
-      "fact": "Mevlânâ Celâleddîn-i Rûmî, (30 Eylül 1207 - 17 Aralık 1273), 13. yüzyılda Anadolu'da yaşamış bir Fars tasavvufçu, ilahiyatçı ve sufi bir mistik şairdir.",
-      "url": "https://tr.wikipedia.org/wiki/Mevl%C3%A2n%C3%A2_Cel%C3%A2ledd%C3%AEn-i_R%C3%BBm%C3%AE"
-    },
-    {
-      "category": "tarihi_kisiler",
-      "title": "Ludwig van Beethoven",
-      "fact": "Ludwig van Beethoven (vaftiz: 17 Aralık 1770, Bonn - ölüm: 26 Mart 1827, Viyana), Klasik dönemden Romantik döneme geçiş sürecine büyük katkı sağlamış ve gelmiş geçmiş en ünlü ve etkileyici bestecilerden biri olarak kabul edilen Alman piyanist ve bestecidir.",
-      "url": "https://tr.wikipedia.org/wiki/Ludwig_van_Beethoven"
+      "title": "Mustafa Kemal Atatürk",
+      "fact": "Mustafa Kemal Atatürk (1881, Selanik - 10 Kasım 1938, İstanbul), Türk mareşal, devlet adamı, yazar, Türk Kurtuluş Savaşı'nın başkomutanı, Türkiye Cumhuriyeti'nin kurucusu ve ilk cumhurbaşkanıdır.",
+      "url": "https://tr.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk"
     },
     {
       "category": "tarihi_kisiler",
@@ -378,21 +358,51 @@
     },
     {
       "category": "tarihi_kisiler",
-      "title": "Nikola Tesla",
-      "fact": "Nikola Tesla (Sırpça telaffuz: [nǐkola têsla]; Sırpça: Никола Тесла; 10 Temmuz 1856 - 7 Ocak 1943), Sırp-Amerikalı mucit, elektrik mühendisi, makine mühendisi ve fütüristti.",
-      "url": "https://tr.wikipedia.org/wiki/Nikola_Tesla"
+      "title": "Isaac Newton",
+      "fact": "Isaac Newton (4 Ocak 1643, Woolsthorpe-by-Colsterworth - 31 Mart 1727, Kensington), İngiliz fizikçi, matematikçi, astronom, mucit, simyacı, teolog ve filozoftur.",
+      "url": "https://tr.wikipedia.org/wiki/Isaac_Newton"
+    },
+    {
+      "category": "tarihi_kisiler",
+      "title": "Ludwig van Beethoven",
+      "fact": "Ludwig van Beethoven (vaftiz: 17 Aralık 1770, Bonn - ölüm: 26 Mart 1827, Viyana), Klasik dönemden Romantik döneme geçiş sürecine büyük katkı sağlamış ve gelmiş geçmiş en ünlü ve etkileyici bestecilerden biri olarak kabul edilen Alman piyanist ve bestecidir.",
+      "url": "https://tr.wikipedia.org/wiki/Ludwig_van_Beethoven"
+    },
+    {
+      "category": "tarihi_kisiler",
+      "title": "William Shakespeare",
+      "fact": "William Shakespeare (26 Nisan 1564 (vaftiz) – 23 Nisan 1616), İngiliz şair, oyun yazarı ve oyuncudur.",
+      "url": "https://tr.wikipedia.org/wiki/William_Shakespeare"
+    },
+    {
+      "category": "tarihi_kisiler",
+      "title": "Louis Pasteur",
+      "fact": "Louis Pasteur (27 Aralık 1822, Dole, Fransa - 28 Eylül 1895 Saint-Cloud, Fransa), aşılama, mikrobiyal fermantasyon ve kendi adıyla anılan pastörizasyon ilkelerine ilişkin keşifleriyle tanınan Fransız kimyager, eczacı ve mikrobiyolog.",
+      "url": "https://tr.wikipedia.org/wiki/Louis_Pasteur"
+    },
+    {
+      "category": "tarihi_kisiler",
+      "title": "Mevlânâ Celâleddîn-i Rûmî",
+      "fact": "Mevlânâ Celâleddîn-i Rûmî, (30 Eylül 1207 - 17 Aralık 1273), 13. yüzyılda Anadolu'da yaşamış bir Fars tasavvufçu, ilahiyatçı ve sufi bir mistik şairdir.",
+      "url": "https://tr.wikipedia.org/wiki/Mevl%C3%A2n%C3%A2_Cel%C3%A2ledd%C3%AEn-i_R%C3%BBm%C3%AE"
     },
     {
       "category": "teknoloji",
-      "title": "Bilgisayar",
-      "fact": "Bilgisayar, aritmetik veya mantıksal işlem dizilerini (berim) otomatik olarak yürütmek üzere programlanabilen dijital bir elektronik makinedir.",
-      "url": "https://tr.wikipedia.org/wiki/Bilgisayar"
+      "title": "Veri",
+      "fact": "Veri (İng. ve Lat. datum; ç. data), ham (işlenmemiş) gerçek enformasyon parçacığına verilen addır.",
+      "url": "https://tr.wikipedia.org/wiki/Veri"
     },
     {
       "category": "teknoloji",
-      "title": "Tren",
-      "fact": "Tren, raylar üzerinde bir ya da birkaç lokomotif tarafından çekilen veya itilen vagonlardan oluşan ulaşım aracı.",
-      "url": "https://tr.wikipedia.org/wiki/Tren"
+      "title": "Robot",
+      "fact": "Robot, otonom veya önceden programlanmış görevleri yerine getirebilen elektro-mekanik bir makinedir.",
+      "url": "https://tr.wikipedia.org/wiki/Robot"
+    },
+    {
+      "category": "teknoloji",
+      "title": "Yapay zekâ",
+      "fact": "Yapay zekâ (İngilizce: Artificial intelligence, AI); hesaplama sistemlerinin öğrenme, akıl, problem çözme, algılama ve karar verme gibi tipik olarak insan zekâsıyla ilişkilendirilen görevleri yerine getirme yeteneğidir.",
+      "url": "https://tr.wikipedia.org/wiki/Yapay_zek%C3%A2"
     },
     {
       "category": "teknoloji",
@@ -402,39 +412,27 @@
     },
     {
       "category": "teknoloji",
-      "title": "Wi-Fi",
-      "fact": "Wi-Fi, kişisel bilgisayar, video oyunu konsolları, dijital ses oynatıcıları ve akıllı telefonlar gibi cihazların kablosuz olarak birbirlerine bağlanmasını sağlayan teknolojidir.",
-      "url": "https://tr.wikipedia.org/wiki/Wi-Fi"
+      "title": "Diyot",
+      "fact": "Diyot, yalnızca bir yönde akım geçiren devre elemanıdır.",
+      "url": "https://tr.wikipedia.org/wiki/Diyot"
     },
     {
       "category": "teknoloji",
-      "title": "Yönlendirici",
-      "fact": "Yönlendirici (İngilizce: router), aynı ağ iletişim kurallarını kullanan iki bilgisayar ağı arasında veri çerçevelerinin iletimini sağlayan ağ donanımıdır.",
-      "url": "https://tr.wikipedia.org/wiki/Y%C3%B6nlendirici"
+      "title": "Web grafik tasarımı",
+      "fact": "Web grafik tasarımı, grafik tasarım ile yakından ilişkili olmakla birlikte, web ortamına özgü gereksinimlere yanıt veren bağımsız bir tasarım disiplinidir.",
+      "url": "https://tr.wikipedia.org/wiki/Web_grafik_tasar%C4%B1m%C4%B1"
     },
     {
       "category": "teknoloji",
-      "title": "Batarya",
-      "fact": "Batarya, orduda en küçük topçu birliği.",
-      "url": "https://tr.wikipedia.org/wiki/Batarya"
+      "title": "Elektrik",
+      "fact": "Elektrik, elektrik yüküne sahip maddenin varlığı ve hareketiyle ilişkili fiziksel olaylar bütünüdür.",
+      "url": "https://tr.wikipedia.org/wiki/Elektrik"
     },
     {
       "category": "teknoloji",
-      "title": "Programlama",
-      "fact": "Programlama ya da diğer adı ile yazılımlama (İngilizce: programming), bilgisayarın donanıma nasıl davranacağını anlatan, bilgisayara yön veren komutlar, kelimeler, aritmetik işlemlerdir.",
-      "url": "https://tr.wikipedia.org/wiki/Programlama"
-    },
-    {
-      "category": "teknoloji",
-      "title": "Mikroskop",
-      "fact": "Mikroskop (Yunanca: μικρός mikrós, \"küçük\"; σκοπεῖν skopeîn, \"görüntü\"), çıplak gözle görülemeyecek kadar küçük cisimlerin birkaç çeşit mercek yardımıyla büyütülerek görüntüsünün incelenmesini sağlayan bir alettir.",
-      "url": "https://tr.wikipedia.org/wiki/Mikroskop"
-    },
-    {
-      "category": "toplum_ve_dil",
-      "title": "Hemşirelik",
-      "fact": "Hemşirelik; birey, aile ve toplumun sağlığını koruma ve geliştirmeye odaklanan, ideal sağlık düzeyine ve yaşam kalitesine ulaştırmayı hedefleyen bir sağlık profesyonelidir.",
-      "url": "https://tr.wikipedia.org/wiki/Hem%C5%9Firelik"
+      "title": "Uçak",
+      "fact": "Uçak veya tayyare; hava akımının başta kanatlar olmak üzere kanat profilli parçaların alt ve üst yüzeyleri arasında basınç farkı oluşturması sayesinde havada tutunarak yükselebilen, uçma özellikli motorlu bir hava gemisi ve hava taşıtıdır.",
+      "url": "https://tr.wikipedia.org/wiki/U%C3%A7ak"
     },
     {
       "category": "toplum_ve_dil",
@@ -444,46 +442,85 @@
     },
     {
       "category": "toplum_ve_dil",
-      "title": "Müzik",
-      "fact": "Müzik, insanın doğaya eklediği uyumlu seslerdir.",
-      "url": "https://tr.wikipedia.org/wiki/M%C3%BCzik"
+      "title": "Türkçe",
+      "fact": "Türkçe ya da Türkiye Türkçesi, Güneydoğu Avrupa ve Batı Asya'da konuşulan, Türk dilleri dil ailesine ait sondan eklemeli bir dildir.",
+      "url": "https://tr.wikipedia.org/wiki/T%C3%BCrk%C3%A7e"
     },
     {
       "category": "toplum_ve_dil",
-      "title": "Mimar",
-      "fact": "Mimar veya arkitekt, yapıları mimari ilkeler (sağlamlık, işlevsellik, estetik) doğrultusunda dizayn eden, bunu yaparken kullanıcı isteklerini göz önünde bulunduran ve genellikle yapım sürecini de kontrol eden, denetleyen usta yapıcı, sanatçı.",
-      "url": "https://tr.wikipedia.org/wiki/Mimar"
+      "title": "Devlet",
+      "fact": "Devlet, toprak bütünlüğüne bağlı olarak siyasal bakımdan örgütlenmiş millet veya milletler topluluğunun oluşturduğu tüzel varlıktır.",
+      "url": "https://tr.wikipedia.org/wiki/Devlet"
     },
     {
       "category": "toplum_ve_dil",
-      "title": "Sinema",
-      "fact": "Sinema veya Sinema sanatı, kamera aracılığı ile elde edilmiş görüntülerin bir ışık aracılığı ile beyaz renkte bir perdeye yansıtılarak film adı verilen sesli veya sessiz hareketli videolar elde edilmesi işidir.",
-      "url": "https://tr.wikipedia.org/wiki/Sinema"
+      "title": "Toplum",
+      "fact": "Toplum ya da cemiyet, bir arada yaşayan canlıların oluşturduğu topluluktur.",
+      "url": "https://tr.wikipedia.org/wiki/Toplum"
     },
     {
       "category": "toplum_ve_dil",
-      "title": "Harf",
-      "fact": "Harf, yazı yazmak için kullanılan semboldür.",
-      "url": "https://tr.wikipedia.org/wiki/Harf"
+      "title": "Öğrenci",
+      "fact": "Öğrenci, bir okul veya kurstaki derslere katılarak eğitim-öğretim alan kişi.",
+      "url": "https://tr.wikipedia.org/wiki/%C3%96%C4%9Frenci"
     },
     {
       "category": "toplum_ve_dil",
-      "title": "Kitap",
-      "fact": "Kitap ya da betik, bir kenarından birleştirilerek dışına kapak takılmış, yani ciltlenmiş kâğıt, parşömen, vb. malzemeden üretilmiş üzeri baskılı sayfaların bir araya gelmesiyle oluşan okumalıktır.",
-      "url": "https://tr.wikipedia.org/wiki/Kitap"
+      "title": "Kelime",
+      "fact": "Kelime veya sözcük, tek başına anlamlı, bir ya da birbirine bağlı birden fazla biçimbirimden (morfem) oluşan, ses değeri taşıyan dil birimidir.",
+      "url": "https://tr.wikipedia.org/wiki/Kelime"
     },
     {
       "category": "toplum_ve_dil",
-      "title": "Hak",
-      "fact": "Hak, kişilerin hukuk düzenince korunan menfaatleridir.",
-      "url": "https://tr.wikipedia.org/wiki/Hak"
+      "title": "Coğrafya",
+      "fact": "Coğrafya; beşerî (insanî) sistemleri ve yeryüzünü araştıran, bunlar arasındaki ilişkiyi neden-sonuç ve dağılış ilkesine bağlı olarak inceleyen ve sorgulayan bir bilim dalıdır.",
+      "url": "https://tr.wikipedia.org/wiki/Co%C4%9Frafya"
+    },
+    {
+      "category": "toplum_ve_dil",
+      "title": "Meslek",
+      "fact": "Meslek, insan yaşamını sürdürebilmek için yaptığı ve genellikle yoğun bir eğitim, çalışmayı gerektiren sürecin sonunda kişilerin kazandığı unvanın adıdır.",
+      "url": "https://tr.wikipedia.org/wiki/Meslek"
     }
   ],
   "rejected_examples": [
     {
+      "title": "Balık",
+      "category": "hayvanlar",
+      "reason": "manual_review_reject",
+      "manual_reason": "Lead uses archaic and unclear heart/anatomical wording",
+      "url": "https://tr.wikipedia.org/wiki/Bal%C4%B1k",
+      "preview": "Balıklar (Latince: pisces) poikloterm olan, neredeyse sadece suda yaşayan ve solungaçları ile solunum yapan, soğuk kanlı, yürekleri çift gözlü, çoğunun vücudu pullu, genellikle yumurta ile üreyen omurgalı hayvanlardır. Bazı türler canlı doğurarak üre"
+    },
+    {
+      "title": "İnek",
+      "category": "hayvanlar",
+      "reason": "manual_review_reject",
+      "manual_reason": "In Cow redirects to generic cattle; the question would receive a non-specific bovine definition",
+      "url": "https://tr.wikipedia.org/wiki/S%C4%B1%C4%9F%C4%B1r",
+      "preview": "Sığır (Latince: Bos primigenius taurus veya Bos taurus), memeliler (Mammalia) sınıfının, çift toynaklılar (Artiodactyla) takımının, boynuzlugiller (Bovidae) familyasının sığırlar (Bovinae) alt familyasından evcil büyükbaş hayvan. Çoğunlukla evcil ola"
+    },
+    {
+      "title": "Ördek",
+      "category": "hayvanlar",
+      "reason": "manual_review_reject",
+      "manual_reason": "Claim that ducks are universally larger than chickens is not generally valid",
+      "url": "https://tr.wikipedia.org/wiki/%C3%96rdek",
+      "preview": "Ördek, Anatinae alt familyasından, tıknaz gövdeli, kısa bacaklı ve kısa boyunlu, yassı gagalı, paytak yürüyüşlü, tavuktan daha iri, yabanıl ve evcil türleri bulunan, eti ve yumurtası yenen bir su kuşu.\n\n"
+    },
+    {
+      "title": "Dev panda",
+      "category": "hayvanlar",
+      "reason": "manual_review_reject",
+      "manual_reason": "Conservation threat label in lead may be outdated",
+      "url": "https://tr.wikipedia.org/wiki/Dev_panda",
+      "preview": "Dev panda (Ailuropoda Melanoleuca) veya sadece panda, ayıgiller familyasından, beyaz postu üzerinde bölge bölge siyah büyük benekleri olan, iri, nesli tehlikede olan bir ayı türü. Küçük pandadan ayırt edebilinmesi için büyük panda veya sadece bambu i"
+    },
+    {
       "title": "Yunus",
       "category": "hayvanlar",
       "reason": "disambiguation_or_markup",
+      "manual_reason": null,
       "url": "https://tr.wikipedia.org/wiki/Yunus",
       "preview": "Yunus şu anlamlara gelebilir:"
     },
@@ -491,13 +528,23 @@
       "title": "Köpek balığı",
       "category": "hayvanlar",
       "reason": "title_mismatch",
+      "manual_reason": null,
       "url": "https://tr.wikipedia.org/wiki/K%C3%B6pekbal%C4%B1%C4%9F%C4%B1",
       "preview": "Köpek balığı (Selachimorpha), kıkırdaklı balıklar (Chondrichthyes) sınıfının Elasmobranchii alt sınıfını oluşturan iki üst takımdan biri olan Selachimorpha (diğeri, Batoidea) içinde sınıflanan balıkların ortak adı."
+    },
+    {
+      "title": "Kurbağa",
+      "category": "hayvanlar",
+      "reason": "manual_review_reject",
+      "manual_reason": "Lead defines the etymology of an order rather than an ordinary frog",
+      "url": "https://tr.wikipedia.org/wiki/Kurba%C4%9Fa",
+      "preview": "Kuyruksuz kurbağalar (Latince: Anura), Yunancadaki \"yokluk\" ön eki olan ἀ(ν)- an- ile yine Yunancada \"kuyruk\" anlamına gelen οὐρά ourá sözcüklerinden yapay türetilmiş bir terimdir ve \"kuyruksuz\" demektir.\nErişkinlerinin uzun arka bacaklar, tıknaz göv"
     },
     {
       "title": "Bal arısı",
       "category": "hayvanlar",
       "reason": "title_mismatch",
+      "manual_reason": null,
       "url": "https://tr.wikipedia.org/wiki/Bal_ar%C4%B1s%C4%B1",
       "preview": "Apis mellifera veya bal arısı, Apis cinsine bağlı bir arı türüdür. Dünya çapında 7-12 bal arısı türü arasında en yaygın olanıdır. Apis cins adı Latince \"arı\" anlamına gelir ve mellifera Latince \"bal taşıyan\" anlamına gelir ve türün bal üretimine atıf"
     },
@@ -505,20 +552,47 @@
       "title": "Kedi balığı",
       "category": "hayvanlar",
       "reason": "title_mismatch",
+      "manual_reason": null,
       "url": "https://tr.wikipedia.org/wiki/Kedi_bal%C4%B1%C4%9F%C4%B1",
       "preview": "Siluriformes (Yayıngiller), kemikli balıklar üst sınıfına ait, 34 familyayı ve dünyaca 2400 balık türünü kapsayan bir balık takımı. Siluriformes balıkları genelde yassı yapılı tatlı su balıklarıdırlar. Sadece birkaç türleri denizde, çoğu tatlısuda ya"
+    },
+    {
+      "title": "Bebek",
+      "category": "insan_ve_saglik",
+      "reason": "manual_review_reject",
+      "manual_reason": "Unnatural and imprecise human development definition",
+      "url": "https://tr.wikipedia.org/wiki/Bebek",
+      "preview": "Bebek, bir insanın en küçük hali olan doğum anından itibaren yürüme dönemine kadar olan zaman diliminde aldığı isimdir.\nYeni doğmuş olan bir bebek her açıdan anne ve babasına muhtaçtır. Sağlıklı bir bebeğin ağırlığı ortalama 3.2 kg boyu ise 35–50 cm "
+    },
+    {
+      "title": "Beyin",
+      "category": "insan_ve_saglik",
+      "reason": "manual_review_reject",
+      "manual_reason": "Unnatural ungrammatical first sentence; replace with verified concise source in later corpus",
+      "url": "https://tr.wikipedia.org/wiki/Beyin",
+      "preview": "Beyin (Eski Türkçede meñi, Orta Türkçede mengi ya da meyin), sinir sisteminin merkezi olarak hizmet eden bir organıdır. Bütün omurgalı hayvanlar ve çoğu omurgasız hayvan -bazı süngerler, knidliler, tulumlular ve derisi dikenliler gibi omurgasızlar ha"
     },
     {
       "title": "Akciğer",
       "category": "insan_ve_saglik",
       "reason": "title_mismatch",
+      "manual_reason": null,
       "url": "https://tr.wikipedia.org/wiki/Akci%C4%9Fer",
       "preview": "Hava soluyan omurgalılardaki temel solunum organıdır. Soluk alındığında burun ve ağızdan giren hava nefes borusu ve sonrasında bronşlardan geçerek akciğerlere ulaşır. Toplardamarlarla gelen karbondioksitce fazla olan (kirli) kan burada yenilenir. Ayr"
+    },
+    {
+      "title": "Diş",
+      "category": "insan_ve_saglik",
+      "reason": "manual_review_reject",
+      "manual_reason": "Likely typo that confuses food with a product",
+      "url": "https://tr.wikipedia.org/wiki/Di%C5%9F",
+      "preview": "Diş, canlılarda ürünün ilk mekanik işleme için özel olarak gelişmiş organizmanın bir parçası. Hayvanlarda ayrıca savunma ve saldırı silahı. İnsanda konuşma organlarından biri ve kahkaha yapıcı niteliği olarak da kullanılıyor."
     },
     {
       "title": "Sağlık",
       "category": "insan_ve_saglik",
       "reason": "title_mismatch",
+      "manual_reason": null,
       "url": "https://tr.wikipedia.org/wiki/Sa%C4%9Fl%C4%B1k",
       "preview": "Yaygın kullanımda ve tıpta sağlık, Dünya Sağlık Örgütüne göre, \"yalnızca hastalık ve sakatlığın olmaması değil, fiziksel, zihinsel ve sosyal açıdan tam bir iyilik halidir\". Zaman içinde farklı amaçlar için çeşitli tanımlar kullanılmıştır. Sağlık, düz"
     },
@@ -526,41 +600,119 @@
       "title": "Güneş",
       "category": "dogabilimleri",
       "reason": "disambiguation_or_markup",
+      "manual_reason": null,
       "url": "https://tr.wikipedia.org/wiki/G%C3%BCne%C5%9F",
       "preview": "Güneş, Güneş Sistemi'nin merkezinde yer alan bir yıldızdır. Çekirdeğindeki nükleer füzyon reaksiyonları ile akkor hale gelene kadar ısınan, %10'u morötesi olmak üzere esas olarak görünür ışık ve kızılötesi radyasyon olarak yüzeyinden enerji yayan, ol"
+    },
+    {
+      "title": "Okyanus",
+      "category": "dogabilimleri",
+      "reason": "manual_review_reject",
+      "manual_reason": "Lead interrupted at etymological abbreviation",
+      "url": "https://tr.wikipedia.org/wiki/Okyanus",
+      "preview": "Okyanus (Eski Yunanca: Ὠκεανός, trans. Okeanós), bir gezegenin hidrosferinin çoğunu oluşturan bir su kütlesidir. Dünya üzerinde bir okyanus, Dünya Okyanusunun ana geleneksel bölümlerinden biridir. Bunlar, bölgeye göre azalan sırada, Pasifik, Atlantik"
     },
     {
       "title": "Karbondioksit",
       "category": "dogabilimleri",
       "reason": "title_mismatch",
+      "manual_reason": null,
       "url": "https://tr.wikipedia.org/wiki/Karbondioksit",
       "preview": "Karbon dioksit, kovalent bağlı bir karbon ve iki oksijen atomundan oluşan moleküle sahip, normal koşullarda gaz hâlinde bulunan bileşiğin adıdır. Renk ve kokusu yoktur. Kimyasal formülü CO2 şeklinde olup molekül ağırlığı 44,009 g/mol'dür. Karbon içer"
+    },
+    {
+      "title": "Atom",
+      "category": "dogabilimleri",
+      "reason": "manual_review_reject",
+      "manual_reason": "Simplification falsely claims single atoms carry all physical and chemical properties of matter",
+      "url": "https://tr.wikipedia.org/wiki/Atom",
+      "preview": "Atom veya ögecik, bilinen evrendeki tüm maddenin kimyasal ve fiziksel niteliklerini taşıyan en küçük yapı taşıdır. Atom kelimesi Yunancada \"bölünemez\" anlamına gelen \"atomos\"tan türemiştir. Atomus sözcüğünü ortaya atan ilk kişi MÖ 440'lı yıllarda yaş"
+    },
+    {
+      "title": "Molekül",
+      "category": "dogabilimleri",
+      "reason": "manual_review_reject",
+      "manual_reason": "Defines all molecules incorrectly as chemical compounds",
+      "url": "https://tr.wikipedia.org/wiki/Molek%C3%BCl",
+      "preview": "Molekül, birbirine bağlı gruplar halindeki atomların oluşturduğu kimyasal bileşiklerin en küçük temel yapısına verilen addır. Diğer bir ifadeyle bir molekül bir bileşiği oluşturan atomların eşit oranlarda bulunduğu en küçük birimdir. Moleküller yapıl"
+    },
+    {
+      "title": "Virüs",
+      "category": "dogabilimleri",
+      "reason": "manual_review_reject",
+      "manual_reason": "Misleadingly frames viruses as living creatures",
+      "url": "https://tr.wikipedia.org/wiki/Vir%C3%BCs",
+      "preview": "Virüs, canlı hücreleri enfekte edebilen ve böylece kendi kendine çoğalabilen mikroskobik büyüklükte ve hastalıklara yol açan biyolojik yaratıkların genel adıdır. Virüsler, hayvanlardan ve bitkilerden, bakterilerin ve arkeaların da içinde bulunduğu mi"
+    },
+    {
+      "title": "Enerji",
+      "category": "dogabilimleri",
+      "reason": "manual_review_reject",
+      "manual_reason": "Poor machine-translation-like prose with ambiguous meaning",
+      "url": "https://tr.wikipedia.org/wiki/Enerji",
+      "preview": "Fizikte enerji (Antik Yunanca ἐνέργεια (enérgeia) 'aktivite'den gelir), bir cisime veya fiziksel bir sisteme aktarılan, işin performansında ve ısı ve ışık biçiminde tanınabilen niceliksel özelliktir. Enerji korunan bir miktardır; Enerjinin korunumu y"
+    },
+    {
+      "title": "Sıcaklık",
+      "category": "dogabilimleri",
+      "reason": "manual_review_reject",
+      "manual_reason": "Circular definition of temperature in terms of temperature",
+      "url": "https://tr.wikipedia.org/wiki/S%C4%B1cakl%C4%B1k",
+      "preview": "Sıcaklık ya da suhunet, bir cismin sıcaklığının ya da soğukluğunun bir ölçüsüdür. Gazlar için kinetik enerji, mutlak sıcaklık dereceleriyle orantılıdır.\n\nDuyularla algılanmakta ve genellikle sıcak ya da soğuk terimleri ile ifade edilmektedir. Teknik "
     },
     {
       "title": "Yer çekimi",
       "category": "dogabilimleri",
       "reason": "title_mismatch",
+      "manual_reason": null,
       "url": "https://tr.wikipedia.org/wiki/Yer%C3%A7ekimi",
       "preview": "Yer çekimi (g ile gösterilir), kütleçekim (Dünya içindeki kütle dağılımından) ve merkezkaç kuvvetinin (Dünya'nın dönüşünden) birleşik etkisi nedeniyle nesnelere aktarılan net ivmedir. Yönü bir şakul topuzuyla çakışan, gücü veya büyüklüğü g=‖𝐠‖ normuy"
+    },
+    {
+      "title": "Matematik",
+      "category": "matematik",
+      "reason": "manual_review_reject",
+      "manual_reason": "Overbroad misleading first sentence introducing philosophy and physics as a definition",
+      "url": "https://tr.wikipedia.org/wiki/Matematik",
+      "preview": "Matematik (Yunanca μάθημα máthēma, \"bilgi, çalışma, öğrenme\"); sayılar, felsefe, uzay ve fizik gibi konularla ilgilenir. Matematikçiler ve filozoflar arasında matematiğin kesin kapsamı ve tanımı konusunda görüş ayrılığı vardır.\nMatematikçiler örüntül"
+    },
+    {
+      "title": "Ondalık sayı",
+      "category": "matematik",
+      "reason": "manual_review_reject",
+      "manual_reason": "Redirect to decimal numeral system instead of decimal number",
+      "url": "https://tr.wikipedia.org/wiki/Onlu",
+      "preview": "Onlu ya da Ondalık sayı sistemi (ayrıca on tabanlı konumsal sayı sistemi ve bazen onluk veya desimal olarak da adlandırılır), tam sayıları ve tam sayı olmayan sayıları ifade etmek için kullanılan standart bir sistemdir.\nBu sistem, Hint-Arap sayı sist"
     },
     {
       "title": "Eşitsizlik",
       "category": "matematik",
       "reason": "not_found",
+      "manual_reason": null,
       "url": null,
       "preview": ""
+    },
+    {
+      "title": "Fonksiyon",
+      "category": "matematik",
+      "reason": "manual_review_reject",
+      "manual_reason": "Defines functions only as numeric inputs and numeric outputs",
+      "url": "https://tr.wikipedia.org/wiki/Fonksiyon",
+      "preview": "Fonksiyon, matematikte değişken sayıları girdi olarak kabul edip bunlardan bir çıktı sayısı oluşmasını sağlayan kurallardır. Fonksiyon, 17. yüzyılda matematiğin kavramlarından biri olmuştur. Fizik, mühendislik, mimarlık ve birçok alanda kullanılmakta"
     },
     {
       "title": "Doğru",
       "category": "matematik",
       "reason": "disambiguation_or_markup",
+      "manual_reason": null,
       "url": "https://tr.wikipedia.org/wiki/Do%C4%9Fru",
-      "preview": "Doğru, şu anlamlara gelebilir:\n\nDoğru (geometri), düz bir eğri\nDoğru, mantıkta Boole'sal (Boolean) bir veri tipi"
+      "preview": "Doğru, şu anlamlara gelebilir:\n\nDoğru (geometri), düz bir eğri\nDoğru, mantıkta Boole'sal (Boolean) bir veri tipi\n\n"
     },
     {
       "title": "Daire",
       "category": "matematik",
       "reason": "broken_markup",
+      "manual_reason": null,
       "url": "https://tr.wikipedia.org/wiki/Daire",
       "preview": "Daire ya da dönge, çemberin içinde kalan alana verilen isimdir. Burada alandan kasıt, bir çemberin çevrelediği noktaların kümesi olmasıdır. Bir dairenin açık daire ya da kapalı daire olmasını dairenin sınırlarını oluşturan çemberin daireye dahil olup"
     },
@@ -568,6 +720,7 @@
       "title": "Tam sayı",
       "category": "matematik",
       "reason": "broken_citation",
+      "manual_reason": null,
       "url": "https://tr.wikipedia.org/wiki/Tam_say%C4%B1",
       "preview": "Tam sayılar, sayılar kümesinde yer alan sıfır (0), pozitif yönde yer alan doğal sayılar (1, 2, 3, ...) ve bunların negatif değerlerinden oluşan negatif sayılardan (−1, −2, −3, ...) oluşan sayı kümesidir.\nTüm tam sayıların oluşturduğu küme, çoğunlukla"
     },
@@ -575,6 +728,7 @@
       "title": "Karekök",
       "category": "matematik",
       "reason": "disambiguation_or_markup",
+      "manual_reason": null,
       "url": "https://tr.wikipedia.org/wiki/Karek%C3%B6k",
       "preview": "Matematikte negatif olmayan bir gerçel \n  \n    \n      \n        x\n      \n    \n    {\\displaystyle x}\n  \n sayısının temel karekök bulma işlemi \n  \n    \n      \n        \n          \n            x\n          \n        \n      \n    \n    {\\displaystyle {\\sqrt {x"
     },
@@ -582,6 +736,7 @@
       "title": "İstatistik",
       "category": "matematik",
       "reason": "too_long",
+      "manual_reason": null,
       "url": "https://tr.wikipedia.org/wiki/%C4%B0statistik",
       "preview": "İstatistik veya sayım bilimi, belirli bir amaç için veri toplama, tablo ve grafiklerle özetleme, sonuçları yorumlama, sonuçların güven derecelerini açıklama, örneklerden elde edilen sonuçları kitle için genelleme, özellikler arasındaki ilişkiyi araşt"
     },
@@ -589,6 +744,7 @@
       "title": "Değişken",
       "category": "matematik",
       "reason": "incomplete_first_sentence",
+      "manual_reason": null,
       "url": "https://tr.wikipedia.org/wiki/De%C4%9Fi%C5%9Fken",
       "preview": "Değişken (bilgisayar bilimi)\nDeğişim (dilbilim)\nDeğişken (matematik)"
     },
@@ -596,13 +752,23 @@
       "title": "Vektör",
       "category": "matematik",
       "reason": "title_mismatch",
+      "manual_reason": null,
       "url": "https://tr.wikipedia.org/wiki/Vekt%C3%B6r",
       "preview": "Matematik, fizik ve mühendislikte, Öklid vektörü veya kısaca vektör (bazen geometrik vektör, konumsal vektör ya da yöney) sayısal büyüklüğü (veya uzunluğu) ve yönü olan geometrik bir objedir. Vektör, genellikle bir doğru parçası ile özdeşleştirilir. "
+    },
+    {
+      "title": "Matris",
+      "category": "matematik",
+      "reason": "manual_review_reject",
+      "manual_reason": "Disambiguation text, not a proper mathematical definition",
+      "url": "https://tr.wikipedia.org/wiki/Matris",
+      "preview": "Matris, aşağıdaki anlamlara gelir:\n\nMatris (matematik), gerçek ve karmaşık sayıların dikdörtgen biçiminde tablosu.\nMatris (istatistik), elemanlar topluluğunun düzenlenmiş bir biçimi.\nMatris (matbaacılık), baskı yoluyla teksir için kullanılan, girinti"
     },
     {
       "title": "Web sitesi",
       "category": "teknoloji",
       "reason": "title_mismatch",
+      "manual_reason": null,
       "url": "https://tr.wikipedia.org/wiki/%C4%B0nternet_sitesi",
       "preview": "Web sitesi, ortak bir alan adı ile tanımlanan ve en az bir web sunucusunda yayınlanan web sayfaları ve ilgili içeriklerden oluşan bir koleksiyondur. Web üzerindeki sayfalar; metin, görsel ve animasyon şeklinde ziyaretçisine bilgi aktaran veya hizmet "
     },
@@ -610,13 +776,39 @@
       "title": "Web geliştirme",
       "category": "teknoloji",
       "reason": "not_found",
+      "manual_reason": null,
       "url": null,
       "preview": ""
+    },
+    {
+      "title": "Yazılım",
+      "category": "teknoloji",
+      "reason": "manual_review_reject",
+      "manual_reason": "Incorrectly limits software to device communication",
+      "url": "https://tr.wikipedia.org/wiki/Yaz%C4%B1l%C4%B1m",
+      "preview": "Yazılım, değişik ve çeşitli görevler yapma amaçlı tasarlanmış elektronik aygıtların birbirleriyle haberleşebilmesini ve uyumunu sağlayarak görevlerini ya da kullanılabilirliklerini geliştirmeye yarayan makine komutlarıdır.\nYazılım, elektronik aygıtla"
+    },
+    {
+      "title": "Donanım",
+      "category": "teknoloji",
+      "reason": "manual_review_reject",
+      "manual_reason": "Disambiguation list rather than hardware definition",
+      "url": "https://tr.wikipedia.org/wiki/Donan%C4%B1m",
+      "preview": "Donanım aşağıdaki anlamlara gelebilir:\n\nAğ donanımı: Bilgisayar ağının elemanları arasında iletişim için gerekli aygıtlar.\nBilgisayar donanımı: Bilgisayarda bulunan fiziksel birimler."
+    },
+    {
+      "title": "Programlama",
+      "category": "teknoloji",
+      "reason": "manual_review_reject",
+      "manual_reason": "Vague and misleading technical explanation",
+      "url": "https://tr.wikipedia.org/wiki/Programlama",
+      "preview": "Programlama ya da diğer adı ile yazılımlama (İngilizce: programming), bilgisayarın donanıma nasıl davranacağını anlatan, bilgisayara yön veren komutlar, kelimeler, aritmetik işlemlerdir. Diğer bir tanımla programlama, bilgisayar programlarının yazılm"
     },
     {
       "title": "Python (programlama dili)",
       "category": "teknoloji",
       "reason": "not_found",
+      "manual_reason": null,
       "url": null,
       "preview": ""
     },
@@ -624,6 +816,7 @@
       "title": "Veritabanı",
       "category": "teknoloji",
       "reason": "title_mismatch",
+      "manual_reason": null,
       "url": "https://tr.wikipedia.org/wiki/Veritaban%C4%B1",
       "preview": "Veritabanları, yapılandırılmış bilgi veya verilerin depolandığı alanlardır. Bilgi artışıyla birlikte bilgisayarda bilgi depolama ve bilgiye erişim konularında yeni yöntemlere ihtiyaç duyulmuştur. Veritabanları; büyük miktardaki bilgileri depolamada g"
     },
@@ -631,13 +824,23 @@
       "title": "Kablosuz ağ",
       "category": "teknoloji",
       "reason": "title_mismatch",
+      "manual_reason": null,
       "url": "https://tr.wikipedia.org/wiki/Kablosuz_a%C4%9F",
       "preview": "Kablosuz yerel ağ, kablolu iletişime alternatif olarak uygulanan, RF (Radyo Frekansı) teknolojisini kullanarak havadan bilgi alışverişi yapan esnek bir iletişim sistemidir."
+    },
+    {
+      "title": "Modem",
+      "category": "teknoloji",
+      "reason": "manual_review_reject",
+      "manual_reason": "Etymology without explanation of a device's function",
+      "url": "https://tr.wikipedia.org/wiki/Modem",
+      "preview": "Modem veya çevirge, tanım olarak \"Modülator\" ve \"Demodülator\" kelimelerinin birleşiminden üretilmiştir. Modem, bilgisayarların genel ağa bağlantısını sağlayan ve bir bilgisayarı uzak yerlerdeki bilgisayar(lara) bağlayan aygıttır. Modem, verileri ses "
     },
     {
       "title": "Elektronik",
       "category": "teknoloji",
       "reason": "disambiguation_or_markup",
+      "manual_reason": null,
       "url": "https://tr.wikipedia.org/wiki/Elektronik",
       "preview": "Elektronik, elektronları ve diğer elektrik yüklü parçacıkları yönlendiren cihazları tasarlamak, oluşturmak ve çalıştırmak için fizik prensiplerini inceleyen ve uygulayan bir bilim ve mühendislik disiplinidir. Elektronik, transistörler, diyotlar ve en"
     },
@@ -645,6 +848,7 @@
       "title": "Elektriksel direnç",
       "category": "teknoloji",
       "reason": "not_found",
+      "manual_reason": null,
       "url": null,
       "preview": ""
     },
@@ -652,6 +856,7 @@
       "title": "Gerilim",
       "category": "teknoloji",
       "reason": "too_long",
+      "manual_reason": null,
       "url": "https://tr.wikipedia.org/wiki/Gerilim",
       "preview": "Gerilim ile şu maddeler kastedilmiş olabilir:\n\nGerilim (elektrik), elektriksel bir büyüklük\nGerilim (fizik), üç boyutlu cisimlere her iki uçtan uygulanan çekme kuvveti\nGerilim (tür), sinema, roman, hikâye gibi yapıtlarda kullanılan bir tür\nPsikolojik"
     },
@@ -659,6 +864,7 @@
       "title": "Elektrik akımı",
       "category": "teknoloji",
       "reason": "disambiguation_or_markup",
+      "manual_reason": null,
       "url": "https://tr.wikipedia.org/wiki/Elektrik_ak%C4%B1m%C4%B1",
       "preview": "Elektrik akımı, elektriksel akım veya cereyan, en kısa tanımıyla elektriksel yük taşıyan parçacıkların hareketidir. Bu yük genellikle elektrik devrelerindeki kabloların içerisinde hareket eden elektronlar tarafından taşınmaktadır. Ayrıca, elektrolit "
     },
@@ -666,27 +872,175 @@
       "title": "Ohm kanunu",
       "category": "teknoloji",
       "reason": "title_mismatch",
+      "manual_reason": null,
       "url": "https://tr.wikipedia.org/wiki/Ohm_kanunu",
       "preview": "Ohm yasası, bir elektrik devresinde iki nokta arasındaki iletken üzerinden geçen akım, potansiyel farkla (örn. voltaj veya gerilim düşümü) doğru; iki nokta arasındaki dirençle ters orantılıdır.\n\nI=VR\nya da\n\nV=I.R\nBurada, I akım amper, V referans alın"
+    },
+    {
+      "title": "Sensör",
+      "category": "teknoloji",
+      "reason": "manual_review_reject",
+      "manual_reason": "Malformed double punctuation in key definition",
+      "url": "https://tr.wikipedia.org/wiki/Sens%C3%B6r",
+      "preview": "Sensör,, fiziksel bir olayı tespit etmek amacıyla bir çıkış sinyali üreten cihazdır.\nSensör, ısı, ışık, nem, ses, basınç, kuvvet, elektrik, uzaklık, ivme gibi fiziksel ya da pH gibi kimyasal büyüklükleri elektrik sinyallerine çeviren düzeneklerin gen"
+    },
+    {
+      "title": "Batarya",
+      "category": "teknoloji",
+      "reason": "manual_review_reject",
+      "manual_reason": "Ambiguous military-artillery sense rather than electrical battery",
+      "url": "https://tr.wikipedia.org/wiki/Batarya",
+      "preview": "Batarya, orduda en küçük topçu birliği.\nBatarya, cep telefonu ve benzeri cihazlara takılan şarjlı pil.\nBatarya, elektrik enerjisini kimyasal enerji olarak depo eden, istenildiğinde bunu elektrik enerjisi olarak veren cihaz, akım toplar, biriktireç."
     },
     {
       "title": "Otomobil",
       "category": "teknoloji",
       "reason": "disambiguation_or_markup",
+      "manual_reason": null,
       "url": "https://tr.wikipedia.org/wiki/Otomobil",
       "preview": "Otomobil, yolcu veya yük taşımak üzere tasarlanmış, motorlu ve tekerlekli kara ulaşım aracı. Otomobil, yakıtla çalışan bir motor sayesinde hayvan gücü kullanılmadan, itmeden veya çekmeden hareket edebilen ve üzerindekileri de taşıyabilen bir taşıttır"
+    },
+    {
+      "title": "Akıllı telefon",
+      "category": "teknoloji",
+      "reason": "manual_review_reject",
+      "manual_reason": "Dated PDA-focused definition, not general modern smartphone",
+      "url": "https://tr.wikipedia.org/wiki/Ak%C4%B1ll%C4%B1_telefon",
+      "preview": "Akıllı telefon (İngilizce: smartphone), cep telefonunun sağladığı klasik özelliklere, bilgisayar dünyasının bir ürünü olan PDA'lerin özelliklerinin de eklenmesiyle tasarlanan gelişmiş mobil iletişim cihazıdır. Akıllı telefonlarda mobil işletim sistem"
+    },
+    {
+      "title": "Afrika",
+      "category": "cografya",
+      "reason": "manual_review_reject",
+      "manual_reason": "Incorrect characterization of Africa as world's second by population density",
+      "url": "https://tr.wikipedia.org/wiki/Afrika",
+      "preview": "Afrika (İngilizce: Africa, Fransızca: Afrique, Arapça: أفريقيا), yüzölçümü ve nüfus yoğunluğu açısından Dünya'nın en büyük ikinci kıtasıdır. Kendisine bitişik kabul edilen adalar ile birlikte 30,3 milyon km²'lik alanı ile dünya yüzölçümünün %6'sını v"
+    },
+    {
+      "title": "Kanada",
+      "category": "cografya",
+      "reason": "manual_review_reject",
+      "manual_reason": "Broken empty English/French parenthetical labels",
+      "url": "https://tr.wikipedia.org/wiki/Kanada",
+      "preview": "Kanada (İngilizce: ; Fransızca: ), Kuzey Amerika'da bir ülkedir. On eyalet ve üç bölgeden oluşan ülke, Büyük Okyanus'tan Atlas Okyanusu'na ve kuzeyde Arktik Okyanusu'na kadar 9,98 milyon km²'lik bir alanı kaplar. Bu özelliğiyle yüzölçümü bakımından d"
+    },
+    {
+      "title": "Irak",
+      "category": "cografya",
+      "reason": "manual_review_reject",
+      "manual_reason": "Complex mixed-script official title crowds out simple factual learning",
+      "url": "https://tr.wikipedia.org/wiki/Irak",
+      "preview": "Irak (Arapça: العراق, romanize: el-‘Irāk; Kürtçe: عێراق, romanize: Êraq), resmî adıyla Irak Cumhuriyeti (Arapça: جمهورية العـراق, romanize: el-Cumhūrīyyetü'l-‘Irākīyye; Kürtçe: كۆماريى عێراق, romanize: Komarî Êraq), Batı Asya'da yer alan bir ülkedir."
     },
     {
       "title": "Karadeniz",
       "category": "cografya",
       "reason": "too_long",
+      "manual_reason": null,
       "url": "https://tr.wikipedia.org/wiki/Karadeniz",
       "preview": "Karadeniz (Bulgarca: Черно море (Çerno more); Rumence: Marea Neagră; Rusça: Чёрное море (Çyornoye more); Ukraynaca: Чорне море (Çorne more); Gürcüce: შავი ზღვა (Şavi Zğva); Abhazca: Амшын Еиқәа (Amşın Eyk'wa); Lazca/Megrelce: უჩა ზუღა (Uça Zuğa); Çer"
+    },
+    {
+      "title": "Mısır (bitki)",
+      "category": "bitkiler_ve_gida",
+      "reason": "manual_review_reject",
+      "manual_reason": "Ungrammatical fragment without copula",
+      "url": "https://tr.wikipedia.org/wiki/M%C4%B1s%C4%B1r_(bitki)",
+      "preview": "Mısır (Zea mays), genellikle çok nemli iklim bölgelerinde yetiştirilebilen bir tarım bitkisi. Meksika ve Orta Amerika kökenlidir.\nMısırda lisin ve triptofan proteinin biyolojik değeri de aminoasitlerin limite edici etkisi altındadır. Tanesindeki ham "
+    },
+    {
+      "title": "Yumurta",
+      "category": "bitkiler_ve_gida",
+      "reason": "manual_review_reject",
+      "manual_reason": "Cell-biological sense mismatches everyday food meaning",
+      "url": "https://tr.wikipedia.org/wiki/Yumurta",
+      "preview": "Yumurta, bir dişinin vücudunda oluşan, yumurtlama ve döllenmeden sonra aynı türden bir canlı oluşturan hücredir. Dişi hayvanların ve özellikle kuşların embriyoyu korumak amacıyla yumurtladığı yuvarlak ve oval şekilli cisimlere yumurta denmektedir. Yu"
+    },
+    {
+      "title": "Şeker",
+      "category": "bitkiler_ve_gida",
+      "reason": "manual_review_reject",
+      "manual_reason": "Incorrectly conflates all sugars with sucrose",
+      "url": "https://tr.wikipedia.org/wiki/%C5%9Eeker",
+      "preview": "Şeker veya sakkaroz, çoğu yiyecek ve içecekte kullanılan tatlı ve çözünür karbonhidratların genel adıdır. Çoğu bitkide bulunur ama şeker kamışı ve şeker pancarı olmak üzere bünyesinde bundan yeterince elde edilebilecek kadar bulunduran iki bitki vard"
+    },
+    {
+      "title": "Protein",
+      "category": "bitkiler_ve_gida",
+      "reason": "manual_review_reject",
+      "manual_reason": "Ungrammatical amino-acid chain definition",
+      "url": "https://tr.wikipedia.org/wiki/Protein",
+      "preview": "Proteinler, bir veya daha fazla uzun amino asit artık zincirini içeren büyük biyomoleküller ve makromolekül'lerdir. Proteinler organizmalar içinde, hücrelere yapı ve organizmalar sağlayarak ve molekülleri bir konumdan diğerine taşıyarak metabolik rea"
+    },
+    {
+      "title": "Karbonhidrat",
+      "category": "bitkiler_ve_gida",
+      "reason": "manual_review_reject",
+      "manual_reason": "Unnecessary chemical formula fragment and unsuited introductory explanation",
+      "url": "https://tr.wikipedia.org/wiki/Karbonhidrat",
+      "preview": "Karbonhidrat, karbon (C), hidrojen (H) ve oksijen (O) atomlarından oluşan, genellikle hidrojen-oksijen atomu oranı (suda) 2:1 olan bir biyomoleküldür ve dolayısıyla ampirik (deneysel) formülü Cm(H2O)n şeklindedir. m, n'den farklı da olabilir, aynı da"
+    },
+    {
+      "title": "Dil",
+      "category": "toplum_ve_dil",
+      "reason": "manual_review_reject",
+      "manual_reason": "Flowery subjective and unclear description, not a clean instructional definition",
+      "url": "https://tr.wikipedia.org/wiki/Dil",
+      "preview": "Dil veya lisan, insanlar arasında anlaşmayı ve iletişimi sağlayan doğal bir araç, kendisine özgü kuralları olan ve ancak bu kurallar içerisinde gelişen canlı bir varlık, çok boyutlu kavramlar bütünü; temeli tarihin bilinmeyen dönemlerinde atılmış bir"
+    },
+    {
+      "title": "İngilizce",
+      "category": "toplum_ve_dil",
+      "reason": "manual_review_reject",
+      "manual_reason": "Broken parenthetical and malformed sentence",
+      "url": "https://tr.wikipedia.org/wiki/%C4%B0ngilizce",
+      "preview": "İngilizce (Modern İngilizce, günümüzde resmi olmasa bile ana dili farklı olan insanların konuştuğu Fransızca, Arapça, İspanyolca, Rusça, Çince, Housa ve Türkçe ile beraber \"küresel ortak dil\"lerden biri olarak tanımlanmaktadır. İngilizce özellikle il"
+    },
+    {
+      "title": "Kütüphane",
+      "category": "toplum_ve_dil",
+      "reason": "manual_review_reject",
+      "manual_reason": "Etymology of word instead of what a library is",
+      "url": "https://tr.wikipedia.org/wiki/K%C3%BCt%C3%BCphane",
+      "preview": "Kütüphane anlamına gelen ve genellikle Batı dünyasında yaygın olarak kullanılan ‘bibliothek’ kelimesinin aslı Eski Yunancadır ve biblion kitap, baskılı ürünlerin saklandığı yer demektir. Türkçedeki kütüphane ise, Farsça ve Arapça kökenli kütüb (kitap"
+    },
+    {
+      "title": "Müzik",
+      "category": "toplum_ve_dil",
+      "reason": "manual_review_reject",
+      "manual_reason": "Subjective definition that does not sufficiently identify music",
+      "url": "https://tr.wikipedia.org/wiki/M%C3%BCzik",
+      "preview": "Müzik, insanın doğaya eklediği uyumlu seslerdir. Ses, bir doğa olayıdır. Müzik, bu doğal ve etkin olaydan bilinçli bir çalışma ve emek ile bir sanat yapıtı yaratmak, sesi bilimsel ve estetik bir temele oturtmaktır. \n\n"
+    },
+    {
+      "title": "Sinema",
+      "category": "toplum_ve_dil",
+      "reason": "manual_review_reject",
+      "manual_reason": "Awkward and misleading audiovisual production definition",
+      "url": "https://tr.wikipedia.org/wiki/Sinema",
+      "preview": "Sinema veya Sinema sanatı, kamera aracılığı ile elde edilmiş görüntülerin bir ışık aracılığı ile beyaz renkte bir perdeye yansıtılarak film adı verilen sesli veya sessiz hareketli videolar elde edilmesi işidir. Üretilen bu filmler, sinema salonu adı "
+    },
+    {
+      "title": "Ekonomi",
+      "category": "toplum_ve_dil",
+      "reason": "manual_review_reject",
+      "manual_reason": "Incomplete and ambiguous scope of economic activity",
+      "url": "https://tr.wikipedia.org/wiki/Ekonomi",
+      "preview": "Ekonomi, üretim, ticaret, dağıtım ve tüketim, ithalat ve ihracattan oluşan insan etkinliğidir. İnsanın ihtiyaçlarını karşılamada yapılan her türlü faaliyeti içerir.\nEkonomi belli bir bölge içindeki ekonomik sistemden oluşur. Bu sistem o bölgedeki iş "
+    },
+    {
+      "title": "Banka",
+      "category": "toplum_ve_dil",
+      "reason": "manual_review_reject",
+      "manual_reason": "Overly restrictive interest-driven banking definition",
+      "url": "https://tr.wikipedia.org/wiki/Banka",
+      "preview": "Banka, faizle para alınıp verilebilen, kredi, iskonto, kambiyo işlemleri yapan, kasalarında para, değerli belge, eşya saklayan ve bunun dışındaki diğer ticari, finansal ve ekonomik etkinliklerde bulunan kuruluşlara denir. En yaygın üçüncül sektörlerd"
     },
     {
       "title": "Hukuk",
       "category": "toplum_ve_dil",
       "reason": "too_long",
+      "manual_reason": null,
       "url": "https://tr.wikipedia.org/wiki/Hukuk",
       "preview": "Hukuk ya da tüze birey, toplum ve devletin hareketlerini, birbirleriyle olan ilişkilerini; yetkili organlar tarafından usulüne uygun olarak çıkarılan, kamu gücüyle desteklenen, muhatabına genel olarak nasıl davranması yahut nasıl davranmaması gerekti"
     },
@@ -694,6 +1048,7 @@
       "title": "Görev",
       "category": "toplum_ve_dil",
       "reason": "not_found",
+      "manual_reason": null,
       "url": null,
       "preview": ""
     },
@@ -701,13 +1056,23 @@
       "title": "Mühendis",
       "category": "toplum_ve_dil",
       "reason": "too_long",
+      "manual_reason": null,
       "url": "https://tr.wikipedia.org/wiki/M%C3%BChendis",
       "preview": "Mühendisler, mühendisliğin uygulayıcıları olarak, işlevsel hedefleri ve gereksinimleri yerine getirmek için makineler, karmaşık sistemler, yapılar, aletler ve malzemeler icat eden, tasarlayan, analiz eden, inşa eden ve test eden, bunu yaparken de pra"
+    },
+    {
+      "title": "Şehir",
+      "category": "toplum_ve_dil",
+      "reason": "manual_review_reject",
+      "manual_reason": "Overly categorical statement that a city is always the largest settlement",
+      "url": "https://tr.wikipedia.org/wiki/%C5%9Eehir",
+      "preview": "Şehir veya kent, en büyük yerleşim birimidir. Şehirler genellikle barınma, emlak, sanitasyon, kamu hizmeti, temel kamu hizmetleri, arazi kullanımı, imalat, hizmet, toplu ulaşım, kavşak ve iletişim için kapsamlı altyapı ve sistemlere sahiptir. Şehirle"
     },
     {
       "title": "Marie Curie",
       "category": "tarihi_kisiler",
       "reason": "title_mismatch",
+      "manual_reason": null,
       "url": "https://tr.wikipedia.org/wiki/Marie_Curie",
       "preview": "Marie Skłodowska Curie (Lehçe telaffuz: [kʲiˈri]; Fransızca telaffuz: [kyʁi]; doğum Maria Salomea Skłodowska, 7 Kasım 1867 – 4 Temmuz 1934), radyoaktivite alanında öncü araştırmalar yapmış ve bu araştırmaları sonucunda Nobel Ödülü'ne layık görülmüş P"
     },
@@ -715,6 +1080,7 @@
       "title": "Charles Darwin",
       "category": "tarihi_kisiler",
       "reason": "title_mismatch",
+      "manual_reason": null,
       "url": "https://tr.wikipedia.org/wiki/Charles_Darwin",
       "preview": "Charles Robert Darwin  (12 Şubat 1809 - 19 Nisan 1882), evrimsel biyolojiye yaptığı katkılarla tanınan İngiliz doğa bilimci, jeolog ve biyologdur. Tüm yaşam türlerinin ortak bir atadan türediği yönündeki önermesi günümüzde genel kabul görmekte ve bil"
     },
@@ -722,6 +1088,7 @@
       "title": "Thomas Edison",
       "category": "tarihi_kisiler",
       "reason": "title_mismatch",
+      "manual_reason": null,
       "url": "https://tr.wikipedia.org/wiki/Thomas_Edison",
       "preview": "Thomas Alva Edison (11 Şubat 1847 - 18 Ekim 1931), 20. yüzyıl yaşamını icatlarıyla büyük bir şekilde etkileyen Amerikalı mucit ve iş adamıdır. Elektrik enerjisi üretimi, kitle iletişimi, ses kaydı, pizza dilimleyici gibi birçok alanda cihazlar gelişt"
     },
@@ -729,6 +1096,7 @@
       "title": "Ada Lovelace",
       "category": "tarihi_kisiler",
       "reason": "title_mismatch",
+      "manual_reason": null,
       "url": "https://tr.wikipedia.org/wiki/Ada_Lovelace",
       "preview": "Augusta Ada King, Lovelace Kontesi (10 Aralık 1815, Londra - 27 Kasım 1852, Londra), Augusta Ada Byron adıyla doğan ve günümüzde yaygın olarak Ada Lovelace adıyla bilinen, İngiliz matematikçi ve yazardır. Esas olarak Charles Babbage'in erken dönem me"
     },
@@ -736,6 +1104,7 @@
       "title": "Alan Turing",
       "category": "tarihi_kisiler",
       "reason": "title_mismatch",
+      "manual_reason": null,
       "url": "https://tr.wikipedia.org/wiki/Alan_Turing",
       "preview": "Alan Mathison Turing (İngilizce okunuşu: Elın Tyuring; d. 23 Haziran 1912, Londra; ö. 7 Haziran 1954, Wilmslow), İngiliz matematikçi, mantıkçı, kriptanalist ve bilgisayar bilimcidir. Sherborne Okulu'nda ve Cambridge'deki King's College'da okudu, 1938"
     },
@@ -743,22 +1112,17 @@
       "title": "Leonardo da Vinci",
       "category": "tarihi_kisiler",
       "reason": "incomplete_first_sentence",
+      "manual_reason": null,
       "url": "https://tr.wikipedia.org/wiki/Leonardo_da_Vinci",
-      "preview": "Leonardo di ser Piero da Vinci ("
+      "preview": "Leonardo di ser Piero da Vinci (\n\n"
     },
     {
       "title": "İbn-i Sina",
       "category": "tarihi_kisiler",
       "reason": "title_mismatch",
+      "manual_reason": null,
       "url": "https://tr.wikipedia.org/wiki/%C4%B0bn_Sina",
       "preview": "İbn Sînâ (Farsça: ابن سینا) veya Ebu Ali Sînâ (Farsça: ابوعلی سینا) ya da Batılıların söyleyişiyle Avicenna (y. 980 – Haziran 1037), İslam'ın Altın Çağı döneminin en önemli doktorlarından, astronomlarından, düşünürlerinden, yazarlarından ve bilginler"
-    },
-    {
-      "title": "Aziz Sancar",
-      "category": "tarihi_kisiler",
-      "reason": "too_short",
-      "url": "https://tr.wikipedia.org/wiki/Aziz_Sancar",
-      "preview": "Aziz Sancar (d. 8 Eylül 1946, Savur, Mardin), Türk-Amerikalı doktor, akademisyen, biyokimyager ve moleküler biyologdur. 2015 yılında, Tomas Lindahl ve Paul L. Modrich ile birlikte DNA onarımına ilişkin çalışmaları nedeniyle Nobel Kimya Ödülü'ne layık"
     }
   ],
   "limit": "Heuristic screening cannot guarantee Wikipedia factual accuracy; no per-fact manual expert audit.",
