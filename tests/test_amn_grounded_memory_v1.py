@@ -31,12 +31,18 @@ def test_no_unrelated_topic_substitution_when_question_unknown():
     for question in ("Kedi nasıl kullanılır","Salata nasıl yapılır",
                      "Top nasıl oynanır","Bilinmeyen nesne nedir",
                      "Oy pusuladı nedir","Oyun saatleri nerede",
-                     "Denklem nasıl çözülür","10.000 kuş türü mü vardır"):
+                     "Denklem nasıl çözülür"):
         result=memory.answer(question)
         assert result.answer==NOT_FOUND
         assert not result.found
         assert result.source_url==""
     assert "Web" not in memory.answer("Kedi nasıl kullanılır").answer
+    # Existing vetted BirdLife fact actually covers this question; it must
+    # not be treated as unknown merely to force the test to pass.
+    bird=memory.answer("10.000 kuş türü mü vardır")
+    assert bird.found
+    assert "11" in bird.answer
+    assert bird.source_url.startswith("https://")
 
 def test_train_only_memory_no_validation_test_leakage():
     memory=MemoryIndex(DATA/"train.jsonl")
