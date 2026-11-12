@@ -1,0 +1,67 @@
+name: AMN v3.1 replay retention fix - eight original Turkish QAs
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/amn_v31_replay8.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: amn-v31-replay8
+  cancel-in-progress: false
+
+jobs:
+  train-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install exact dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Validate model's learned token alignment and corrected checkpoint
+        run: python -m pytest -q tests/test_amn_v31_rehearsal_fix.py
+      - name: Recreate original source and hash partitions
+        run: |
+          python -u experiments/prepare_open_turkish.py \
+            --output data/open_turkish_v31 \
+            --max-samples 20000 --max-seq-len 680 \
+            --min-answer-bytes 45 --min-train 3000
+      - name: Train balanced replay of old six and two formerly forgotten control questions
+        run: |
+          python -u experiments/fix_amn_v31_replay8.py \
+            --original results/amn_tm_v31 \
+            --base results/amn_tm_v31_rehearsal \
+            --audit results/amn_tm_v31/seen_training_questions/audit.json \
+            --data data/open_turkish_v31 \
+            --output results/amn_tm_v31_replay8 \
+            --steps 320 --batch 4 --lr 0.0004 \
+            --report-every 80 --seed 74 --threads 2
+      - name: Save separate replay checkpoint and unedited model responses
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          tmp="$(mktemp -d)"
+          cp -a results/amn_tm_v31_replay8/. "$tmp/"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            mkdir -p results/amn_tm_v31_replay8
+            cp -a "$tmp/." results/amn_tm_v31_replay8/
+            git add -f results/amn_tm_v31_replay8/
+            if git diff --cached --quiet; then
+              echo "Identical artifacts already archived"
+              exit 0
+            fi
+            git commit -m "Archive AMN v3.1 eight-example replay retention model and real Turkish answers"
+            if git push origin HEAD:main; then exit 0; fi
+            echo "Retrying concurrent update"
+          done
+          exit 1
