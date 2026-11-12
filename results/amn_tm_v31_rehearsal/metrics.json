@@ -1,0 +1,285 @@
+{
+  "purpose": "Diagnose and correct inadequate sample exposure",
+  "original_model": "AMNTMv3.1",
+  "new_checkpoint": "fine-tuned original v3.1, preserved in independent file",
+  "training_source_audit_verified": true,
+  "training_source_file_sha256": "f1aed098ae68849a66075220c7aae09971e0193371937c0f35433b2afd9d2f64",
+  "tokenizer_sha256": "5ce79ef839ad3dd4a7e411d2f74bfb10cc7db00e0e55bb2369f7e95f376b41f5",
+  "original_steps": 1420,
+  "starting_checkpoint_sha256": "79f4d92aa351996bad4b83cd7b434a516921f02bbbc39a7152fbac01f8383e2b",
+  "fresh_optimization_steps": 360,
+  "learning_rate": 0.0006,
+  "batch_size": 3,
+  "trained_question_count": 6,
+  "original_answer_exposures": [
+    2,
+    2,
+    2,
+    3,
+    3,
+    3
+  ],
+  "new_answer_exposures": [
+    180,
+    180,
+    180,
+    180,
+    180,
+    180
+  ],
+  "heldout_from_new_rehearsal_question_count": 2,
+  "control_were_seen_in_original_v31": true,
+  "not_evidence_of_open_domain_generalization": true,
+  "before": {
+    "train_teacher_forced_nll": [
+      6.861207962036133,
+      7.10565710067749,
+      6.789156494140625,
+      6.849050903320313,
+      6.277552517977628,
+      6.780827308768656
+    ],
+    "control_teacher_forced_nll": [
+      7.069468180338542,
+      6.416907461065995
+    ],
+    "seen_generation": [
+      {
+        "question": "Bir konuşma başlatmak için üç en iyi uygulamayı listeleyin.",
+        "reference": "Bir konuşma başlatmak için en iyi uygulamaların bazıları şunlardır: 1) Doğrudan olun ve açık uçlu bir soru sorun. 2) Sıcak ve dostça olun. 3) Gerçek ilgi göstererek övgüler sunun ve diğer kişinin ne söylediğini dinleyin.",
+        "answer": "1. Bir, bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir",
+        "eos": false,
+        "tokens": 100,
+        "exact": false,
+        "char_f1_proxy": 0.2309
+      },
+      {
+        "question": "Web geliştirme ve web tasarımı arasındaki farkı açıklayın.",
+        "reference": "Web geliştirme, web sitesi oluşturma sürecidir ve web sitesinin işlevselliğini oluşturmak için kodlama ve işaretleme dili yazmayı içerir. Web tasarımı, web sitesinin görünümüne odaklanır ve görsel düzeni, renkleri ve tipografisini içerir. Web geliştirme, bir web sitesinin teknik yönlerine odaklanırken web tasarımı estetiğine odaklanır.",
+        "answer": "Bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir",
+        "eos": false,
+        "tokens": 100,
+        "exact": false,
+        "char_f1_proxy": 0.3125
+      },
+      {
+        "question": "Doğru bir çizgi için matematiksel denklemi türetin.",
+        "reference": "y = mx + b, burada m eğim ve b çizginin y-kesiti olarak tanımlanır.",
+        "answer": "1. Bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir",
+        "eos": false,
+        "tokens": 100,
+        "exact": false,
+        "char_f1_proxy": 0.1118
+      },
+      {
+        "question": "Vejetaryenler için uygun bir yemek önerin.",
+        "reference": "Lezzetli bir vejetaryen yemek Ratatouille olabilir. Patlıcan, kabak, domates, biber, soğan, sarımsak ve otların zengin domates sosunda pişirilmesiyle yapılır. Quinoa, kuskus veya gevrek ekmekle servis edilebilir.",
+        "answer": "1. Bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir",
+        "eos": false,
+        "tokens": 100,
+        "exact": false,
+        "char_f1_proxy": 0.1967
+      },
+      {
+        "question": "Dünyada kaç kuş türü olduğunu bulun.",
+        "reference": "Dünya'da yaklaşık 10.000 kuş türü vardır.",
+        "answer": "1. Bir, bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir",
+        "eos": false,
+        "tokens": 100,
+        "exact": false,
+        "char_f1_proxy": 0.0459
+      },
+      {
+        "question": "İyi dengelenmiş bir diyetin beş bileşenini adlandırın.",
+        "reference": "Dengeli bir diyet, meyve ve sebzeler; tam tahıllar; az yağlı süt ürünleri; sağlıklı yağlar ve az şeker, tuz ve sağlıksız yağ içeren besinler gibi çeşitli besin yoğunluğuna sahip yiyecekleri içermelidir. Ayrıca, dengeli bir diyet için yeterli su tüketimi ve gün boyunca düzenli öğünler ve atıştırmalıklar tüketmek önemlidir.",
+        "answer": "1. Bir, bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir",
+        "eos": false,
+        "tokens": 100,
+        "exact": false,
+        "char_f1_proxy": 0.2841
+      }
+    ],
+    "control_generation": [
+      {
+        "question": "Erkek ve dişi kardinal arasındaki farkı nasıl anlatacağınızı açıklayın.",
+        "reference": "Erkek kardinal kuşlar parlak kırmızı tüylere sahiptir, dişi kardinal kuşların tüyleri daha kahverengi renklidir. Erkeklerin yüzleri siyahken, dişi kardinal kuşların yüzleri gri renklidir. Ayrıca, erkek kardinal kuşlar genellikle dişilerden daha büyüktür.",
+        "answer": "Bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir",
+        "eos": false,
+        "tokens": 100,
+        "exact": false,
+        "char_f1_proxy": 0.2542
+      },
+      {
+        "question": "Bir resmi tanımlamak için 10 sıfat bulun.",
+        "reference": "Canlı, karmaşık, hipnotize edici, cezbedici, parlak, cesur, dinamik, ifade dolu, hipnotize edici ve baştan çıkarıcı.",
+        "answer": "1. Bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir bir",
+        "eos": false,
+        "tokens": 100,
+        "exact": false,
+        "char_f1_proxy": 0.1323
+      }
+    ],
+    "seen_summary": {
+      "exact_count": 0,
+      "count": 6,
+      "avg_char_f1_proxy": 0.197
+    },
+    "control_summary": {
+      "exact_count": 0,
+      "count": 2,
+      "avg_char_f1_proxy": 0.1932
+    }
+  },
+  "after": {
+    "train_teacher_forced_nll": [
+      0.0032897237688302994,
+      0.002951798029243946,
+      0.002904670536518097,
+      0.0032067636648813883,
+      0.0027764778245579114,
+      0.0029547630406137723
+    ],
+    "control_teacher_forced_nll": [
+      8.759402320498513,
+      9.093274568256579
+    ],
+    "seen_generation": [
+      {
+        "question": "Bir konuşma başlatmak için üç en iyi uygulamayı listeleyin.",
+        "reference": "Bir konuşma başlatmak için en iyi uygulamaların bazıları şunlardır: 1) Doğrudan olun ve açık uçlu bir soru sorun. 2) Sıcak ve dostça olun. 3) Gerçek ilgi göstererek övgüler sunun ve diğer kişinin ne söylediğini dinleyin.",
+        "answer": "Bir konuşma başlatmak için en iyi uygulamaların bazıları şunlardır: 1) Doğrudan olun ve açık uçlu bir soru sorun. 2) Sıcak ve dostça olun. 3) Gerçek ilgi göstererek övgüler sunun ve diğer kişinin ne söylediğini dinleyin.",
+        "eos": true,
+        "tokens": 47,
+        "exact": true,
+        "char_f1_proxy": 1.0
+      },
+      {
+        "question": "Web geliştirme ve web tasarımı arasındaki farkı açıklayın.",
+        "reference": "Web geliştirme, web sitesi oluşturma sürecidir ve web sitesinin işlevselliğini oluşturmak için kodlama ve işaretleme dili yazmayı içerir. Web tasarımı, web sitesinin görünümüne odaklanır ve görsel düzeni, renkleri ve tipografisini içerir. Web geliştirme, bir web sitesinin teknik yönlerine odaklanırken web tasarımı estetiğine odaklanır.",
+        "answer": "Web geliştirme, web sitesi oluşturma sürecidir ve web sitesinin işlevselliğini oluşturmak için kodlama ve işaretleme dili yazmayı içerir. Web tasarımı, web sitesinin görünümüne odaklanır ve görsel düzeni, renkleri ve tipografisini içerir. Web geliştirme, bir web sitesinin teknik yönlerine odaklanırken web tasarımı estetiğine odaklanır.",
+        "eos": true,
+        "tokens": 63,
+        "exact": true,
+        "char_f1_proxy": 1.0
+      },
+      {
+        "question": "Doğru bir çizgi için matematiksel denklemi türetin.",
+        "reference": "y = mx + b, burada m eğim ve b çizginin y-kesiti olarak tanımlanır.",
+        "answer": "y = mx + b, burada m eğim ve b çizginin y-kesiti olarak tanımlanır.",
+        "eos": true,
+        "tokens": 24,
+        "exact": true,
+        "char_f1_proxy": 1.0
+      },
+      {
+        "question": "Vejetaryenler için uygun bir yemek önerin.",
+        "reference": "Lezzetli bir vejetaryen yemek Ratatouille olabilir. Patlıcan, kabak, domates, biber, soğan, sarımsak ve otların zengin domates sosunda pişirilmesiyle yapılır. Quinoa, kuskus veya gevrek ekmekle servis edilebilir.",
+        "answer": "Lezzetli bir vejetaryen yemek Ratatouille olabilir. Patlıcan, kabak, domates, biber, soğan, sarımsak ve otların zengin domates sosunda pişirilmesiyle yapılır. Quinoa, kuskus veya gevrek ekmekle servis edilebilir.",
+        "eos": true,
+        "tokens": 59,
+        "exact": true,
+        "char_f1_proxy": 1.0
+      },
+      {
+        "question": "Dünyada kaç kuş türü olduğunu bulun.",
+        "reference": "Dünya'da yaklaşık 10.000 kuş türü vardır.",
+        "answer": "Dünya'da yaklaşık 10.000 kuş türü vardır.",
+        "eos": true,
+        "tokens": 10,
+        "exact": true,
+        "char_f1_proxy": 1.0
+      },
+      {
+        "question": "İyi dengelenmiş bir diyetin beş bileşenini adlandırın.",
+        "reference": "Dengeli bir diyet, meyve ve sebzeler; tam tahıllar; az yağlı süt ürünleri; sağlıklı yağlar ve az şeker, tuz ve sağlıksız yağ içeren besinler gibi çeşitli besin yoğunluğuna sahip yiyecekleri içermelidir. Ayrıca, dengeli bir diyet için yeterli su tüketimi ve gün boyunca düzenli öğünler ve atıştırmalıklar tüketmek önemlidir.",
+        "answer": "Dengeli bir diyet, meyve ve sebzeler; tam tahıllar; az yağlı süt ürünleri; sağlıklı yağlar ve az şeker, tuz ve sağlıksız yağ içeren besinler gibi çeşitli besin yoğunluğuna sahip yiyecekleri içermelidir. Ayrıca, dengeli bir diyet için yeterli su tüketimi ve gün boyunca düzenli öğünler ve atıştırmalıklar tüketmek önemlidir.",
+        "eos": true,
+        "tokens": 66,
+        "exact": true,
+        "char_f1_proxy": 1.0
+      }
+    ],
+    "control_generation": [
+      {
+        "question": "Erkek ve dişi kardinal arasındaki farkı nasıl anlatacağınızı açıklayın.",
+        "reference": "Erkek kardinal kuşlar parlak kırmızı tüylere sahiptir, dişi kardinal kuşların tüyleri daha kahverengi renklidir. Erkeklerin yüzleri siyahken, dişi kardinal kuşların yüzleri gri renklidir. Ayrıca, erkek kardinal kuşlar genellikle dişilerden daha büyüktür.",
+        "answer": "Web geliştirme, web sitesi oluşturma sürecidir ve web sitesinin işlevselliğini oluşturmak için kodlama ve işaretleme dili yazmayı içerir. Web tasarımı, web sitesinin görünümüne odaklanır ve görsel düzeni, renkleri ve tipografisini içerir. Web geliştirme, bir web sitesinin teknik yönlerine odaklanırken web tasarımı estetiğine odaklanır.",
+        "eos": true,
+        "tokens": 63,
+        "exact": false,
+        "char_f1_proxy": 0.7039
+      },
+      {
+        "question": "Bir resmi tanımlamak için 10 sıfat bulun.",
+        "reference": "Canlı, karmaşık, hipnotize edici, cezbedici, parlak, cesur, dinamik, ifade dolu, hipnotize edici ve baştan çıkarıcı.",
+        "answer": "Bir konuşma başlatmak için en iyi uygulamaların bazıları şunlardır: 1) Doğrudan olun ve açık uçlu bir soru sorun. 2) Sıcak ve dostça olun. 3) Gerçek ilgi göstererek övgüler sunun ve diğer kişinin ne söylediğini dinleyin.",
+        "eos": true,
+        "tokens": 47,
+        "exact": false,
+        "char_f1_proxy": 0.5595
+      }
+    ],
+    "seen_summary": {
+      "exact_count": 6,
+      "count": 6,
+      "avg_char_f1_proxy": 1.0
+    },
+    "control_summary": {
+      "exact_count": 0,
+      "count": 2,
+      "avg_char_f1_proxy": 0.6317
+    }
+  },
+  "history": [
+    {
+      "step": 1,
+      "batch_loss": 6.888242721557617,
+      "mean_seen_nll": 6.6291060888255045,
+      "mean_control_nll": 6.745271681145817,
+      "elapsed_seconds": 1.4
+    },
+    {
+      "step": 60,
+      "batch_loss": 0.6419715881347656,
+      "mean_seen_nll": 0.4639453245904064,
+      "mean_control_nll": 7.811842661055308,
+      "elapsed_seconds": 50.5
+    },
+    {
+      "step": 120,
+      "batch_loss": 0.021289879456162453,
+      "mean_seen_nll": 0.020919908989503355,
+      "mean_control_nll": 8.468884052987285,
+      "elapsed_seconds": 100.6
+    },
+    {
+      "step": 180,
+      "batch_loss": 0.00987315271049738,
+      "mean_seen_nll": 0.00979584147362607,
+      "mean_control_nll": 8.649632421252921,
+      "elapsed_seconds": 150.1
+    },
+    {
+      "step": 240,
+      "batch_loss": 0.006072605960071087,
+      "mean_seen_nll": 0.005972686211891516,
+      "mean_control_nll": 8.761523470643569,
+      "elapsed_seconds": 199.4
+    },
+    {
+      "step": 300,
+      "batch_loss": 0.004210702609270811,
+      "mean_seen_nll": 0.004097965466959092,
+      "mean_control_nll": 8.851960222822681,
+      "elapsed_seconds": 249.4
+    },
+    {
+      "step": 360,
+      "batch_loss": 0.003147399751469493,
+      "mean_seen_nll": 0.0030140328107742358,
+      "mean_control_nll": 8.926338444377546,
+      "elapsed_seconds": 299.2
+    }
+  ],
+  "train_seconds": 302.9
+}
