@@ -13,6 +13,8 @@ from urllib.parse import urlencode,quote
 from urllib.error import HTTPError,URLError
 
 ROOT=Path(__file__).resolve().parents[1]
+REVIEW_FILE=ROOT/"data/amn_world_manual_review_exclusions_v1.json"
+MANUAL_EXCLUSIONS=json.loads(REVIEW_FILE.read_text(encoding="utf-8"))["exclusions"]
 REST="https://tr.wikipedia.org/api/rest_v1/page/summary/"
 ACTION="https://tr.wikipedia.org/w/api.php"
 WIKI="https://tr.wikipedia.org"
@@ -128,6 +130,8 @@ def batch_fetch(entries):
 
 def clean_lead(article):
     if "failure" in article:return None,article["failure"]
+    if article.get("requested") in MANUAL_EXCLUSIONS:
+        return None,"manual_review_reject"
     whole=re.sub(r"\s+"," ",html.unescape(article["extract"])).strip()
     if not whole:return None,"empty_text"
     if any(k in whole.casefold() for k in BAD):return None,"disambiguation_or_markup"
@@ -239,7 +243,8 @@ def prepare(seeds,raw,out,min_accepted):
         fact,why=clean_lead(article)
         if fact is None:
             rejects.append({"title":article["requested"],"category":article["category"],
-                "reason":why,"url":article.get("url"),
+                "reason":why,"manual_reason":MANUAL_EXCLUSIONS.get(article["requested"]),
+                "url":article.get("url"),
                 "preview":article.get("extract","")[:250]})
             reason[why]+=1
         else:
@@ -255,13 +260,19 @@ def prepare(seeds,raw,out,min_accepted):
     if must-actual:raise RuntimeError("QUALITY GATE missing basics: "+repr(must-actual))
     splits={"train":[],"val":[],"test":[]};seen=set()
     topic_owner={}
+    canonical_owner={}
     core_train={"Köpek","Kedi","İnsan","Kadın","Erkek","Denklem","Web geliştirme",
         "Web tasarımı","Bilgisayar","Atom","Güneş","Dünya","İnternet","Yapay zekâ",
         "Robot","Elektrik","Cinsiyet","Toplumsal cinsiyet","Matematik","Beyin"}
     for a in accepted:
-        h=int(digest("world-v1|"+norm(a["requested"]))[:8],16)%100
+        canonical=a["url"]
+        h=int(digest("world-v1-source|"+canonical)[:8],16)%100
         split="train" if a["requested"] in core_train else (
             "test" if h<10 else "val" if h<20 else "train")
+        if canonical in canonical_owner:
+            split=canonical_owner[canonical]
+        else:
+            canonical_owner[canonical]=split
         topic_owner[a["requested"]]=split
         for qa in make_qa(a,a["fact"]):
             key=norm(qa["prompt"])
@@ -297,6 +308,9 @@ def prepare(seeds,raw,out,min_accepted):
       "seed_topic_count":len(seeds),"download_success_count":sum("failure" not in a for a in raw),
       "accepted_page_count":len(accepted),"rejected_page_count":len(rejects),
       "rejection_reasons":dict(reason),"accepted_by_category":dict(categories),
+      "manually_rejected_count":reason.get("manual_review_reject",0),
+      "manual_review_exclusion_file":"data/amn_world_manual_review_exclusions_v1.json",
+      "manual_review_exclusion_sha256":hashlib.sha256(REVIEW_FILE.read_bytes()).hexdigest(),
       "training_topics":sum(s=="train" for s in topic_owner.values()),
       "split_qa_counts":{k:len(v) for k,v in splits.items()},
       "official_tuik_name_qa_count":len(names),
@@ -315,7 +329,7 @@ def prepare(seeds,raw,out,min_accepted):
       "license":"Wikipedia CC BY-SA/GFDL and official statistical facts",
       "train":len(splits["train"]),"val":len(splits["val"]),"test":len(splits["test"]),
       "split_protocol":"topic-disjoint deterministic hash; official names train only",
-      "quality_gate":"strict syntax source attribution and no unvetted Alpaca"}
+      "quality_gate":"manual editorial reject list and strict source-attributed format checks"}
     (out/"manifest.json").write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding="utf-8")
     lines=["# Türkçe dünya bilgisi — veri kalite denetimi","",
         "Kaynak: Türkçe Wikipedia (355 maddelik ön-seçim) ve resmi TÜİK 2025 bebek isimleri.",
@@ -324,6 +338,7 @@ def prepare(seeds,raw,out,min_accepted):
         "Otomatik kalite denetimi yüzde 100 doğruluk iddiası taşımaz.","",
         "İndirilen: "+str(audit["download_success_count"])+"/"+str(len(seeds)),
         "Kabul: "+str(len(accepted)),"Ret: "+str(len(rejects)),
+        "Elle incelemede reddedilen: "+str(reason.get("manual_review_reject",0)),
         "Train/val/test QA: "+"/".join(str(len(splits[k])) for k in ("train","val","test")),
         "İsim QA: "+str(len(names)),
         "Diğer güvenilir kaynaklı QA: "+str(len(external)),
