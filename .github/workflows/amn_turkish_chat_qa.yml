@@ -1,0 +1,54 @@
+name: Verify AMN Turkish live chat and record real post-training Q&A
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/amn_turkish_chat_qa.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: amn-turkish-chat-qa-archive
+  cancel-in-progress: false
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install inference dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Smoke-test real checkpoint through HTTP chat API
+        run: python -m pytest -q tests/test_amn_chat_server.py
+      - name: Ask six new real questions of frozen v2 AMN
+        run: python -u experiments/qa_posttrain_v2.py
+      - name: Archive raw answers only in AMN-4W-Edit
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          tmp="$(mktemp -d)"
+          cp results/open_turkish_retrain_v2/chat_probes/answers.json "$tmp/"
+          cp results/open_turkish_retrain_v2/chat_probes/answers_tr.md "$tmp/"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            mkdir -p results/open_turkish_retrain_v2/chat_probes
+            cp "$tmp/"* results/open_turkish_retrain_v2/chat_probes/
+            git add -f results/open_turkish_retrain_v2/chat_probes/
+            if git diff --cached --quiet; then
+              echo "Answer archive already identical"
+              exit 0
+            fi
+            git commit -m "Archive six posttraining Turkish answers from v2 AMN checkpoint"
+            if git push origin HEAD:main; then exit 0; fi
+            echo "Concurrent update; refreshing main"
+          done
+          exit 1
