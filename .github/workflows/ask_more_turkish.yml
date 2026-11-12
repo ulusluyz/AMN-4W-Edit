@@ -1,0 +1,51 @@
+name: Ask six new Turkish questions to saved AMN model
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/ask_more_turkish.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: amn-edit-question-probe
+  cancel-in-progress: false
+
+jobs:
+  ask-saved-amn:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install inference dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Generate six genuine answers from frozen checkpoint
+        run: python -u experiments/ask_more_turkish.py
+      - name: Commit original raw model answers to Edit only
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          saved="$(mktemp -d)"
+          cp results/open_turkish/more_questions/answers.json "$saved/"
+          cp results/open_turkish/more_questions/answers_tr.md "$saved/"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            mkdir -p results/open_turkish/more_questions
+            cp "$saved/"* results/open_turkish/more_questions/
+            git add -f results/open_turkish/more_questions/
+            if git diff --cached --quiet; then
+              echo "Answers already archived"
+              exit 0
+            fi
+            git commit -m "Archive six real Turkish responses from saved AMN checkpoint"
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
