@@ -1,0 +1,245 @@
+{
+  "architecture": {
+    "vocab_size": 2400,
+    "width": 160,
+    "key_dim": 32,
+    "layers": 2,
+    "pad_id": 0
+  },
+  "params": 1167424,
+  "tokenizer_sha256": "8e884873ae6b8f3cf304ad262072bba39ff5ae79b928e4186ee65114526c1cfa",
+  "source": {
+    "dataset": "TFLai/Turkish-Alpaca",
+    "dataset_page": "https://huggingface.co/datasets/TFLai/Turkish-Alpaca",
+    "license": "Apache-2.0",
+    "source_file_sha256": "f1aed098ae68849a66075220c7aae09971e0193371937c0f35433b2afd9d2f64",
+    "split_key": "normalized prompt",
+    "split_protocol": "SHA256 deterministic; 86% train, 7% dev, 7% test, exact input dedup",
+    "note": "SFT real human-readable Turkish text; no template or structured slot labels",
+    "source_rows": 51914,
+    "eligible": 31433,
+    "selected": 20000,
+    "skipped": {
+      "empty": 0,
+      "short": 10424,
+      "too_long": 9860,
+      "duplicate": 197
+    },
+    "train": 17213,
+    "val": 1443,
+    "test": 1344,
+    "min_answer_bytes": 45,
+    "max_seq_len": 640,
+    "max_samples": 20000
+  },
+  "counts": {
+    "train": 17146,
+    "val": 1434,
+    "test": 1341
+  },
+  "tokenizer_dropped": {
+    "train": 67,
+    "val": 9,
+    "test": 3
+  },
+  "training_steps": 2200,
+  "best_step": 2200,
+  "train_seconds": 660.839693421,
+  "validation_nll": 3.8313490872386526,
+  "test": {
+    "nll": 3.8620622855921662,
+    "ppl": 47.563339484118984,
+    "tokens": 33559
+  },
+  "history": [
+    {
+      "step": 1,
+      "train_nll": 7.95892858505249,
+      "val_nll": 7.812712932274914,
+      "val_ppl": 2471.827247096406,
+      "seconds": 1.6472929130000011
+    },
+    {
+      "step": 150,
+      "train_nll": 5.86350679397583,
+      "val_nll": 5.892713952581457,
+      "val_ppl": 362.38745335393173,
+      "seconds": 46.862176524000006
+    },
+    {
+      "step": 300,
+      "train_nll": 4.883817195892334,
+      "val_nll": 5.036076052858626,
+      "val_ppl": 153.8650705133596,
+      "seconds": 90.24892309999998
+    },
+    {
+      "step": 450,
+      "train_nll": 4.5642194747924805,
+      "val_nll": 4.686405017371969,
+      "val_ppl": 108.46255707866175,
+      "seconds": 135.71378786300002
+    },
+    {
+      "step": 600,
+      "train_nll": 4.414886951446533,
+      "val_nll": 4.4734137868892585,
+      "val_ppl": 87.65544985392661,
+      "seconds": 180.673453598
+    },
+    {
+      "step": 750,
+      "train_nll": 4.177516460418701,
+      "val_nll": 4.361638492477886,
+      "val_ppl": 78.38546325337906,
+      "seconds": 225.48131030599998
+    },
+    {
+      "step": 900,
+      "train_nll": 4.0023322105407715,
+      "val_nll": 4.2597525657742885,
+      "val_ppl": 70.7924648082936,
+      "seconds": 270.230120928
+    },
+    {
+      "step": 1050,
+      "train_nll": 4.2000508308410645,
+      "val_nll": 4.153535557043163,
+      "val_ppl": 63.65867176000231,
+      "seconds": 315.298489225
+    },
+    {
+      "step": 1200,
+      "train_nll": 3.683941125869751,
+      "val_nll": 4.076580506607212,
+      "val_ppl": 58.94356770477852,
+      "seconds": 360.20353948599995
+    },
+    {
+      "step": 1350,
+      "train_nll": 4.089222431182861,
+      "val_nll": 4.0139437919291305,
+      "val_ppl": 55.364787774129354,
+      "seconds": 405.506181157
+    },
+    {
+      "step": 1500,
+      "train_nll": 3.6945385932922363,
+      "val_nll": 3.9775791709014623,
+      "val_ppl": 53.387635323276385,
+      "seconds": 450.900531184
+    },
+    {
+      "step": 1650,
+      "train_nll": 3.72713303565979,
+      "val_nll": 3.9270040472547354,
+      "val_ppl": 50.754691005431475,
+      "seconds": 496.57011176799995
+    },
+    {
+      "step": 1800,
+      "train_nll": 3.5575661659240723,
+      "val_nll": 3.8993768189843565,
+      "val_ppl": 49.371672027962575,
+      "seconds": 541.706397372
+    },
+    {
+      "step": 1950,
+      "train_nll": 3.6146247386932373,
+      "val_nll": 3.858670805248727,
+      "val_ppl": 47.40230258428614,
+      "seconds": 585.490486496
+    },
+    {
+      "step": 2100,
+      "train_nll": 3.562258243560791,
+      "val_nll": 3.840144170361642,
+      "val_ppl": 46.53218251780616,
+      "seconds": 627.873401015
+    },
+    {
+      "step": 2200,
+      "train_nll": 3.479348659515381,
+      "val_nll": 3.8313490872386526,
+      "val_ppl": 46.12472255333041,
+      "seconds": 657.6700174069999
+    }
+  ],
+  "generated": [
+    {
+      "prompt": "Bir insanın öğrenme sürecini açıklar mısın?",
+      "text": "Bir işletim, bir görevi yerine tarafından yönetilen bir program veya program yazın olarak, bilgisayar bilimi, bir makine öğrenme algoritmasıdır. Kullanıcı, belirli görevleri tamamlanmasını öncelikle, bilgisayar programının bir nokta için en güçlü bir program oluşturun.",
+      "tokens_generated": 54,
+      "eos": true,
+      "words": 34
+    },
+    {
+      "prompt": "Ağ bağlantısında gecikme neden artabilir?",
+      "text": "Bir zaman, bir kişinin, bir mal, bir akıllı bir çağrıdır. Büyük bir bağımsız bir ağacındaki bir duvarı ve bir neşe gibi bir ağ oluşturmadan oluşur. Mağaza'nın bir gövdeye karşıya kalıyor.",
+      "tokens_generated": 62,
+      "eos": true,
+      "words": 30
+    },
+    {
+      "prompt": "Bir kitabın ana fikri nasıl belirlenir?",
+      "text": "Bir şirketin araştırmacılık ve bir sistemin bir parçasıdır. Doğru bir bir iş, bir kişinin bir role karşı karşıya, bir iş modeli, internet üzerinden bir ödül vermelidir. Ayrıca, bir iş yelemesi, bir işlevsiz ve işbirliği ve bir görevi tamamlamak için kullanılır.",
+      "tokens_generated": 71,
+      "eos": true,
+      "words": 40
+    },
+    {
+      "prompt": "Yeni bir yazılım projesinde riskler nasıl azaltılır?",
+      "text": "Yeni bir web sitesinin kullanıcı dostudur ve bir web sitesini oluşturmak için kullanılır.",
+      "tokens_generated": 18,
+      "eos": true,
+      "words": 13
+    },
+    {
+      "prompt": "Bir arkadaşına çevreyi korumayı anlat.",
+      "text": "Bir kişi, bir görevi tamamlamak için gereken zaman ayırmak, yeni deneyimlerinizi konuşmaya yardımcı olabilir, bir şeyler belirleyin ve yeni bir görevler sunmak ve düzenli egzersiz yapmak, rekaberlere dikkatleştirmek ve sosyal medya reklamlarını iyileştirmek, olumlu bir deneyimler ve ödüllerinizi tanıyabilir. Ayrıca, sosyal medya, işletme becerilerini geliştirmekten kaçınmak için bir araç paylaşabileceklerinin sosyal medya uygulamaktır.",
+      "tokens_generated": 97,
+      "eos": true,
+      "words": 53
+    },
+    {
+      "prompt": "Türkçede kelimelere neden ekler getirilir?",
+      "text": "Talep etmek için mümkün olduğunca ulaşmak, mümkün olan en kısa sürede uygulamak için kullanılır. 2. Netleri ve talep etmek zordur. 3. Talep edilmiş en kısa sürede besleyici en kısa sürede sürün. 5. Talep, ince ve nakit bir araya getirir.",
+      "tokens_generated": 74,
+      "eos": true,
+      "words": 39
+    },
+    {
+      "prompt": "Yarıçapı verilen bir dairenin alanını hesaplamak için kullanılabilecek geçerli bir denklem oluşturun.",
+      "reference": "Verilen yarıçapıyla bir dairenin alanını hesaplamak için kullanılan denklem A = πr² şeklindedir, burada A alanı, π sabit Pi (3.14159...) ve r yarıçapı temsil eder.",
+      "text": "Bir el yapmak için, iki sayı arasındaki değeri karşılaştırılabilen bir sayıda, bir sayıya bir sayıda yanı sıra, sayı olarak değişimin bir sayıda bir sayıya karşılaştırılmalıdır. Merkezi sayıya, sayı olarak doğru bir sayıya giren bir sayıya oluşturarak, sayı listesinin sayıın bir sayıya bir sayıdır. İlk sayı ise bir sayıda hesap, sayı ise 2 = 2. return sayı arasındaki sayıya bir sayıdır.",
+      "tokens_generated": 97,
+      "eos": true,
+      "words": 60
+    },
+    {
+      "prompt": "Aşağıdaki cümleyi emir kipi olarak biçimlendirin. \n\n(Bu cümle de zaten emir kipi olarak verilmiş olduğundan çeviri yapmama gerek yok.)\nLütfen görevi tamamlamak için bir hatırlatıcı ayarlayın.",
+      "reference": "Görevi tamamlamak için bir hatırlatıcı ayarla.",
+      "text": "Verilen belge, her biri veya binaları ve kağıt veya bir bincal alınabilir.",
+      "tokens_generated": 24,
+      "eos": true,
+      "words": 12
+    },
+    {
+      "prompt": "Büyük bir takım tarafından kullanılabilen bir proje yönetim aracı adı verin.",
+      "reference": "Büyük bir takım tarafından kullanılabilecek bir proje yönetimi aracı Asana'dır. Asana, takım işbirliğini basitleştirmeye ve görevlerini düzenlemeye yardımcı olmak için tasarlanmış bir web tabanlı uygulamadır. Görev listeleri, özelleştirilmiş etiketler ve son tarihler, özel alanlar ve otomatik hatırlatıcılar gibi özellikleri vardır. Ayrıca geniş bir API ve mobil uygulamaları vardır, böylece takımlar her yerden ve her zaman çalışabilirler.",
+      "text": "Gözler, bir programlama dili, bir programlama dili bir dil sistemi, bir dil öğrenmeli ve bilgisayar bilimindeki diller oluşturmak için bir programlama dili ve dilbilgisi arasındaki dilimleriyle iletişim kurmalı ve dilbilgisi gibi diller oluşturmak için dilbilgisi ve dilin dilimi öğrenmelerine yardımcı olmak için kullanılan dilbilgisidir.",
+      "tokens_generated": 73,
+      "eos": true,
+      "words": 44
+    },
+    {
+      "prompt": "Bir yazılım mühendisliği projesi için bir problem ifadesi örneği yazın.",
+      "reference": "Bir yazılım mühendisliği projesi için problem açıklaması şöyle olabilir: \"Belirli bir zaman çerçevesi içinde müşterilerin hesapları arasında fon transferine izin veren verimli ve güvenli bir çevrimiçi bankacılık sistemi geliştirmek.\"",
+      "text": "Siptoword'in ana teması, bir e-ticaret hesabının bir web sitesi geliştirmek için bir web sitesi tasaralım. Soruna inhanetleri arın imgesi, bir web sitesinin profesyonel özelliklerin kullanıcı arayüzüzü ve bir arama sistemleri oluşturma, kullanıcı dostu bir web sitesi oluşturmalı ve arama motoruları ve web sayfaları içerecektir. Ayrıca, web sitelerini takip etmek için tasarlanmış bir web sitelerine oluşturmak için tasarlanmıştır. Meksika kullanıcı dostu bir web sitesi, arama motorları, kullanıcı dostuları ve hizmetlere erişim sağlamak ve web sitesi tasarlamak için bir web sitelerini sunmak için tasarlanmış bir web sit",
+      "tokens_generated": 160,
+      "eos": false,
+      "words": 85
+    }
+  ],
+  "limits": "Subword Turkish AMN from scratch; small model trained on real instruction text, not general Turkish proficiency"
+}

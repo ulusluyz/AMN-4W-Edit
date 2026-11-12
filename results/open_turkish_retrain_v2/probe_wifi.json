@@ -1,0 +1,41 @@
+{
+  "prompt": "Kablosuz ağ neden yavaşlar?",
+  "answer": {
+    "text": "Kaplanda, bir buzdolabı, bir buzdolabı, bir buzdolabı, bir buzdolabı, bir buzdolabı, bir buzdolabı, bir buzdolabı, bir buzdolabı, bir buzdolabı, bir buzdolabı, bir buzdolabı, bir buzdolabı, bir buzdolabı, bir buzdolabı, bir buzdolabı, bir buzdolabı, bir buzdolabı, bir buzdolabı, bir buzdolabı, bir buz",
+    "tokens_generated": 160,
+    "eos": false,
+    "words": 41
+  },
+  "metadata": {
+    "best_step": 2200,
+    "val_nll": 3.8313490872386526,
+    "source": {
+      "dataset": "TFLai/Turkish-Alpaca",
+      "dataset_page": "https://huggingface.co/datasets/TFLai/Turkish-Alpaca",
+      "license": "Apache-2.0",
+      "source_file_sha256": "f1aed098ae68849a66075220c7aae09971e0193371937c0f35433b2afd9d2f64",
+      "split_key": "normalized prompt",
+      "split_protocol": "SHA256 deterministic; 86% train, 7% dev, 7% test, exact input dedup",
+      "note": "SFT real human-readable Turkish text; no template or structured slot labels",
+      "source_rows": 51914,
+      "eligible": 31433,
+      "selected": 20000,
+      "skipped": {
+        "empty": 0,
+        "short": 10424,
+        "too_long": 9860,
+        "duplicate": 197
+      },
+      "train": 17213,
+      "val": 1443,
+      "test": 1344,
+      "min_answer_bytes": 45,
+      "max_seq_len": 640,
+      "max_samples": 20000
+    },
+    "seed": 71,
+    "train_examples": 17146,
+    "dev_examples": 1434,
+    "params": 1167424
+  }
+}
