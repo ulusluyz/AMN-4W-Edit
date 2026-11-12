@@ -1,0 +1,41 @@
+name: Verify AMN seen-QA conditioning by swapped questions
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/amn_question_conditioning.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install inference packages
+        run: python -m pip install -r requirements.txt
+      - name: Check correct versus incorrect prompt likelihoods, original and corrected model
+        run: python -u experiments/test_amn_question_conditioning.py
+      - name: Commit independent likelihood audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          cp results/amn_tm_v31_rehearsal/question_conditioning.json /tmp/amn_question_conditioning.json
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/amn_question_conditioning.json results/amn_tm_v31_rehearsal/question_conditioning.json
+            git add -f results/amn_tm_v31_rehearsal/question_conditioning.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m "Archive swapped-question test of AMN memorization versus prompt sensitivity"
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
