@@ -22,7 +22,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Unit-test Turkish text quality gate, source labels and official name counts
+      - name: Verify tightened topic-lead matching, source attribution and official name counts
         run: python -m pip install pytest && python -m pytest -q tests/test_amn_world_facts_v1.py
       - name: Download 355 intentionally selected general-knowledge Turkish Wikipedia articles
         run: |
