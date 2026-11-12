@@ -24,7 +24,7 @@ jobs:
           python-version: '3.12'
       - name: Install existing PyTorch and SentencePiece requirements (no new data downloads)
         run: python -m pip install -r requirements.txt
-      - name: Confirm original reviewed data, no split leakage and high-precision Turkish memory
+      - name: Verify reviewed evidence including the known bird-count source, with no split leakage
         run: |
           python -m pytest -q \
             tests/test_amn_grounded_memory_v1.py \
