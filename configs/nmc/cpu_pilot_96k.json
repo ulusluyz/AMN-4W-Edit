@@ -1,0 +1,4 @@
+{
+  "model": {"vocab_size":256,"d_model":48,"memory_dim":24,"slots":8,"layers":2,"expansion":2,"use_fast":true,"use_episodic":true},
+  "training": {"device":"cpu","threads":2,"lr":0.0007,"weight_decay":0.01,"chunk_size":64,"epochs":5,"max_steps":900,"eval_every":225,"eval_max_bytes":4096}
+}

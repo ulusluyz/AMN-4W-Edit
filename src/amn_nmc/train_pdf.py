@@ -35,9 +35,12 @@ def main():
     parser.add_argument("--output", required=True)
     parser.add_argument("--config", default="configs/nmc/cpu_smoke.json")
     parser.add_argument("--seed", type=int, default=17)
+    parser.add_argument("--resume", action="store_true")
+    parser.add_argument("--extra-steps", type=int, default=0)
     args = parser.parse_args()
     manifest = validate_source(args.data)
-    result = train(args.data, args.output, args.config, args.seed)
+    result = train(args.data, args.output, args.config, args.seed,
+                   resume=args.resume, extra_steps=args.extra_steps)
     result["training_source_sha256"] = manifest["source_sha256"]
     result["evaluation_limitation"] = manifest["split_type"]
     Path(args.output, "pdf_run_audit.json").write_text(
