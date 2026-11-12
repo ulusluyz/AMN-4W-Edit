@@ -1,0 +1,360 @@
+{
+  "architecture": "AMNTMv3.1",
+  "model_version": "v3.1",
+  "config": {
+    "vocab_size": 8192,
+    "width": 544,
+    "layers": 6,
+    "key_dim": 128,
+    "semantic_dim": 192,
+    "pad_id": 0
+  },
+  "parameters": 16380518,
+  "experiment": "bounded real Turkish multi-objective CPU pilot",
+  "targets_not_yet_achieved": {
+    "full_pretraining_tokens": 100000000,
+    "natural_language_quality": "not established",
+    "full_context_training": 512,
+    "human_intent_gold_labels": "not available",
+    "true_multiturn_dataset": "not available"
+  },
+  "trained_from_scratch": true,
+  "old_checkpoints_unchanged": true,
+  "data": {
+    "dataset": "TFLai/Turkish-Alpaca",
+    "dataset_page": "https://huggingface.co/datasets/TFLai/Turkish-Alpaca",
+    "license": "Apache-2.0",
+    "source_file_sha256": "f1aed098ae68849a66075220c7aae09971e0193371937c0f35433b2afd9d2f64",
+    "split_key": "normalized prompt",
+    "split_protocol": "SHA256 deterministic; 86% train, 7% dev, 7% test, exact input dedup",
+    "note": "SFT real human-readable Turkish text; no template or structured slot labels",
+    "source_rows": 51914,
+    "eligible": 32975,
+    "selected": 20000,
+    "skipped": {
+      "empty": 0,
+      "short": 10424,
+      "too_long": 8315,
+      "duplicate": 200
+    },
+    "train": 17212,
+    "val": 1427,
+    "test": 1361,
+    "min_answer_bytes": 45,
+    "max_seq_len": 680,
+    "max_samples": 20000
+  },
+  "data_counts": {
+    "train": 17170,
+    "dev": 1418,
+    "test": 1356
+  },
+  "tokenizer_vocab": 8192,
+  "tokenizer_sha256": "5ce79ef839ad3dd4a7e411d2f74bfb10cc7db00e0e55bb2369f7e95f376b41f5",
+  "effective_training_context_max": 192,
+  "configured_context_limit": 512,
+  "weak_intent_labels": true,
+  "synthetic_multiturn_training": true,
+  "scheduled_stages": {
+    "answer_language_model": 200,
+    "weak_intent": 100,
+    "in_batch_grounding": 120,
+    "synthetic_multiturn": 100,
+    "answer_sft_with_replay": 900
+  },
+  "completed_updates": 1420,
+  "stop_reason": "all_stages",
+  "train_lm_target_tokens": 258188,
+  "train_input_tokens": 488625,
+  "weak_intent_supervision_examples": 1300,
+  "contrastive_positive_pairs": 1860,
+  "synthetic_multiturn_examples": 400,
+  "best_checkpoint_step": 1420,
+  "best_validation_answer_nll": 7.2158797230953375,
+  "test_answer_metrics": {
+    "answer_nll": 7.1547176023532275,
+    "answer_ppl": 1280.1308808535139,
+    "answer_tokens": 4204,
+    "weak_intent_rule_agreement": 0.825,
+    "weak_intent_n": 80
+  },
+  "generated": [
+    {
+      "question": "Bir robot engellerden kaçınmak için hangi sensörleri kullanabilir?",
+      "text": "Bu bir bir bir bir bir bir bir bir fazla, bir gün için bir için bir bir bir bir, bir bir bir için ve bir bir bir bir bir bir bir bir ve birın içinma bir bir bir birler, diğer için bir bir bir bir bir bir diğer bir biri için bir bir bir bir bir bir ve bir bir zaman ve ve bir. bir bir bir bir bir bir bir birların için bir bir bir bir bir bir bir bir bir bir birın ve bir bir bir bir bir bir bir ve bir bir için için bir bir bir bir bir diğer bir bir bir bir bir bir birların bir birlar.",
+      "eos": true,
+      "tokens": 125
+    },
+    {
+      "question": "Python dilinde for döngüsü ne işe yarar?",
+      "text": "Bir bir daha zaman bir biri ve bir bir bir bir zaman. 2. Amerika, her veya  bir bir bir bir bir bir birlerme.",
+      "eos": true,
+      "tokens": 30
+    },
+    {
+      "question": "Elektrik devresinde Ohm kanunu nedir?",
+      "text": "Bir bir bir bir bir zaman veda bir bir bir bir bir bir bir iyi bir bir. için, için, L, bir bir birların şekilde ve ve bir diğer zamanme için bir bir bir bir bir bir bir olarak.",
+      "eos": true,
+      "tokens": 46
+    },
+    {
+      "question": "Kablosuz ağda gecikme neden artar?",
+      "text": "1. 5. #, bir ve bir birlar ve 1 birdan ve işdir. Örneğin, bir bir bir bir bir dahaler, enda su,i: B -",
+      "eos": true,
+      "tokens": 35
+    },
+    {
+      "question": "Yeni bir yazılım projesinde riskler nasıl azaltılır?",
+      "text": "1. Bu bir 2. 1. Bir,, bir bir ve bir bir bir bir bir.. ve ve diğer bir bir bir bir daha bir birin gibi bir bir bir bir bir bir bir en bir uygun.",
+      "eos": true,
+      "tokens": 41
+    },
+    {
+      "question": "Türkçe öğrenmek için hangi yöntemler kullanılabilir?",
+      "text": "\", bir bir bir bir bir bir bir birta. B, diğer bir bir dahame, yeni ve şekilde bir iki için daha, bir bir bir bir bir iş bir daha iyi veya bir bir' bir bir diğerların birda bir bir şekilde için veya iyiieları için bir bir,ların bir zaman vedalar olan birlarınıu.",
+      "eos": true,
+      "tokens": 71
+    }
+  ],
+  "history": [
+    {
+      "stage": "answer_language_model",
+      "stage_step": 1,
+      "global_step": 1,
+      "training_loss": 9.266986846923828,
+      "elapsed_seconds": 1.31
+    },
+    {
+      "stage": "answer_language_model",
+      "stage_step": 50,
+      "global_step": 50,
+      "training_loss": 8.356077194213867,
+      "elapsed_seconds": 62.84
+    },
+    {
+      "stage": "answer_language_model",
+      "stage_step": 100,
+      "global_step": 100,
+      "training_loss": 8.054727554321289,
+      "elapsed_seconds": 118.49
+    },
+    {
+      "stage": "answer_language_model",
+      "stage_step": 150,
+      "global_step": 150,
+      "training_loss": 7.848294258117676,
+      "elapsed_seconds": 179.12
+    },
+    {
+      "stage": "answer_language_model",
+      "stage_step": 200,
+      "global_step": 200,
+      "training_loss": 7.071089267730713,
+      "elapsed_seconds": 241.7
+    },
+    {
+      "stage": "weak_intent",
+      "stage_step": 1,
+      "global_step": 201,
+      "training_loss": 2.1367292404174805,
+      "elapsed_seconds": 242.16
+    },
+    {
+      "stage": "weak_intent",
+      "stage_step": 50,
+      "global_step": 250,
+      "training_loss": 0.13807660341262817,
+      "elapsed_seconds": 259.05
+    },
+    {
+      "stage": "weak_intent",
+      "stage_step": 100,
+      "global_step": 300,
+      "training_loss": 1.4556171894073486,
+      "elapsed_seconds": 274.87
+    },
+    {
+      "stage": "in_batch_grounding",
+      "stage_step": 1,
+      "global_step": 301,
+      "training_loss": 2.0827691555023193,
+      "elapsed_seconds": 276.47
+    },
+    {
+      "stage": "in_batch_grounding",
+      "stage_step": 50,
+      "global_step": 350,
+      "training_loss": 2.075350284576416,
+      "elapsed_seconds": 372.5
+    },
+    {
+      "stage": "in_batch_grounding",
+      "stage_step": 100,
+      "global_step": 400,
+      "training_loss": 2.162736177444458,
+      "elapsed_seconds": 469.65
+    },
+    {
+      "stage": "in_batch_grounding",
+      "stage_step": 120,
+      "global_step": 420,
+      "training_loss": 2.0843844413757324,
+      "elapsed_seconds": 509.46
+    },
+    {
+      "stage": "synthetic_multiturn",
+      "stage_step": 1,
+      "global_step": 421,
+      "training_loss": 7.79229736328125,
+      "elapsed_seconds": 511.75
+    },
+    {
+      "stage": "synthetic_multiturn",
+      "stage_step": 50,
+      "global_step": 470,
+      "training_loss": 7.667799472808838,
+      "elapsed_seconds": 617.61
+    },
+    {
+      "stage": "synthetic_multiturn",
+      "stage_step": 100,
+      "global_step": 520,
+      "training_loss": 7.379611015319824,
+      "elapsed_seconds": 726.18
+    },
+    {
+      "stage": "answer_sft_with_replay",
+      "stage_step": 1,
+      "global_step": 521,
+      "training_loss": 8.38686466217041,
+      "elapsed_seconds": 728.77
+    },
+    {
+      "stage": "answer_sft_with_replay",
+      "stage_step": 50,
+      "global_step": 570,
+      "training_loss": 7.206274509429932,
+      "elapsed_seconds": 815.19
+    },
+    {
+      "stage": "answer_sft_with_replay",
+      "stage_step": 100,
+      "global_step": 620,
+      "training_loss": 7.4607086181640625,
+      "elapsed_seconds": 904.53
+    },
+    {
+      "stage": "answer_sft_with_replay",
+      "stage_step": 150,
+      "global_step": 670,
+      "training_loss": 7.548656463623047,
+      "elapsed_seconds": 1001.11
+    },
+    {
+      "stage": "answer_sft_with_replay",
+      "stage_step": 200,
+      "global_step": 720,
+      "training_loss": 7.627676010131836,
+      "elapsed_seconds": 1090.59
+    },
+    {
+      "stage": "answer_sft_with_replay",
+      "stage_step": 250,
+      "global_step": 770,
+      "training_loss": 7.616246223449707,
+      "elapsed_seconds": 1185.23
+    },
+    {
+      "stage": "answer_sft_with_replay",
+      "stage_step": 300,
+      "global_step": 820,
+      "training_loss": 7.609679698944092,
+      "elapsed_seconds": 1270.16
+    },
+    {
+      "stage": "answer_sft_with_replay",
+      "stage_step": 350,
+      "global_step": 870,
+      "training_loss": 7.31600284576416,
+      "elapsed_seconds": 1357.69
+    },
+    {
+      "stage": "answer_sft_with_replay",
+      "stage_step": 400,
+      "global_step": 920,
+      "training_loss": 7.203701972961426,
+      "elapsed_seconds": 1447.43
+    },
+    {
+      "stage": "answer_sft_with_replay",
+      "stage_step": 450,
+      "global_step": 970,
+      "training_loss": 7.792568683624268,
+      "elapsed_seconds": 1536.15
+    },
+    {
+      "stage": "answer_sft_with_replay",
+      "stage_step": 500,
+      "global_step": 1020,
+      "training_loss": 7.4312896728515625,
+      "elapsed_seconds": 1629.16
+    },
+    {
+      "stage": "answer_sft_with_replay",
+      "stage_step": 550,
+      "global_step": 1070,
+      "training_loss": 7.382591724395752,
+      "elapsed_seconds": 1719.11
+    },
+    {
+      "stage": "answer_sft_with_replay",
+      "stage_step": 600,
+      "global_step": 1120,
+      "training_loss": 7.171764373779297,
+      "elapsed_seconds": 1810.34
+    },
+    {
+      "stage": "answer_sft_with_replay",
+      "stage_step": 650,
+      "global_step": 1170,
+      "training_loss": 7.264998435974121,
+      "elapsed_seconds": 1908.99
+    },
+    {
+      "stage": "answer_sft_with_replay",
+      "stage_step": 700,
+      "global_step": 1220,
+      "training_loss": 7.289350986480713,
+      "elapsed_seconds": 2000.17
+    },
+    {
+      "stage": "answer_sft_with_replay",
+      "stage_step": 750,
+      "global_step": 1270,
+      "training_loss": 7.237842559814453,
+      "elapsed_seconds": 2098.02
+    },
+    {
+      "stage": "answer_sft_with_replay",
+      "stage_step": 800,
+      "global_step": 1320,
+      "training_loss": 7.0828728675842285,
+      "elapsed_seconds": 2181.57
+    },
+    {
+      "stage": "answer_sft_with_replay",
+      "stage_step": 850,
+      "global_step": 1370,
+      "training_loss": 7.354619026184082,
+      "elapsed_seconds": 2276.21
+    },
+    {
+      "stage": "answer_sft_with_replay",
+      "stage_step": 900,
+      "global_step": 1420,
+      "training_loss": 7.046363353729248,
+      "elapsed_seconds": 2362.24
+    }
+  ],
+  "train_seconds": 2381.14
+}
