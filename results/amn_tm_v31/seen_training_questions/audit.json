@@ -1,0 +1,172 @@
+{
+  "source": {
+    "dataset": "TFLai/Turkish-Alpaca",
+    "dataset_page": "https://huggingface.co/datasets/TFLai/Turkish-Alpaca",
+    "license": "Apache-2.0",
+    "source_file_sha256": "f1aed098ae68849a66075220c7aae09971e0193371937c0f35433b2afd9d2f64",
+    "split_key": "normalized prompt",
+    "split_protocol": "SHA256 deterministic; 86% train, 7% dev, 7% test, exact input dedup",
+    "note": "SFT real human-readable Turkish text; no template or structured slot labels",
+    "source_rows": 51914,
+    "eligible": 32975,
+    "selected": 20000,
+    "skipped": {
+      "empty": 0,
+      "short": 10424,
+      "too_long": 8315,
+      "duplicate": 200
+    },
+    "train": 17212,
+    "val": 1427,
+    "test": 1361,
+    "min_answer_bytes": 45,
+    "max_seq_len": 680,
+    "max_samples": 20000
+  },
+  "model": "AMNTMv3.1",
+  "training_step": 1420,
+  "original_training_sampling_replayed": true,
+  "training_exposure_counters_verified": {
+    "train_lm_target_tokens": 258188,
+    "train_input_tokens": 488625,
+    "weak_intent_supervision_examples": 1300,
+    "contrastive_positive_pairs": 1860,
+    "synthetic_multiturn_examples": 400
+  },
+  "tokenizer_sha256": "5ce79ef839ad3dd4a7e411d2f74bfb10cc7db00e0e55bb2369f7e95f376b41f5",
+  "encoded_train_examples": 17170,
+  "different_questions_really_used_in_sft": 3265,
+  "number_of_sft_examples_seen": 3600,
+  "intent_distribution_of_train_pool": {
+    "other": 13018,
+    "explanation": 2827,
+    "procedure": 352,
+    "comparison": 409,
+    "calculation": 409,
+    "writing": 155
+  },
+  "selection_before_inference": true,
+  "note": "This tests memorization of seen training QAs, not heldout generalization.",
+  "results": [
+    {
+      "question": "20 Hz sinüs dalgasının tepe frekansı nedir?",
+      "training_reference": "20 Hz'lik bir sinüs dalgasının tepe frekansı 20 Hz'dir.",
+      "weak_intent_class": "explanation",
+      "sft_exposures": 3,
+      "reference_teacher_forced_nll": 6.716244697570801,
+      "model_answer": "4. K - A, bir sosyal bir bir için bir güçlü için bir Gu bir bir birları bir birın. 5. Birlar ve bu ve bir daha birin,,ta gibita ve sulara ve sular. Bu, şekilde, bir bir bir birlar, buleri ve bir bir birların bir bir bir ve birleri, veri daha bir ve iki bir bir ve bir bir bir bir birlarında gibi bir, ve en bir ve güçlü ve ve her bir bir bir iyiler.",
+      "generated_tokens": 102,
+      "eos": true
+    },
+    {
+      "question": "\"Lai̇kman teri̇mde \"döngüsel ekonomi\" kavramını nasıl açıklarsınız?\"",
+      "training_reference": "Dairesel ekonomi, malzemelerin yeniden kullanımı ve geri dönüşümü yoluyla atık azaltmaya ve kaynakları korumaya odaklanan sürdürülebilir bir ekonomik sistemdir. Bu yaklaşım, malzemelerin üretim, tüketim ve atılma tek kullanımlık döngüsünden geçtiği geleneksel lineer ekonomiyi değiştirmek için tasarlanmıştır.",
+      "weak_intent_class": "explanation",
+      "sft_exposures": 3,
+      "reference_teacher_forced_nll": 7.212100028991699,
+      "model_answer": "1. G ve iyi bir birlar.",
+      "generated_tokens": 8,
+      "eos": true
+    },
+    {
+      "question": "Bir konuşma başlatmak için üç en iyi uygulamayı listeleyin.",
+      "training_reference": "Bir konuşma başlatmak için en iyi uygulamaların bazıları şunlardır: 1) Doğrudan olun ve açık uçlu bir soru sorun. 2) Sıcak ve dostça olun. 3) Gerçek ilgi göstererek övgüler sunun ve diğer kişinin ne söylediğini dinleyin.",
+      "weak_intent_class": "procedure",
+      "sft_exposures": 2,
+      "reference_teacher_forced_nll": 6.861208438873291,
+      "model_answer": "Bir bir bir bir bir bir bir birler, yüksek bir 1 en bir bir bir bir bir bir iş, bir bir bir bir bir bir bir bir bir güçlü birler veya bir bir bir bir bir bir bir bir veların için bir bir bir bir bir bir bir bir birta, bir bir bir bir iyi bir bir birlerin, bir bir bir bir bir en bir bir ve bir bir bir bir diğer bir en bir güçlü ve bir bir bir bir bir bir ve bir şekilde için bir iyi bir bir bir bir bir bir bir bir bir birların bir birleri için iyi bir en bir bir iyima",
+      "generated_tokens": 120,
+      "eos": false
+    },
+    {
+      "question": "Bir kişi bir sınavda başarısız olduğunda hissettiği duyguları tanımlayan 5 kelime bulun.",
+      "training_reference": "Hayal kırıklığına uğramış, hayal kırıklığına uğramış, endişeli, cesareti kırılmış, utanmış.",
+      "weak_intent_class": "procedure",
+      "sft_exposures": 2,
+      "reference_teacher_forced_nll": 7.375383377075195,
+      "model_answer": "1. Bu, diğer iyi bir bir bir ve bir ve bir bir bir bir bir ve şekilde ve diğer bir bir bir bir bir bir bir bir bir bir bir birlar için şekilde, bir bir büyük ve birların ve bir bir için bir diğer bir bir birları, işi, bir birlar ve bu bir iş kadar.",
+      "generated_tokens": 65,
+      "eos": true
+    },
+    {
+      "question": "Web geliştirme ve web tasarımı arasındaki farkı açıklayın.",
+      "training_reference": "Web geliştirme, web sitesi oluşturma sürecidir ve web sitesinin işlevselliğini oluşturmak için kodlama ve işaretleme dili yazmayı içerir. Web tasarımı, web sitesinin görünümüne odaklanır ve görsel düzeni, renkleri ve tipografisini içerir. Web geliştirme, bir web sitesinin teknik yönlerine odaklanırken web tasarımı estetiğine odaklanır.",
+      "weak_intent_class": "comparison",
+      "sft_exposures": 2,
+      "reference_teacher_forced_nll": 7.10565710067749,
+      "model_answer": "1. 1. A ve diğer büyüke ve birlar için bir daha bir -'.  \" bir bir biri ve her bir bir bir diğerda birlarıdir.",
+      "generated_tokens": 34,
+      "eos": true
+    },
+    {
+      "question": "Erkek ve dişi kardinal arasındaki farkı nasıl anlatacağınızı açıklayın.",
+      "training_reference": "Erkek kardinal kuşlar parlak kırmızı tüylere sahiptir, dişi kardinal kuşların tüyleri daha kahverengi renklidir. Erkeklerin yüzleri siyahken, dişi kardinal kuşların yüzleri gri renklidir. Ayrıca, erkek kardinal kuşlar genellikle dişilerden daha büyüktür.",
+      "weak_intent_class": "comparison",
+      "sft_exposures": 2,
+      "reference_teacher_forced_nll": 7.069468021392822,
+      "model_answer": "\" \", bir en bir bir bir bir iyi bir daha bir bir bir, bir şekilde ve bir bir, yüksek ve zaman ve birın için bir iyi bir bir bir bir bir bir bir, bir bir bir ve bir bir bir bir bir bir bir daha bir bir bir bir, bir diğer olarak, 1 içinler ve şekilde gibi, bir yüksek bir diğerlar bir her bir en bir bir bir bir bir. bir bir bir bir bir diğeri için lerinlar.",
+      "generated_tokens": 95,
+      "eos": true
+    },
+    {
+      "question": "x=0'dan x=5'e kadar x^3'ün integralini hesaplayın.",
+      "training_reference": "x^3'ün x=0'dan x=5'e kadar olan integrali 125/4'tür.",
+      "weak_intent_class": "calculation",
+      "sft_exposures": 2,
+      "reference_teacher_forced_nll": 7.487568378448486,
+      "model_answer": "\"'o) = =' ve fe'(e - -','e.",
+      "generated_tokens": 20,
+      "eos": true
+    },
+    {
+      "question": "Doğru bir çizgi için matematiksel denklemi türetin.",
+      "training_reference": "y = mx + b, burada m eğim ve b çizginin y-kesiti olarak tanımlanır.",
+      "weak_intent_class": "calculation",
+      "sft_exposures": 2,
+      "reference_teacher_forced_nll": 6.789156436920166,
+      "model_answer": "Bir G, bir bir bir fazla bir bir bir en en bir bir bir bir bir en bir bir birda bir en bir bir bir ve bir bir bir bir bir bir, bir bir diğer bir iyi bir şekilde için bir birlar, bir bir bir birda bir birları içinlar için, iki bir her bir daha bir bir bir veta için iş bir bir diğer biri için bir enleri bir daha bir bir, bir bir bir bir için,, bir su ve diğer güçlüların bir bir bir bir daha bir ve bir bir daha, bir bir şekildeın için olan bir bir bir bir bir",
+      "generated_tokens": 120,
+      "eos": false
+    },
+    {
+      "question": "Vejetaryenler için uygun bir yemek önerin.",
+      "training_reference": "Lezzetli bir vejetaryen yemek Ratatouille olabilir. Patlıcan, kabak, domates, biber, soğan, sarımsak ve otların zengin domates sosunda pişirilmesiyle yapılır. Quinoa, kuskus veya gevrek ekmekle servis edilebilir.",
+      "weak_intent_class": "other",
+      "sft_exposures": 3,
+      "reference_teacher_forced_nll": 6.849050998687744,
+      "model_answer": "Bu, bir bir bir birın bir diğer bir,i, bir bir zaman, en bir bu. Bu, bir daha daha bir su,, bir bir bir birlar ve diğer, ve gün ve bir bir bir bir bir bir veya bir bir bir bir birlı bir iyi birta, bir bu ve bir bir bir daha için için birdalar. Ayrıca,, bir daha, bir bir bu, bir, bir ve bir bir güçlü ve bir bir bir, bir daha ve şekilde, daha bir bir diğer bir bir bir, bir bir bir farklı bir yüksek ve iki bir birın için bir",
+      "generated_tokens": 120,
+      "eos": false
+    },
+    {
+      "question": "Bir resmi tanımlamak için 10 sıfat bulun.",
+      "training_reference": "Canlı, karmaşık, hipnotize edici, cezbedici, parlak, cesur, dinamik, ifade dolu, hipnotize edici ve baştan çıkarıcı.",
+      "weak_intent_class": "other",
+      "sft_exposures": 3,
+      "reference_teacher_forced_nll": 6.41690731048584,
+      "model_answer": "Bu, bir bir bir, bir her bir bir bir bir' bir dahaların bir bir bir bir bir birın ve  biri için.",
+      "generated_tokens": 29,
+      "eos": true
+    },
+    {
+      "question": "Dünyada kaç kuş türü olduğunu bulun.",
+      "training_reference": "Dünya'da yaklaşık 10.000 kuş türü vardır.",
+      "weak_intent_class": "other",
+      "sft_exposures": 3,
+      "reference_teacher_forced_nll": 6.277552604675293,
+      "model_answer": "G en bir su, iki bir için bir bir bir' ve  ve birın bir bir bir bir bir bu gibi veya bir şekilde bir her bir birda gibi bir bir'.",
+      "generated_tokens": 37,
+      "eos": true
+    },
+    {
+      "question": "İyi dengelenmiş bir diyetin beş bileşenini adlandırın.",
+      "training_reference": "Dengeli bir diyet, meyve ve sebzeler; tam tahıllar; az yağlı süt ürünleri; sağlıklı yağlar ve az şeker, tuz ve sağlıksız yağ içeren besinler gibi çeşitli besin yoğunluğuna sahip yiyecekleri içermelidir. Ayrıca, dengeli bir diyet için yeterli su tüketimi ve gün boyunca düzenli öğünler ve atıştırmalıklar tüketmek önemlidir.",
+      "weak_intent_class": "other",
+      "sft_exposures": 3,
+      "reference_teacher_forced_nll": 6.780827522277832,
+      "model_answer": "2. O, bir bir bir diğer bir bir bir bir bir diğer biri ve b bir şekilde için diğer bir bir bir bir bir bu eni bir bir bir diğer bir iş için. Bu, diğer, bir bir güçlü bir bir bir ve birların bir birların velar için bir birların bir bir bir bir bir bir şekilde.",
+      "generated_tokens": 67,
+      "eos": true
+    }
+  ]
+}
