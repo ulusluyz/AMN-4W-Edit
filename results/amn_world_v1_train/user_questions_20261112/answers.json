@@ -1,0 +1,85 @@
+{
+  "model": "AMNTMv3.1",
+  "checkpoint": "results/amn_world_v1_train/best.pt",
+  "checkpoint_sha256": "4d993b9dac88ba7a593c45dffeea1c86ecd2a7fbf67bfebc062ebf4b2c2aa9c3",
+  "tokenizer_sha256": "5ce79ef839ad3dd4a7e411d2f74bfb10cc7db00e0e55bb2369f7e95f376b41f5",
+  "new_training": false,
+  "retrieval": false,
+  "edited_answers": false,
+  "temperature": 0,
+  "max_new_tokens": 120,
+  "questions": [
+    {
+      "number": 1,
+      "question": "Cumhuriyet nedir",
+      "raw_answer": "Alkek, yetişkin bir eril insandır.",
+      "tokens": 11,
+      "eos": true,
+      "inference_seconds": 0.0961
+    },
+    {
+      "number": 2,
+      "question": "Kedi nedir",
+      "raw_answer": "Web, resmî adıyla Fed Cum Cumhura, Güney''da en ülk bir ülkedir.",
+      "tokens": 25,
+      "eos": true,
+      "inference_seconds": 0.1525
+    },
+    {
+      "number": 3,
+      "question": "Güneş nedir",
+      "raw_answer": "Web, resmî adıyla Fed Cum Cumhuriyeti, Güney''''''''da en ülk bir ülkedir.",
+      "tokens": 31,
+      "eos": true,
+      "inference_seconds": 0.1787
+    },
+    {
+      "number": 4,
+      "question": "Top nasıl oynanır",
+      "raw_answer": "Robot, yetişkin bir dişi insandır.",
+      "tokens": 9,
+      "eos": true,
+      "inference_seconds": 0.0837
+    },
+    {
+      "number": 5,
+      "question": "Oy pusuladı nedir",
+      "raw_answer": "Al, resmî adıyla \" Cum Cumhur Cum'da bir ülkedir.",
+      "tokens": 19,
+      "eos": true,
+      "inference_seconds": 0.1385
+    },
+    {
+      "number": 6,
+      "question": "Salata nasıl yapılır",
+      "raw_answer": "Kemar, resmî adıyla \" Cum Cumhursaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "tokens": 120,
+      "eos": false,
+      "inference_seconds": 0.6083
+    },
+    {
+      "number": 7,
+      "question": "Saksı nedir",
+      "raw_answer": "S (omoo iateis familyaarlergiller (Canidae) familyasına ait, görünüş ve büyüklükleri farklı 400'den fazla ırkı olan, etçil bir memelidir.",
+      "tokens": 52,
+      "eos": true,
+      "inference_seconds": 0.2857
+    },
+    {
+      "number": 8,
+      "question": "Saat nasıl kullanılır",
+      "raw_answer": "Robot, otonom veya önceden programlanmış görevleri yerine getirebilen elektro-mekanik bir makinedir.",
+      "tokens": 22,
+      "eos": true,
+      "inference_seconds": 0.142
+    },
+    {
+      "number": 9,
+      "question": "Pusula nedir",
+      "raw_answer": "Alkek, erillik ve dişilik arasında farklılık gösteren özellikler aralığı veya bağlama göre, bu özellikler biyolojik cinsiyeti ve cinsiyete dayalı toplumsal yapıları (cinsiyet rolleri ve diğer toplumsal roller de) kapsayabilir.",
+      "tokens": 53,
+      "eos": true,
+      "inference_seconds": 0.2901
+    }
+  ]
+}
