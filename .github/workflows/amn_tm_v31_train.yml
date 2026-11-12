@@ -1,0 +1,73 @@
+name: AMN-TM v3.1 corrected five-stage Turkish retraining
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/amn_tm_v31_train.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: amn-tm-v31-native-retrain
+  cancel-in-progress: false
+
+jobs:
+  train-v31:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install model environment
+        run: python -m pip install -r requirements.txt
+      - name: Verify corrected logits, streaming, checkpoint version and all objectives
+        run: |
+          python -m pytest -q tests/test_amn_tm_v3.py tests/test_amn_tm_v31.py
+      - name: Download same licensed real Turkish corpus with heldout prompt splits
+        run: |
+          python -u experiments/prepare_open_turkish.py \
+            --output data/open_turkish_v31 \
+            --max-samples 20000 --max-seq-len 680 \
+            --min-answer-bytes 45 --min-train 3000
+      - name: Actual 16M scale-corrected AMN Turkish multiobjective training
+        run: |
+          python -u experiments/train_amn_tm_v3.py \
+            --data data/open_turkish_v31 \
+            --output results/amn_tm_v31 \
+            --model-version v3.1 \
+            --width 544 --layers 6 --key-dim 128 --semantic-dim 192 \
+            --vocab 8192 --max-len 192 --semantic-len 64 \
+            --batch 4 --retrieval-batch 8 --threads 2 \
+            --seed 73 --lr 0.0005 \
+            --lm-steps 200 --intent-steps 100 \
+            --ground-steps 120 --dialogue-steps 100 --sft-steps 900 \
+            --log-every 50 --eval-every 120 \
+            --eval-rows 40 --test-rows 80 \
+            --generate-tokens 160 --max-seconds 2440
+      - name: Archive v3.1 separate from original checkpoints, with raw question responses
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          tmp="$(mktemp -d)"
+          cp -a results/amn_tm_v31/. "$tmp/"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            mkdir -p results/amn_tm_v31
+            cp -a "$tmp/." results/amn_tm_v31/
+            git add -f results/amn_tm_v31/
+            if git diff --cached --quiet; then
+              echo "Identical result archive already exists"
+              exit 0
+            fi
+            git commit -m "Archive scale-corrected AMN-TM v3.1 multiobjective Turkish checkpoint and raw answers"
+            if git push origin HEAD:main; then exit 0; fi
+            echo "Concurrent update; retry"
+          done
+          exit 1
