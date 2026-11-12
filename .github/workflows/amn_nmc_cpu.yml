@@ -7,6 +7,7 @@ on:
       - 'tests/test_nmc.py'
       - 'tests/test_nmc_pdf_source.py'
       - 'tests/test_nmc_training_v2.py'
+      - 'tests/test_nmc_capability.py'
       - 'configs/nmc/**'
       - '.github/workflows/amn_nmc_cpu.yml'
   pull_request:
@@ -15,6 +16,7 @@ on:
       - 'tests/test_nmc.py'
       - 'tests/test_nmc_pdf_source.py'
       - 'tests/test_nmc_training_v2.py'
+      - 'tests/test_nmc_capability.py'
       - 'configs/nmc/**'
       - '.github/workflows/amn_nmc_cpu.yml'
 jobs:
@@ -35,7 +37,7 @@ jobs:
         env:
           PYTHONPATH: src
           OMP_NUM_THREADS: '2'
-        run: python -m pytest -q tests/test_nmc.py tests/test_nmc_pdf_source.py tests/test_nmc_training_v2.py
+        run: python -m pytest -q tests/test_nmc.py tests/test_nmc_pdf_source.py tests/test_nmc_training_v2.py tests/test_nmc_capability.py
       - name: Preserve tested source for identical offline CPU smoke test
         if: success()
         uses: actions/upload-artifact@v4
