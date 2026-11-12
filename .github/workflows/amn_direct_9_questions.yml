@@ -1,0 +1,52 @@
+name: Ask nine exact direct questions to saved AMN replay8
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/amn_direct_9_questions.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: amn-direct-9-question-probe
+  cancel-in-progress: false
+
+jobs:
+  inference:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install AMN inference dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Ask exactly nine user prompts using the saved replay8 weights
+        run: python -u experiments/ask_9_direct_amn_v31.py
+      - name: Archive actual neural output without changes
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          tmp="$(mktemp -d)"
+          cp results/amn_tm_v31_replay8/direct_conversation_9/answers.json "$tmp/"
+          cp results/amn_tm_v31_replay8/direct_conversation_9/answers_tr.md "$tmp/"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            mkdir -p results/amn_tm_v31_replay8/direct_conversation_9
+            cp "$tmp/"* results/amn_tm_v31_replay8/direct_conversation_9/
+            git add -f results/amn_tm_v31_replay8/direct_conversation_9/
+            if git diff --cached --quiet; then
+              echo 'Results already identical'
+              exit 0
+            fi
+            git commit -m "Archive raw AMN replies to nine direct user questions"
+            if git push origin HEAD:main; then exit 0; fi
+            echo 'Concurrent update; retrying'
+          done
+          exit 1
