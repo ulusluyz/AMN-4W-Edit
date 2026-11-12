@@ -119,6 +119,49 @@ def choose_distinct(rng,rows,n):
     if len(chosen)!=n:raise ValueError("Cannot sample unique answer pairs")
     return chosen
 
+class BalancedEpochSampler:
+    """Visit each training example once per epoch before repeating it.
+
+    Unlike random sampling with replacement, per-example exposure can be
+    measured and controlled. For a 17,170-row dataset at batch 4, one SFT
+    epoch requires ceil(17170/4) = 4,293 optimizer updates.
+    """
+    def __init__(self,rows,seed):
+        self.rows=rows
+        self.rng=random.Random(seed)
+        self.order=list(range(len(rows)))
+        self.rng.shuffle(self.order)
+        self.pos=0
+        self.exposures=[0]*len(rows)
+
+    def take(self,n):
+        if not 1<=n<=len(self.rows):
+            raise ValueError("Invalid epoch batch size")
+        selected=[]
+        seen=set()
+        while len(selected)<n:
+            if self.pos==len(self.order):
+                self.rng.shuffle(self.order)
+                self.pos=0
+            idx=self.order[self.pos]
+            self.pos+=1
+            if idx in seen:
+                continue
+            seen.add(idx)
+            selected.append(self.rows[idx])
+            self.exposures[idx]+=1
+        return selected
+
+    def stats(self):
+        samples=sum(self.exposures)
+        covered=sum(x>0 for x in self.exposures)
+        return {"total_samples":samples,"unique_samples":covered,
+                "dataset_size":len(self.rows),
+                "coverage_ratio":covered/len(self.rows),
+                "minimum_exposures":min(self.exposures),
+                "maximum_exposures":max(self.exposures)}
+
+
 def train(args):
     global sp_global
     torch.set_num_threads(args.threads)
@@ -148,6 +191,8 @@ def train(args):
         raise RuntimeError("Expected 16M-class architecture; got "+str(params))
     optimizer=torch.optim.AdamW(model.parameters(),lr=args.lr,weight_decay=.015)
     rng=random.Random(args.seed+200)
+    sft_sampler=BalancedEpochSampler(train_rows,args.seed+12345) if args.sft_sampler=="epoch" else None
+    sft_exposures=Counter()
     stages=[
         ("answer_language_model",args.lm_steps),
         ("weak_intent",args.intent_steps),
@@ -203,7 +248,10 @@ def train(args):
                 tokens_input+=int(x.ne(sp.pad_id()).sum())
                 multiturn_examples+=len(sample)
             elif stage=="answer_sft_with_replay":
-                sample=choose_distinct(rng,train_rows,args.batch)
+                sample=(sft_sampler.take(args.batch) if sft_sampler is not None
+                        else choose_distinct(rng,train_rows,args.batch))
+                for row in sample:
+                    sft_exposures[row["prompt"]]+=1
                 x,y=collate_lm([r["sft"] for r in sample],sp.pad_id())
                 logits=model(x)
                 loss=F.cross_entropy(logits.reshape(-1,logits.size(-1)),
@@ -242,6 +290,16 @@ def train(args):
                     save_model(out/"best.pt",model,{"global_step":completed,
                          "stage":stage,"val_nll":best_val,"seed":args.seed})
         if reason=="time_budget":break
+    # Prevent accidental quality claims from a zero-coverage training schedule.
+    if args.require_sft_exposures>0:
+        min_coverage=min(sft_sampler.exposures) if sft_sampler is not None else (
+            min(sft_exposures.get(r["prompt"],0) for r in train_rows))
+        if min_coverage<args.require_sft_exposures:
+            raise RuntimeError(
+                "INSUFFICIENT_SFT_COVERAGE: required each training question at least "+
+                str(args.require_sft_exposures)+" times, minimum observed "+str(min_coverage)+
+                "; increase --sft-steps or reduce data. Model not published.")
+
     # Ensure a checkpoint even when the time budget ends before the SFT stage.
     if not (out/"best.pt").exists():
         dev_metric=evaluate(model,dev_rows,sp.pad_id(),max_examples=args.eval_rows)
@@ -289,6 +347,14 @@ def train(args):
         "synthetic_multiturn_training":True,
         "scheduled_stages":dict(stages),
         "completed_updates":completed,"stop_reason":reason,
+        "sft_sampling":args.sft_sampler,
+        "sft_coverage":(sft_sampler.stats() if sft_sampler is not None else {
+           "total_samples":sum(sft_exposures.values()),
+           "unique_samples":len(sft_exposures),
+           "dataset_size":len(train_rows),
+           "coverage_ratio":len(sft_exposures)/len(train_rows),
+           "minimum_exposures":min(sft_exposures.get(r["prompt"],0) for r in train_rows),
+           "maximum_exposures":max(sft_exposures.values(),default=0)}),
         "train_lm_target_tokens":tokens_lm,
         "train_input_tokens":tokens_input,
         "weak_intent_supervision_examples":intent_examples,
@@ -335,6 +401,8 @@ def main():
     a.add_argument("--semantic-len",type=int,default=56)
     a.add_argument("--batch",type=int,default=2)
     a.add_argument("--retrieval-batch",type=int,default=4)
+    a.add_argument("--sft-sampler",choices=("random","epoch"),default="random")
+    a.add_argument("--require-sft-exposures",type=int,default=0)
     a.add_argument("--lr",type=float,default=0.0008)
     a.add_argument("--threads",type=int,default=2)
     a.add_argument("--seed",type=int,default=73)
