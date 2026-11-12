@@ -90,7 +90,7 @@ def clean_lead(article):
         return None,"non_turkish_or_noise"
     if len(re.findall(r"\d+",text))>5:return None,"number_noise"
     title=article["title"].split(" (",1)[0]
-    if len(title)>=4 and norm(title) not in norm(text[:max(75,3*len(title))]):
+    if len(title)>=4 and norm(title) not in norm(text[:max(12,len(title)+16)]):
         return None,"title_mismatch"
     return text,"accepted"
 
