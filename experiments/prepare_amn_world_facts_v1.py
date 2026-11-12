@@ -72,6 +72,60 @@ def fetch(item):
                 if attempt==0:time.sleep(.25)
     return {"requested":name,"category":cat,"failure":"download_failed","errors":errors}
 
+def batch_fetch(entries):
+    """One Action API request per <=15 titles, not hundreds of REST calls.
+
+    Respects Wikimedia rate limits. Redirects and normalized names are
+    resolved explicitly; any unresolved title is rejected, never guessed.
+    """
+    originals=[r["title"] for r in entries]
+    params=urlencode({"action":"query","format":"json","formatversion":2,
+       "redirects":1,"prop":"extracts|info","exintro":1,"explaintext":1,
+       "inprop":"url","titles":"|".join(originals)})
+    errors=[]
+    for retry in range(4):
+        try:
+            doc=get_json(ACTION+"?"+params)
+            query=doc.get("query",{})
+            aliases={}
+            for item in query.get("normalized",[]):
+                aliases[item["from"]]=item["to"]
+            for item in query.get("redirects",[]):
+                aliases[item["from"]]=item["to"]
+            indexed={p["title"]:p for p in query.get("pages",[])}
+            def resolve(title):
+                seen=set()
+                for i in range(8):
+                    if title in seen:break
+                    seen.add(title)
+                    if title in indexed:return indexed[title]
+                    title=aliases.get(title,title.replace("_"," "))
+                return None
+            output=[]
+            for entry in entries:
+                name=entry["title"]
+                p=resolve(name)
+                if not p:
+                    output.append({"requested":name,"category":entry["category"],
+                        "failure":"unresolved_title","errors":[]})
+                    continue
+                if "missing" in p or p.get("pageid",-1)<0:
+                    output.append({"requested":name,"category":entry["category"],
+                        "failure":"not_found","errors":[]})
+                    continue
+                title=p.get("title",name)
+                url=p.get("fullurl") or WIKI+"/wiki/"+quote(title.replace(" ","_"))
+                output.append({"requested":name,"category":entry["category"],
+                    "title":title,"extract":p.get("extract",""),
+                    "url":url,"revision":p.get("lastrevid"),"fetch_api":"action_batch"})
+            return output
+        except (HTTPError,URLError,TimeoutError,ValueError,KeyError,IndexError) as exc:
+            errors.append(type(exc).__name__+":"+str(exc)[:180])
+            time.sleep(min(16,2**(retry+1)))
+    return [{"requested":e["title"],"category":e["category"],
+             "failure":"batch_download_failed","errors":errors} for e in entries]
+
+
 def clean_lead(article):
     if "failure" in article:return None,article["failure"]
     whole=re.sub(r"\s+"," ",html.unescape(article["extract"])).strip()
@@ -143,8 +197,10 @@ def prepare(seeds,raw,out,min_accepted):
             accepted.append({**article,"fact":fact})
             categories[article["category"]]+=1
     if len(accepted)<min_accepted or len(categories)<6:
+        errors=[x for x in raw if x.get("failure")][:8]
         raise RuntimeError("QUALITY GATE: accepted="+str(len(accepted))+
-                           " rejects="+str(dict(reason))+" categories="+str(dict(categories)))
+                           " rejects="+str(dict(reason))+" categories="+str(dict(categories))+
+                           " download_samples="+repr(errors))
     must={"Köpek","Kedi","İnsan","Denklem"}
     actual={x["requested"] for x in accepted}
     if must-actual:raise RuntimeError("QUALITY GATE missing basics: "+repr(must-actual))
@@ -241,13 +297,16 @@ def main():
     args=p.parse_args()
     seeds=json.loads(Path(args.seeds).read_text(encoding="utf-8"))["topics"]
     out=Path(args.output);out.mkdir(parents=True,exist_ok=True)
-    raw=[None]*len(seeds)
-    with ThreadPoolExecutor(max_workers=args.workers) as pool:
-        jobs={pool.submit(fetch,s):i for i,s in enumerate(seeds)}
-        progress=0
-        for f in as_completed(jobs):
-            raw[jobs[f]]=f.result();progress+=1
-            if progress%50==0:print("DOWNLOAD",progress,len(seeds),flush=True)
+    raw=[]
+    for start in range(0,len(seeds),15):
+        chunk=seeds[start:start+15]
+        batch=batch_fetch(chunk)
+        raw.extend(batch)
+        failure=sum("failure" in x for x in batch)
+        print("BATCH",start//15+1,"pages",len(batch),
+              "failures",failure,"progress",len(raw),"/",len(seeds),flush=True)
+        # Prevent bursts; a single batch counts as one API read.
+        time.sleep(.65)
     # Persist raw even if the quality gate fails for forensic analysis.
     write_jsonl(out/"downloaded_raw_pages.jsonl",raw)
     prepare(seeds,raw,out,args.min_accepted)
