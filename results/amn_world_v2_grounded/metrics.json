@@ -1,0 +1,315 @@
+{
+  "objective": "offline question-to-verified-evidence memory + six-epoch SFT and neural contrastive ranker",
+  "did_download_data": false,
+  "changed_original_checkpoint": false,
+  "was_neural_generation": false,
+  "backbone": "AMNTMv3.1; 16380518 parameters; Transformer-free",
+  "original_checkpoint_sha256": "4d993b9dac88ba7a593c45dffeea1c86ecd2a7fbf67bfebc062ebf4b2c2aa9c3",
+  "training_source_sha256": "db4324ebcc06a939a6f4046af86600cf98ba16673715fea09ca3aa7f93f77f00",
+  "train_rows": 746,
+  "validation_rows": 63,
+  "test_rows": 54,
+  "source_qa_count": 746,
+  "planned_epochs": 6,
+  "epochs_completed": 2,
+  "sft_training_updates": 374,
+  "best_sft_step": 0,
+  "stop_reason": "early_stopping_no_val_improvement",
+  "broad_exposure": {
+    "total_samples": 1496,
+    "unique_samples": 746,
+    "dataset_size": 746,
+    "coverage_ratio": 1.0,
+    "minimum_exposures": 2,
+    "maximum_exposures": 3
+  },
+  "core_exposure": {
+    "total_samples": 748,
+    "unique_samples": 62,
+    "dataset_size": 62,
+    "coverage_ratio": 1.0,
+    "minimum_exposures": 12,
+    "maximum_exposures": 13
+  },
+  "initial_validation_nll": 6.747770893056675,
+  "best_validation_nll": 6.747770893056675,
+  "initial_test_nll": 6.80418830115105,
+  "final_test_nll": 6.80418830115105,
+  "inbatch_retrieval_val_before": {
+    "recall_at1_inbatch": 0.19047619047619047,
+    "questions": 21
+  },
+  "inbatch_retrieval_val_after_sft": {
+    "recall_at1_inbatch": 0.19047619047619047,
+    "questions": 21
+  },
+  "inbatch_retrieval_val_after": 0.47619047619047616,
+  "inbatch_retrieval_test_after": {
+    "recall_at1_inbatch": 0.5555555555555556,
+    "questions": 18
+  },
+  "retrieval_steps_requested": 240,
+  "retrieval_best_step": 160,
+  "history": [
+    {
+      "epoch": 1,
+      "updates": 187,
+      "validation_nll": 6.747097556504387,
+      "broad_coverage": {
+        "total_samples": 748,
+        "unique_samples": 746,
+        "dataset_size": 746,
+        "coverage_ratio": 1.0,
+        "minimum_exposures": 1,
+        "maximum_exposures": 2
+      },
+      "core_replay_coverage": {
+        "total_samples": 374,
+        "unique_samples": 62,
+        "dataset_size": 62,
+        "coverage_ratio": 1.0,
+        "minimum_exposures": 6,
+        "maximum_exposures": 7
+      },
+      "elapsed_s": 219.9
+    },
+    {
+      "epoch": 2,
+      "updates": 374,
+      "validation_nll": 6.794425198136479,
+      "broad_coverage": {
+        "total_samples": 1496,
+        "unique_samples": 746,
+        "dataset_size": 746,
+        "coverage_ratio": 1.0,
+        "minimum_exposures": 2,
+        "maximum_exposures": 3
+      },
+      "core_replay_coverage": {
+        "total_samples": 748,
+        "unique_samples": 62,
+        "dataset_size": 62,
+        "coverage_ratio": 1.0,
+        "minimum_exposures": 12,
+        "maximum_exposures": 13
+      },
+      "elapsed_s": 432.2
+    }
+  ],
+  "retrieval_history": [
+    {
+      "step": 1,
+      "train_contrastive_nll": 2.372788190841675,
+      "val_inbatch_recall_at1": 0.14285714285714285
+    },
+    {
+      "step": 40,
+      "train_contrastive_nll": 2.3848156929016113,
+      "val_inbatch_recall_at1": 0.2857142857142857
+    },
+    {
+      "step": 80,
+      "train_contrastive_nll": 1.8393447399139404,
+      "val_inbatch_recall_at1": 0.38095238095238093
+    },
+    {
+      "step": 120,
+      "train_contrastive_nll": 1.321608066558838,
+      "val_inbatch_recall_at1": 0.38095238095238093
+    },
+    {
+      "step": 160,
+      "train_contrastive_nll": 1.2752318382263184,
+      "val_inbatch_recall_at1": 0.47619047619047616
+    },
+    {
+      "step": 200,
+      "train_contrastive_nll": 1.4438881874084473,
+      "val_inbatch_recall_at1": 0.3333333333333333
+    },
+    {
+      "step": 240,
+      "train_contrastive_nll": 1.5160291194915771,
+      "val_inbatch_recall_at1": 0.3333333333333333
+    }
+  ],
+  "source_data_examples": [
+    {
+      "question": "Köpek hakkında kısa bilgi verir misin?",
+      "answer": "Köpek (Canis lupus familiaris); köpekgiller (Canidae) familyasına ait, görünüş ve büyüklükleri farklı 400'den fazla ırkı olan, etçil bir memelidir.",
+      "source_url": "https://tr.wikipedia.org/wiki/K%C3%B6pek"
+    },
+    {
+      "question": "Kedi hakkında kısa bilgi verir misin?",
+      "answer": "Kedi (Felis catus), ayrıca evcil kedi veya ev kedisi olarak da adlandırılır, küçük, evcilleştirilmiş etobur memelidir.",
+      "source_url": "https://tr.wikipedia.org/wiki/Kedi"
+    },
+    {
+      "question": "İnsan hakkında kısa bilgi verir misin?",
+      "answer": "İnsan (Homo sapiens lit. \"bilge insan\") veya modern insan, primatların en yaygın türüdür.",
+      "source_url": "https://tr.wikipedia.org/wiki/%C4%B0nsan"
+    },
+    {
+      "question": "Denklem hakkında kısa bilgi verir misin?",
+      "answer": "Denklem, iki niceliğin eşitliğini gösteren bağıntıdır.",
+      "source_url": "https://tr.wikipedia.org/wiki/Denklem"
+    },
+    {
+      "question": "Erkek hakkında kısa bilgi verir misin?",
+      "answer": "Erkek, yetişkin bir eril insandır.",
+      "source_url": "https://tr.wikipedia.org/wiki/Erkek"
+    },
+    {
+      "question": "Kadın hakkında kısa bilgi verir misin?",
+      "answer": "Kadın, yetişkin bir dişi insandır.",
+      "source_url": "https://tr.wikipedia.org/wiki/Kad%C4%B1n"
+    }
+  ],
+  "user_question_results": [
+    {
+      "question": "Kedi nedir?",
+      "answer": "Kedi (Felis catus), ayrıca evcil kedi veya ev kedisi olarak da adlandırılır, küçük, evcilleştirilmiş etobur memelidir.",
+      "source": "Turkish Wikipedia",
+      "source_url": "https://tr.wikipedia.org/wiki/Kedi",
+      "topic": "Kedi",
+      "method": "exact_train_question",
+      "confidence": 1.0,
+      "neural_similarity": 0.755967378616333,
+      "model_generated": false
+    },
+    {
+      "question": "Köpek nedir?",
+      "answer": "Köpek (Canis lupus familiaris); köpekgiller (Canidae) familyasına ait, görünüş ve büyüklükleri farklı 400'den fazla ırkı olan, etçil bir memelidir.",
+      "source": "Turkish Wikipedia",
+      "source_url": "https://tr.wikipedia.org/wiki/K%C3%B6pek",
+      "topic": "Köpek",
+      "method": "exact_train_question",
+      "confidence": 1.0,
+      "neural_similarity": 0.4594893753528595,
+      "model_generated": false
+    },
+    {
+      "question": "Denklem nedir?",
+      "answer": "Denklem, iki niceliğin eşitliğini gösteren bağıntıdır.",
+      "source": "Turkish Wikipedia",
+      "source_url": "https://tr.wikipedia.org/wiki/Denklem",
+      "topic": "Denklem",
+      "method": "exact_train_question",
+      "confidence": 1.0,
+      "neural_similarity": 0.792397141456604,
+      "model_generated": false
+    },
+    {
+      "question": "İnsan nedir?",
+      "answer": "İnsan (Homo sapiens lit. \"bilge insan\") veya modern insan, primatların en yaygın türüdür.",
+      "source": "Turkish Wikipedia",
+      "source_url": "https://tr.wikipedia.org/wiki/%C4%B0nsan",
+      "topic": "İnsan",
+      "method": "exact_train_question",
+      "confidence": 1.0,
+      "neural_similarity": 0.3658245801925659,
+      "model_generated": false
+    },
+    {
+      "question": "Erkek nedir?",
+      "answer": "Erkek, yetişkin bir eril insandır.",
+      "source": "Turkish Wikipedia",
+      "source_url": "https://tr.wikipedia.org/wiki/Erkek",
+      "topic": "Erkek",
+      "method": "exact_train_question",
+      "confidence": 1.0,
+      "neural_similarity": 0.7436725497245789,
+      "model_generated": false
+    },
+    {
+      "question": "Kadın nedir?",
+      "answer": "Kadın, yetişkin bir dişi insandır.",
+      "source": "Turkish Wikipedia",
+      "source_url": "https://tr.wikipedia.org/wiki/Kad%C4%B1n",
+      "topic": "Kadın",
+      "method": "exact_train_question",
+      "confidence": 1.0,
+      "neural_similarity": 0.7541477680206299,
+      "model_generated": false
+    },
+    {
+      "question": "20 tane erkek insan 8 tane kadın insan ismi yaz",
+      "answer": "Erkek isimleri: Alparslan, Göktuğ, Metehan, Yusuf, Kerem, Miran, Ömer Asaf, Ömer, Atlas, Aras, Miraç, Aslan, Kuzey, Poyraz, Alperen, Yiğit, Eymen, Aybars, Ali Asaf, Çınar. Kız isimleri: Alya, Defne, Gökçe, Zeynep, Asel, Umay, Asya, Elisa.",
+      "source": "TÜİK ADNKS 2025",
+      "source_url": "https://nip.tuik.gov.tr/?value=YeniDoganIsimleri",
+      "topic": "2025 resmi isimler iki grup",
+      "method": "exact_train_question",
+      "confidence": 1.0,
+      "neural_similarity": -0.4829771816730499,
+      "model_generated": false
+    },
+    {
+      "question": "Cumhuriyet nedir",
+      "answer": "Bu soruya ilişkin doğrulanmış bilgi mevcut belleğimde bulunmuyor.",
+      "source": "",
+      "source_url": "",
+      "topic": "",
+      "method": "unknown_topic",
+      "confidence": 0.0,
+      "neural_similarity": null,
+      "model_generated": false
+    },
+    {
+      "question": "Güneş nedir",
+      "answer": "Bu soruya ilişkin doğrulanmış bilgi mevcut belleğimde bulunmuyor.",
+      "source": "",
+      "source_url": "",
+      "topic": "",
+      "method": "unknown_topic",
+      "confidence": 0.0,
+      "neural_similarity": null,
+      "model_generated": false
+    },
+    {
+      "question": "Salata nasıl yapılır",
+      "answer": "Bu soruya ilişkin doğrulanmış bilgi mevcut belleğimde bulunmuyor.",
+      "source": "",
+      "source_url": "",
+      "topic": "",
+      "method": "unsupported_intent",
+      "confidence": 0.0,
+      "neural_similarity": null,
+      "model_generated": false
+    },
+    {
+      "question": "Saksı nedir",
+      "answer": "Bu soruya ilişkin doğrulanmış bilgi mevcut belleğimde bulunmuyor.",
+      "source": "",
+      "source_url": "",
+      "topic": "",
+      "method": "unknown_topic",
+      "confidence": 0.0,
+      "neural_similarity": null,
+      "model_generated": false
+    },
+    {
+      "question": "Pusula nedir",
+      "answer": "Bu soruya ilişkin doğrulanmış bilgi mevcut belleğimde bulunmuyor.",
+      "source": "",
+      "source_url": "",
+      "topic": "",
+      "method": "unknown_topic",
+      "confidence": 0.0,
+      "neural_similarity": null,
+      "model_generated": false
+    },
+    {
+      "question": "Kedi nasıl kullanılır",
+      "answer": "Bu soruya ilişkin doğrulanmış bilgi mevcut belleğimde bulunmuyor.",
+      "source": "",
+      "source_url": "",
+      "topic": "",
+      "method": "unsupported_intent",
+      "confidence": 0.0,
+      "neural_similarity": null,
+      "model_generated": false
+    }
+  ],
+  "source_limit": "Only train split included in factual memory. Unmatched questions abstain. Answers are retrieved source text, not generated.",
+  "train_seconds": 595.7
+}
