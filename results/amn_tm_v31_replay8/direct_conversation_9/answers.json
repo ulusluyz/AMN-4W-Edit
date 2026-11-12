@@ -1,0 +1,86 @@
+{
+  "source": "direct user questions in current ChatGPT conversation",
+  "model": "AMNTMv3.1 replay8",
+  "checkpoint_path": "results/amn_tm_v31_replay8/trained.pt",
+  "checkpoint_sha256": "4af28fb7bc71efe97aa5970aa39076c472dfe16f14ad3daad80e0c32bc6b58ea",
+  "tokenizer_path": "results/amn_tm_v31/tokenizer.model",
+  "tokenizer_sha256": "5ce79ef839ad3dd4a7e411d2f74bfb10cc7db00e0e55bb2369f7e95f376b41f5",
+  "training_in_this_run": false,
+  "retrieval_in_this_run": false,
+  "human_edits_to_model_answers": false,
+  "decoding": "greedy, temperature=0, max_new_tokens=120",
+  "questions": [
+    {
+      "number": 1,
+      "question_exact": "Web geliştirme nedir",
+      "model_raw_answer": "Web bir, web, hipnotize edici ve baştan çıkarıcı.",
+      "generated_tokens": 17,
+      "eos": true,
+      "inference_seconds": 0.093
+    },
+    {
+      "number": 2,
+      "question_exact": "Teknik yön nedir",
+      "model_raw_answer": "Web, karmaşık, hipnotize edici, cezbedici, parlak, cesur, dinamik, ifade dolu, hipnotize edici ve baştan çıkarıcı.",
+      "generated_tokens": 37,
+      "eos": true,
+      "inference_seconds": 0.169
+    },
+    {
+      "number": 3,
+      "question_exact": "Denklem nedir",
+      "model_raw_answer": "Web bir, web, hipnotize edici ve baştan çıkarıcı.",
+      "generated_tokens": 17,
+      "eos": true,
+      "inference_seconds": 0.089
+    },
+    {
+      "number": 4,
+      "question_exact": "Köpek nedir",
+      "model_raw_answer": "Web bir, web ve sebzeler; tam tahıllar; az yağlı süt ürünleri; sağlıklı yağlar ve az şeker, tuz ve sağlıksız yağ içeren besinler gibi çeşitli besin yoğunluğuna sahip yiyecekleri içermelidir. Ayrıca, dengeli bir diyet için yeterli su tüketimi ve gün boyunca düzenli öğünler ve atıştırmalıklar tüketmek önemlidir.",
+      "generated_tokens": 65,
+      "eos": true,
+      "inference_seconds": 0.268
+    },
+    {
+      "number": 5,
+      "question_exact": "10.000 kuş türü mü vardır",
+      "model_raw_answer": "Dünya'da yaklaşık 10.000 kuş türü vardır.",
+      "generated_tokens": 10,
+      "eos": true,
+      "inference_seconds": 0.079
+    },
+    {
+      "number": 6,
+      "question_exact": "Kadın kime denir",
+      "model_raw_answer": "1) bir vejetaryen yemek Ratatouille olabilir. Patlıcan, kabak, domates, biber, soğan, sarımsak ve otların zengin domates sosunda pişirilmesiyle yapılır. Quinoa, kuskus veya gevrek ekmekle servis edilebilir.",
+      "generated_tokens": 59,
+      "eos": true,
+      "inference_seconds": 0.261
+    },
+    {
+      "number": 7,
+      "question_exact": "Erkek kime denir",
+      "model_raw_answer": "1) bir, bazı ve azlarların bazıları şunlardır: 1) Doğrudan olun ve açık uçlu bir soru sorun. 2) Sıcak ve dostça olun. 3) Gerçek ilgi göstererek övgüler sunun ve diğer kişinin ne söylediğini dinleyin.",
+      "generated_tokens": 47,
+      "eos": true,
+      "inference_seconds": 0.222
+    },
+    {
+      "number": 8,
+      "question_exact": "İnsan cinsiyetleri neler",
+      "model_raw_answer": "1) bir ve iyi uygulamaların bazıları şunlardır: 1) Doğrudan olun ve açık uçlu bir soru sorun. 2) Sıcak ve dostça olun. 3) Gerçek ilgi göstererek övgüler sunun ve diğer kişinin ne söylediğini dinleyin.",
+      "generated_tokens": 45,
+      "eos": true,
+      "inference_seconds": 0.202
+    },
+    {
+      "number": 9,
+      "question_exact": "20 tane erkek insan 8 tane kadın insan ismi yaz",
+      "model_raw_answer": "Web, karmaşık, hipnotize edici, cezbedici, parlak, cesur, dinamik, ifade dolu, hipnotize edici ve baştan çıkarıcı.",
+      "generated_tokens": 37,
+      "eos": true,
+      "inference_seconds": 0.197
+    }
+  ]
+}
