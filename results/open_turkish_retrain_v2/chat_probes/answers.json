@@ -1,0 +1,55 @@
+{
+  "architecture": "AMNSubwordLM-v1",
+  "checkpoint_sha256": "fc52654db3780901a98d9a1756028218e0b1b02db96d794ecbd786379a1e2ba6",
+  "tokenizer_sha256": "8e884873ae6b8f3cf304ad262072bba39ff5ae79b928e4186ee65114526c1cfa",
+  "best_step": 2200,
+  "training_this_run": false,
+  "decode": {
+    "temperature": 0,
+    "max_new_tokens": 96
+  },
+  "answers": [
+    {
+      "question": "Bir robot engellerden kaçınmak için hangi sensörleri kullanabilir?",
+      "text": "Bir bilgisayar, bir bilgisayarın bir bilgisayarıncılık ve bir bilgisayarıncılık gibi bir bilgisayarıncı bir bilgisayarıncıdır. Bir bilgisayarıncı bir bilgisayarıncı bir bilgisayarıncı bir bilgisayarıncıdır. Bir bilgisayarıncı bir bilgisayarıncı bir bilgisayarıncı bir bilgisayarıncıdır. Bir bilgisayarıncı bir bilgisayarıncı bir bilgisayarıncı bir bilgisayarıncıdır. Bir bilgisayarıncı bir bilgisayarıncı bir bilgisayarıncı bir bilgisayar",
+      "tokens_generated": 96,
+      "eos": false,
+      "words": 46
+    },
+    {
+      "question": "Python dilinde for döngüsü ne işe yarar? Bir örnek verir misin?",
+      "text": "Bir denklemi için bir denklemi, bir denklemi, bir denklemi, bir denklemi, bir denklemi, bir denklemi, bir denklemi, bir denklemi, bir denklemi, bir denklemi, bir denklemi, bir denklemi, bir denklemi, bir denklemi, bir denklemi, bir denklemi, bir denklemi, bir denklemi, bir denklemi, bir denklemi, bir denklemi, bir denklemi, bir denklemi,",
+      "tokens_generated": 96,
+      "eos": false,
+      "words": 49
+    },
+    {
+      "question": "Bir elektrik devresinde Ohm kanunu nasıl kullanılır?",
+      "text": "Bir buzdolabı, bir buzdolabı, bir buzdolabı, bir buzdolabı, bir buzdolabı, bir buzdolabı, bir buzdolabı, bir buzdolabı, bir buzdolabı, bir buzdolabı, bir buzdolabı, bir buzdolabı,",
+      "tokens_generated": 96,
+      "eos": false,
+      "words": 24
+    },
+    {
+      "question": "Kablosuz ağdaki gecikmenin nedenlerini açıklar mısın?",
+      "text": "Kuzey Amerika'nın atmosferi, çimenler, beyazlar, beyazlar, beyazlar, beyazlar, beyazlar, beyazlar, beyazlar, beyazlar, beyazlar, beyazlar, beyazlar, beyazlar, beyazlar, beyazlar, beyazlar, beyazlar, beyazlar, beyazlar, beyazlar, beyazlar, beyaz",
+      "tokens_generated": 96,
+      "eos": false,
+      "words": 25
+    },
+    {
+      "question": "Yeni başlayan birine yazılım testi neden önemlidir, anlatır mısın?",
+      "text": "Yeni bir dil öğrenmek için bir dil öğrenmek için bir dil öğrenmek için bir dil öğrenmek için bir dil öğrenmek için bir dil öğrenmek için bir dil öğrenmek için bir dil öğrenmek için bir dil öğrenmek için bir dil öğrenmek için bir dil öğrenmek için bir dil öğrenmek için bir dil öğrenmek için bir dil öğrenmek için bir dil öğrenmek için bir dil öğrenmek için bir dil öğrenmek için bir dil öğrenmek için bir dil öğrenmek için",
+      "tokens_generated": 96,
+      "eos": false,
+      "words": 77
+    },
+    {
+      "question": "Bir arkadaşına teşekkür etmek için doğal bir Türkçe cümle yaz.",
+      "text": "Bir gün, bir gün boyunca bir gün boyunca bir gün boyunca bir gün boyunca bir günün bir gün için bir günün bir gün için bir günün bir gün için bir günün bir gün için bir günün bir günün bir günün bir günün bir günün bir günün bir günün bir günün bir günün bir günün bir günün bir günün bir günün bir günün bir günün bir günün bir günün bir günün bir günün",
+      "tokens_generated": 96,
+      "eos": false,
+      "words": 72
+    }
+  ]
+}
