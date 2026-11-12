@@ -4,7 +4,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/"experiments"))
 from prepare_amn_world_facts_v1 import (
-    clean_lead,make_qa,official_names,digest,norm
+    clean_lead,make_qa,official_names,verified_editorial_facts,digest,norm
 )
 
 
@@ -44,3 +44,26 @@ def test_official_2025_name_counts_and_unique_prompts():
     assert len(male)==20
     assert len(female)==8
     assert all(x["source"]=="TÜİK ADNKS 2025" for x in names)
+
+
+def test_short_complete_math_and_human_definitions_are_accepted():
+    for title,text in (
+       ("Denklem","Denklem, iki niceliğin eşitliğini gösteren bağıntıdır."),
+       ("Kadın","Kadın, yetişkin bir dişi insandır."),
+       ("Erkek","Erkek, yetişkin bir eril insandır.")):
+        article={"requested":title,"category":"test","title":title,"extract":text}
+        fact,reason=clean_lead(article)
+        assert fact==text
+        assert reason=="accepted"
+
+def test_nonwikipedia_editorial_facts_have_exact_official_sources():
+    rows=verified_editorial_facts()
+    assert len(rows)>=10
+    sources={"MDN Web Docs":"https://developer.mozilla.org/",
+       "Dünya Sağlık Örgütü":"https://www.who.int/",
+       "BirdLife International":"https://www.birdlife.org/"}
+    assert all(row["source_url"].startswith(sources[row["source"]])
+               for row in rows)
+    assert any(x["prompt"]=="Web geliştirme nedir?" for x in rows)
+    assert any(x["prompt"]=="İnsan cinsiyetleri neler?" for x in rows)
+    assert any(x["prompt"]=="10.000 kuş türü mü vardır?" for x in rows)
