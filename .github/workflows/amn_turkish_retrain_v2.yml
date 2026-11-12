@@ -1,0 +1,111 @@
+name: AMN Turkish retraining v2 - real text subword
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/amn_turkish_retrain_v2.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: amn-turkish-retrain-v2-only
+  cancel-in-progress: false
+
+jobs:
+  retrain:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install training requirements
+        run: |
+          python -m pip install -r requirements.txt
+          python -m pip install sentencepiece==0.2.1
+      - name: Assert model math, causality, UTF8 and trained checkpoint compatibility
+        run: |
+          python -m pytest -q tests/test_amn_open_turkish_sp.py tests/test_amn_open_turkish.py
+      - name: Fetch licensed Turkish instruction-response data and create isolated splits
+        run: |
+          python -u experiments/prepare_open_turkish.py \
+            --output data/open_turkish_v2 \
+            --max-samples 20000 --max-seq-len 640 \
+            --min-answer-bytes 45 --min-train 3000
+      - name: Train fresh subword AMN, preserve all prior checkpoints
+        run: |
+          python -u experiments/train_open_turkish_sp.py \
+            --data data/open_turkish_v2 \
+            --output results/open_turkish_retrain_v2 \
+            --steps 2200 --width 160 --key-dim 32 --layers 2 \
+            --vocab-size 2400 --max-len 224 --batch 16 \
+            --lr 0.0015 --threads 2 --eval-every 150 --patience 6 \
+            --seed 71
+      - name: Test the saved model on fresh Turkish questions without rewriting answers
+        shell: bash
+        run: |
+          set -euo pipefail
+          python experiments/amn_open_turkish_sp.py \
+            --checkpoint results/open_turkish_retrain_v2/best.pt \
+            --tokenizer results/open_turkish_retrain_v2/tokenizer.model \
+            --prompt 'Bir robot engellerden nasıl kaçınabilir?' \
+            --temperature 0 --max-new-tokens 160 \
+            > results/open_turkish_retrain_v2/probe_robot.json
+          python experiments/amn_open_turkish_sp.py \
+            --checkpoint results/open_turkish_retrain_v2/best.pt \
+            --tokenizer results/open_turkish_retrain_v2/tokenizer.model \
+            --prompt 'Python dilinde for döngüsü ne işe yarar?' \
+            --temperature 0 --max-new-tokens 160 \
+            > results/open_turkish_retrain_v2/probe_python.json
+          python experiments/amn_open_turkish_sp.py \
+            --checkpoint results/open_turkish_retrain_v2/best.pt \
+            --tokenizer results/open_turkish_retrain_v2/tokenizer.model \
+            --prompt 'Kablosuz ağ neden yavaşlar?' \
+            --temperature 0 --max-new-tokens 160 \
+            > results/open_turkish_retrain_v2/probe_wifi.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path('results/open_turkish_retrain_v2')
+          records=[]
+          for p in ('robot','python','wifi'):
+              r=json.loads((root/f'probe_{p}.json').read_text())
+              records.append({'task':p,'question':r['prompt'],'answer':r['answer']['text'],
+                              'eos':r['answer']['eos']})
+          m=json.loads((root/'metrics.json').read_text())
+          lines=['# AMN retraining v2 — genuine Turkish model outputs','',
+              f"Training steps: {m['training_steps']}; best: {m['best_step']}",
+              f"Test token NLL: {m['test']['nll']:.4f}; test PPL: {m['test']['ppl']:.3f}",'',
+              'Answers below are neural model outputs (greedy); not manually edited.','']
+          for row in records:
+              lines.extend(['## '+row['task'], '**Soru:** '+row['question'],
+                            '**Gerçek AMN cevabı:** '+(row['answer'] or '(boş)'), ''])
+          (root/'retraining_probes_tr.md').write_text('\n'.join(lines),encoding='utf-8')
+          print(json.dumps(records,ensure_ascii=False,indent=2))
+          PY
+      - name: Archive independent trained weights and raw outputs only to Edit
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          tmp="$(mktemp -d)"
+          cp -a results/open_turkish_retrain_v2/. "$tmp/"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            mkdir -p results/open_turkish_retrain_v2
+            cp -a "$tmp/." results/open_turkish_retrain_v2/
+            git add -f results/open_turkish_retrain_v2/
+            if git diff --cached --quiet; then
+              echo 'Identical results already present'
+              exit 0
+            fi
+            git commit -m "Archive new Turkish subword AMN retraining and real generated responses"
+            if git push origin HEAD:main; then exit 0; fi
+            echo 'Concurrent push; trying updated main'
+          done
+          exit 1
