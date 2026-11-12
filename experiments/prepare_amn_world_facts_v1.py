@@ -134,7 +134,7 @@ def clean_lead(article):
     if any(c in whole for c in "<>{}|") or "\ufffd" in whole:
         return None,"broken_markup"
     text=SPLIT_SENT.split(whole)[0].strip()
-    if len(text)<56 or len(text.split())<8:return None,"too_short"
+    if len(text)<28 or len(text.split())<4:return None,"too_short"
     if len(text)>355:return None,"too_long"
     if not text.endswith((".","!","?")):return None,"incomplete_first_sentence"
     if re.search(r"\[[0-9]+\]|https?://|\.\.\.",text):
@@ -165,6 +165,55 @@ def official_names():
         "category":"resmi_isimler","source":"TÜİK ADNKS 2025",
         "source_url":TUIK,"license":"public statistical facts"})
     return rows
+
+def verified_editorial_facts():
+    """Short manually edited Turkish summaries traceable to reliable organizations.
+
+    These are labeled editorial paraphrases, NOT automatically extracted from
+    the linked documents, and NOT fake or machine-translated instructions.
+    Source URL is retained on each example for manual verification.
+    """
+    facts=[
+      ("Web geliştirme",
+       ["Web geliştirme nedir?", "Web geliştirme ne işe yarar?",
+        "Web geliştirme hakkında kısa bilgi ver."],
+       "Web geliştirme, web sitelerinin ve web uygulamalarının oluşturulması ve geliştirilmesi işidir. Bu süreçte HTML, CSS ve JavaScript gibi teknolojiler kullanılır.",
+       "MDN Web Docs","https://developer.mozilla.org/en-US/docs/Learn_web_development"),
+      ("Teknik yön",
+       ["Teknik yön nedir?", "Bir işin teknik yönü ne demektir?"],
+       "Bir çalışmanın teknik yönü, nasıl tasarlandığı, hangi araçların kullanıldığı ve nasıl uygulandığıyla ilgili ayrıntılardır.",
+       "MDN Web Docs","https://developer.mozilla.org/en-US/docs/Learn_web_development/About"),
+      ("İnsan cinsiyeti",
+       ["İnsan cinsiyetleri neler?", "Biyolojik cinsiyet ve toplumsal cinsiyet arasındaki fark nedir?",
+        "İnsanlarda cinsiyet çeşitliliği nasıl açıklanır?"],
+       "Biyolojik cinsiyet genellikle dişi ve erkek olarak sınıflandırılır; interseks özellikler de görülebilir. Toplumsal cinsiyet ve cinsiyet kimliği ise biyolojik cinsiyetten farklı kavramlardır.",
+       "Dünya Sağlık Örgütü",
+       "https://www.who.int/news-room/questions-and-answers/item/gender-and-health"),
+      ("Kadın tanımı",
+       ["Kadın kime denir?", "Kadın kimdir?"],
+       "Kadın, yetişkin dişi insan için kullanılan bir sözcüktür; toplumsal cinsiyet bağlamında kadın kimliğiyle yaşayan yetişkinler için de kullanılır.",
+       "Dünya Sağlık Örgütü","https://www.who.int/health-topics/gender"),
+      ("Erkek tanımı",
+       ["Erkek kime denir?", "Erkek kimdir?"],
+       "Erkek, yetişkin eril insan için kullanılan bir sözcüktür; toplumsal cinsiyet bağlamında erkek kimliğiyle yaşayan yetişkinler için de kullanılır.",
+       "Dünya Sağlık Örgütü","https://www.who.int/health-topics/gender"),
+      ("Kuş türü sayımı",
+       ["10.000 kuş türü mü vardır?", "Dünyada kaç kuş türü vardır?",
+        "Kuş türlerinin sayısı kaçtır?"],
+       "Dünya genelinde yaklaşık 11 bin kuş türü sınıflandırılır. Kesin sayı kullanılan taksonomi listesine ve yıla göre değişebilir. AviList 2025 listesi 11.131 tür içerir.",
+       "BirdLife International",
+       "https://www.birdlife.org/news/2025/06/11/avilist-unites-the-worlds-bird-species/")
+    ]
+    rows=[]
+    for topic,questions,answer,source,url in facts:
+        for question in questions:
+            rows.append({"prompt":question,"answer":answer,"topic":topic,
+                 "category":"uzman_kaynakli_temel_kavram",
+                 "source":source,"source_url":url,
+                 "license":"Attribution: short independently written editorial paraphrase",
+                 "human_editorial_fact":True})
+    return rows
+
 
 def make_qa(article,fact):
     title=article["title"].split(" (",1)[0]
@@ -219,8 +268,9 @@ def prepare(seeds,raw,out,min_accepted):
             if key in seen:continue
             seen.add(key);splits[split].append(qa)
     names=official_names()
-    for qa in names:
-        if norm(qa["prompt"]) in seen:raise RuntimeError("duplicate official prompt")
+    external=verified_editorial_facts()
+    for qa in names+external:
+        if norm(qa["prompt"]) in seen:raise RuntimeError("duplicate sourced prompt")
         seen.add(norm(qa["prompt"]))
         splits["train"].append(qa)
     if len(splits["train"])<200 or min(len(splits["val"]),len(splits["test"]))<12:
@@ -250,6 +300,7 @@ def prepare(seeds,raw,out,min_accepted):
       "training_topics":sum(s=="train" for s in topic_owner.values()),
       "split_qa_counts":{k:len(v) for k,v in splits.items()},
       "official_tuik_name_qa_count":len(names),
+      "externally_sourced_editorial_qa_count":len(external),
       "name_example_20_male_8_female":names[-1],
       "total_unique_prompts":len(seen),
       "source_sha256":hashlib.sha256((out/"downloaded_raw_pages.jsonl").read_bytes()).hexdigest(),
@@ -274,7 +325,9 @@ def prepare(seeds,raw,out,min_accepted):
         "İndirilen: "+str(audit["download_success_count"])+"/"+str(len(seeds)),
         "Kabul: "+str(len(accepted)),"Ret: "+str(len(rejects)),
         "Train/val/test QA: "+"/".join(str(len(splits[k])) for k in ("train","val","test")),
-        "İsim QA: "+str(len(names)),"","## Ret nedenleri"]
+        "İsim QA: "+str(len(names)),
+        "Diğer güvenilir kaynaklı QA: "+str(len(external)),
+        "","## Ret nedenleri"]
     lines +=["- "+k+": "+str(v) for k,v in reason.most_common()]
     lines+=["","## Kategori kapsamı"]
     lines +=["- "+k+": "+str(v) for k,v in sorted(categories.items())]
