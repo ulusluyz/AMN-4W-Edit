@@ -11,3 +11,5 @@ venv.bak/
 *.log
 weights/
 results/
+work/
+data/nmc_pdf_private/
