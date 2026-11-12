@@ -150,9 +150,13 @@ def prepare(seeds,raw,out,min_accepted):
     if must-actual:raise RuntimeError("QUALITY GATE missing basics: "+repr(must-actual))
     splits={"train":[],"val":[],"test":[]};seen=set()
     topic_owner={}
+    core_train={"Köpek","Kedi","İnsan","Kadın","Erkek","Denklem","Web geliştirme",
+        "Web tasarımı","Bilgisayar","Atom","Güneş","Dünya","İnternet","Yapay zekâ",
+        "Robot","Elektrik","Cinsiyet","Toplumsal cinsiyet","Matematik","Beyin"}
     for a in accepted:
         h=int(digest("world-v1|"+norm(a["requested"]))[:8],16)%100
-        split="test" if h<10 else "val" if h<20 else "train"
+        split="train" if a["requested"] in core_train else (
+            "test" if h<10 else "val" if h<20 else "train")
         topic_owner[a["requested"]]=split
         for qa in make_qa(a,a["fact"]):
             key=norm(qa["prompt"])
