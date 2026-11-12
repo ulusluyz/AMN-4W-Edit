@@ -1,0 +1,70 @@
+name: AMN v3.2 — offline source-grounded QA memory and six-epoch learning
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/amn_grounded_v2_train.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: amn-grounded-v2-train
+  cancel-in-progress: false
+
+jobs:
+  grounded-model:
+    runs-on: ubuntu-latest
+    timeout-minutes: 57
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install existing PyTorch and SentencePiece requirements (no new data downloads)
+        run: python -m pip install -r requirements.txt
+      - name: Confirm original reviewed data, no split leakage and high-precision Turkish memory
+        run: |
+          python -m pytest -q \
+            tests/test_amn_grounded_memory_v1.py \
+            tests/test_amn_world_training_v1.py \
+            tests/test_amn_tm_v31.py \
+            tests/test_amn_epoch_sampler.py
+      - name: Train six complete balanced epochs, early-stop and native contrastive query/evidence heads
+        run: |
+          python -u experiments/train_amn_grounded_v2.py \
+            --data data/amn_world_v1 \
+            --base results/amn_world_v1_train/best.pt \
+            --tokenizer results/amn_tm_v31/tokenizer.model \
+            --output results/amn_world_v2_grounded \
+            --epochs 6 --batch 4 --core-batch 2 --max-length 192 \
+            --max-seconds 2300 --patience 2 --min-delta 0.015 \
+            --lr 0.00013 --retrieval-lr 0.0015 \
+            --retrieval-batch 10 --retrieval-steps 240 \
+            --retrieval-eval-every 40 --threads 2 --seed 177
+      - name: Save new frozen checkpoint, full training metrics, data examples and offline Q/A
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          tmp="$(mktemp -d)"
+          cp results/amn_world_v2_grounded/best.pt "$tmp/"
+          cp results/amn_world_v2_grounded/metrics.json "$tmp/"
+          cp results/amn_world_v2_grounded/memory_questions_tr.md "$tmp/"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            mkdir -p results/amn_world_v2_grounded
+            cp "$tmp/"* results/amn_world_v2_grounded/
+            git add -f results/amn_world_v2_grounded/
+            if git diff --cached --quiet; then
+              echo "All artifacts already archived"
+              exit 0
+            fi
+            git commit -m "Archive audited AMN grounded v2 offline memory, neural reranker and six-epoch CPU results"
+            if git push origin HEAD:main; then exit 0; fi
+            echo "Concurrent commit, retrying latest main"
+          done
+          exit 1
