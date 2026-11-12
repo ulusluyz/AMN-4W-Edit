@@ -135,8 +135,14 @@ def train(args):
     test_rows=prepare_rows(sp,test_raw,args.max_len)
     if min(map(len,(train_rows,dev_rows,test_rows)))<20 or len(train_rows)<1000:
         raise RuntimeError("Insufficient real-text data after subword filtering")
-    model=AMNTMv3(sp.vocab_size(),args.width,args.layers,args.key_dim,
-                  args.semantic_dim,sp.pad_id())
+    if args.model_version=="v3.1":
+        from amn_tm_v31 import AMNTMv31,save as save_model,restore as restore_model
+        model_class=AMNTMv31
+    else:
+        model_class=AMNTMv3
+        save_model,restore_model=save,restore
+    model=model_class(sp.vocab_size(),args.width,args.layers,args.key_dim,
+                      args.semantic_dim,sp.pad_id())
     params=parameters(model)
     if args.width==544 and args.layers==6 and not 15_000_000<=params<=18_000_000:
         raise RuntimeError("Expected 16M-class architecture; got "+str(params))
@@ -174,7 +180,7 @@ def train(args):
                 intent_examples+=len(sample)
                 tokens_input+=int(q.ne(sp.pad_id()).sum())
             elif stage=="in_batch_grounding":
-                sample=choose_distinct(rng,train_rows,max(2,args.batch))
+                sample=choose_distinct(rng,train_rows,max(2,args.retrieval_batch))
                 q=collate_questions(sp,[r["prompt"] for r in sample],max_len=args.semantic_len)
                 a=collate_questions(sp,[r["answer"] for r in sample],max_len=args.semantic_len)
                 loss=model.retrieval_loss(q,a)
@@ -233,16 +239,16 @@ def train(args):
                 print("DEVELOPMENT",completed,json.dumps(metric),flush=True)
                 if metric["answer_nll"] < best_val:
                     best_val=metric["answer_nll"];best_step=completed
-                    save(out/"best.pt",model,{"global_step":completed,
+                    save_model(out/"best.pt",model,{"global_step":completed,
                          "stage":stage,"val_nll":best_val,"seed":args.seed})
         if reason=="time_budget":break
     # Ensure a checkpoint even when the time budget ends before the SFT stage.
     if not (out/"best.pt").exists():
         dev_metric=evaluate(model,dev_rows,sp.pad_id(),max_examples=args.eval_rows)
         best_val=dev_metric["answer_nll"];best_step=completed
-        save(out/"best.pt",model,{"global_step":completed,"stage":"partial",
+        save_model(out/"best.pt",model,{"global_step":completed,"stage":"partial",
                                   "val_nll":best_val,"seed":args.seed})
-    best_model,checkpoint_info=restore(out/"best.pt")
+    best_model,checkpoint_info=restore_model(out/"best.pt")
     test_result=evaluate(best_model,test_rows,sp.pad_id(),max_examples=args.test_rows)
     probes=(
         "Bir robot engellerden kaçınmak için hangi sensörleri kullanabilir?",
@@ -260,7 +266,8 @@ def train(args):
         generated.append(row)
         print("GENERATED",json.dumps(row,ensure_ascii=False),flush=True)
     result={
-        "architecture":"AMNTMv3","config":best_model.config,
+        "architecture":"AMNTMv3.1" if args.model_version=="v3.1" else "AMNTMv3",
+        "model_version":args.model_version,"config":best_model.config,
         "parameters":params,
         "experiment":"bounded real Turkish multi-objective CPU pilot",
         "targets_not_yet_achieved":{
@@ -317,6 +324,7 @@ def train(args):
 def main():
     a=argparse.ArgumentParser()
     a.add_argument("--data",default="data/open_turkish_v3")
+    a.add_argument("--model-version",choices=("v3","v3.1"),default="v3")
     a.add_argument("--output",default="results/amn_tm_v3_pilot")
     a.add_argument("--width",type=int,default=544)
     a.add_argument("--layers",type=int,default=6)
@@ -326,6 +334,7 @@ def main():
     a.add_argument("--max-len",type=int,default=144)
     a.add_argument("--semantic-len",type=int,default=56)
     a.add_argument("--batch",type=int,default=2)
+    a.add_argument("--retrieval-batch",type=int,default=4)
     a.add_argument("--lr",type=float,default=0.0008)
     a.add_argument("--threads",type=int,default=2)
     a.add_argument("--seed",type=int,default=73)
