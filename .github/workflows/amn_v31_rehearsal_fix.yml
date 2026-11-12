@@ -1,0 +1,67 @@
+name: Fix AMN v3.1 seen-question learning with balanced rehearsal
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/amn_v31_rehearsal_fix.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: amn-v31-rehearsal-fix
+  cancel-in-progress: false
+
+jobs:
+  fix-and-verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install inference and training dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Test causal labels, gradient learning and the v3.1 original model
+        run: |
+          python -m pytest -q tests/test_amn_v31_rehearsal_fix.py tests/test_amn_tm_v31.py
+      - name: Recreate original 2026-11-12 Turkish corpus and partitions
+        run: |
+          python -u experiments/prepare_open_turkish.py \
+            --output data/open_turkish_v31 \
+            --max-samples 20000 --max-seq-len 680 \
+            --min-answer-bytes 45 --min-train 3000
+      - name: Verify source and rehearse 6 truly seen questions against unchanged v3.1 base
+        run: |
+          python -u experiments/fix_amn_v31_rehearsal.py \
+            --data data/open_turkish_v31 \
+            --base results/amn_tm_v31 \
+            --audit results/amn_tm_v31/seen_training_questions/audit.json \
+            --output results/amn_tm_v31_rehearsal \
+            --steps 360 --batch 3 --lr 0.0006 \
+            --report-every 60 --threads 2 --seed 73
+      - name: Archive new checkpoint and before-after raw outputs without overwriting v3.1
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          tmp="$(mktemp -d)"
+          cp -a results/amn_tm_v31_rehearsal/. "$tmp/"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            mkdir -p results/amn_tm_v31_rehearsal
+            cp -a "$tmp/." results/amn_tm_v31_rehearsal/
+            git add -f results/amn_tm_v31_rehearsal/
+            if git diff --cached --quiet; then
+              echo "Exact artifacts already archived"
+              exit 0
+            fi
+            git commit -m "Archive AMN v3.1 balanced question rehearsal results and immutable base comparison"
+            if git push origin HEAD:main; then exit 0; fi
+            echo "Concurrent push; retrying origin main"
+          done
+          exit 1
