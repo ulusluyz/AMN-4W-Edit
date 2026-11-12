@@ -1,0 +1,233 @@
+{
+  "experiment": "replay all previously seen six + two controls",
+  "scope": "exact learned/seen QAs, NOT open-domain generalization",
+  "source_recreated_and_matched": true,
+  "original_tokenizer_sha256": "5ce79ef839ad3dd4a7e411d2f74bfb10cc7db00e0e55bb2369f7e95f376b41f5",
+  "new_training_steps": 320,
+  "batch": 4,
+  "lr": 0.0004,
+  "per_question_replay_exposures": [
+    160,
+    160,
+    160,
+    160,
+    160,
+    160,
+    160,
+    160
+  ],
+  "old_six": {
+    "before_nll": 0.0030135339550547875,
+    "after_nll": 0.0014030572081351316,
+    "before_summary": {
+      "exact_count": 6,
+      "count": 6,
+      "avg_char_f1_proxy": 1.0
+    },
+    "after_summary": {
+      "exact_count": 6,
+      "count": 6,
+      "avg_char_f1_proxy": 1.0
+    }
+  },
+  "previously_forgotten_two": {
+    "before_nll": 8.926337641283386,
+    "after_nll": 0.002394600594750821,
+    "before_summary": {
+      "exact_count": 0,
+      "count": 2,
+      "avg_char_f1_proxy": 0.6317
+    },
+    "after_summary": {
+      "exact_count": 2,
+      "count": 2,
+      "avg_char_f1_proxy": 1.0
+    }
+  },
+  "before_answers": [
+    {
+      "question": "Bir konuşma başlatmak için üç en iyi uygulamayı listeleyin.",
+      "reference": "Bir konuşma başlatmak için en iyi uygulamaların bazıları şunlardır: 1) Doğrudan olun ve açık uçlu bir soru sorun. 2) Sıcak ve dostça olun. 3) Gerçek ilgi göstererek övgüler sunun ve diğer kişinin ne söylediğini dinleyin.",
+      "answer": "Bir konuşma başlatmak için en iyi uygulamaların bazıları şunlardır: 1) Doğrudan olun ve açık uçlu bir soru sorun. 2) Sıcak ve dostça olun. 3) Gerçek ilgi göstererek övgüler sunun ve diğer kişinin ne söylediğini dinleyin.",
+      "eos": true,
+      "tokens": 47,
+      "exact": true,
+      "char_f1_proxy": 1.0
+    },
+    {
+      "question": "Web geliştirme ve web tasarımı arasındaki farkı açıklayın.",
+      "reference": "Web geliştirme, web sitesi oluşturma sürecidir ve web sitesinin işlevselliğini oluşturmak için kodlama ve işaretleme dili yazmayı içerir. Web tasarımı, web sitesinin görünümüne odaklanır ve görsel düzeni, renkleri ve tipografisini içerir. Web geliştirme, bir web sitesinin teknik yönlerine odaklanırken web tasarımı estetiğine odaklanır.",
+      "answer": "Web geliştirme, web sitesi oluşturma sürecidir ve web sitesinin işlevselliğini oluşturmak için kodlama ve işaretleme dili yazmayı içerir. Web tasarımı, web sitesinin görünümüne odaklanır ve görsel düzeni, renkleri ve tipografisini içerir. Web geliştirme, bir web sitesinin teknik yönlerine odaklanırken web tasarımı estetiğine odaklanır.",
+      "eos": true,
+      "tokens": 63,
+      "exact": true,
+      "char_f1_proxy": 1.0
+    },
+    {
+      "question": "Doğru bir çizgi için matematiksel denklemi türetin.",
+      "reference": "y = mx + b, burada m eğim ve b çizginin y-kesiti olarak tanımlanır.",
+      "answer": "y = mx + b, burada m eğim ve b çizginin y-kesiti olarak tanımlanır.",
+      "eos": true,
+      "tokens": 24,
+      "exact": true,
+      "char_f1_proxy": 1.0
+    },
+    {
+      "question": "Vejetaryenler için uygun bir yemek önerin.",
+      "reference": "Lezzetli bir vejetaryen yemek Ratatouille olabilir. Patlıcan, kabak, domates, biber, soğan, sarımsak ve otların zengin domates sosunda pişirilmesiyle yapılır. Quinoa, kuskus veya gevrek ekmekle servis edilebilir.",
+      "answer": "Lezzetli bir vejetaryen yemek Ratatouille olabilir. Patlıcan, kabak, domates, biber, soğan, sarımsak ve otların zengin domates sosunda pişirilmesiyle yapılır. Quinoa, kuskus veya gevrek ekmekle servis edilebilir.",
+      "eos": true,
+      "tokens": 59,
+      "exact": true,
+      "char_f1_proxy": 1.0
+    },
+    {
+      "question": "Dünyada kaç kuş türü olduğunu bulun.",
+      "reference": "Dünya'da yaklaşık 10.000 kuş türü vardır.",
+      "answer": "Dünya'da yaklaşık 10.000 kuş türü vardır.",
+      "eos": true,
+      "tokens": 10,
+      "exact": true,
+      "char_f1_proxy": 1.0
+    },
+    {
+      "question": "İyi dengelenmiş bir diyetin beş bileşenini adlandırın.",
+      "reference": "Dengeli bir diyet, meyve ve sebzeler; tam tahıllar; az yağlı süt ürünleri; sağlıklı yağlar ve az şeker, tuz ve sağlıksız yağ içeren besinler gibi çeşitli besin yoğunluğuna sahip yiyecekleri içermelidir. Ayrıca, dengeli bir diyet için yeterli su tüketimi ve gün boyunca düzenli öğünler ve atıştırmalıklar tüketmek önemlidir.",
+      "answer": "Dengeli bir diyet, meyve ve sebzeler; tam tahıllar; az yağlı süt ürünleri; sağlıklı yağlar ve az şeker, tuz ve sağlıksız yağ içeren besinler gibi çeşitli besin yoğunluğuna sahip yiyecekleri içermelidir. Ayrıca, dengeli bir diyet için yeterli su tüketimi ve gün boyunca düzenli öğünler ve atıştırmalıklar tüketmek önemlidir.",
+      "eos": true,
+      "tokens": 66,
+      "exact": true,
+      "char_f1_proxy": 1.0
+    },
+    {
+      "question": "Erkek ve dişi kardinal arasındaki farkı nasıl anlatacağınızı açıklayın.",
+      "reference": "Erkek kardinal kuşlar parlak kırmızı tüylere sahiptir, dişi kardinal kuşların tüyleri daha kahverengi renklidir. Erkeklerin yüzleri siyahken, dişi kardinal kuşların yüzleri gri renklidir. Ayrıca, erkek kardinal kuşlar genellikle dişilerden daha büyüktür.",
+      "answer": "Web geliştirme, web sitesi oluşturma sürecidir ve web sitesinin işlevselliğini oluşturmak için kodlama ve işaretleme dili yazmayı içerir. Web tasarımı, web sitesinin görünümüne odaklanır ve görsel düzeni, renkleri ve tipografisini içerir. Web geliştirme, bir web sitesinin teknik yönlerine odaklanırken web tasarımı estetiğine odaklanır.",
+      "eos": true,
+      "tokens": 63,
+      "exact": false,
+      "char_f1_proxy": 0.7039
+    },
+    {
+      "question": "Bir resmi tanımlamak için 10 sıfat bulun.",
+      "reference": "Canlı, karmaşık, hipnotize edici, cezbedici, parlak, cesur, dinamik, ifade dolu, hipnotize edici ve baştan çıkarıcı.",
+      "answer": "Bir konuşma başlatmak için en iyi uygulamaların bazıları şunlardır: 1) Doğrudan olun ve açık uçlu bir soru sorun. 2) Sıcak ve dostça olun. 3) Gerçek ilgi göstererek övgüler sunun ve diğer kişinin ne söylediğini dinleyin.",
+      "eos": true,
+      "tokens": 47,
+      "exact": false,
+      "char_f1_proxy": 0.5595
+    }
+  ],
+  "after_answers": [
+    {
+      "question": "Bir konuşma başlatmak için üç en iyi uygulamayı listeleyin.",
+      "reference": "Bir konuşma başlatmak için en iyi uygulamaların bazıları şunlardır: 1) Doğrudan olun ve açık uçlu bir soru sorun. 2) Sıcak ve dostça olun. 3) Gerçek ilgi göstererek övgüler sunun ve diğer kişinin ne söylediğini dinleyin.",
+      "answer": "Bir konuşma başlatmak için en iyi uygulamaların bazıları şunlardır: 1) Doğrudan olun ve açık uçlu bir soru sorun. 2) Sıcak ve dostça olun. 3) Gerçek ilgi göstererek övgüler sunun ve diğer kişinin ne söylediğini dinleyin.",
+      "eos": true,
+      "tokens": 47,
+      "exact": true,
+      "char_f1_proxy": 1.0
+    },
+    {
+      "question": "Web geliştirme ve web tasarımı arasındaki farkı açıklayın.",
+      "reference": "Web geliştirme, web sitesi oluşturma sürecidir ve web sitesinin işlevselliğini oluşturmak için kodlama ve işaretleme dili yazmayı içerir. Web tasarımı, web sitesinin görünümüne odaklanır ve görsel düzeni, renkleri ve tipografisini içerir. Web geliştirme, bir web sitesinin teknik yönlerine odaklanırken web tasarımı estetiğine odaklanır.",
+      "answer": "Web geliştirme, web sitesi oluşturma sürecidir ve web sitesinin işlevselliğini oluşturmak için kodlama ve işaretleme dili yazmayı içerir. Web tasarımı, web sitesinin görünümüne odaklanır ve görsel düzeni, renkleri ve tipografisini içerir. Web geliştirme, bir web sitesinin teknik yönlerine odaklanırken web tasarımı estetiğine odaklanır.",
+      "eos": true,
+      "tokens": 63,
+      "exact": true,
+      "char_f1_proxy": 1.0
+    },
+    {
+      "question": "Doğru bir çizgi için matematiksel denklemi türetin.",
+      "reference": "y = mx + b, burada m eğim ve b çizginin y-kesiti olarak tanımlanır.",
+      "answer": "y = mx + b, burada m eğim ve b çizginin y-kesiti olarak tanımlanır.",
+      "eos": true,
+      "tokens": 24,
+      "exact": true,
+      "char_f1_proxy": 1.0
+    },
+    {
+      "question": "Vejetaryenler için uygun bir yemek önerin.",
+      "reference": "Lezzetli bir vejetaryen yemek Ratatouille olabilir. Patlıcan, kabak, domates, biber, soğan, sarımsak ve otların zengin domates sosunda pişirilmesiyle yapılır. Quinoa, kuskus veya gevrek ekmekle servis edilebilir.",
+      "answer": "Lezzetli bir vejetaryen yemek Ratatouille olabilir. Patlıcan, kabak, domates, biber, soğan, sarımsak ve otların zengin domates sosunda pişirilmesiyle yapılır. Quinoa, kuskus veya gevrek ekmekle servis edilebilir.",
+      "eos": true,
+      "tokens": 59,
+      "exact": true,
+      "char_f1_proxy": 1.0
+    },
+    {
+      "question": "Dünyada kaç kuş türü olduğunu bulun.",
+      "reference": "Dünya'da yaklaşık 10.000 kuş türü vardır.",
+      "answer": "Dünya'da yaklaşık 10.000 kuş türü vardır.",
+      "eos": true,
+      "tokens": 10,
+      "exact": true,
+      "char_f1_proxy": 1.0
+    },
+    {
+      "question": "İyi dengelenmiş bir diyetin beş bileşenini adlandırın.",
+      "reference": "Dengeli bir diyet, meyve ve sebzeler; tam tahıllar; az yağlı süt ürünleri; sağlıklı yağlar ve az şeker, tuz ve sağlıksız yağ içeren besinler gibi çeşitli besin yoğunluğuna sahip yiyecekleri içermelidir. Ayrıca, dengeli bir diyet için yeterli su tüketimi ve gün boyunca düzenli öğünler ve atıştırmalıklar tüketmek önemlidir.",
+      "answer": "Dengeli bir diyet, meyve ve sebzeler; tam tahıllar; az yağlı süt ürünleri; sağlıklı yağlar ve az şeker, tuz ve sağlıksız yağ içeren besinler gibi çeşitli besin yoğunluğuna sahip yiyecekleri içermelidir. Ayrıca, dengeli bir diyet için yeterli su tüketimi ve gün boyunca düzenli öğünler ve atıştırmalıklar tüketmek önemlidir.",
+      "eos": true,
+      "tokens": 66,
+      "exact": true,
+      "char_f1_proxy": 1.0
+    },
+    {
+      "question": "Erkek ve dişi kardinal arasındaki farkı nasıl anlatacağınızı açıklayın.",
+      "reference": "Erkek kardinal kuşlar parlak kırmızı tüylere sahiptir, dişi kardinal kuşların tüyleri daha kahverengi renklidir. Erkeklerin yüzleri siyahken, dişi kardinal kuşların yüzleri gri renklidir. Ayrıca, erkek kardinal kuşlar genellikle dişilerden daha büyüktür.",
+      "answer": "Erkek kardinal kuşlar parlak kırmızı tüylere sahiptir, dişi kardinal kuşların tüyleri daha kahverengi renklidir. Erkeklerin yüzleri siyahken, dişi kardinal kuşların yüzleri gri renklidir. Ayrıca, erkek kardinal kuşlar genellikle dişilerden daha büyüktür.",
+      "eos": true,
+      "tokens": 62,
+      "exact": true,
+      "char_f1_proxy": 1.0
+    },
+    {
+      "question": "Bir resmi tanımlamak için 10 sıfat bulun.",
+      "reference": "Canlı, karmaşık, hipnotize edici, cezbedici, parlak, cesur, dinamik, ifade dolu, hipnotize edici ve baştan çıkarıcı.",
+      "answer": "Canlı, karmaşık, hipnotize edici, cezbedici, parlak, cesur, dinamik, ifade dolu, hipnotize edici ve baştan çıkarıcı.",
+      "eos": true,
+      "tokens": 37,
+      "exact": true,
+      "char_f1_proxy": 1.0
+    }
+  ],
+  "history": [
+    {
+      "step": 1,
+      "training_loss": 1.9657114744186401,
+      "six_old_seen_nll": 0.02162359656847634,
+      "two_replayed_control_nll": 7.66800247995477,
+      "seconds": 1.8
+    },
+    {
+      "step": 80,
+      "training_loss": 0.011872701346874237,
+      "six_old_seen_nll": 0.00665670299669482,
+      "two_replayed_control_nll": 0.01726699619862868,
+      "seconds": 89.9
+    },
+    {
+      "step": 160,
+      "training_loss": 0.0036535433027893305,
+      "six_old_seen_nll": 0.0030397628845396213,
+      "two_replayed_control_nll": 0.006530715182187065,
+      "seconds": 180.2
+    },
+    {
+      "step": 240,
+      "training_loss": 0.003116884734481573,
+      "six_old_seen_nll": 0.0019439881256525695,
+      "two_replayed_control_nll": 0.003736543709547597,
+      "seconds": 270.5
+    },
+    {
+      "step": 320,
+      "training_loss": 0.0014013723703101277,
+      "six_old_seen_nll": 0.0014030572081351316,
+      "two_replayed_control_nll": 0.002394600594750821,
+      "seconds": 361.4
+    }
+  ],
+  "training_seconds": 364.9
+}
