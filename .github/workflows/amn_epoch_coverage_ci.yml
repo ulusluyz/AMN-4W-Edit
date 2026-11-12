@@ -1,0 +1,21 @@
+name: Verify full-epoch AMN question coverage and real SFT learning
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/amn_epoch_coverage_ci.yml'
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Test epoch sampler, causal labels and actual gradient descent
+        run: python -m pytest -q tests/test_amn_epoch_sampler.py tests/test_amn_v31_rehearsal_fix.py
