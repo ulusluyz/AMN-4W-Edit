@@ -1,0 +1,55 @@
+{
+  "model": "AMNOpenTurkish-v1",
+  "checkpoint_sha256": "462a98d1e6e72b7b74443fc1de7190c5b9913445d6a573532b125ad18ce9eab6",
+  "checkpoint_best_step": 1200,
+  "inference_only": true,
+  "decode": {
+    "max_new_bytes": 320,
+    "temperature": 0.7,
+    "top_k": 12
+  },
+  "results": [
+    {
+      "question": "Bir robotun engellere çarpmadan hareket etmesi için hangi sensörler kullanılabilir?",
+      "text": "Bir koşularını hafif aynı bir çalında çevrem çağırı olduğun devata bir üzerinde iletişim adım dağıları köl bağlandırı başamesi ve dilim özgürler için gündürme ve bir gördemimi bir dört getirmektedir.",
+      "bytes_generated": 229,
+      "valid_utf8": true,
+      "eos": true
+    },
+    {
+      "question": "Python dilinde bir döngü ne işe yarar? Kısa bir örnekle açıkla.",
+      "text": "Kapı karakteriyor.",
+      "bytes_generated": 19,
+      "valid_utf8": true,
+      "eos": true
+    },
+    {
+      "question": "Elektrik devresinde direnç ve akım arasında nasıl bir ilişki vardır?",
+      "text": "Bu bağlıktür ve yağaç hayatını kalmak için bir devam sevgilidir.",
+      "bytes_generated": 72,
+      "valid_utf8": true,
+      "eos": true
+    },
+    {
+      "question": "Kablosuz ağda bağlantı kalitesi neden düşebilir?",
+      "text": "Müşteri hisse tama dünyası, dünyanız bir tasarının yeni hard edin? Benzersiz hesaflerin en kaynakların kület duyanın olur, maker kilimi için kaydan birimli bir hizmetleri yakanlarıdır.",
+      "bytes_generated": 198,
+      "valid_utf8": true,
+      "eos": true
+    },
+    {
+      "question": "Türkçe dilinde bir arkadaşına teşekkür etmek için kısa ve doğal bir cümle yaz.",
+      "text": "En krhane her köy bir aktiviçi ve hayvan kayvalıdır.",
+      "bytes_generated": 56,
+      "valid_utf8": true,
+      "eos": true
+    },
+    {
+      "question": "Bir yazılım projesini test ederken hangi hatalara dikkat etmeliyiz?",
+      "text": "Bu yakın öğrenmeyini daha altında yaptan çözümü bir dünyasında iyi bir günülü dilemi bir güneştirir.",
+      "bytes_generated": 115,
+      "valid_utf8": true,
+      "eos": true
+    }
+  ]
+}
