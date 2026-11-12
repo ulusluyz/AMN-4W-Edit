@@ -59,6 +59,13 @@ def validate_data(folder):
                 topics[r["topic"]]=split
             elif r["source"]=="TÜİK ADNKS 2025":
                 if split!="train":raise RuntimeError("Official names partition leak")
+            elif r["source"] in ("MDN Web Docs","Dünya Sağlık Örgütü","BirdLife International"):
+                allowed={"MDN Web Docs":"https://developer.mozilla.org/",
+                    "Dünya Sağlık Örgütü":"https://www.who.int/",
+                    "BirdLife International":"https://www.birdlife.org/"}
+                if not r["source_url"].startswith(allowed[r["source"]]):
+                    raise RuntimeError("Wrong attribution for editorial fact")
+                if split!="train":raise RuntimeError("Editorial fact partition leak")
             else:raise RuntimeError("Unapproved source "+r["source"])
     return manifest,audit,rows
 
@@ -99,7 +106,7 @@ def probe(model,sp,questions,max_new=100):
     return outputs
 
 def core_sample(r):
-    return r["category"]=="resmi_isimler" or r["topic"] in CORE
+    return r["category"] in ("resmi_isimler","uzman_kaynakli_temel_kavram") or r["topic"] in CORE
 
 def train(args):
     torch.set_num_threads(args.threads)
