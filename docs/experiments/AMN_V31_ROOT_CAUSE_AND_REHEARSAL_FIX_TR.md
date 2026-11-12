@@ -61,3 +61,21 @@ Bu nedenle sadece aynı veriyi yüzlerce kez tekrar etmek tüm sorunu çözmez. 
 - GitHub Actions run 43176442536 (success)
 
 Eski tüm checkpointler korunmuştur.
+
+
+## Soruya koşullandırma (ek deney)
+
+GitHub Actions run 43177429767 başarılı. Gerçek soru Q_i ile hedef cevap A_i
+arasındaki teacher-forced NLL, aynı A_i yanıtının başka eğitim sorusu Q_j altında
+NLL değeriyle karşılaştırıldı:
+
+| Ölçüm | İlk v3.1 | Altı-soruluk tekrar |
+|---|---:|---:|
+| Doğru soruya daha yüksek olasılık veren eşleşme | 4 / 6 | **6 / 6** |
+| Yanlış sorunun NLL eksi doğru sorunun NLL ortalaması | 0,000206 | **0,468471** |
+
+Böylece altı görülmüş örnekte yalnızca sabit bir cevabı bağımsız üretme değil,
+soruya göre dağılım değiştirme becerisi de **sınırlı olarak** gözlemlendi.
+Bu hâlâ bilinmeyen Türkçe soruları anlama kanıtı değildir.
+
+Kaynak: results/amn_tm_v31_rehearsal/question_conditioning.json
