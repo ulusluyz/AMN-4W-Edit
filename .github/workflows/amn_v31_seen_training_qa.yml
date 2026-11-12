@@ -1,0 +1,60 @@
+name: Audit actual training data and ask seen Turkish questions (AMN v3.1)
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/amn_v31_seen_training_qa.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: amn-v31-seen-training-audit
+  cancel-in-progress: false
+
+jobs:
+  verify-seen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install same model dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Re-download original licensed corpus and recreate the exact hashed training split
+        run: |
+          python -u experiments/prepare_open_turkish.py \
+            --output data/open_turkish_v31 \
+            --max-samples 20000 --max-seq-len 680 \
+            --min-answer-bytes 45 --min-train 3000
+      - name: Replay original SGD sample selection and ask only actually seen training questions
+        run: |
+          python -u experiments/audit_seen_training_questions_v31.py \
+            --data data/open_turkish_v31 \
+            --results results/amn_tm_v31
+      - name: Preserve source audit, reference answers and raw model responses
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          tmp="$(mktemp -d)"
+          cp results/amn_tm_v31/seen_training_questions/audit.json "$tmp/"
+          cp results/amn_tm_v31/seen_training_questions/seen_qa_tr.md "$tmp/"
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            mkdir -p results/amn_tm_v31/seen_training_questions
+            cp "$tmp/"* results/amn_tm_v31/seen_training_questions/
+            git add -f results/amn_tm_v31/seen_training_questions/
+            if git diff --cached --quiet; then
+              echo 'Archive identical'
+              exit 0
+            fi
+            git commit -m "Audit original AMN v3.1 training examples and archive genuine seen-question responses"
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
