@@ -14,7 +14,7 @@ class AMNNMC(nn.Module):
         self.embedding = nn.Embedding(256, c.d_model)
         self.blocks = nn.ModuleList([
             NMCBlock(c.d_model, c.memory_dim, c.slots, c.expansion,
-                     c.use_fast, c.use_episodic)
+                     c.use_fast, c.use_episodic, c.addressing)
             for _ in range(c.layers)
         ])
         self.head = nn.Linear(c.d_model, 256)

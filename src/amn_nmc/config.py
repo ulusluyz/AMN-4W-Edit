@@ -12,10 +12,13 @@ class NMCConfig:
     expansion: int = 2
     use_fast: bool = True
     use_episodic: bool = True
+    addressing: str = "legacy"
 
     def __post_init__(self):
         if self.vocab_size != 256:
             raise ValueError("The first NMC implementation models raw bytes (256 symbols)")
+        if self.addressing not in ("legacy", "competitive"):
+            raise ValueError("unknown episodic addressing mode")
         for key in ("d_model", "memory_dim", "slots", "layers", "expansion"):
             if getattr(self, key) < 1:
                 raise ValueError(f"{key} must be positive")

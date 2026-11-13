@@ -159,7 +159,9 @@ def train(data, output, config_path, seed=17, *, resume=False, extra_steps=0):
         saved = torch.load(out / "last.pt", map_location="cpu", weights_only=True)
         if saved.get("format_version") != 2 or saved.get("seed") != seed:
             raise ValueError("Incompatible checkpoint format or seed")
-        if saved.get("config") != asdict(mc) or saved.get("fingerprints") != fingerprints:
+        saved_config = dict(saved.get("config", {}))
+        saved_config.setdefault("addressing", "legacy")
+        if saved_config != asdict(mc) or saved.get("fingerprints") != fingerprints:
             raise ValueError("Changed corpus or architecture on resume")
         previous_settings = saved["training_settings"]
         # Extending max_steps is allowed but changing causal TBPTT or optimizer is not.

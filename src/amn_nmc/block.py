@@ -21,10 +21,11 @@ class RMSNorm(nn.Module):
 
 class NMCBlock(nn.Module):
     def __init__(self, d_model, memory_dim, slots, expansion=2,
-                 use_fast=True, use_episodic=True):
+                 use_fast=True, use_episodic=True, addressing="legacy"):
         super().__init__()
         self.d, self.m, self.slots = d_model, memory_dim, slots
         self.use_fast, self.use_episodic = use_fast, use_episodic
+        self.addressing = addressing
         self.gate = nn.Linear(3 * d_model, d_model)
         self.candidate = nn.Linear(3 * d_model, d_model)
         self.hidden_norm = RMSNorm(d_model)
@@ -80,11 +81,26 @@ class NMCBlock(nn.Module):
 
         if self.use_episodic:
             similarities = torch.bmm(state.keys, q.unsqueeze(-1)).squeeze(-1)
-            address = torch.softmax(similarities / 0.35 + 0.25 * torch.log1p(state.usage), dim=-1)
+            if self.addressing == "competitive":
+                centered_keys = F.normalize(
+                    state.keys - state.keys.mean(-1, keepdim=True), dim=-1, eps=1e-6)
+                centered_q = F.normalize(
+                    q - q.mean(-1, keepdim=True), dim=-1, eps=1e-6)
+                similarities = torch.bmm(
+                    centered_keys, centered_q.unsqueeze(-1)).squeeze(-1)
+                address = torch.softmax(
+                    similarities / 0.23 + 0.25 * torch.log1p(state.usage), dim=-1)
+            else:
+                address = torch.softmax(
+                    similarities / 0.35 + 0.25 * torch.log1p(state.usage), dim=-1)
             long_read = torch.bmm(address.unsqueeze(1), state.values).squeeze(1)
             novelty = (1.0 - address.square().sum(-1, keepdim=True)).clamp(0, 1)
             allocation_gate = torch.sigmoid(self.long_allocate(torch.cat((h, novelty), -1)))
-            allocation = torch.softmax(-4.0 * state.usage + self.slot_bias, dim=-1)
+            if self.addressing == "competitive":
+                slot = torch.argmin(state.usage - 0.01 * self.slot_bias, dim=-1)
+                allocation = F.one_hot(slot, num_classes=self.slots).to(dtype=h.dtype)
+            else:
+                allocation = torch.softmax(-4.0 * state.usage + self.slot_bias, dim=-1)
             allocation_weight = (1.0 - allocation_gate) * address + allocation_gate * allocation
             write_strength = torch.sigmoid(self.long_write(h)) * allocation_weight
             new_keys = F.normalize(
